@@ -1,0 +1,125 @@
+/* General Reset & Body */
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #222;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+nav {
+    background-color: #444;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+}
+
+.navigation li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navigation li a:hover, .active {
+    background-color: #666;
+}
+
+/* Main Content */
+main {
+    padding: 10px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.photo-box img {
+    width: 100%;
+    height: auto;
+}
+
+/* Course List - Mobile (1 Column) */
+#course-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.course-card {
+    background-color: #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Highlight completed courses */
+.completed {
+    background-color: #a52a2a; /* Maroon/Brownish as often seen in BYU-I styles */
+    color: white;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Footer - Mobile */
+footer {
+    background-color: #dbdbdb;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 0 10px;
+}

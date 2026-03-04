@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Austin Anumudu</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="profile-header">
+                <img src="images/profile.webp" alt="Profile" class="logo">
+                <h1>Austin Anumudu</h1>
+            </div>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Repo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-grid">
+            <section class="card">
+                <h2 class="card-header">About Me</h2>
+                <div class="card-content">
+                    <p>Welcome to my web development portal. This page showcases my progress in the WDD certificate program.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="card-header">Student Photo</h2>
+                <div class="card-content photo-box">
+                    <img src="images/student-photo.jpg" alt="Austin Anumudu">
+                </div>
+            </section>
+        </div>
+
+        <section class="card certificate-section">
+            <h2 class="card-header">Web Certificate Courses</h2>
+            <div class="card-content">
+                <div class="filters">
+                    <button id="all">All</button>
+                    <button id="cse">CSE</button>
+                    <button id="wdd">WDD</button>
+                </div>
+                <div id="course-list"></div>
+                <p class="credit-msg">The total credits for courses listed above is <span id="total-credits"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/github.png" alt="GitHub"></a>
+            <a href="#"><img src="images/x.png" alt="X"></a>
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="currentyear"></span> ● Austin Anumudu ● Lagos, Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
