@@ -18,3 +18,8 @@ main {
 #course-list {
     grid-template-columns: repeat(3, 1fr);
 }
+
+.photo-box img {
+    max-width: 100%;
+    height: auto;
+}
