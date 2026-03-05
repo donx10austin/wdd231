@@ -1,7 +1,10 @@
-// Get the current year for the copyright
-const currentYear = new Date().getFullYear();
-document.querySelector("#currentyear").textContent = currentYear;
+document.addEventListener("DOMContentLoaded", () => {
+    // Dynamic Copyright Year
+    document.querySelector("#currentyear").textContent = new Date().getFullYear();
 
-// Get the last modification date and time of the document
-const lastMod = document.lastModified;
-document.querySelector("#lastModified").textContent = `Last Modification: ${lastMod}`;
+    // Last Modified (Will show 2026 based on current system time)
+    const lastMod = document.querySelector("#lastModified");
+    if (lastMod) {
+        lastMod.textContent = `Last Modification: ${document.lastModified}`;
+    }
+});

@@ -1,17 +1,15 @@
-/* General Reset & Body */
+/* small.css */
 body {
-    font-family: 'Roboto', Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
-/* Header & Navigation */
+/* Header & Horizontal Nav */
 header {
-    background-color: #222;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    background-color: #fff;
+    border-bottom: 2px solid #333;
 }
 
 .profile-header {
@@ -19,54 +17,68 @@ header {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    padding: 15px;
 }
 
 .logo {
     width: 60px;
     height: auto;
-    border-radius: 50%;
+    border: 1px solid #ccc;
 }
 
 nav {
-    background-color: #444;
+    background-color: #333;
 }
 
 .navigation {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column; /* Stacked on mobile */
+    justify-content: center;
+}
+
+.navigation li {
+    flex: 1;
+    text-align: center;
 }
 
 .navigation li a {
     display: block;
     color: white;
+    padding: 15px 5px;
     text-decoration: none;
-    padding: 1rem;
-    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .navigation li a:hover, .active {
-    background-color: #666;
+    background-color: #555;
 }
 
 /* Main Content */
 main {
-    padding: 10px;
+    padding: 15px;
+}
+
+.main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+    background: white;
+    border: 1px solid #bbb;
 }
 
 .card-header {
-    background-color: #222;
-    color: #fff;
+    background: #333;
+    color: white;
     padding: 10px;
     margin: 0;
     text-align: center;
+    font-size: 1rem;
 }
 
 .card-content {
@@ -78,45 +90,47 @@ main {
     height: auto;
 }
 
-/* Course List - Mobile (1 Column) */
-#course-list {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.course-card {
-    background-color: #ddd;
-    padding: 15px;
-    text-align: center;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Highlight completed courses */
-.completed {
-    background-color: #a52a2a; /* Maroon/Brownish as often seen in BYU-I styles */
-    color: white;
-}
-
+/* Course List */
 .filters {
     display: flex;
+    gap: 5px;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .filters button {
-    padding: 10px 20px;
+    padding: 10px;
+    background: #ddd;
+    border: 1px solid #999;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* Footer - Mobile */
+#course-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.course-card {
+    background: #e0e0e0;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #bbb;
+    font-weight: bold;
+}
+
+.completed {
+    background-color: #99c299 !important; /* Green for done */
+}
+
+/* Footer */
 footer {
-    background-color: #dbdbdb;
+    background: #dbdbdb;
     padding: 20px;
     text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #bbb;
 }
 
 .social-links img {
