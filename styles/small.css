@@ -1,4 +1,5 @@
-/* small.css - Mobile First */
+/* small.css - Mobile First Styles */
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -41,21 +42,19 @@ nav {
     flex: 1 1 auto;
 }
 
-/* Find your .navigation li a and make sure color is white */
 .navigation li a {
     display: block;
-    color: #ffffff; /* Explicit white for contrast */
+    color: #ffffff; /* FIX: Contrast ratio for accessibility */
     padding: 15px 10px;
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: bold;
 }
 
-/* Ensure the active/hover state also has high contrast */
 .navigation li a:hover, 
-.active {
+.navigation li a.active {
     background-color: #555;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 main {
@@ -88,6 +87,7 @@ main {
 .photo-box img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .filters {

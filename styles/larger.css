@@ -1,4 +1,4 @@
-/* larger.css - Desktop Layout */
+/* larger.css - Desktop Layout Overrides */
 
 @media screen and (min-width: 768px) {
     main {
@@ -9,7 +9,6 @@
     .main-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 20px;
     }
 
     .navigation li a {
@@ -19,10 +18,5 @@
 
     #course-list {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .photo-box img {
-        max-width: 100%;
-        height: auto;
     }
 }
