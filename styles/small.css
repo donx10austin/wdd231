@@ -1,5 +1,4 @@
 /* small.css - Mobile First Styles */
-
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -9,22 +8,47 @@ body {
 
 header {
     background-color: #fff;
-    border-bottom: 2px solid #333;
+    display: flex;
+    flex-direction: column; /* Stacks branding on top of nav */
 }
 
-.profile-header {
+/* Site Branding - Top Left */
+.site-branding {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px;
+    padding: 10px 20px;
 }
 
-.logo {
-    width: 60px;
-    height: auto;
+.icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border: 1px solid #999;
+    position: relative;
 }
 
+/* Creating the 'X' shape in the placeholder */
+.icon-placeholder::before, .icon-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    top: 50%;
+    left: 0;
+}
+.icon-placeholder::before { transform: rotate(45deg); }
+.icon-placeholder::after { transform: rotate(-45deg); }
+
+.site-branding h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Navigation - Horizontal Bar Underneath */
 nav {
     background-color: #333;
 }
@@ -34,32 +58,27 @@ nav {
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.navigation li {
-    flex: 1 1 auto;
+    justify-content: flex-start; /* Aligns links horizontally */
+    overflow-x: auto; /* Allows scrolling if links are too wide for mobile */
 }
 
 .navigation li a {
     display: block;
-    color: #ffffff; /* FIX: Contrast ratio for accessibility */
-    padding: 15px 10px;
+    color: #ffffff;
+    padding: 15px 12px;
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .navigation li a:hover, 
 .navigation li a.active {
     background-color: #555;
-    color: #ffffff;
 }
 
-main {
-    padding: 15px;
-}
+/* Main Content */
+main { padding: 15px; }
 
 .main-grid {
     display: flex;
@@ -70,6 +89,7 @@ main {
 .card {
     background: white;
     border: 1px solid #bbb;
+    margin-bottom: 20px;
 }
 
 .card-header {
@@ -80,16 +100,17 @@ main {
     text-align: center;
 }
 
-.card-content {
-    padding: 15px;
-}
+.card-content { padding: 15px; }
 
 .photo-box img {
     width: 100%;
+    max-width: 300px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
+/* Course Filters */
 .filters {
     display: flex;
     gap: 5px;
@@ -98,11 +119,10 @@ main {
 }
 
 .filters button {
-    padding: 10px;
+    padding: 10px 20px;
     background: #ddd;
     border: 1px solid #999;
     cursor: pointer;
-    font-weight: bold;
 }
 
 #course-list {
@@ -118,18 +138,13 @@ main {
     border: 1px solid #bbb;
 }
 
-.completed {
-    background-color: #99c299;
-}
+.completed { background-color: #99c299; }
 
 footer {
     background: #dbdbdb;
     padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    border-top: 1px solid #bbb;
 }
 
-.social-links img {
-    width: 30px;
-    margin: 0 10px;
-}
+.social-links img { width: 30px; margin: 0 10px; }

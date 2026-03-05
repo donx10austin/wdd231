@@ -1,6 +1,10 @@
 /* larger.css - Desktop Layout Overrides */
-
 @media screen and (min-width: 768px) {
+    .navigation li a {
+        font-size: 0.9rem;
+        padding: 15px 30px;
+    }
+
     main {
         max-width: 1000px;
         margin: 20px auto;
@@ -9,11 +13,7 @@
     .main-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
-    }
-
-    .navigation li a {
-        font-size: 0.9rem;
-        padding: 15px 20px;
+        align-items: start;
     }
 
     #course-list {
