@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 231 - Austin Anumudu</title>
+    
+    <meta name="description" content="WDD 231 Course Portal for Austin Anumudu. This site features web development projects, course work, and credits.">
+    <meta name="author" content="Austin Anumudu">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
+    
     <script src="scripts/course.js" defer></script>
 </head>
 <body>
     <header>
         <div class="profile-header">
-            <img src="images/profile.webp" alt="Profile" class="logo">
+            <img src="images/austin-photo.webp" alt="Austin Anumudu Profile Logo" class="logo">
             <h1>Austin Anumudu</h1>
         </div>
         <nav>
@@ -19,6 +29,7 @@
                 <li><a href="#" class="active">HOME</a></li>
                 <li><a href="#">CHAMBER PROJECT</a></li>
                 <li><a href="#">FINAL PROJECT</a></li>
+                <li><a href="https://github.com/austin-anumudu" target="_blank">GITHUB REPO</a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +45,7 @@
             <section class="card">
                 <h2 class="card-header">Student Photo</h2>
                 <div class="card-content photo-box">
-                    <img src="images/student-photo.webp" alt="Austin Anumudu">
+                    <img src="images/austin-photo.webp" alt="Austin Anumudu">
                 </div>
             </section>
         </div>
@@ -55,9 +66,9 @@
 
     <footer>
         <div class="social-links">
-            <img src="images/linkedin.png" alt="LinkedIn">
-            <img src="images/github.png" alt="GitHub">
-            <img src="images/x.png" alt="X">
+            <a href="#"><img src="images/linkedin-logo.png" alt="LinkedIn Profile"></a>
+            <a href="#"><img src="images/github-logo.png" alt="GitHub Profile"></a>
+            <a href="#"><img src="images/x-logo.png" alt="X Profile"></a>
         </div>
         <p>&copy; <span id="currentyear"></span> ● Austin Anumudu ● Lagos, Nigeria</p>
         <p id="lastModified"></p>

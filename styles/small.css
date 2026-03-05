@@ -1,12 +1,11 @@
-/* small.css */
+/* small.css - Mobile First */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-/* Header & Horizontal Nav */
 header {
     background-color: #fff;
     border-bottom: 2px solid #333;
@@ -23,7 +22,6 @@ header {
 .logo {
     width: 60px;
     height: auto;
-    border: 1px solid #ccc;
 }
 
 nav {
@@ -36,19 +34,19 @@ nav {
     padding: 0;
     margin: 0;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navigation li {
-    flex: 1;
-    text-align: center;
+    flex: 1 1 auto;
 }
 
 .navigation li a {
     display: block;
     color: white;
-    padding: 15px 5px;
+    padding: 15px 10px;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
 }
 
@@ -56,7 +54,6 @@ nav {
     background-color: #555;
 }
 
-/* Main Content */
 main {
     padding: 15px;
 }
@@ -78,7 +75,6 @@ main {
     padding: 10px;
     margin: 0;
     text-align: center;
-    font-size: 1rem;
 }
 
 .card-content {
@@ -90,7 +86,6 @@ main {
     height: auto;
 }
 
-/* Course List */
 .filters {
     display: flex;
     gap: 5px;
@@ -117,20 +112,17 @@ main {
     padding: 15px;
     text-align: center;
     border: 1px solid #bbb;
-    font-weight: bold;
 }
 
 .completed {
-    background-color: #99c299 !important; /* Green for done */
+    background-color: #99c299;
 }
 
-/* Footer */
 footer {
     background: #dbdbdb;
     padding: 20px;
     text-align: center;
     margin-top: 20px;
-    border-top: 1px solid #bbb;
 }
 
 .social-links img {

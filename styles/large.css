@@ -1,22 +1,20 @@
-/* larger.css */
-@media screen and (min-width: 768px) {
-    main {
-        max-width: 1000px;
-        margin: 20px auto;
-    }
+/* larger.css - Desktop Layout (No Media Query needed due to HTML link) */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+}
 
-    .main-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-    }
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
 
-    .navigation li a {
-        font-size: 1rem;
-        padding: 15px 30px;
-    }
+.navigation li a {
+    font-size: 0.9rem;
+    padding: 15px 20px;
+}
 
-    #course-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
+#course-list {
+    grid-template-columns: repeat(3, 1fr);
 }
