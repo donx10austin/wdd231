@@ -1,45 +1,97 @@
-/* Grid View (Mobile First) */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 1rem;
+/* 1. Standardize Colors and Fonts with Variables */
+:root {
+    --primary-color: #003366;    /* Lagos Blue */
+    --secondary-color: #f4f4f4;  /* Light Gray */
+    --accent-color: #ffcc00;     /* Gold Member */
+    --text-color: #333333;
+    --white: #ffffff;
+    --footer-bg: #222222;
+    --heading-font: 'Montserrat', sans-serif;
+    --paragraph-font: 'Roboto', sans-serif;
 }
 
+/* 2. Basic Setup */
+body {
+    font-family: var(--paragraph-font);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+}
+
+/* 3. Consolidated Member Cards (Rules #2 and #14 Merged) */
 .member-card {
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #cccccc;
     padding: 1rem;
-    background: #fff;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
     text-align: center;
 }
 
 .member-card img {
     max-width: 150px;
     height: auto;
+    margin-bottom: 1rem;
 }
 
-/* List View */
+/* 4. Directory Container Toggle Styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 1rem;
+}
+
 .list {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .list .member-card {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: left;
-    align-items: center;
-    border: none;
-    border-bottom: 1px solid #eee;
+    padding: 0.5rem 1rem;
 }
 
-.list .member-card img {
-    display: none;
-}
-
+/* 5. Consolidated Footer (Rules #7 and #19 Merged) */
 footer {
-    background: #333;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+    background-color: var(--footer-bg);
+    color: var(--white);
+    padding: 2rem;       /* Resolved: Picked 2rem over 3rem */
+    text-align: center;  /* Resolved: Picked center over left */
+    margin-top: 2rem;
+}
+
+.footer-info p, .footer-meta p {
+    margin: 0.5rem 0;
+}
+
+/* 6. Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: var(--primary-color);
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+nav ul li a.active {
+    background-color: rgba(255,255,255,0.2);
+    font-weight: bold;
 }
