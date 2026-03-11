@@ -17,18 +17,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: var(--gray-bg);
 }
 
 .branding {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-.logo { width: 40px; height: auto; }
-h1 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0; }
+.logo { width: 50px; height: auto; }
+h1 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin: 0; }
 
 /* Navigation */
 #menu { font-size: 2rem; background: none; border: none; cursor: pointer; }
@@ -38,52 +38,66 @@ h1 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin: 0; }
     list-style: none;
     padding: 0;
     position: absolute;
-    top: 60px;
+    top: 65px;
     right: 0;
     background: var(--gray-bg);
     width: 100%;
-    text-align: center;
     z-index: 10;
 }
 
 .nav-links.show { display: block; }
 .nav-links li a { display: block; padding: 1rem; text-decoration: none; color: #000; }
 
-/* Hero Section */
-.hero { padding: 1rem; }
-.hero-box {
-    border: 1px solid #999;
-    height: 250px;
+/* Grid Layout */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    padding: 20px; 
+}
+
+/* Member Cards - MATCHING SCREENSHOT */
+.member-card { 
+    border: 1px solid #eee; 
+    padding: 25px; 
+    text-align: center; 
+    background: var(--white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds the depth from your image */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    background: #f4f4f4;
+    justify-content: center;
 }
 
-.hero-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    padding: 10px 15px;
-    background: #aaa;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.member-card img { 
+    max-width: 200px; 
+    height: auto; 
+    margin-bottom: 15px;
 }
 
-/* Members Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; padding: 1rem; }
-.member-card { border: 1px solid #ddd; padding: 1rem; text-align: center; background: #fff; }
-.member-card img { max-width: 100px; }
+.member-card p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.member-card a {
+    color: #0066cc;
+    text-decoration: none;
+}
 
 /* List View */
-.list .member-card { display: flex; justify-content: space-between; align-items: center; text-align: left; }
+.list { display: flex; flex-direction: column; padding: 1rem; }
+.list .member-card { 
+    flex-direction: row; 
+    justify-content: space-between; 
+    text-align: left; 
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
 
 /* Footer */
-footer { padding: 2rem; background: #222; color: #fff; text-align: center; }
+footer { padding: 2rem; background: #222; color: #fff; text-align: center; margin-top: 2rem;}
 
-/* Dark Mode Class */
+/* Dark Mode */
 body.dark-mode { background-color: #121212; color: #eee; }
-body.dark-mode .hero-box, body.dark-mode .member-card { background-color: #1e1e1e; color: #fff; }
+body.dark-mode .member-card { background-color: #1e1e1e; border-color: #333; }
