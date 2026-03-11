@@ -1,7 +1,7 @@
-const url = "data/members.json"; // path relative to directory.html
+const url = "data/members.json"; 
 const cards = document.querySelector("#members");
 
-// 1. Fetch Member Data with Error Handling
+// 1. Fetch Member Data
 async function getMembers() {
     try {
         const response = await fetch(url);
@@ -31,7 +31,7 @@ const displayMembers = (members) => {
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <p><a href="${member.website}" target="_blank">Visit Site</a></p>
-            <p class="level">${mLevel} Member</p>
+            <p class="level"><strong>${mLevel} Member</strong></p>
         `;
         cards.appendChild(section);
     });
@@ -53,23 +53,26 @@ if (gridbtn && listbtn) {
     });
 }
 
-// 4. Hamburger Menu Toggle (For Mobile View)
+// 4. Hamburger Menu Toggle
 const mainnav = document.querySelector('.nav-links');
 const hambutton = document.querySelector('#menu');
 
 if (hambutton && mainnav) {
     hambutton.addEventListener('click', () => {
         mainnav.classList.toggle('show');
-        hambutton.classList.toggle('show');
     });
 }
 
-// 5. Footer Dates
+// 5. Dynamic Footer Dates (Result: 2026)
 const yearSpan = document.querySelector("#currentyear");
 const lastModSpan = document.querySelector("#lastModified");
 
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-if (lastModSpan) lastModSpan.textContent = `Last Modified: ${document.lastModified}`;
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear(); // Dynamically sets to 2026
+}
+if (lastModSpan) {
+    lastModSpan.textContent = `Last Modified: ${document.lastModified}`;
+}
 
 // Initialize
 getMembers();

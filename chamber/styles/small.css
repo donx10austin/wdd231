@@ -1,8 +1,8 @@
 /* 1. Standardize Colors and Fonts with Variables */
 :root {
-    --primary-color: #003366;    /* Lagos Blue */
-    --secondary-color: #f4f4f4;  /* Light Gray */
-    --accent-color: #ffcc00;     /* Gold Member */
+    --primary-color: #003366;
+    --secondary-color: #f4f4f4;
+    --accent-color: #ffcc00;
     --text-color: #333333;
     --white: #ffffff;
     --footer-bg: #222222;
@@ -22,7 +22,7 @@ h1, h2, h3 {
     font-family: var(--heading-font);
 }
 
-/* 3. Consolidated Member Cards (Rules #2 and #14 Merged) */
+/* 3. Consolidated Member Cards */
 .member-card {
     display: flex;
     flex-direction: column;
@@ -62,12 +62,12 @@ h1, h2, h3 {
     padding: 0.5rem 1rem;
 }
 
-/* 5. Consolidated Footer (Rules #7 and #19 Merged) */
+/* 5. Consolidated Footer */
 footer {
     background-color: var(--footer-bg);
     color: var(--white);
-    padding: 2rem;       /* Resolved: Picked 2rem over 3rem */
-    text-align: center;  /* Resolved: Picked center over left */
+    padding: 2rem;
+    text-align: center;
     margin-top: 2rem;
 }
 
@@ -92,6 +92,11 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     font-weight: bold;
+}
+
+/* Mobile Menu Class */
+.nav-links.show {
+    display: block;
 }
