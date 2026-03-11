@@ -24,7 +24,7 @@ header {
 .branding { display: flex; align-items: center; gap: 10px; }
 .logo { width: 50px; height: auto; }
 
-/* --- Directory Grid (The "White Card" look) --- */
+/* --- Directory Grid --- */
 #members.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -47,7 +47,7 @@ header {
 .member-card img {
     max-width: 150px;
     height: 100px;
-    object-fit: contain; /* Keeps logos from stretching */
+    object-fit: contain;
     margin-bottom: 1rem;
     display: block;
 }
@@ -74,13 +74,13 @@ footer {
 
 .social-icon {
     width: 30px; 
-    height: auto;
-    filter: invert(1); /* Makes black icons white so they show on black footer */
+    height: 30px;
+    filter: invert(1); /* Converts black PNGs to white for visibility */
     transition: 0.3s;
 }
 
 .social-icon:hover {
-    filter: none; 
+    filter: none; /* Shows brand colors on hover */
     transform: scale(1.1);
 }
 
