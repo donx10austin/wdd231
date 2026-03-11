@@ -3,65 +3,65 @@
         {
             "name": "Glo Limited",
             "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
-            "phone": "+234 805 000 0000",
+            "phone": "(234) 805-000-0000",
             "website": "https://www.gloworld.com",
             "image": "glo-logo.webp",
             "membership": 3,
-            "other": "Telecommunications leader in Nigeria."
+            "category": "Telecommunications"
         },
         {
             "name": "Access Bank",
             "address": "14/15 Prince Alaba Abiodun, Victoria Island, Lagos",
-            "phone": "+234 1 271 2005",
+            "phone": "(234) 1-271-2005",
             "website": "https://www.accessbankplc.com",
             "image": "access-logo.webp",
             "membership": 3,
-            "other": "Multinational commercial bank."
+            "category": "Banking & Finance"
         },
         {
             "name": "Flutterwave",
             "address": "8 Crossway Street, Lekki Phase 1, Lagos",
-            "phone": "+234 1 234 5678",
+            "phone": "(234) 1-234-5678",
             "website": "https://www.flutterwave.com",
             "image": "flutterwave-logo.webp",
             "membership": 2,
-            "other": "Fintech payment solutions."
+            "category": "Fintech"
         },
         {
             "name": "Andela Lagos",
             "address": "235 Ikorodu Road, Ilupeju, Lagos",
-            "phone": "+234 1 908 7654",
+            "phone": "(234) 1-908-7654",
             "website": "https://andela.com",
             "image": "andela-logo.webp",
             "membership": 2,
-            "other": "Tech talent accelerator."
+            "category": "Technology Training"
         },
         {
             "name": "Lagos Start-Up Lab",
             "address": "12 Marina Road, Lagos Island",
-            "phone": "+234 700 111 2222",
+            "phone": "(234) 700-111-2222",
             "website": "https://lagosstartup.ng",
             "image": "startup-logo.webp",
             "membership": 1,
-            "other": "Local incubator for tech entrepreneurs."
+            "category": "Business Incubator"
         },
         {
             "name": "Eko Hotels & Suites",
             "address": "Plot 1415 Adetokunbo Ademola St, Victoria Island",
-            "phone": "+234 1 277 2700",
+            "phone": "(234) 1-277-2700",
             "website": "https://www.ekohotels.com",
             "image": "eko-logo.webp",
             "membership": 3,
-            "other": "Premier hospitality and events venue."
+            "category": "Hospitality"
         },
         {
             "name": "Dangote Group",
             "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
-            "phone": "+234 1 460 6410",
+            "phone": "(234) 1-460-6410",
             "website": "https://www.dangote.com",
             "image": "dangote-logo.webp",
             "membership": 3,
-            "other": "Diversified manufacturing conglomerate."
+            "category": "Manufacturing"
         }
     ]
 }
