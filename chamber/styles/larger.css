@@ -1,52 +1,14 @@
-/* larger.css - Desktop Styles (768px and wider) */
-
 @media screen and (min-width: 768px) {
-    /* 1. Layout Container */
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    /* 2. Navigation */
-    #menu {
-        display: none; /* Hide hamburger */
-    }
-
+    header { padding: 1rem 5%; }
+    #menu { display: none; }
+    
     .nav-links {
-        display: flex !important; 
-        flex-direction: row;
-        justify-content: center;
-        background-color: var(--footer-bg); /* Use the variable from small.css */
+        display: flex !important;
+        position: static;
+        width: auto;
+        gap: 20px;
     }
 
-    /* 3. Directory Grid - Adjustments only */
-    article.grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 25px;
-    }
-
-    .member-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
-    /* 4. Directory List View - Table Style */
-    article.list .member-card {
-        display: grid;
-        grid-template-columns: 2fr 1.5fr 1fr 1fr;
-        text-align: left;
-    }
-
-    /* 5. Footer - Layout Change */
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        text-align: left; /* Changes from center in small.css */
-        padding: 3rem;    /* Overrides 2rem in small.css */
-    }
-
-    .footer-meta {
-        text-align: right;
-    }
+    footer { display: grid; grid-template-columns: 1fr 1fr; text-align: left; }
+    .footer-meta { text-align: right; }
 }

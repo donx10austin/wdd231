@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lagos Chamber Directory - Austin Anumudu</title>
-
-    <meta name="description" content="Official Business Directory for the Lagos Chamber of Commerce. Discover top-rated local companies and industry leaders in Nigeria.">
-    <meta name="author" content="Austin Anumudu">
     
+    <meta name="description" content="Official Business Directory for the Lagos Chamber of Commerce. Explore innovative Nigerian companies and industry leaders in West Africa's economic center.">
+    <meta name="author" content="Austin Anumudu">
+    <link rel="icon" href="favicon.ico">
+
     <meta property="og:title" content="Lagos Chamber Directory">
     <meta property="og:description" content="Explore the official Lagos Chamber of Commerce directory. Connect with top businesses, industry experts, and innovative startups across Lagos, Nigeria.">
     <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/chamber-og.jpg">
@@ -15,7 +16,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
@@ -27,19 +27,29 @@
 <body>
     <header>
         <div class="branding">
+            <img src="images/logo.png" alt="Lagos Chamber Logo" class="logo">
             <h1>Lagos Chamber of Commerce</h1>
         </div>
         <nav>
-            <button id="menu" aria-label="Toggle Menu">Menu</button>
+            <button id="menu" aria-label="Toggle Menu">≡</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><button id="dark-mode" title="Toggle Dark Mode">◑</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="hero">
+            <div class="hero-box">
+                <p>scalable, responsive hero image</p>
+                <button class="hero-btn">Keynote Tickets</button>
+            </div>
+        </section>
+
         <div class="view-toggle">
             <button id="grid-btn">Grid View</button>
             <button id="list-btn">List View</button>

@@ -1,65 +1,67 @@
-[
-    {
-        "name": "Eko Atlantic Tech Hub",
-        "address": "12 Marina Road, Lagos Island",
-        "phone": "+234 801 111 2222",
-        "website": "https://ekoatlantic.ng",
-        "image": "eko-tech.webp",
-        "membership": 3,
-        "tagline": "The future of African innovation."
-    },
-    {
-        "name": "Ikeja Logistics Ltd",
-        "address": "45 Allen Avenue, Ikeja",
-        "phone": "+234 802 222 3333",
-        "website": "https://ikejalogistics.com",
-        "image": "ikeja-log.webp",
-        "membership": 2,
-        "tagline": "Moving Lagos forward."
-    },
-    {
-        "name": "Victoria Island Legal",
-        "address": "88 Adeola Odeku St, VI",
-        "phone": "+234 803 333 4444",
-        "website": "https://vilegal.ng",
-        "image": "vi-legal.webp",
-        "membership": 1,
-        "tagline": "Corporate law excellence."
-    },
-    {
-        "name": "Lekki Port Services",
-        "address": "Free Trade Zone, Lekki",
-        "phone": "+234 804 444 5555",
-        "website": "https://lekkiport.ng",
-        "image": "lekki-port.webp",
-        "membership": 3,
-        "tagline": "Gateway to global trade."
-    },
-    {
-        "name": "Oando Energy",
-        "address": "21 Ozumba Mbadiwe Ave, VI",
-        "phone": "+234 805 555 6666",
-        "website": "https://oando.com",
-        "image": "oando.webp",
-        "membership": 3,
-        "tagline": "Powering Nigeria."
-    },
-    {
-        "name": "Surulere Textiles",
-        "address": "15 Adeniran Ogunsanya St",
-        "phone": "+234 806 666 7777",
-        "website": "https://suruleretextiles.ng",
-        "image": "textiles.webp",
-        "membership": 2,
-        "tagline": "Authentic Nigerian patterns."
-    },
-    {
-        "name": "Yaba Software House",
-        "address": "Herbert Macaulay Way, Yaba",
-        "phone": "+234 807 777 8888",
-        "website": "https://yabasoft.ng",
-        "image": "yaba-soft.webp",
-        "membership": 1,
-        "tagline": "Coding the mainland."
-    }
-]
+{
+    "members": [
+        {
+            "name": "Glo Limited",
+            "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
+            "phone": "+234 805 000 0000",
+            "website": "https://www.gloworld.com",
+            "image": "glo-logo.webp",
+            "membership": 3,
+            "other": "Telecommunications leader in Nigeria."
+        },
+        {
+            "name": "Access Bank",
+            "address": "14/15 Prince Alaba Abiodun, Victoria Island, Lagos",
+            "phone": "+234 1 271 2005",
+            "website": "https://www.accessbankplc.com",
+            "image": "access-logo.webp",
+            "membership": 3,
+            "other": "Multinational commercial bank."
+        },
+        {
+            "name": "Flutterwave",
+            "address": "8 Crossway Street, Lekki Phase 1, Lagos",
+            "phone": "+234 1 234 5678",
+            "website": "https://www.flutterwave.com",
+            "image": "flutterwave-logo.webp",
+            "membership": 2,
+            "other": "Fintech payment solutions."
+        },
+        {
+            "name": "Andela Lagos",
+            "address": "235 Ikorodu Road, Ilupeju, Lagos",
+            "phone": "+234 1 908 7654",
+            "website": "https://andela.com",
+            "image": "andela-logo.webp",
+            "membership": 2,
+            "other": "Tech talent accelerator."
+        },
+        {
+            "name": "Lagos Start-Up Lab",
+            "address": "12 Marina Road, Lagos Island",
+            "phone": "+234 700 111 2222",
+            "website": "https://lagosstartup.ng",
+            "image": "startup-logo.webp",
+            "membership": 1,
+            "other": "Local incubator for tech entrepreneurs."
+        },
+        {
+            "name": "Eko Hotels & Suites",
+            "address": "Plot 1415 Adetokunbo Ademola St, Victoria Island",
+            "phone": "+234 1 277 2700",
+            "website": "https://www.ekohotels.com",
+            "image": "eko-logo.webp",
+            "membership": 3,
+            "other": "Premier hospitality and events venue."
+        },
+        {
+            "name": "Dangote Group",
+            "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
+            "phone": "+234 1 460 6410",
+            "website": "https://www.dangote.com",
+            "image": "dangote-logo.webp",
+            "membership": 3,
+            "other": "Diversified manufacturing conglomerate."
+        }
+    ]
+}
