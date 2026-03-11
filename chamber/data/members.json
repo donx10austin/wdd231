@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Eko Atlantic Tech Hub",
+        "address": "12 Marina Road, Lagos Island",
+        "phone": "+234 801 111 2222",
+        "website": "https://ekoatlantic.ng",
+        "image": "eko-tech.webp",
+        "membership": 3,
+        "tagline": "The future of African innovation."
+    },
+    {
+        "name": "Ikeja Logistics Ltd",
+        "address": "45 Allen Avenue, Ikeja",
+        "phone": "+234 802 222 3333",
+        "website": "https://ikejalogistics.com",
+        "image": "ikeja-log.webp",
+        "membership": 2,
+        "tagline": "Moving Lagos forward."
+    },
+    {
+        "name": "Victoria Island Legal",
+        "address": "88 Adeola Odeku St, VI",
+        "phone": "+234 803 333 4444",
+        "website": "https://vilegal.ng",
+        "image": "vi-legal.webp",
+        "membership": 1,
+        "tagline": "Corporate law excellence."
+    },
+    {
+        "name": "Lekki Port Services",
+        "address": "Free Trade Zone, Lekki",
+        "phone": "+234 804 444 5555",
+        "website": "https://lekkiport.ng",
+        "image": "lekki-port.webp",
+        "membership": 3,
+        "tagline": "Gateway to global trade."
+    },
+    {
+        "name": "Oando Energy",
+        "address": "21 Ozumba Mbadiwe Ave, VI",
+        "phone": "+234 805 555 6666",
+        "website": "https://oando.com",
+        "image": "oando.webp",
+        "membership": 3,
+        "tagline": "Powering Nigeria."
+    },
+    {
+        "name": "Surulere Textiles",
+        "address": "15 Adeniran Ogunsanya St",
+        "phone": "+234 806 666 7777",
+        "website": "https://suruleretextiles.ng",
+        "image": "textiles.webp",
+        "membership": 2,
+        "tagline": "Authentic Nigerian patterns."
+    },
+    {
+        "name": "Yaba Software House",
+        "address": "Herbert Macaulay Way, Yaba",
+        "phone": "+234 807 777 8888",
+        "website": "https://yabasoft.ng",
+        "image": "yaba-soft.webp",
+        "membership": 1,
+        "tagline": "Coding the mainland."
+    }
+]

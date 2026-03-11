@@ -1,0 +1,45 @@
+/* Grid View (Mobile First) */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 1rem;
+}
+
+.member-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background: #fff;
+    text-align: center;
+}
+
+.member-card img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* List View */
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list .member-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: left;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.list .member-card img {
+    display: none;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
