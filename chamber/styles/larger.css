@@ -7,38 +7,30 @@
     }
 
     .nav-links {
-        display: flex !important; /* Force horizontal display */
+        display: flex !important; 
         gap: 2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
     }
 
     /* --- Member Directory - 3 Columns --- */
     #members.grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Exactly 3 cards per row */
+        grid-template-columns: repeat(3, 1fr); 
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    /* --- Footer - 3-Column Layout (Matching Wireframe) --- */
+    /* --- Footer - 3-Column Layout (BLUE SECTION) --- */
     .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Left, Center, Right */
+        grid-template-columns: 1fr 1fr 1fr; 
         align-items: center;
         text-align: left;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 2rem 0;
     }
 
-    /* This forces social icons to stay centered regardless of alt text length */
     .footer-social {
         grid-column: 2; 
-        display: flex;
         justify-content: center;
-        gap: 25px;
         margin: 0;
     }
 
@@ -53,10 +45,11 @@
 
     /* --- Hero Section Adjustment --- */
     .hero-box {
-        height: 400px; /* Taller hero area for desktop */
+        height: 400px; 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: #e2e2e2; /* Placeholder color if no image */
     }
 }
