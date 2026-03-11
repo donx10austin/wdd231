@@ -1,52 +1,29 @@
+/* --- Variables & Base --- */
 :root {
     --primary-bg: #dadada;
     --card-bg: #ffffff;
-    --text-dark: #333;
+    --footer-bg: #1a1a1a;
+    --text-main: #333;
 }
 
-body { font-family: 'Roboto', sans-serif; margin: 0; }
+body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--text-main); }
 
+/* --- Header --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 5%;
     background-color: var(--primary-bg);
 }
 
 .branding { display: flex; align-items: center; gap: 10px; }
 .logo { width: 50px; height: auto; }
 
-#menu { font-size: 2rem; background: none; border: none; cursor: pointer; }
-
-.nav-links { display: none; list-style: none; padding: 0; text-align: center; }
-.nav-links.show { display: block; position: absolute; top: 70px; width: 100%; background: var(--primary-bg); z-index: 100; }
-
-.hero-box {
-    position: relative;
-    height: 300px;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #999;
-}
-
-.hero-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background: #bbb;
-    border-radius: 8px;
-    border: none;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Directory Cards - Matching your Reference Image */
+/* --- Directory Grid (The "White Card" look) --- */
 #members.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: 20px;
     padding: 20px;
 }
@@ -56,11 +33,47 @@ header {
     padding: 2rem;
     text-align: center;
     border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* This adds the depth from your screenshot */
+    border-radius: 5px;
 }
 
-.member-card img { max-width: 150px; margin-bottom: 1rem; }
-.member-card p { margin: 5px 0; font-size: 0.9rem; }
+.member-card img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-footer { background-color: var(--primary-bg); padding: 2rem; }
-.footer-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+/* --- Footer & Social Icons FIX --- */
+footer { 
+    background-color: var(--footer-bg); 
+    color: white; 
+    padding: 2rem 5%; 
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 30px; /* Size must be defined to show up */
+    height: auto;
+    filter: invert(1); /* FIXED: This makes black icons WHITE for your dark footer */
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    filter: none; /* Colors return on hover */
+    transform: scale(1.1);
+}

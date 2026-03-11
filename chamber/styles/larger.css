@@ -1,70 +1,20 @@
 /* styles/larger.css */
 
 @media screen and (min-width: 768px) {
-    /* --- HEADER --- */
-    #menu {
-        display: none; /* Hide hamburger menu on desktop */
+    /* Header Navigation */
+    #menu { display: none; }
+    .nav-links { 
+        display: flex !important; 
+        gap: 20px; 
+        list-style: none;
     }
 
-    header {
-        padding: 0.5rem 5%;
+    /* Directory Grid - 3 Columns */
+    #members.grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .nav-links {
-        display: flex !important; /* Force display on large screens */
-        position: static;
-        width: auto;
-        background: none;
-        gap: 1.5rem;
-    }
-
-    .nav-links li a {
-        padding: 0.5rem 1rem;
-        transition: 0.3s;
-    }
-
-    .nav-links li a:hover {
-        text-decoration: underline;
-        color: var(--primary-color);
-    }
-
-    /* --- HOME GRID (The 3-Column Layout from Wireframe) --- */
-    .home-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr; /* Matches the width ratio in the image */
-        grid-template-rows: auto auto auto;
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .hero {
-        grid-column: 1 / -1; /* Hero spans all 3 columns */
-    }
-
-    .events {
-        grid-column: 1 / 2; /* Large event box on the left */
-        grid-row: 2 / 3;
-    }
-
-    .weather {
-        grid-column: 2 / 3; /* Middle column */
-    }
-
-    .forecast {
-        grid-column: 3 / 4; /* Right column */
-    }
-
-    /* Spotlights section at the bottom spanning all columns */
-    .spotlights {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-        margin-top: 10px;
-    }
-
-    /* --- FOOTER (3-Column Layout) --- */
+    /* Footer - 3 Columns (Matches Timbuktu Wireframe) */
     .footer-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -73,17 +23,11 @@
     }
 
     .footer-social {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        margin: 0;
+        justify-content: center; /* Icons stay in middle column */
     }
 
     .footer-meta {
         text-align: right;
-    }
-
-    /* --- DIRECTORY VIEW --- */
-    #members.grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on desktop */
     }
 }
