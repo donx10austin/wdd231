@@ -1,65 +1,62 @@
 /* larger.css - Desktop View (768px and wider) */
 
 @media screen and (min-width: 768px) {
-    /* --- Header / Nav --- */
+    /* --- Header / Nav Alignment --- */
     #menu {
-        display: none; /* Hide hamburger menu */
+        display: none; /* Hide hamburger menu on desktop */
     }
 
     .nav-links {
-        display: flex !important; /* Show horizontal links */
-        position: static;
-        width: auto;
-        background: none;
-        gap: 1.5rem;
+        display: flex !important; /* Force horizontal display */
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
-    /* --- Home Page Grid Layout (The "Timbuktu" Wireframe) --- */
-    .home-grid {
+    /* --- Member Directory - 3 Columns --- */
+    #members.grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr; /* 3 Columns: Main, Side1, Side2 */
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr); /* Exactly 3 cards per row */
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    .hero {
-        grid-column: 1 / -1; /* Hero spans full width */
-    }
-
-    .events {
-        grid-column: 1 / 2; /* Larger left box */
-    }
-
-    .weather {
-        grid-column: 2 / 3;
-    }
-
-    .forecast {
-        grid-column: 3 / 4;
-    }
-
-    /* --- Directory Grid (3 Cards per row) --- */
-    #members.grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* --- Footer (3 Columns: Contact, Social, Meta) --- */
+    /* --- Footer - 3-Column Layout (Matching Wireframe) --- */
     .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Exact match to wireframe */
+        grid-template-columns: 1fr 1fr 1fr; /* Left, Center, Right */
         align-items: center;
         text-align: left;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 2rem 0;
     }
 
+    /* This forces social icons to stay centered regardless of alt text length */
     .footer-social {
-        justify-content: center; /* Icons stay in the middle */
+        grid-column: 2; 
+        display: flex;
+        justify-content: center;
+        gap: 25px;
         margin: 0;
     }
 
     .footer-meta {
+        grid-column: 3;
         text-align: right;
+    }
+
+    .footer-info {
+        grid-column: 1;
+    }
+
+    /* --- Hero Section Adjustment --- */
+    .hero-box {
+        height: 400px; /* Taller hero area for desktop */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
