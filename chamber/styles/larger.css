@@ -1,30 +1,62 @@
-/* styles/larger.css */
+/* larger.css - Desktop View (768px and wider) */
 
 @media screen and (min-width: 768px) {
-    /* Header Navigation */
-    #menu { display: none; }
-    .nav-links { 
-        display: flex !important; 
-        gap: 20px; 
-        list-style: none;
+    /* --- Header / Nav --- */
+    #menu {
+        display: none; /* Hide hamburger menu */
     }
 
-    /* Directory Grid - 3 Columns */
+    .nav-links {
+        display: flex !important; /* Show horizontal links */
+        position: static;
+        width: auto;
+        background: none;
+        gap: 1.5rem;
+    }
+
+    /* --- Home Page Grid Layout (The "Timbuktu" Wireframe) --- */
+    .home-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr; /* 3 Columns: Main, Side1, Side2 */
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        grid-column: 1 / -1; /* Hero spans full width */
+    }
+
+    .events {
+        grid-column: 1 / 2; /* Larger left box */
+    }
+
+    .weather {
+        grid-column: 2 / 3;
+    }
+
+    .forecast {
+        grid-column: 3 / 4;
+    }
+
+    /* --- Directory Grid (3 Cards per row) --- */
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Footer - 3 Columns (Matches Timbuktu Wireframe) */
+    /* --- Footer (3 Columns: Contact, Social, Meta) --- */
     .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr; /* Exact match to wireframe */
         align-items: center;
         text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .footer-social {
+        justify-content: center; /* Icons stay in the middle */
         margin: 0;
-        justify-content: center; /* Icons stay in middle column */
     }
 
     .footer-meta {

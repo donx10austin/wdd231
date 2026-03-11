@@ -28,15 +28,6 @@
             "category": "Fintech"
         },
         {
-            "name": "Andela Lagos",
-            "address": "235 Ikorodu Road, Ilupeju, Lagos",
-            "phone": "(234) 1-908-7654",
-            "website": "https://andela.com",
-            "image": "andela-logo.webp",
-            "membership": 2,
-            "category": "Technology Training"
-        },
-        {
             "name": "Lagos Start-Up Lab",
             "address": "12 Marina Road, Lagos Island",
             "phone": "(234) 700-111-2222",

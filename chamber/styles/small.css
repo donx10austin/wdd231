@@ -6,7 +6,11 @@
     --text-main: #333;
 }
 
-body { font-family: 'Roboto', sans-serif; margin: 0; color: var(--text-main); }
+body { 
+    font-family: 'Roboto', sans-serif; 
+    margin: 0; 
+    color: var(--text-main); 
+}
 
 /* --- Header --- */
 header {
@@ -23,7 +27,7 @@ header {
 /* --- Directory Grid (The "White Card" look) --- */
 #members.grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -33,20 +37,22 @@ header {
     padding: 2rem;
     text-align: center;
     border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* This adds the depth from your screenshot */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .member-card img {
     max-width: 150px;
-    height: auto;
+    height: 100px;
+    object-fit: contain; /* Keeps logos from stretching */
     margin-bottom: 1rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* --- Footer & Social Icons FIX --- */
+/* --- Footer & Social Icons --- */
 footer { 
     background-color: var(--footer-bg); 
     color: white; 
@@ -67,13 +73,19 @@ footer {
 }
 
 .social-icon {
-    width: 30px; /* Size must be defined to show up */
+    width: 30px; 
     height: auto;
-    filter: invert(1); /* FIXED: This makes black icons WHITE for your dark footer */
+    filter: invert(1); /* Makes black icons white so they show on black footer */
     transition: 0.3s;
 }
 
 .social-icon:hover {
-    filter: none; /* Colors return on hover */
+    filter: none; 
     transform: scale(1.1);
+}
+
+.footer-meta {
+    font-size: 0.85rem;
+    border-top: 1px solid #444;
+    padding-top: 15px;
 }
