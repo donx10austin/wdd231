@@ -1,49 +1,88 @@
+/* --- DESKTOP STYLES (Min-width 600px) --- */
 @media (min-width: 600px) {
+
+    /* --- HEADER & NAV ALIGNMENT --- */
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    /* --- DIRECTORY GRID (3-Column Repetition) --- */
     #member-container.grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        max-width: 1000px;
+        /* Matches your screenshot: 3 cards per row */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px;
+        max-width: 1200px;
         margin: 40px auto;
-        padding: 0 20px;
+        padding: 0 40px;
     }
 
     .member-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 25px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .member-card:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transform: translateY(-3px);
+    }
+
+    /* --- LIST VIEW ALIGNMENT --- */
+    #member-container.list .member-card {
+        display: grid;
+        /* Columns: Name, Address, Phone, Website, Category */
+        grid-template-columns: 2fr 2fr 1.5fr 1fr 1.5fr;
         align-items: center;
+        padding: 15px 20px;
     }
 
-    .member-card img {
-        width: auto;
-        height: 60px; /* Uniform height like your screenshot */
-        margin-bottom: 15px;
-        object-fit: contain;
+    #member-container.list .member-card h3 {
+        margin: 0;
+        font-size: 0.9rem;
     }
 
-    .member-card h3 {
-        font-size: 1rem;
-        margin: 10px 0;
-        color: #000;
+    #member-container.list .member-card p,
+    #member-container.list .member-card a {
+        margin: 0;
+        padding: 0 10px;
     }
 
-    .member-card p {
-        font-size: 0.8rem;
-        color: #444;
-        margin: 3px 0;
-        line-height: 1.4;
+    /* --- FOOTER LAYOUT (Alignment & Proximity) --- */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Left, Center (Icons), Right */
+        align-items: center;
+        text-align: left;
+        padding: 2.5rem 5%;
     }
 
-    .member-card a {
-        color: blue;
-        font-size: 0.75rem;
-        text-decoration: underline;
-        margin: 10px 0;
+    .footer-info {
+        grid-column: 1;
+    }
+
+    .social-links {
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-copy {
+        grid-column: 3;
+        text-align: right;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    /* Ensure the 7th card (Dangote) centers or aligns correctly */
+    #member-container.grid section:last-child {
+        /* Optional: If you want the 7th card alone on the bottom row to center */
+        /* grid-column: 2; */
+    }
+}
+
+/* --- LARGE SCREEN POLISH --- */
+@media (min-width: 1000px) {
+    #member-container.grid {
+        gap: 40px;
     }
 }

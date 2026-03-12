@@ -4,64 +4,57 @@
       "name": "MTN Nigeria",
       "address": "4 Aromire Road, Golden Plaza, Ikoyi, Lagos",
       "phone": "(234) 803-100-0180",
-      "website": "https://www.mtn.ng",
+      "website": "https://mtn.ng",
       "image": "images/mtn-logo.webp",
-      "membership": "Gold",
-      "industry": "Telecommunications"
+      "membership": "Telecommunications"
     },
     {
       "name": "Glo Limited",
       "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
       "phone": "(234) 805-000-0000",
-      "website": "https://www.gloworld.com",
+      "website": "https://gloworld.com",
       "image": "images/glo-logo.webp",
-      "membership": "Silver",
-      "industry": "Telecommunications"
+      "membership": "Telecommunications"
     },
     {
       "name": "Access Bank",
       "address": "14/15 Prince Alaba Abiodun, Victoria Island, Lagos",
       "phone": "(234) 1-271-2005",
-      "website": "https://www.accessbankplc.com",
+      "website": "https://accessbankplc.com",
       "image": "images/access-logo.webp",
-      "membership": "Gold",
-      "industry": "Banking & Finance"
-    },
-    {
-      "name": "Ikeja Electric",
-      "address": "Obafemi Awolowo Way, Alausa, Ikeja, Lagos",
-      "phone": "(234) 1-271-7350",
-      "website": "https://www.ikejaelectric.com",
-      "image": "images/ikeja-logo.webp",
-      "membership": "Silver",
-      "industry": "Energy"
+      "membership": "Banking & Finance"
     },
     {
       "name": "Flutterwave",
       "address": "8 Crossway Street, Lekki Phase 1, Lagos",
       "phone": "(234) 1-234-5678",
-      "website": "https://www.flutterwave.com",
-      "image": "images/flutter-logo.webp",
-      "membership": "Gold",
-      "industry": "Fintech"
-    },
-    {
-      "name": "Dangote Group",
-      "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
-      "phone": "(234) 1-460-6410",
-      "website": "https://www.dangote.com",
-      "image": "images/dangote-logo.webp",
-      "membership": "Gold",
-      "industry": "Manufacturing"
+      "website": "https://flutterwave.com",
+      "image": "images/flutterwave-logo.webp",
+      "membership": "Fintech"
     },
     {
       "name": "Lagos Start-Up Lab",
       "address": "12 Marina Road, Lagos Island",
       "phone": "(234) 700-111-2222",
-      "website": "https://www.lagosstartuplab.ng",
+      "website": "https://lagosstartuplab.ng",
       "image": "images/startup-logo.webp",
-      "membership": "Member",
-      "industry": "Business Incubator"
+      "membership": "Business Incubator"
+    },
+    {
+      "name": "Eko Hotels & Suites",
+      "address": "Plot 1415 Adetokunbo Ademola St, Victoria Island",
+      "phone": "(234) 1-277-2700",
+      "website": "https://ekohotels.com",
+      "image": "images/eko-logo.webp",
+      "membership": "Hospitality"
+    },
+    {
+      "name": "Dangote Group",
+      "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
+      "phone": "(234) 1-460-6410",
+      "website": "https://dangote.com",
+      "image": "images/dangote-logo.webp",
+      "membership": "Manufacturing"
     }
   ]
 }
