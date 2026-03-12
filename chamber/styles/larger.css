@@ -1,4 +1,4 @@
-/* Desktop specific layout */
+/* Tablet and Desktop Styles */
 
 header {
     flex-direction: row;
@@ -6,38 +6,34 @@ header {
     padding: 1rem 5%;
 }
 
-#menu { display: none; }
+.branding {
+    flex-direction: row;
+    gap: 15px;
+    text-align: left;
+}
 
-nav ul { 
-    display: flex !important; 
-    gap: 2rem; 
+#menu { display: none; } /* Hide the hamburger menu */
+
+nav ul {
+    display: flex !important; /* Show horizontal menu */
+    gap: 1rem;
     margin: 0;
 }
 
-nav ul li a {
-    padding: 0;
+nav a {
+    padding: 0.5rem;
 }
 
-/* Members Grid - 3 columns on Desktop */
+/* Member Grid Adjustments */
 #members.grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Members List - Table-like row on Desktop */
-#members.list .member-card {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1fr;
-    align-items: center;
-    gap: 15px;
-}
-
-#members.list .member-card:nth-child(even) { 
-    background-color: #f0f4f8; 
-}
-
-/* Footer Layout */
 .footer-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -45,6 +41,3 @@ nav ul li a {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-.footer-meta { text-align: right; }
-.footer-info { text-align: left; }
