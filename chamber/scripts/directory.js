@@ -2,10 +2,7 @@ const url = "data/members.json";
 const container = document.querySelector("#member-container");
 const gridBtn = document.querySelector("#grid");
 const listBtn = document.querySelector("#list");
-const menuBtn = document.querySelector("#menu-btn");
-const navList = document.querySelector(".nav-links");
 
-// Async Fetch Function
 async function getMembers() {
     try {
         const response = await fetch(url);
@@ -14,7 +11,7 @@ async function getMembers() {
             displayMembers(data.members);
         }
     } catch (error) {
-        console.error("Lighthouse Audit Error - Fetch:", error);
+        console.error("Fetch error:", error);
     }
 }
 
@@ -24,7 +21,7 @@ function displayMembers(members) {
         const card = document.createElement("section");
         card.className = "member-card";
         card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} branding" loading="lazy" width="150" height="150">
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy" width="150" height="150">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
@@ -35,19 +32,16 @@ function displayMembers(members) {
     });
 }
 
-// Toggle View Logic
-gridBtn.addEventListener("click", () => {
-    container.className = "grid";
-});
-
-listBtn.addEventListener("click", () => {
-    container.className = "list";
-});
+// Toggle Listeners
+gridBtn.addEventListener("click", () => container.className = "grid");
+listBtn.addEventListener("click", () => container.className = "list");
 
 // Hamburger Menu
+const menuBtn = document.querySelector("#menu-btn");
+const nav = document.querySelector(".nav-links");
 menuBtn.addEventListener("click", () => {
-    navList.classList.toggle("open");
-    menuBtn.textContent = navList.classList.contains("open") ? "❌" : "☰";
+    nav.classList.toggle("open");
+    menuBtn.textContent = nav.classList.contains("open") ? "❌" : "☰";
 });
 
 // Footer Dates

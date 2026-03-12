@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | Lagos Chamber of Commerce</title>
     
-    <meta name="description" content="Connect with Lagos's top-rated businesses. Explore our certified directory to find reliable partners in finance, tech, and manufacturing today.">
+    <meta name="description" content="Explore the Lagos Chamber of Commerce business directory. Connect with certified local leaders in tech, finance, and manufacturing today.">
     <meta name="author" content="Austin Anumudu">
-    <link rel="icon" href="images/favicon.ico">
-    <meta property="og:title" content="Lagos Chamber of Commerce Business Directory">
+    <link rel="icon" href="images/chamber-logo.jpg">
+
+    <meta property="og:title" content="Lagos Chamber of Commerce Directory">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
     <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Explore the official Lagos Chamber directory. Discover certified local businesses and industry leaders across Nigeria's commercial capital.">
+    <meta property="og:description" content="Discover and connect with top-rated businesses across Lagos. Our certified directory highlights industry leaders in Nigeria.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/larger.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 600px)">
 
-    <script src="js/members.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="images/chamber-logo.jpg" alt="Lagos Chamber of Commerce Official Logo" id="logo">
+            <img src="images/chamber-og.jpg" alt="Lagos Chamber Logo" id="logo">
             <h1>Lagos Chamber of Commerce</h1>
         </div>
         <button id="menu-btn" aria-label="Toggle Menu">☰</button>
@@ -43,8 +43,8 @@
 
     <main>
         <div class="view-toggle">
-            <button id="grid" aria-label="Grid View">Grid View</button>
-            <button id="list" aria-label="List View">List View</button>
+            <button id="grid" aria-label="Show Grid">Grid View</button>
+            <button id="list" aria-label="Show List">List View</button>
         </div>
         <article id="member-container" class="grid"></article>
     </main>
@@ -57,13 +57,12 @@
                 <p>info@lagoschamber.ng</p>
             </div>
             <div class="footer-middle">
-                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="Lagos Chamber YouTube Channel"></a>
-                <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Lagos Chamber Twitter Profile"></a>
-                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="Lagos Chamber LinkedIn Professional Page"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="Lagos Chamber YouTube"></a>
+                <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Lagos Chamber Twitter"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="Lagos Chamber LinkedIn"></a>
             </div>
             <div class="footer-right">
-                <p>WDD231 Class Project</p>
-                <p>Austin Anumudu</p>
+                <p>WDD231 | Austin Anumudu</p>
                 <p>&copy; <span id="currentyear"></span> Lagos Chamber</p>
                 <p id="lastModified"></p>
             </div>

@@ -1,11 +1,17 @@
 @media (min-width: 600px) {
-    /* --- Desktop Navigation --- */
+    /* --- Desktop Header & Nav --- */
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
     #menu-btn {
-        display: none;
+        display: none; /* Hide hamburger */
     }
 
     .nav-links {
-        display: flex !important;
+        display: flex !important; /* Force display */
         flex-direction: row;
         justify-content: center;
         background-color: transparent;
@@ -17,24 +23,20 @@
         padding: 0.5rem 1rem;
     }
 
-    .nav-links li a:hover {
-        text-decoration: underline;
-    }
-
-    /* --- Desktop Grid View (3 Columns) --- */
+    /* --- Desktop Grid View (Alignment) --- */
     #member-container.grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 25px;
+        gap: 30px;
     }
 
-    /* --- Desktop List View (Zebra Striped) --- */
+    /* --- Desktop List View (Repetition) --- */
     #member-container.list {
         display: flex;
         flex-direction: column;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 
@@ -44,7 +46,7 @@
         text-align: left;
         max-width: 100%;
         border-radius: 0;
-        padding: 10px 20px;
+        padding: 12px 25px;
         align-items: center;
         box-shadow: none;
         border: none;
@@ -56,15 +58,15 @@
         display: none;
     }
 
+    /* Zebra Striping */
     #member-container.list .member-card:nth-child(even) {
-        background-color: #f1f1f1;
+        background-color: #f7f7f7;
     }
 
-    /* --- Desktop Footer (3-Way Split) --- */
+    /* --- Desktop Footer (Split) --- */
     .footer-container {
         flex-direction: row !important;
         justify-content: space-between !important;
-        align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         text-align: left;
@@ -72,10 +74,6 @@
 
     .footer-left, .footer-middle, .footer-right {
         flex: 1;
-    }
-
-    .footer-middle {
-        justify-content: center;
     }
 
     .footer-right {
