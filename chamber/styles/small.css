@@ -1,35 +1,26 @@
 :root {
     --navy: #002147;
     --gold: #ffcc00;
-    --white: #ffffff;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Base Styles */
+body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    overflow-x: hidden;
-}
+header { background: var(--navy); color: white; padding: 1rem; text-align: center; }
 
-header { background-color: var(--navy); color: var(--white); padding: 1rem 5%; }
-
-.header-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-
-#menu-btn { background: none; border: 1px solid white; color: white; padding: 5px 10px; font-size: 1.5rem; }
-
-.nav-links { display: none; list-style: none; width: 100%; }
+.nav-links { display: none; list-style: none; padding: 0; }
 .nav-links.open { display: block; }
-.nav-links li a { display: block; color: white; text-decoration: none; padding: 10px; text-align: center; }
-.nav-links li a.active { color: var(--gold); font-weight: bold; }
+.nav-links li a { color: white; text-decoration: none; display: block; padding: 10px; }
+.nav-links li a.active { color: var(--gold); }
 
-.view-toggle { text-align: center; padding: 20px; background: #eee; }
-.view-toggle button { padding: 10px 15px; margin: 0 5px; cursor: pointer; background: var(--navy); color: white; border: none; }
+/* Directory Layout */
+#member-container.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
 
-#member-container.grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
-
-.member-card { border: 1px solid #ccc; padding: 20px; width: 100%; max-width: 320px; text-align: center; background: white; }
-.member-card img { height: 75px; width: auto; margin-bottom: 10px; }
-
-footer { background: var(--navy); color: white; padding: 20px; text-align: center; }
-.footer-middle img { filter: invert(1); margin: 0 10px; }
+.member-card { border: 1px solid #ccc; padding: 1rem; width: 280px; text-align: center; }
+.member-card img { width: 100px; height: auto; margin-bottom: 10px; }
