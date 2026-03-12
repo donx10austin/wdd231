@@ -9,16 +9,40 @@
     .nav-links {
         display: flex !important; 
         gap: 2rem;
+        list-style: none;
     }
 
-    /* --- Member Directory - 3 Columns --- */
+    /* --- Member Directory - 3 Columns (Repetition & Alignment) --- */
     #members.grid {
         grid-template-columns: repeat(3, 1fr); 
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 2rem auto;
+        gap: 30px;
     }
 
-    /* --- Footer - 3-Column Layout (BLUE SECTION) --- */
+    /* --- List View Refinement (Desktop Row Alignment) --- */
+    #members.list {
+        max-width: 1100px;
+        margin: 2rem auto;
+    }
+
+    #members.list .member-card {
+        display: grid;
+        /* Aligns Name, Address, Phone, and Website in a clean row */
+        grid-template-columns: 1.5fr 2fr 1fr 1fr; 
+        text-align: left;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-radius: 0;
+        background-color: #fff;
+    }
+
+    /* Stripe effect for list (Repetition) */
+    #members.list .member-card:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    /* --- Footer - 3-Column Layout --- */
     .footer-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; 
@@ -29,27 +53,25 @@
     }
 
     .footer-social {
-        grid-column: 2; 
         justify-content: center;
-        margin: 0;
     }
 
     .footer-meta {
-        grid-column: 3;
         text-align: right;
-    }
-
-    .footer-info {
-        grid-column: 1;
+        border-top: none;
+        padding-top: 0;
     }
 
     /* --- Hero Section Adjustment --- */
     .hero-box {
-        height: 400px; 
+        height: 300px; 
+        background-color: var(--primary-blue);
+        color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #e2e2e2; /* Placeholder color if no image */
+        border-radius: 8px;
+        margin-top: 1rem;
     }
 }

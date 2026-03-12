@@ -1,6 +1,15 @@
 {
     "members": [
         {
+            "name": "MTN Nigeria",
+            "address": "4 Aromire Road, Golden Plaza, Ikoyi, Lagos",
+            "phone": "(234) 803-100-0180",
+            "website": "https://www.mtn.ng",
+            "image": "mtn-logo.webp",
+            "membership": 3,
+            "category": "Telecommunications"
+        },
+        {
             "name": "Glo Limited",
             "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
             "phone": "(234) 805-000-0000",
