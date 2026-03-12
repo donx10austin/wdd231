@@ -1,274 +1,110 @@
-/* --- GLOBAL STYLES --- */
+/* --- Global Variables --- */
 :root {
-    --primary-blue: #003366;
-    --dark-grey: #333333;
-    --light-grey: #dbdbdb;
+    --primary: #004a99;
+    --secondary: #ffcc00;
+    --accent: #f0f0f0;
+    --text: #333;
     --white: #ffffff;
-    --accent-grey: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: var(--dark-grey);
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
 }
 
-/* --- HEADER --- */
-header {
-    background-color: var(--white);
-    padding: 1rem;
+/* --- Header & Nav --- */
+header, footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1.5rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-grey);
 }
 
-.logo {
+#main-logo {
     width: 80px;
     height: auto;
-    margin-bottom: 0.5rem;
 }
 
-header h1 {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin: 0;
-    color: var(--primary-blue);
-}
-
-/* --- NAVIGATION --- */
-#menu-toggle {
+#menu-btn {
     font-size: 2rem;
     background: none;
     border: none;
-    color: var(--primary-blue);
+    color: var(--white);
     cursor: pointer;
-    padding: 10px;
+    padding: 0.5rem;
 }
 
-#nav-links {
+.nav-links {
     list-style: none;
-    padding: 0;
     display: none; /* Hidden by default on mobile */
 }
 
-#nav-links.open {
+.nav-links.open {
     display: block;
 }
 
-#nav-links li a {
+.nav-links li a {
     display: block;
-    padding: 10px;
+    padding: 1rem;
+    color: var(--white);
     text-decoration: none;
-    color: var(--primary-blue);
-    font-weight: 500;
-    border-bottom: 1px solid var(--accent-grey);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* --- HERO SECTION --- */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+/* --- Directory Grid/List --- */
+.view-toggle {
+    text-align: center;
+    margin: 1rem;
 }
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
-
-.hero-btn {
-    background-color: var(--dark-grey);
-    color: var(--white);
-    border: none;
-    padding: 10px 20px;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-/* --- DASHBOARD CARDS --- */
-.info-grid {
-    padding: 10px;
-}
-
-.card {
-    background-color: var(--accent-grey);
-    margin-bottom: 20px;
-    border: 1px solid #999;
-}
-
-.card h2 {
-    background-color: var(--dark-grey);
-    color: var(--white);
-    margin: 0;
-    padding: 10px;
+.view-toggle button {
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-.content {
-    padding: 20px;
-    text-align: center;
-}
-
-/* --- SECTION HEADER --- */
-.section-header {
-    background-color: var(--dark-grey);
-    color: var(--white);
-    padding: 10px 20px;
-    margin: 20px 0 0 0;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.temp {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-/* --- SPOTLIGHT SECTION --- */
-.spotlight-card {
-    background-color: var(--white);
-    border: 1px solid #ccc;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.spot-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.spotlight-card h3 {
-    margin: 0;
-    font-weight: 900;
-}
-
-.tagline {
-    font-weight: 300;
-    font-style: italic;
-    color: #666;
-    margin: 5px 0;
-}
-
-/* --- DIRECTORY CARDS & CONTROLS --- */
-.directory-controls {
-    text-align: center;
-    margin: 15px 0 10px 0;
-    padding: 0 10px;
-}
-
-.directory-controls button {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
     cursor: pointer;
-    border-radius: 4px;
-    font-weight: 500;
+    background-color: var(--secondary);
+    border: none;
+    margin: 0.25rem;
 }
 
-.directory-controls button:hover {
-    background-color: #002244;
-}
-
-.directory-controls button.active {
-    background-color: #ff9900;
-}
-
-/* container for directory cards will switch between grid and list via class */
-.directory {
-    padding: 10px;
-}
-
-.directory.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.directory.list {
-    display: block;
-}
-
-/* spacing when in list mode (mobile) */
-.directory.list .member-card {
-    margin-bottom: 20px;
+/* Base Card Style */
+.grid, .list {
+    padding: 1rem;
 }
 
 .member-card {
     background-color: var(--white);
-    border: 1px solid #ccc;
-    padding: 20px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .member-card img {
-    width: 120px;
+    max-width: 150px;
     height: auto;
-    margin-bottom: 15px;
 }
 
-.member-card h3 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--primary-blue);
+/* Hide images in list view per instructions */
+.list .member-card img {
+    display: none;
 }
 
-.member-card .details {
-    font-size: 0.9rem;
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-.member-card .details a {
-    color: var(--primary-blue);
-    text-decoration: none;
-}
-
-.member-card .details a:hover {
-    text-decoration: underline;
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--light-grey);
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 1px solid #bbb;
-}
-
-.social-icons {
+/* --- Footer --- */
+.footer-container {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.social-icons img {
-    width: 32px;
-    height: 32px;
-}
-
-.footer-meta {
-    font-size: 0.85rem;
-    line-height: 1.5;
+.footer-social img {
+    width: 44px; /* Accessible touch target */
+    height: 44px;
+    margin: 0 10px;
 }

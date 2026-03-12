@@ -1,121 +1,50 @@
-/* Media query for screens larger than 700px */
-@media screen and (min-width: 700px) {
+/* --- Navigation Desktop --- */
+#menu-btn {
+    display: none; /* Hide hamburger on desktop */
+}
 
-    /* --- HEADER & NAV --- */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 5%;
-    }
+.nav-links {
+    display: flex !important;
+    justify-content: center;
+}
 
-    .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+.nav-links li a:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
 
-    .logo {
-        margin-bottom: 0;
-    }
+/* --- Grid View Multi-Column --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
-    #menu-toggle {
-        display: none; /* Hide hamburger on desktop */
-    }
+/* --- List View Desktop --- */
+.list .member-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 0;
+}
 
-    #nav-links {
-        display: flex !important; /* Force flex for horizontal menu */
-        gap: 25px;
-    }
+.list .member-card:nth-child(even) {
+    background-color: #e8e8e8; /* Zebra striping */
+}
 
-    #nav-links li a {
-        border-bottom: none;
-        padding: 0;
-    }
+/* --- Footer Desktop --- */
+.footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    #nav-links li a:hover {
-        color: #ff9900; /* Optional hover color */
-    }
-
-    /* --- HERO --- */
-    .hero {
-        height: 400px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* --- DASHBOARD GRID (3 Columns) --- */
-    .info-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr; /* Events is wider */
-        max-width: 1200px;
-        margin: 30px auto;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    /* --- SECTION HEADER --- */
-    .section-header {
-        max-width: 1200px;
-        margin: 20px auto 0;
-        padding: 10px 20px;
-    }
-
-    /* --- DIRECTORY CONTROLS --- */
-    .directory-controls {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        max-width: 1200px;
-        margin: 15px auto;
-        padding: 0 20px;
-    }
-
-    /* --- DIRECTORY GRID (3 Columns) --- */
-    .directory.grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        max-width: 1200px;
-        margin: 0 auto;
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    /* --- SPOTLIGHT GRID (3 Columns) --- */
-    .spotlight {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        max-width: 1200px;
-        margin: 40px auto;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .spotlight-card {
-        margin: 0; /* Remove mobile margins */
-    }
-
-    .directory.list .member-card {
-        max-width: 800px;
-        margin: 0 auto 20px;
-    }
-
-    /* --- FOOTER (Horizontal Split) --- */
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        text-align: left;
-        padding: 40px 5%;
-    }
-
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        margin: 0;
-    }
-
-    .footer-meta {
-        text-align: right;
-    }
+.footer-branding {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
 }
