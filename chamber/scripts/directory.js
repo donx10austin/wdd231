@@ -1,59 +1,30 @@
-const url = "data/members.json";
-const cards = document.querySelector("#members");
-const gridButton = document.querySelector("#grid-btn");
-const listButton = document.querySelector("#list-btn");
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.querySelector('#menu');
+    const navigation = document.querySelector('nav ul');
 
-async function getMembers() {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch");
-        const data = await response.json();
-        displayMembers(data.members);
-    } catch (error) {
-        console.error("Error:", error);
+    // Check if elements exist to avoid console errors
+    if (menuButton && navigation) {
+        menuButton.addEventListener('click', () => {
+            navigation.classList.toggle('show');
+            
+            // Optional: Toggle the button icon between ☰ and ❌
+            if (navigation.classList.contains('show')) {
+                menuButton.textContent = '❌';
+            } else {
+                menuButton.textContent = '☰';
+            }
+        });
     }
-}
 
-const displayMembers = (members) => {
-    cards.innerHTML = ""; 
-    members.forEach((member) => {
-        let section = document.createElement("section");
-        section.className = "member-card";
-        section.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-            <p class="category"><strong>${member.category}</strong></p>
-        `;
-        cards.appendChild(section);
-    });
-}
+    // Handle Footer Dates (Standard requirement for this course)
+    const yearSpan = document.querySelector('#currentyear');
+    const lastModSpan = document.querySelector('#lastModified');
 
-gridButton.addEventListener("click", () => {
-    cards.classList.add("grid");
-    cards.classList.remove("list");
-    gridButton.classList.add("active");
-    listButton.classList.remove("active");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+    if (lastModSpan) {
+        lastModSpan.textContent = `Last Modification: ${document.lastModified}`;
+    }
 });
-
-listButton.addEventListener("click", () => {
-    cards.classList.add("list");
-    cards.classList.remove("grid");
-    listButton.classList.add("active");
-    gridButton.classList.remove("active");
-});
-
-// Hamburger Menu
-const menuBtn = document.querySelector("#menu");
-const navLinks = document.querySelector(".nav-links");
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-    menuBtn.textContent = navLinks.classList.contains("show") ? "X" : "≡";
-});
-
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
-
-getMembers();
