@@ -1,3 +1,4 @@
+/* --- VARIABLES & RESET --- */
 :root {
     --primary-blue: #003366; 
     --accent-gold: #ffcc00;
@@ -16,18 +17,19 @@ body {
     background-color: var(--light-bg);
 }
 
+/* --- HEADER & BRANDING --- */
 header {
     background-color: var(--primary-blue);
     padding: 1rem;
     color: var(--text-white);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacked for mobile */
     align-items: center;
 }
 
 .branding {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacked for mobile */
     align-items: center;
     text-align: center;
 }
@@ -35,38 +37,7 @@ header {
 .logo { width: 60px; height: auto; margin-bottom: 0.5rem; }
 h1 { font-size: 1.25rem; margin: 0; }
 
-/* --- NAVIGATION FIX STARTS HERE --- */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    display: none; /* Hidden on mobile by default */
-}
-
-nav ul.show {
-    display: block;
-}
-
-/* This is the rule that fixes the blue color you circled */
-nav a {
-    color: var(--text-white) !important; /* Forces links to be white */
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--accent-gold) !important;
-}
-
-/* Style for the active page link */
-nav a.active {
-    color: var(--accent-gold) !important;
-    border-bottom: 2px solid var(--accent-gold);
-}
-
+/* --- NAVIGATION --- */
 #menu { 
     background: none; 
     border: none; 
@@ -74,7 +45,42 @@ nav a.active {
     font-size: 2rem; 
     cursor: pointer; 
 }
-/* --- NAVIGATION FIX ENDS HERE --- */
 
-footer { background-color: var(--primary-blue); color: white; padding: 2rem; text-align: center; }
-.social-icon { width: 30px; filter: brightness(0) invert(1); margin: 0 10px; }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: none; /* Hidden on mobile until toggled */
+}
+
+nav ul.show {
+    display: block;
+}
+
+nav a {
+    color: var(--text-white); /* FIX: White text on blue background */
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-gold);
+}
+
+/* --- FOOTER --- */
+footer { 
+    background-color: var(--primary-blue); 
+    color: white; 
+    padding: 2rem; 
+    text-align: center; 
+}
+
+.social-icon { 
+    width: 30px; 
+    filter: brightness(0) invert(1); 
+    margin: 0 10px; 
+}
