@@ -1,7 +1,5 @@
 const url = "data/members.json";
 const container = document.querySelector("#member-container");
-const gridBtn = document.querySelector("#grid");
-const listBtn = document.querySelector("#list");
 
 async function getMembers() {
     try {
@@ -11,41 +9,37 @@ async function getMembers() {
             displayMembers(data.members);
         }
     } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Error fetching data:", error);
     }
 }
 
 function displayMembers(members) {
     container.innerHTML = "";
     members.forEach(member => {
-        const card = document.createElement("section");
-        card.className = "member-card";
-        card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo" loading="lazy" width="150" height="150">
+        const section = document.createElement("section");
+        section.classList.add("member-card");
+
+        section.innerHTML = `
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
-            <p><strong>Status: ${member.membership}</strong></p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p class="industry">${member.industry}</p>
         `;
-        container.appendChild(card);
+        container.appendChild(section);
     });
 }
 
-// Toggle Listeners
-gridBtn.addEventListener("click", () => container.className = "grid");
-listBtn.addEventListener("click", () => container.className = "list");
-
-// Hamburger Menu
-const menuBtn = document.querySelector("#menu-btn");
-const nav = document.querySelector(".nav-links");
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    menuBtn.textContent = nav.classList.contains("open") ? "❌" : "☰";
+// Button Toggles
+document.querySelector("#grid").addEventListener("click", () => {
+    container.classList.add("grid");
+    container.classList.remove("list");
 });
 
-// Footer Dates
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+document.querySelector("#list").addEventListener("click", () => {
+    container.classList.add("list");
+    container.classList.remove("grid");
+});
 
 getMembers();

@@ -1,155 +1,54 @@
-/* --- Root Variables & Google Fonts --- */
 :root {
-    --primary-color: #003366; /* Navy Blue - High Contrast */
-    --secondary-color: #ffcc00; /* Gold Accent */
+    --navy: #003366;
     --white: #ffffff;
-    --text-color: #222222;
-}
-
-/* --- Global Reset --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
-/* --- Header & Branding --- */
-header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
     text-align: center;
 }
 
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-#logo {
-    width: 100px;
-    height: auto;
-}
-
-/* --- Navigation & Wayfinding --- */
-#menu-btn {
-    background: none;
-    border: none;
+header, footer {
+    background-color: var(--navy);
     color: var(--white);
-    font-size: 2.5rem;
-    cursor: pointer;
-    margin-top: 10px;
+    padding: 20px;
 }
 
-.nav-links {
-    display: none; /* Hidden by default for mobile */
-    list-style: none;
-    background-color: #333;
-}
-
-.nav-links.open {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-links li a {
-    display: block;
-    padding: 1rem;
-    color: var(--white);
-    text-decoration: none;
-    text-align: center;
-    border-bottom: 1px solid #444;
-}
-
-.nav-links li a.active {
-    color: var(--secondary-color);
-    font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* --- View Toggle Buttons --- */
 .view-toggle {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 1.5rem;
+    margin: 20px 0;
 }
 
 .view-toggle button {
-    padding: 12px 24px;
+    background-color: var(--navy);
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid white;
     cursor: pointer;
-    border: 1px solid var(--primary-color);
-    background-color: var(--white);
-    color: var(--primary-color);
-    font-weight: 700;
-    transition: 0.3s;
 }
 
-/* --- Directory Grid (Mobile) --- */
-#member-container.grid {
+#member-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1rem;
+    gap: 20px;
+    padding: 20px;
 }
 
 .member-card {
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    background-color: var(--white);
-    width: 100%;
-    max-width: 380px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    background-color: #fff;
 }
 
 .member-card img {
-    max-width: 150px;
+    max-width: 100px;
     height: auto;
     margin-bottom: 15px;
 }
 
-/* --- Footer --- */
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 2rem 1rem;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: center;
-}
-
-.footer-middle {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-middle img {
-    width: 44px;
-    height: 44px;
-}
+.member-card h3 { margin: 10px 0; font-size: 1.1rem; }
+.member-card p { font-size: 0.8rem; margin: 5px 0; color: #444; }
+.member-card a { font-size: 0.8rem; color: blue; text-decoration: underline; }
+.industry { font-weight: bold; margin-top: 10px !important; }
