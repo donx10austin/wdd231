@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber Directory - City Chamber of Commerce</title>
-    <meta name="description" content="Member directory for the City Chamber of Commerce.">
     
-    <link rel="icon" href="favicon.ico">
+    <title>Lagos Chamber of Commerce | Member Business Directory</title>
+    <meta name="description" content="Explore the Lagos Chamber of Commerce directory to find and support local businesses in Lagos Island.">
+    <meta name="author" content="Your Full Name">
 
+    <meta property="og:title" content="Lagos Chamber of Commerce | Member Business Directory">
+    <meta property="og:description" content="Explore our directory to find and support local businesses dedicated to community growth in Lagos.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/logo.webp">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/larger.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="css/larger.css" media="screen and (min-width: 768px)">
 
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
     <header>
         <div class="branding">
-            <img src="images/logo.webp" alt="Chamber Logo" class="logo" width="60" height="60">
-            <h1>City Chamber</h1>
+            <img src="images/logo.webp" alt="Lagos Chamber Logo" class="logo" width="60" height="60">
+            <h1>Lagos Chamber</h1>
         </div>
-        
         <button id="menu" aria-label="Toggle Menu">☰</button>
-        
         <nav>
-            <ul id="animateme">
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
@@ -33,23 +42,24 @@
     </header>
 
     <main>
-        <div class="menu-controls">
-            <button id="grid-view">Grid View</button>
-            <button id="list-view">List View</button>
+        <div class="controls">
+            <button id="grid-btn">Grid View</button>
+            <button id="list-btn">List View</button>
         </div>
-
         <article id="members" class="grid"></article>
     </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <p><strong>City Chamber of Commerce</strong></p>
-                <p>123 Main Street, Cityville, ST 12345</p>
+                <p><strong>Lagos Chamber of Commerce</strong></p>
+                <p>12 Marina Road, Lagos Island</p>
+                <p>info@lagoschamber.ng</p>
             </div>
             <div class="footer-social">
-                <a href="#"><img src="images/facebook.png" alt="Facebook" class="social-icon"></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram" class="social-icon"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.webp" alt="LinkedIn Icon" class="social-icon" width="30" height="30"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.webp" alt="YouTube Icon" class="social-icon" width="30" height="30"></a>
+                <a href="https://twitter.com" target="_blank"><img src="images/twitter.webp" alt="Twitter Icon" class="social-icon" width="30" height="30"></a>
             </div>
             <div class="footer-meta">
                 <p>&copy;<span id="currentyear"></span> | Your Name | BYU-Idaho</p>

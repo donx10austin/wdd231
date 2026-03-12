@@ -1,6 +1,4 @@
-/* WRAP EVERYTHING IN THIS MEDIA QUERY */
 @media screen and (min-width: 768px) {
-
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -13,25 +11,18 @@
         text-align: left;
     }
 
-    #menu { 
-        display: none; 
-    }
+    #menu { display: none; }
 
     nav ul {
-        display: flex !important; 
+        display: flex !important;
         gap: 1rem;
         margin: 0;
     }
 
-    nav a {
-        padding: 0.5rem;
-    }
+    nav a { padding: 0.5rem; }
 
-    #members.grid {
-        display: grid;
+    .grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 2rem;
         max-width: 1200px;
         margin: 0 auto;
     }

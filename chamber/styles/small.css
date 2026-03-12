@@ -2,7 +2,6 @@
     --primary-blue: #003366; 
     --accent-gold: #ffcc00;
     --light-bg: #f4f7f9;
-    --card-bg: #ffffff;
     --text-main: #333;
     --text-white: #ffffff;
 }
@@ -33,7 +32,6 @@ header {
 }
 
 .logo { width: 60px; height: auto; margin-bottom: 0.5rem; }
-h1 { font-size: 1.25rem; margin: 0; }
 
 #menu { 
     background: none; 
@@ -50,9 +48,7 @@ nav ul {
     display: none;
 }
 
-nav ul.show {
-    display: block;
-}
+nav ul.show { display: block; }
 
 nav a {
     color: var(--text-white);
@@ -63,4 +59,18 @@ nav a {
     text-align: center;
 }
 
+nav a.active { color: var(--accent-gold); }
+
+/* Grid/List Styles */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 1rem;
+}
+
+section { background: white; padding: 1rem; border: 1px solid #ddd; text-align: center; }
+section img { max-width: 150px; height: auto; }
+
 footer { background-color: var(--primary-blue); color: white; padding: 2rem; text-align: center; }
+.social-icon { filter: brightness(0) invert(1); }
