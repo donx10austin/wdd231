@@ -1,105 +1,182 @@
-/* Core Layout - preventing overflow */
-* { box-sizing: border-box; }
+/* --- GLOBAL STYLES --- */
+:root {
+    --primary-blue: #003366;
+    --dark-grey: #333333;
+    --light-grey: #dbdbdb;
+    --white: #ffffff;
+    --accent-grey: #e0e0e0;
+}
 
 body {
     font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     margin: 0;
-    background-color: #f9f9f9; /* Light grey background like wireframe */
+    background-color: #f4f4f4;
+    color: var(--dark-grey);
 }
 
-/* Header & Footer Flex Styles */
-header, footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px 5%;
-    display: flex; /* FLEX USE 1 */
-    justify-content: space-between;
-    align-items: center;
+/* --- HEADER --- */
+header {
+    background-color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-grey);
 }
 
-.branding {
-    display: flex; /* FLEX USE 2 */
-    align-items: center;
-    gap: 15px;
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
 }
 
-/* Grid/List Buttons */
-.controls {
-    display: flex; /* FLEX USE 3 */
-    justify-content: center;
-    padding: 30px;
-    gap: 1px; /* Minimal gap like the wireframe toggle */
+header h1 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--primary-blue);
 }
 
-.controls button {
-    padding: 8px 20px;
-    border: 1px solid #003366;
-    background: white;
-    color: #003366;
+/* --- NAVIGATION --- */
+#menu-toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--primary-blue);
     cursor: pointer;
+    padding: 10px;
 }
 
-.active-toggle {
-    background: #003366 !important;
-    color: white !important;
+#nav-links {
+    list-style: none;
+    padding: 0;
+    display: none; /* Hidden by default on mobile */
 }
 
-/* Member Cards - Grid View */
-#members.grid {
-    display: flex; /* FLEX USE 4 - stacks on mobile */
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 5% 40px 5%;
+#nav-links.open {
+    display: block;
 }
 
-.member-card {
-    background: white;
-    border: 1px solid #ccc;
-    padding: 25px;
-    display: flex; /* FLEX USE 5 */
-    flex-direction: column;
-    align-items: center; /* Horizontally centers content */
-    text-align: center;
-    height: 100%;
+#nav-links li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent-grey);
 }
 
-.member-card img {
-    max-width: 120px;
-    height: 80px; /* Consistent height for logos */
-    object-fit: contain;
-    margin-bottom: 20px;
-}
-
-.member-card h3 { margin: 10px 0; font-size: 1.1rem; }
-.member-card p { margin: 3px 0; font-size: 0.85rem; color: #555; }
-.member-card a { 
-    margin: 15px 0; 
-    color: #0000EE; 
-    text-decoration: underline; 
-    font-size: 0.8rem;
-}
-
-/* Align category to bottom of card */
-.category {
-    margin-top: auto !important; 
-    padding-top: 15px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Footer Alignment */
-.footer-container {
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.hero-btn {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- DASHBOARD CARDS --- */
+.info-grid {
+    padding: 10px;
+}
+
+.card {
+    background-color: var(--accent-grey);
+    margin-bottom: 20px;
+    border: 1px solid #999;
+}
+
+.card h2 {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
     text-align: center;
 }
 
-.footer-social {
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.temp {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- SPOTLIGHT SECTION --- */
+.spotlight-card {
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.spot-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.spotlight-card h3 {
+    margin: 0;
+    font-weight: 900;
+}
+
+.tagline {
+    font-weight: 300;
+    font-style: italic;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--light-grey);
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #bbb;
+}
+
+.social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin: 20px 0;
 }
 
-.social-icon { filter: brightness(0) invert(1); width: 24px; }
+.social-icons img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-meta {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}

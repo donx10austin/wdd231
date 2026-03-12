@@ -5,7 +5,7 @@
             "address": "4 Aromire Road, Golden Plaza, Ikoyi, Lagos",
             "phone": "(234) 803-100-0180",
             "website": "https://www.mtn.ng",
-            "image": "mtn-logo.webp",
+            "image": "images/mtn-logo.webp",
             "membership": 3,
             "category": "Telecommunications"
         },
@@ -14,7 +14,7 @@
             "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
             "phone": "(234) 805-000-0000",
             "website": "https://www.gloworld.com",
-            "image": "glo-logo.webp",
+            "image": "images/glo-logo.webp",
             "membership": 3,
             "category": "Telecommunications"
         },
@@ -23,7 +23,7 @@
             "address": "14/15 Prince Alaba Abiodun, Victoria Island, Lagos",
             "phone": "(234) 1-271-2005",
             "website": "https://www.accessbankplc.com",
-            "image": "access-logo.webp",
+            "image": "images/access-logo.webp",
             "membership": 3,
             "category": "Banking & Finance"
         },
@@ -32,7 +32,7 @@
             "address": "8 Crossway Street, Lekki Phase 1, Lagos",
             "phone": "(234) 1-234-5678",
             "website": "https://www.flutterwave.com",
-            "image": "flutterwave-logo.webp",
+            "image": "images/flutterwave-logo.webp",
             "membership": 2,
             "category": "Fintech"
         },
@@ -41,7 +41,7 @@
             "address": "12 Marina Road, Lagos Island",
             "phone": "(234) 700-111-2222",
             "website": "https://lagosstartup.ng",
-            "image": "startup-logo.webp",
+            "image": "images/startup-logo.webp",
             "membership": 1,
             "category": "Business Incubator"
         },
@@ -50,7 +50,7 @@
             "address": "Plot 1415 Adetokunbo Ademola St, Victoria Island",
             "phone": "(234) 1-277-2700",
             "website": "https://www.ekohotels.com",
-            "image": "eko-logo.webp",
+            "image": "images/eko-logo.webp",
             "membership": 3,
             "category": "Hospitality"
         },
@@ -59,7 +59,7 @@
             "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
             "phone": "(234) 1-460-6410",
             "website": "https://www.dangote.com",
-            "image": "dangote-logo.webp",
+            "image": "images/dangote-logo.webp",
             "membership": 3,
             "category": "Manufacturing"
         }

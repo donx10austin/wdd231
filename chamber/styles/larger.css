@@ -1,29 +1,88 @@
-/* Navigation */
-#menu { display: none; }
-#nav-list { display: flex; gap: 20px; }
+/* Media query for screens larger than 700px */
+@media screen and (min-width: 700px) {
 
-/* Grid View - 3 Columns */
-#members.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as per wireframe */
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    /* --- HEADER & NAV --- */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5%;
+    }
 
-/* List View Override */
-#members.list .member-card {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 10px 30px;
-}
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-#members.list .member-card img { display: none; }
+    .logo {
+        margin-bottom: 0;
+    }
 
-/* Footer Desktop - 3 Columns Across */
-.footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    #menu-toggle {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    #nav-links {
+        display: flex !important; /* Force flex for horizontal menu */
+        gap: 25px;
+    }
+
+    #nav-links li a {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    #nav-links li a:hover {
+        color: #ff9900; /* Optional hover color */
+    }
+
+    /* --- HERO --- */
+    .hero {
+        height: 400px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- DASHBOARD GRID (3 Columns) --- */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr; /* Events is wider */
+        max-width: 1200px;
+        margin: 30px auto;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    /* --- SPOTLIGHT GRID (3 Columns) --- */
+    .spotlight {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1200px;
+        margin: 40px auto;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .spotlight-card {
+        margin: 0; /* Remove mobile margins */
+    }
+
+    /* --- FOOTER (Horizontal Split) --- */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        text-align: left;
+        padding: 40px 5%;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin: 0;
+    }
+
+    .footer-meta {
+        text-align: right;
+    }
 }
