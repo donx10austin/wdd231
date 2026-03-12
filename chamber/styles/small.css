@@ -1,22 +1,39 @@
-/* --- Global Variables --- */
+/* --- Root Variables & Google Fonts --- */
 :root {
-    --primary: #003366; /* Navy Blue from Lagos Screenshot */
-    --secondary: #ffcc00;
-    --text: #333;
+    --primary-color: #003366;
+    --secondary-color: #ffcc00;
+    --accent-color: #eeeeee;
+    --text-color: #222222;
     --white: #ffffff;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
+/* --- Global Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- Mobile Header --- */
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* --- Header & Navigation --- */
 header {
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 1rem;
     text-align: center;
@@ -30,72 +47,87 @@ header {
 #menu-btn {
     background: none;
     border: none;
-    color: white;
-    font-size: 2rem;
+    color: var(--white);
+    font-size: 2.2rem;
     cursor: pointer;
+    padding: 0.5rem;
 }
 
 .nav-links {
     list-style: none;
     display: none; /* Controlled by JS */
+    background-color: #333;
 }
 
 .nav-links.open {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
     display: block;
     padding: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #444;
 }
 
-/* --- Directory Main --- */
+.nav-links li a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* --- View Toggle Buttons --- */
 .view-toggle {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     padding: 1rem;
+    background-color: #f9f9f9;
 }
 
 .view-toggle button {
     padding: 10px 20px;
-    background-color: var(--primary);
-    color: white;
-    border: 1px solid #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background-color: var(--white);
+    color: var(--primary-color);
 }
 
-/* Mobile Grid (Single Column) */
+/* --- Directory Grid (Mobile) --- */
 #member-container.grid {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
     padding: 1rem;
-    gap: 1rem;
 }
 
 .member-card {
     border: 1px solid #ddd;
     padding: 1.5rem;
-    background-color: #fff;
+    background-color: var(--white);
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .member-card img {
-    max-width: 120px;
+    width: 150px;
     height: auto;
     margin-bottom: 10px;
 }
 
-/* --- Mobile Footer (Stacked) --- */
+/* --- Footer --- */
 footer {
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 2rem 1rem;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -106,12 +138,12 @@ footer {
     text-align: center;
 }
 
-.footer-social {
+.footer-middle {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
-.footer-social img {
-    width: 44px; /* Accessible size */
+.footer-middle img {
+    width: 44px;
     height: 44px;
 }

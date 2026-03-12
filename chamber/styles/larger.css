@@ -1,22 +1,36 @@
 @media (min-width: 600px) {
-    /* --- Desktop Nav --- */
-    #menu-btn { display: none; }
-    .nav-links {
-        display: flex !important;
-        justify-content: center;
-        gap: 20px;
+    /* --- Desktop Navigation --- */
+    #menu-btn {
+        display: none;
     }
 
-    /* --- Desktop Grid (3 Columns) --- */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        gap: 2rem;
+    }
+
+    .nav-links li a {
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links li a:hover {
+        text-decoration: underline;
+    }
+
+    /* --- Desktop Grid View (3 Columns) --- */
     #member-container.grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 20px;
+        gap: 25px;
     }
 
-    /* --- Desktop List View (Zebra Striping) --- */
+    /* --- Desktop List View (Zebra Striped) --- */
     #member-container.list {
         display: flex;
         flex-direction: column;
@@ -26,21 +40,27 @@
 
     #member-container.list .member-card {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr; /* Name, Phone, Website */
+        grid-template-columns: 2fr 1fr 1fr;
         text-align: left;
         max-width: 100%;
-        margin-bottom: 0;
         border-radius: 0;
-        padding: 0.75rem;
+        padding: 10px 20px;
+        align-items: center;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Requirement: Toggle list display WITHOUT images */
+    #member-container.list .member-card img {
+        display: none;
     }
 
     #member-container.list .member-card:nth-child(even) {
-        background-color: #eeeeee; /* Gray Zebra Stripe from image 3.png */
+        background-color: #f1f1f1;
     }
 
-    #member-container.list img { display: none; } /* Hide icons in list view */
-
-    /* --- Footer (3-Column Split like Wireframe 1.png) --- */
+    /* --- Desktop Footer (3-Way Split) --- */
     .footer-container {
         flex-direction: row !important;
         justify-content: space-between !important;
@@ -55,11 +75,10 @@
     }
 
     .footer-middle {
-        display: flex;
-        justify-content: center; /* Centers social icons */
+        justify-content: center;
     }
 
     .footer-right {
-        text-align: right; /* Pushes Student Info to the right */
+        text-align: right;
     }
 }
