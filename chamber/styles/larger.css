@@ -1,45 +1,46 @@
 @media (min-width: 600px) {
+    /* HEADER: Left and Right Shift */
     .header-container {
         flex-direction: row !important;
-        justify-content: space-between !important;
-        width: 100%;
-        max-width: 1200px;
+        justify-content: space-between !important; /* Pushes brand left, nav right */
+        max-width: 1400px;
         margin: 0 auto;
+        width: 100%;
     }
 
     #menu-btn { display: none; }
 
     .nav-links {
         display: flex !important;
-        gap: 20px;
+        gap: 25px;
     }
 
-    .nav-links li a { padding: 0; font-size: 0.9rem; }
-    .nav-links li a.active { color: #87ceeb; /* Light blue highlight */ }
+    .nav-links li a { font-size: 0.85rem; letter-spacing: 1px; }
+    .nav-links li a.active { color: #87ceeb; border-bottom: 2px solid #87ceeb; }
 
+    /* MAIN CONTENT: Centered Grid */
     #member-container.grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
+        justify-items: center;
         max-width: 1100px;
-        margin: 0 auto;
+        margin: 40px auto; /* Centering the grid container */
+        gap: 30px;
     }
 
-    /* List View: Required to hide images */
-    #member-container.list .member-card {
-        display: block;
-        width: 100%;
-        max-width: 900px;
-        text-align: left;
-        border: none;
-        border-bottom: 1px solid #eee;
+    /* List View Settings */
+    #member-container.list { display: block; max-width: 1000px; margin: 0 auto; }
+    #member-container.list .member-card { 
+        display: block; width: 100%; text-align: left; border: none; border-bottom: 1px solid #eee; 
     }
     #member-container.list .member-card img { display: none; }
     #member-container.list .member-card:nth-child(even) { background-color: #f9f9f9; }
 
+    /* FOOTER: Left, Center, Right Shift */
     .footer-container {
         flex-direction: row !important;
-        justify-content: space-between;
-        max-width: 1200px;
+        justify-content: space-between !important;
+        max-width: 1400px;
         margin: 0 auto;
     }
 }

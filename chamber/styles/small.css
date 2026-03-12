@@ -1,39 +1,34 @@
 :root {
-    --navy: #001f3f; /* Deep Navy to match your screenshot */
+    --navy: #001f3f;
     --white: #ffffff;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
+body { font-family: 'Roboto', sans-serif; }
 
-header { background-color: var(--navy); color: var(--white); padding: 1rem; }
+header { background-color: var(--navy); color: white; padding: 1rem 20px; }
 
 .header-container { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 
 .brand { display: flex; align-items: center; gap: 10px; }
-
-#logo { width: 50px; height: auto; border-radius: 4px; }
-
-h1 { font-size: 1.2rem; }
+#logo { width: 45px; height: auto; }
+h1 { font-size: 1.1rem; }
 
 #menu-btn { background: none; border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; }
-
 .nav-links { display: none; list-style: none; text-align: center; }
 .nav-links.open { display: block; width: 100%; }
 .nav-links li a { color: white; text-decoration: none; display: block; padding: 10px; font-weight: bold; }
 
 .view-toggle { text-align: center; padding: 20px; }
-.view-toggle button { padding: 8px 16px; margin: 0 5px; background: var(--navy); color: white; border: none; cursor: pointer; }
+.view-toggle button { padding: 8px 16px; margin: 0 5px; cursor: pointer; background: var(--navy); color: white; border: none; }
 
 #member-container.grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
+.member-card { border: 1px solid #ddd; padding: 20px; width: 100%; max-width: 320px; text-align: center; background: white; }
+.member-card img { max-width: 100px; margin-bottom: 10px; }
+.member-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.member-card p { font-size: 0.8rem; color: #555; margin-bottom: 5px; }
 
-.member-card { border: 1px solid #ddd; padding: 20px; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.member-card img { max-width: 100px; margin-bottom: 15px; }
-.member-card h3 { margin: 10px 0; font-size: 1.1rem; }
-.member-card p { font-size: 0.85rem; margin-bottom: 5px; }
-.member-card a { color: #0000ee; font-size: 0.85rem; }
-
-footer { background-color: var(--navy); color: white; padding: 2rem 1rem; text-align: center; }
-.footer-container { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+footer { background-color: var(--navy); color: white; padding: 2rem 20px; }
+.footer-container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
 .footer-middle img { width: 24px; margin: 0 10px; filter: invert(1); }

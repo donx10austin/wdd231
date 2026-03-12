@@ -11,7 +11,7 @@ async function getMembers() {
         const data = await response.json();
         displayMembers(data.members);
     } catch (error) {
-        console.error("Error loading JSON:", error);
+        console.error("Error:", error);
     }
 }
 
@@ -25,20 +25,21 @@ function displayMembers(members) {
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
             <p><strong>${member.industry || ""}</strong></p>
         `;
         container.appendChild(card);
     });
 }
 
+// Layout Listeners
 gridBtn.addEventListener("click", () => container.className = "grid");
 listBtn.addEventListener("click", () => container.className = "list");
 
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("open");
-});
+// Hamburger Listener
+menuBtn.addEventListener("click", () => nav.classList.toggle("open"));
 
+// Footer Logic
 document.querySelector("#currentyear").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
