@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | Lagos Chamber of Commerce</title>
-
+    
     <meta name="author" content="Austin Anumudu">
     <meta name="description" content="Access the Lagos Chamber of Commerce directory to find and connect with top-rated local businesses in telecommunications, banking, and energy.">
-
     <link rel="icon" href="images/chamber-logo.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,30 +25,29 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="brand">
-                <img src="images/chamber-logo.jpg" alt="Lagos Chamber Logo" id="logo" width="50" height="50">
-                <h1>Lagos Chamber</h1>
-            </div>
-            <nav>
-                <button id="menu-btn" aria-label="Toggle Menu">☰</button>
-                <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="directory.html" class="active">DIRECTORY</a></li>
-                    <li><a href="join.html">JOIN</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Lagos Chamber of Commerce</h1>
     </header>
+
     <main>
         <div class="view-toggle">
-            <button id="grid">Grid View</button>
+            <button id="grid" class="active">Grid View</button>
             <button id="list">List View</button>
         </div>
         <article id="member-container" class="grid"></article>
     </main>
+
     <footer>
-        <p>WDD231 | Austin Anumudu | &copy; <span id="currentyear"></span> | <span id="lastModified"></span></p>
+        <div class="footer-info">
+            <p><strong>Lagos Chamber of Commerce</strong></p>
+            <p>12 Marina Road, Lagos Island</p>
+            <p>info@lagoschamber.ng</p>
+        </div>
+        <div class="social-links">
+            </div>
+        <div class="footer-copy">
+            <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 </body>
 </html>

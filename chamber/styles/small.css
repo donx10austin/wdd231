@@ -1,26 +1,123 @@
+/* ROOT VARIABLES for consistency */
 :root {
     --navy: #002147;
     --gold: #ffcc00;
+    --white: #ffffff;
+    --text-color: #333333;
+    --bg-gray: #f4f7f9;
 }
 
-/* Base Styles */
-body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-header { background: var(--navy); color: white; padding: 1rem; text-align: center; }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-color);
+}
 
-.nav-links { display: none; list-style: none; padding: 0; }
-.nav-links.open { display: block; }
-.nav-links li a { color: white; text-decoration: none; display: block; padding: 10px; }
-.nav-links li a.active { color: var(--gold); }
+/* Header styling based on your screenshot */
+header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: left;
+}
 
-/* Directory Layout */
+header h1 {
+    font-size: 1.4rem;
+}
+
+/* Main View Controls */
+.view-toggle {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.view-toggle button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: var(--navy);
+    color: white;
+    border: 1px solid var(--navy);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Mobile-First Grid Layout */
 #member-container.grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 20px;
 }
 
-.member-card { border: 1px solid #ccc; padding: 1rem; width: 280px; text-align: center; }
-.member-card img { width: 100px; height: auto; margin-bottom: 10px; }
+/* Card Styling to match your screenshot */
+.member-card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.member-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.member-card p {
+    font-size: 0.85rem;
+    margin: 4px 0;
+    color: #555;
+}
+
+.member-card a {
+    color: #0000ee;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    display: block;
+    margin: 10px 0;
+}
+
+.membership-level {
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 2rem 5%;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-top: 30px;
+}
+
+.footer-info { margin-bottom: 15px; }
+
+/* Invert social icons if they are dark images */
+.social-links img {
+    filter: invert(1);
+    width: 24px;
+    margin: 0 10px;
+}
