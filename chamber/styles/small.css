@@ -122,6 +122,16 @@ header h1 {
     text-align: center;
 }
 
+/* --- SECTION HEADER --- */
+.section-header {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 10px 20px;
+    margin: 20px 0 0 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 .temp {
     font-size: 2rem;
     font-weight: 700;
@@ -159,7 +169,8 @@ header h1 {
 /* --- DIRECTORY CARDS & CONTROLS --- */
 .directory-controls {
     text-align: center;
-    margin: 20px 0;
+    margin: 15px 0 10px 0;
+    padding: 0 10px;
 }
 
 .directory-controls button {

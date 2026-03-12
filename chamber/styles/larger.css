@@ -54,6 +54,33 @@
         padding: 0 20px;
     }
 
+    /* --- SECTION HEADER --- */
+    .section-header {
+        max-width: 1200px;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+    }
+
+    /* --- DIRECTORY CONTROLS --- */
+    .directory-controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        max-width: 1200px;
+        margin: 15px auto;
+        padding: 0 20px;
+    }
+
+    /* --- DIRECTORY GRID (3 Columns) --- */
+    .directory.grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
     /* --- SPOTLIGHT GRID (3 Columns) --- */
     .spotlight {
         display: grid;
@@ -66,13 +93,6 @@
 
     .spotlight-card {
         margin: 0; /* Remove mobile margins */
-    }
-
-    /* --- DIRECTORY SPECIFIC --- */
-    /* on larger screens we already set grid in base css but ensure gutters are comfortable */
-    .directory.grid {
-        gap: 30px;
-        padding: 0 20px;
     }
 
     .directory.list .member-card {
@@ -90,6 +110,7 @@
     }
 
     .social-icons {
+        display: flex;
         justify-content: center;
         margin: 0;
     }
