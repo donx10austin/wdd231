@@ -1,24 +1,29 @@
-header { position: static; }
+/* Navigation */
 #menu { display: none; }
-nav { position: static; background: none; width: auto; }
-#nav-list { display: flex; flex-direction: row; gap: 20px; }
+#nav-list { display: flex; gap: 20px; }
 
+/* Grid View - 3 Columns */
 #members.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as per wireframe */
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#members.list { display: block; }
+/* List View Override */
 #members.list .member-card {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    text-align: left;
+    padding: 10px 30px;
 }
 
+#members.list .member-card img { display: none; }
+
+/* Footer Desktop - 3 Columns Across */
 .footer-container {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
 }
-.footer-meta { text-align: right; }

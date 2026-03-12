@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
         menuBtn.textContent = navList.classList.contains('show') ? '❌' : '☰';
     });
 
-    // Fetch Members
+    // Fetch and Display Members
     async function getMembers() {
-        const response = await fetch("data/members.json");
-        const data = await response.json();
-        displayMembers(data.members);
+        try {
+            const response = await fetch("data/members.json");
+            const data = await response.json();
+            displayMembers(data.members);
+        } catch (error) {
+            console.error("Error fetching members:", error);
+        }
     }
 
     const displayMembers = (members) => {
@@ -29,28 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
                 <a href="${member.website}" target="_blank">Visit Website</a>
-                <p class="category">${member.category}</p>
+                <p class="category"><strong>${member.category}</strong></p>
             `;
             membersDisplay.appendChild(card);
         });
     }
 
-    // View Toggles
+    // Toggle Buttons
     gridBtn.addEventListener('click', () => {
-        membersDisplay.classList.add('grid');
-        membersDisplay.classList.remove('list');
+        membersDisplay.classList.replace('list', 'grid');
         gridBtn.classList.add('active-toggle');
         listBtn.classList.remove('active-toggle');
     });
 
     listBtn.addEventListener('click', () => {
-        membersDisplay.classList.add('list');
-        membersDisplay.classList.remove('grid');
+        membersDisplay.classList.replace('grid', 'list');
         listBtn.classList.add('active-toggle');
         gridBtn.classList.remove('active-toggle');
     });
 
-    // Dates
+    // Date Footer
     document.querySelector('#currentyear').textContent = new Date().getFullYear();
     document.querySelector('#lastModified').textContent = `Last Modified: ${document.lastModified}`;
 
