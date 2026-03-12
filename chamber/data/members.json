@@ -5,7 +5,7 @@
       "address": "4 Aromire Road, Golden Plaza, Ikoyi, Lagos",
       "phone": "(234) 803-100-0180",
       "website": "https://www.mtn.ng",
-      "image": "images/mtn-logo.png",
+      "image": "images/mtn-logo.webp",
       "membership": "Gold",
       "industry": "Telecommunications"
     },
@@ -14,7 +14,7 @@
       "address": "Mike Adenuga Towers, 1 Victoria Island, Lagos",
       "phone": "(234) 805-000-0000",
       "website": "https://www.gloworld.com",
-      "image": "images/glo-logo.png",
+      "image": "images/glo-logo.webp",
       "membership": "Silver",
       "industry": "Telecommunications"
     },
@@ -23,7 +23,7 @@
       "address": "14/15 Prince Alaba Abiodun, Victoria Island, Lagos",
       "phone": "(234) 1-271-2005",
       "website": "https://www.accessbankplc.com",
-      "image": "images/access-logo.png",
+      "image": "images/access-logo.webp",
       "membership": "Gold",
       "industry": "Banking & Finance"
     },
@@ -32,7 +32,7 @@
       "address": "Obafemi Awolowo Way, Alausa, Ikeja, Lagos",
       "phone": "(234) 1-271-7350",
       "website": "https://www.ikejaelectric.com",
-      "image": "images/ikeja-logo.png",
+      "image": "images/ikeja-logo.webp",
       "membership": "Silver",
       "industry": "Energy"
     },
@@ -41,7 +41,7 @@
       "address": "8 Crossway Street, Lekki Phase 1, Lagos",
       "phone": "(234) 1-234-5678",
       "website": "https://www.flutterwave.com",
-      "image": "images/flutter-logo.png",
+      "image": "images/flutter-logo.webp",
       "membership": "Gold",
       "industry": "Fintech"
     },
@@ -50,7 +50,7 @@
       "address": "Union Marble House, 1 Alfred Rewane Rd, Ikoyi",
       "phone": "(234) 1-460-6410",
       "website": "https://www.dangote.com",
-      "image": "images/dangote-logo.png",
+      "image": "images/dangote-logo.webp",
       "membership": "Gold",
       "industry": "Manufacturing"
     },
@@ -59,7 +59,7 @@
       "address": "12 Marina Road, Lagos Island",
       "phone": "(234) 700-111-2222",
       "website": "https://www.lagosstartuplab.ng",
-      "image": "images/startup-logo.png",
+      "image": "images/startup-logo.webp",
       "membership": "Member",
       "industry": "Business Incubator"
     }

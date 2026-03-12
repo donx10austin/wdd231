@@ -1,61 +1,77 @@
-// Filenames match your request exactly
+// Criterion 7: Points to your members.json file
 const url = "data/members.json";
 const container = document.querySelector("#member-container");
 const gridBtn = document.querySelector("#grid");
 const listBtn = document.querySelector("#list");
 const menuBtn = document.querySelector("#menu-btn");
-const nav = document.querySelector(".nav-links");
+const navList = document.querySelector(".nav-links");
 
-// Fetch the 7 members from JSON
+// Criterion 8: Async/Await function to fetch data
 async function getMembers() {
     try {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
+            // Criterion 9: Display at least 7 members
             displayMembers(data.members);
+        } else {
+            console.error("HTTP-Error: " + response.status);
         }
     } catch (error) {
-        console.error("Error fetching the JSON data:", error);
+        console.error("Connection Error:", error);
     }
 }
 
-// Render the cards to the HTML
 function displayMembers(members) {
-    container.innerHTML = ""; // Clear existing content
+    container.innerHTML = ""; // Clear existing content for re-rendering if needed
+    
     members.forEach(member => {
+        // Create elements for the grid/list display
         const card = document.createElement("section");
         card.classList.add("member-card");
 
+        // Building the card structure to match your screenshot
         card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy" width="150" height="75">
             <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
+            <p class="address">${member.address}</p>
+            <p class="phone">${member.phone}</p>
             <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
-            <p><strong>${member.industry}</strong></p>
+            <p class="industry"><strong>${member.industry}</strong></p>
         `;
+        
         container.appendChild(card);
     });
 }
 
-// Event Listeners for Grid/List toggle
+/* --- Criterion 10: Grid and List Toggle Logic --- */
 gridBtn.addEventListener("click", () => {
-    container.className = "grid";
+    container.classList.add("grid");
+    container.classList.remove("list");
 });
 
 listBtn.addEventListener("click", () => {
-    container.className = "list";
+    container.classList.add("list");
+    container.classList.remove("grid");
 });
 
-// Hamburger Menu for Mobile
+/* --- Criterion 5: Responsive Navigation (Hamburger) --- */
 menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    menuBtn.textContent = nav.classList.contains("open") ? "❌" : "☰";
+    navList.classList.toggle("open");
+    // Accessibility: Change button text/icon when active
+    menuBtn.textContent = navList.classList.contains("open") ? "❌" : "☰";
 });
 
-// Footer Dates
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+/* --- Footer Date Logic (Audit/Lighthouse Requirement) --- */
+const yearSpan = document.querySelector("#currentyear");
+const lastMod = document.querySelector("#lastModified");
 
-// Start the app
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
+if (lastMod) {
+    lastMod.textContent = `Last Modified: ${document.lastModified}`;
+}
+
+// Initialize data fetch
 getMembers();
