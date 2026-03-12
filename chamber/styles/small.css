@@ -17,6 +17,7 @@ body {
     overflow-x: hidden; 
 }
 
+/* Header & Navigation */
 header {
     display: flex;
     flex-direction: column;
@@ -28,13 +29,6 @@ header {
 
 .logo { width: 50px; height: auto; margin-bottom: 0.5rem; }
 
-/* Mobile Menu Logic */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: none;
-}
-nav ul.show { display: block; text-align: center; }
 #menu { 
     background: none; 
     border: none; 
@@ -43,6 +37,33 @@ nav ul.show { display: block; text-align: center; }
     cursor: pointer; 
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: none; /* Hidden by default on mobile */
+    margin: 1rem 0;
+}
+
+nav ul.show { 
+    display: block; 
+    text-align: center; 
+}
+
+/* THE FIX: Specifically styling the anchor tags */
+nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-gold);
+}
+
+/* View Toggles */
 .view-toggle { text-align: center; padding: 20px; }
 .view-toggle button {
     padding: 10px 20px;
@@ -55,13 +76,14 @@ nav ul.show { display: block; text-align: center; }
 }
 .view-toggle button.active { background-color: var(--primary-blue); color: white; }
 
-/* GRID VIEW */
+/* Grid View (Mobile) */
 #members.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
 }
+
 .member-card {
     background-color: var(--card-bg);
     padding: 1.5rem;
@@ -74,7 +96,7 @@ nav ul.show { display: block; text-align: center; }
 }
 .member-card img { max-width: 100%; height: 100px; object-fit: contain; margin-bottom: 1rem; }
 
-/* LIST VIEW */
+/* List View (Mobile) */
 #members.list { display: flex; flex-direction: column; padding: 20px; }
 #members.list .member-card {
     display: block; 
@@ -84,5 +106,15 @@ nav ul.show { display: block; text-align: center; }
 }
 #members.list .member-card img { display: none !important; }
 
-footer { background-color: var(--primary-blue); color: white; padding: 2rem; text-align: center; }
-.social-icon { width: 30px; filter: brightness(0) invert(1); margin: 0 10px; }
+/* Footer */
+footer { 
+    background-color: var(--primary-blue); 
+    color: white; 
+    padding: 2rem; 
+    text-align: center; 
+}
+.social-icon { 
+    width: 30px; 
+    filter: brightness(0) invert(1); 
+    margin: 0 10px; 
+}
