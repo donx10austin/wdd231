@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Austin Anumudu">
     
     <title>Lagos Chamber of Commerce | Member Business Directory</title>
-    <meta name="description" content="Explore the Lagos Chamber of Commerce directory to find and support local businesses in Lagos Island.">
-    <meta name="author" content="Your Full Name">
+    <meta name="description" content="Connect with top-tier businesses driving growth in Lagos. Explore our directory to support local partners and discover the heartbeat of Nigeria.">
 
-    <meta property="og:title" content="Lagos Chamber of Commerce | Member Business Directory">
-    <meta property="og:description" content="Explore our directory to find and support local businesses dedicated to community growth in Lagos.">
+    <meta property="og:title" content="Lagos Chamber of Commerce: Discover Top Local Businesses">
+    <meta property="og:description" content="Connect with top-tier businesses driving growth in Lagos. Explore our directory to support local partners and discover the heartbeat of Nigeria.">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/logo.webp">
     <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
-    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/small.css">
     <link rel="stylesheet" href="css/larger.css" media="screen and (min-width: 768px)">
-
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
     <header>
         <div class="branding">
-            <img src="images/logo.webp" alt="Lagos Chamber Logo" class="logo" width="60" height="60">
+            <img src="images/logo.webp" alt="Lagos Chamber of Commerce Official Logo" width="60" height="60">
             <h1>Lagos Chamber</h1>
         </div>
         <button id="menu" aria-label="Toggle Menu">☰</button>
@@ -43,7 +42,7 @@
 
     <main>
         <div class="controls">
-            <button id="grid-btn">Grid View</button>
+            <button id="grid-btn" class="active-toggle">Grid View</button>
             <button id="list-btn">List View</button>
         </div>
         <article id="members" class="grid"></article>
@@ -57,12 +56,12 @@
                 <p>info@lagoschamber.ng</p>
             </div>
             <div class="footer-social">
-                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.webp" alt="LinkedIn Icon" class="social-icon" width="30" height="30"></a>
-                <a href="https://youtube.com" target="_blank"><img src="images/youtube.webp" alt="YouTube Icon" class="social-icon" width="30" height="30"></a>
-                <a href="https://twitter.com" target="_blank"><img src="images/twitter.webp" alt="Twitter Icon" class="social-icon" width="30" height="30"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.webp" alt="Lagos Chamber YouTube Channel" width="30" height="30" class="social-icon"></a>
+                <a href="https://twitter.com" target="_blank"><img src="images/twitter.webp" alt="Lagos Chamber Twitter Profile" width="30" height="30" class="social-icon"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.webp" alt="Lagos Chamber LinkedIn Page" width="30" height="30" class="social-icon"></a>
             </div>
             <div class="footer-meta">
-                <p>&copy;<span id="currentyear"></span> | Your Name | BYU-Idaho</p>
+                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | BYU-Idaho</p>
                 <p id="lastModified"></p>
             </div>
         </div>
