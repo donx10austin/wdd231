@@ -68,6 +68,18 @@
         margin: 0; /* Remove mobile margins */
     }
 
+    /* --- DIRECTORY SPECIFIC --- */
+    /* on larger screens we already set grid in base css but ensure gutters are comfortable */
+    .directory.grid {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .directory.list .member-card {
+        max-width: 800px;
+        margin: 0 auto 20px;
+    }
+
     /* --- FOOTER (Horizontal Split) --- */
     footer {
         display: grid;

@@ -156,6 +156,87 @@ header h1 {
     margin: 5px 0;
 }
 
+/* --- DIRECTORY CARDS & CONTROLS --- */
+.directory-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.directory-controls button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.directory-controls button:hover {
+    background-color: #002244;
+}
+
+.directory-controls button.active {
+    background-color: #ff9900;
+}
+
+/* container for directory cards will switch between grid and list via class */
+.directory {
+    padding: 10px;
+}
+
+.directory.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.directory.list {
+    display: block;
+}
+
+/* spacing when in list mode (mobile) */
+.directory.list .member-card {
+    margin-bottom: 20px;
+}
+
+.member-card {
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.member-card h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+}
+
+.member-card .details {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.member-card .details a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.member-card .details a:hover {
+    text-decoration: underline;
+}
+
 /* --- FOOTER --- */
 footer {
     background-color: var(--light-grey);
