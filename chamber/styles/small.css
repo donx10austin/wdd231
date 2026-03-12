@@ -1,4 +1,3 @@
-/* --- Variables & Base --- */
 :root {
     --primary-blue: #003366; 
     --accent-gold: #ffcc00;
@@ -8,19 +7,16 @@
     --text-white: #ffffff;
 }
 
-* {
-    box-sizing: border-box; /* Essential to prevent horizontal scroll */
-}
+* { box-sizing: border-box; }
 
 body { 
     font-family: 'Roboto', sans-serif; 
     margin: 0; 
     color: var(--text-main); 
     background-color: var(--light-bg);
-    overflow-x: hidden; /* Prevent accidental side-scrolling */
+    overflow-x: hidden; 
 }
 
-/* --- Header & Navigation --- */
 header {
     display: flex;
     flex-direction: column;
@@ -32,22 +28,22 @@ header {
 
 .logo { width: 50px; height: auto; margin-bottom: 0.5rem; }
 
+/* Mobile Menu Logic */
 nav ul {
     list-style: none;
     padding: 0;
-    display: none; /* Hidden by default on mobile */
+    display: none;
+}
+nav ul.show { display: block; text-align: center; }
+#menu { 
+    background: none; 
+    border: none; 
+    color: white; 
+    font-size: 2rem; 
+    cursor: pointer; 
 }
 
-nav ul.show {
-    display: block;
-}
-
-/* --- View Toggle Buttons (Repetition Principle) --- */
-.view-toggle {
-    text-align: center;
-    padding: 20px;
-}
-
+.view-toggle { text-align: center; padding: 20px; }
 .view-toggle button {
     padding: 10px 20px;
     font-weight: bold;
@@ -55,22 +51,17 @@ nav ul.show {
     border: 1px solid var(--primary-blue);
     background-color: white;
     color: var(--primary-blue);
-    transition: 0.3s;
+    margin: 0 5px;
 }
+.view-toggle button.active { background-color: var(--primary-blue); color: white; }
 
-.view-toggle button.active {
-    background-color: var(--primary-blue);
-    color: white;
-}
-
-/* --- Member Directory - GRID VIEW --- */
+/* GRID VIEW */
 #members.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
 }
-
 .member-card {
     background-color: var(--card-bg);
     padding: 1.5rem;
@@ -81,49 +72,17 @@ nav ul.show {
     flex-direction: column;
     align-items: center;
 }
+.member-card img { max-width: 100%; height: 100px; object-fit: contain; margin-bottom: 1rem; }
 
-.member-card img {
-    max-width: 100%;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
-
-/* --- Member Directory - LIST VIEW (The Specific Fix) --- */
-#members.list {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
+/* LIST VIEW */
+#members.list { display: flex; flex-direction: column; padding: 20px; }
 #members.list .member-card {
-    display: block; /* Stacked for mobile list */
+    display: block; 
     text-align: left;
     padding: 1rem;
-    border: none;
     border-bottom: 1px solid #ddd;
-    border-radius: 0;
 }
+#members.list .member-card img { display: none !important; }
 
-/* HIDE IMAGES IN LIST VIEW */
-#members.list .member-card img {
-    display: none !important;
-}
-
-#members.list .member-card p {
-    margin: 5px 0;
-}
-
-/* --- Footer --- */
-footer {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-
-.social-icon {
-    width: 30px;
-    filter: brightness(0) invert(1);
-    margin: 0 10px;
-}
+footer { background-color: var(--primary-blue); color: white; padding: 2rem; text-align: center; }
+.social-icon { width: 30px; filter: brightness(0) invert(1); margin: 0 10px; }

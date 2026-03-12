@@ -1,27 +1,18 @@
-/* larger.css - Desktop View (768px and wider) */
-
 @media screen and (min-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem 5%;
     }
+    #menu { display: none; }
+    nav ul { display: flex !important; gap: 2rem; }
 
-    #menu { display: none; } /* Hide hamburger */
-
-    nav ul {
-        display: flex !important;
-        gap: 2rem;
-    }
-
-    /* Alignment: 3-column grid for 7+ members */
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    /* List View: Align data in columns like a table */
     #members.list .member-card {
         display: grid;
         grid-template-columns: 1.5fr 2fr 1fr 1fr;
@@ -29,12 +20,8 @@
         gap: 15px;
     }
 
-    /* Repetition: Zebra striping for usability */
-    #members.list .member-card:nth-child(even) {
-        background-color: #f0f4f8;
-    }
+    #members.list .member-card:nth-child(even) { background-color: #f0f4f8; }
 
-    /* Footer: 3-column layout */
     .footer-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -42,7 +29,6 @@
         max-width: 1200px;
         margin: 0 auto;
     }
-
     .footer-meta { text-align: right; }
     .footer-info { text-align: left; }
 }
