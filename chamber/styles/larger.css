@@ -1,107 +1,24 @@
-/* Media Query for Desktop View (Criterion 2 & 9) */
 @media (min-width: 600px) {
-    
-    /* --- Header: Far Left / Far Right Alignment --- */
-    .header-container {
-        flex-direction: row !important; /* Overrides small.css stack */
-        justify-content: space-between !important; /* Pushes Logo Left, Nav Right */
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-    }
+    .header-container { flex-direction: row; justify-content: space-between; }
+    #menu-btn { display: none; }
+    .nav-links { display: flex; gap: 20px; }
 
-    /* Hide Hamburger on Desktop (Criterion 5) */
-    #menu-btn {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex !important; /* Horizontal Navigation */
-        gap: 2rem;
-    }
-
-    .nav-links li a {
-        padding: 5px 0;
-        font-size: 0.95rem;
-        transition: color 0.3s ease;
-    }
-
-    /* Wayfinding: Active link styling (Criterion 5) */
-    .nav-links li a.active {
-        border-bottom: 2px solid var(--accent-gold);
-        border-left: none; /* Remove mobile border-left style */
-    }
-
-    /* --- Member Display: Centered 3-Column Grid (Criterion 9) --- */
     #member-container.grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Exact 3 columns */
-        justify-items: center; /* Center each card in its track */
-        max-width: 1100px;
-        margin: 3rem auto;
-        gap: 3rem;
-    }
-
-    /* Repetition: Keep card sizes consistent */
-    .member-card {
-        width: 100%;
-        max-width: 320px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    /* --- List View Logic: Criterion 10 (Strict Requirement) --- */
-    #member-container.list {
-        display: flex;
-        flex-direction: column;
-        max-width: 1000px;
-        margin: 2rem auto;
-        gap: 0; /* Remove gaps for table-like look */
-    }
-
-    #member-container.list .member-card {
         display: grid;
-        grid-template-columns: 2fr 1.5fr 1fr 1fr; /* Name, Address, Phone, Industry */
-        align-items: center;
-        text-align: left;
-        width: 100%;
-        max-width: 100%;
-        padding: 12px 25px;
-        border: none;
-        border-bottom: 1px solid #eee;
-        box-shadow: none;
-    }
-
-    /* MANDATORY: Hide images in List View (Criterion 10) */
-    #member-container.list .member-card img {
-        display: none;
-    }
-
-    /* Repetition: Zebra Striping for Readability */
-    #member-container.list .member-card:nth-child(even) {
-        background-color: var(--light-gray);
-    }
-
-    /* --- Footer: Split Layout --- */
-    .footer-container {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center;
-        max-width: 1200px;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
         margin: 0 auto;
+    }
+
+    /* List View Fix: Hide Images */
+    #member-container.list .member-card {
+        display: block;
+        max-width: 100%;
         text-align: left;
+        border: none;
+        border-bottom: 1px solid #ccc;
     }
+    #member-container.list .member-card img { display: none; }
 
-    .footer-left, .footer-right {
-        flex: 1;
-    }
-
-    .footer-middle {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .footer-right {
-        text-align: right;
-    }
+    .footer-container { display: flex; justify-content: space-between; align-items: center; }
 }
