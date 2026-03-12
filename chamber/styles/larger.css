@@ -1,26 +1,45 @@
 @media (min-width: 600px) {
-    #member-container.grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        max-width: 1000px;
+    .header-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
-    /* Requirement: List view hides images and uses zebra striping */
+    #menu-btn { display: none; }
+
+    .nav-links {
+        display: flex !important;
+        gap: 20px;
+    }
+
+    .nav-links li a { padding: 0; font-size: 0.9rem; }
+    .nav-links li a.active { color: #87ceeb; /* Light blue highlight */ }
+
+    #member-container.grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* List View: Required to hide images */
     #member-container.list .member-card {
         display: block;
-        width: 90%;
-        max-width: 800px;
+        width: 100%;
+        max-width: 900px;
         text-align: left;
         border: none;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #eee;
     }
+    #member-container.list .member-card img { display: none; }
+    #member-container.list .member-card:nth-child(even) { background-color: #f9f9f9; }
 
-    #member-container.list .member-card img {
-        display: none;
-    }
-
-    #member-container.list .member-card:nth-child(even) {
-        background-color: #f4f4f4;
+    .footer-container {
+        flex-direction: row !important;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

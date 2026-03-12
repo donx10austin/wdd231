@@ -13,11 +13,11 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
     <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Discover and connect with top-rated businesses across Lagos. Our certified directory highlights industry leaders in Nigeria.">
+    <meta property="og:description" content="Discover and connect with top-rated businesses across Lagos.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 600px)">
@@ -27,18 +27,21 @@
 <body>
     <header>
         <div class="header-container">
-            <img src="images/chamber-og.jpg" alt="Lagos Chamber Logo" id="logo">
-            <h1>Lagos Chamber of Commerce</h1>
+            <div class="brand">
+                <img src="images/chamber-og.jpg" alt="Lagos Chamber Logo" id="logo">
+                <h1>Lagos Chamber of Commerce</h1>
+            </div>
+            
+            <nav>
+                <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="directory.html" class="active">DIRECTORY</a></li>
+                    <li><a href="join.html">JOIN</a></li>
+                    <li><a href="discover.html">DISCOVER</a></li>
+                </ul>
+            </nav>
         </div>
-        <button id="menu-btn" aria-label="Toggle Menu">☰</button>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -57,9 +60,9 @@
                 <p>info@lagoschamber.ng</p>
             </div>
             <div class="footer-middle">
-                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="Lagos Chamber YouTube"></a>
-                <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Lagos Chamber Twitter"></a>
-                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="Lagos Chamber LinkedIn"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://twitter.com" target="_blank"><img src="images/twitter-logo.png" alt="Twitter"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-logo.png" alt="LinkedIn"></a>
             </div>
             <div class="footer-right">
                 <p>WDD231 | Austin Anumudu</p>
@@ -69,4 +72,5 @@
         </div>
     </footer>
 </body>
+</html>y>
 </html>
