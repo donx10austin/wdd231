@@ -2,45 +2,73 @@
     /* HEADER: Left and Right Shift */
     .header-container {
         flex-direction: row !important;
-        justify-content: space-between !important; /* Pushes brand left, nav right */
+        justify-content: space-between !important; /* Forces Far Left and Far Right */
         max-width: 1400px;
         margin: 0 auto;
         width: 100%;
     }
 
-    #menu-btn { display: none; }
+    #menu-btn {
+        display: none;
+    }
 
     .nav-links {
         display: flex !important;
-        gap: 25px;
-    }
-
-    .nav-links li a { font-size: 0.85rem; letter-spacing: 1px; }
-    .nav-links li a.active { color: #87ceeb; border-bottom: 2px solid #87ceeb; }
-
-    /* MAIN CONTENT: Centered Grid */
-    #member-container.grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        justify-items: center;
-        max-width: 1100px;
-        margin: 40px auto; /* Centering the grid container */
         gap: 30px;
     }
 
-    /* List View Settings */
-    #member-container.list { display: block; max-width: 1000px; margin: 0 auto; }
-    #member-container.list .member-card { 
-        display: block; width: 100%; text-align: left; border: none; border-bottom: 1px solid #eee; 
+    .nav-links li a {
+        padding: 0;
+        font-size: 0.9rem;
     }
-    #member-container.list .member-card img { display: none; }
-    #member-container.list .member-card:nth-child(even) { background-color: #f9f9f9; }
 
-    /* FOOTER: Left, Center, Right Shift */
+    .nav-links li a.active {
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+
+    /* MAIN: Centered 3-Column Grid */
+    #member-container.grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        justify-items: center; /* Centers each card in its column */
+        max-width: 1100px;
+        margin: 40px auto; /* Centers the whole container on page */
+        gap: 35px;
+    }
+
+    /* List View Requirement: Hide Images */
+    #member-container.list {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+
+    #member-container.list .member-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    #member-container.list .member-card img {
+        display: none;
+    }
+
+    #member-container.list .member-card:nth-child(even) {
+        background-color: #f8f8f8;
+    }
+
+    /* FOOTER: Far Left and Far Right */
     .footer-container {
         flex-direction: row !important;
         justify-content: space-between !important;
         max-width: 1400px;
         margin: 0 auto;
+        text-align: left;
     }
 }
