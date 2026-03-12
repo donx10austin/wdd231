@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | Lagos Chamber of Commerce</title>
     
-    <meta name="description" content="Official Business Directory for the Lagos Chamber of Commerce.">
     <meta name="author" content="Austin Anumudu">
+    <meta name="description" content="Access the Lagos Chamber of Commerce directory to find and connect with top-rated local businesses in telecommunications, banking, and energy.">
+
     <link rel="icon" href="images/chamber-logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <meta property="og:title" content="Lagos Chamber of Commerce Directory">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
     <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Connect with top-rated businesses across Lagos.">
+    <meta property="og:description" content="Explore the Lagos Chamber of Commerce business directory. Connect with certified local leaders in tech, finance, and manufacturing today.">
 
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 600px)">
+    
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
@@ -27,8 +33,8 @@
                 <h1>Lagos Chamber of Commerce</h1>
             </div>
             <nav>
-                <button id="menu-btn">☰</button>
-                <ul class="nav-links" id="nav-list">
+                <button id="menu-btn" aria-label="Toggle Menu">☰</button>
+                <ul class="nav-links">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="directory.html" class="active">DIRECTORY</a></li>
                     <li><a href="join.html">JOIN</a></li>
@@ -40,24 +46,27 @@
 
     <main>
         <div class="view-toggle">
-            <button id="grid">Grid View</button>
-            <button id="list">List View</button>
+            <button id="grid" aria-label="Grid View">Grid View</button>
+            <button id="list" aria-label="List View">List View</button>
         </div>
+        
         <article id="member-container" class="grid"></article>
     </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <p><strong>Lagos Chamber of Commerce</strong></p>
+                <p><strong>Lagos Chamber</strong></p>
                 <p>12 Marina Road, Lagos Island</p>
                 <p>info@lagoschamber.ng</p>
             </div>
+            
             <div class="footer-middle">
                 <img src="images/youtube.png" alt="YouTube Icon" width="24" height="24">
                 <img src="images/twitter-logo.png" alt="Twitter Icon" width="24" height="24">
                 <img src="images/linkedin-logo.png" alt="LinkedIn Icon" width="24" height="24">
             </div>
+            
             <div class="footer-right">
                 <p>WDD231 | Austin Anumudu</p>
                 <p>&copy; <span id="currentyear"></span> Lagos Chamber</p>

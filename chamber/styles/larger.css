@@ -1,85 +1,88 @@
-/* Media Query for Desktop View (Criterion 2) */
+/* Media Query for Desktop View (Criterion 2 & 9) */
 @media (min-width: 600px) {
     
-    /* --- Header: Far Left / Far Right Layout --- */
+    /* --- Header: Far Left / Far Right Alignment --- */
     .header-container {
-        flex-direction: row !important; /* Overrides small.css column layout */
-        justify-content: space-between !important; /* Pushes brand LEFT and nav RIGHT */
+        flex-direction: row !important; /* Overrides small.css stack */
+        justify-content: space-between !important; /* Pushes Logo Left, Nav Right */
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
     }
 
+    /* Hide Hamburger on Desktop (Criterion 5) */
     #menu-btn {
-        display: none; /* Hide hamburger menu on desktop (Criterion 5) */
+        display: none;
     }
 
     .nav-links {
-        display: flex !important; /* Show horizontal links */
-        gap: 30px;
+        display: flex !important; /* Horizontal Navigation */
+        gap: 2rem;
     }
 
     .nav-links li a {
-        padding: 0;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
+        padding: 5px 0;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+
+    /* Wayfinding: Active link styling (Criterion 5) */
+    .nav-links li a.active {
+        border-bottom: 2px solid var(--accent-gold);
+        border-left: none; /* Remove mobile border-left style */
     }
 
     /* --- Member Display: Centered 3-Column Grid (Criterion 9) --- */
     #member-container.grid {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Exactly 3 columns as requested */
-        justify-items: center; /* Centers cards within their grid tracks */
-        max-items: center;
+        grid-template-columns: repeat(3, 1fr) !important; /* Exact 3 columns */
+        justify-items: center; /* Center each card in its track */
         max-width: 1100px;
-        margin: 40px auto;
-        gap: 40px;
+        margin: 3rem auto;
+        gap: 3rem;
     }
 
-    /* Standard Card Size for Desktop Alignment */
+    /* Repetition: Keep card sizes consistent */
     .member-card {
         width: 100%;
         max-width: 320px;
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .member-card:hover {
-        transform: scale(1.02); /* Subtle hover effect for Best Practices audit */
-    }
-
-    /* --- List View Logic (Criterion 10: NO IMAGES) --- */
+    /* --- List View Logic: Criterion 10 (Strict Requirement) --- */
     #member-container.list {
         display: flex;
         flex-direction: column;
         max-width: 1000px;
-        margin: 20px auto;
+        margin: 2rem auto;
+        gap: 0; /* Remove gaps for table-like look */
     }
 
     #member-container.list .member-card {
         display: grid;
-        grid-template-columns: 2fr 1.5fr 1fr 1fr; /* Table-like row layout */
+        grid-template-columns: 2fr 1.5fr 1fr 1fr; /* Name, Address, Phone, Industry */
         align-items: center;
         text-align: left;
         width: 100%;
         max-width: 100%;
-        padding: 15px 25px;
+        padding: 12px 25px;
         border: none;
         border-bottom: 1px solid #eee;
         box-shadow: none;
     }
 
-    /* STRICTURE REQUIREMENT: List display WITHOUT images */
+    /* MANDATORY: Hide images in List View (Criterion 10) */
     #member-container.list .member-card img {
-        display: none; /* Rubric Criterion 10 fix */
+        display: none;
     }
 
-    /* Repetition Principle: Zebra Striping for List View */
+    /* Repetition: Zebra Striping for Readability */
     #member-container.list .member-card:nth-child(even) {
-        background-color: #f4f4f4;
+        background-color: var(--light-gray);
     }
 
-    /* --- Footer: Far Left / Far Right Layout --- */
+    /* --- Footer: Split Layout --- */
     .footer-container {
         flex-direction: row !important;
         justify-content: space-between !important;

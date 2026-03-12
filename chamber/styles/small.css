@@ -1,12 +1,13 @@
-/* --- Root Variables for Color Contrast (Criterion 4) --- */
+/* --- Root Variables: Criterion 4 (Color Contrast) --- */
 :root {
-    --navy: #002147;
+    --primary-navy: #002147;
+    --accent-gold: #ffcc00;
     --white: #ffffff;
-    --text-main: #333333;
-    --gray-bg: #f9f9f9;
+    --light-gray: #f4f4f4;
+    --text-dark: #222222;
 }
 
-/* --- Base Reset --- */
+/* --- Base Reset: Criterion 2 (Alignment) --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,28 +17,29 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: var(--text-main);
-    overflow-x: hidden; /* Prevents horizontal scrolling (Criterion 2) */
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden; /* Criterion 2: No horizontal scrolling */
 }
 
-/* --- Header Styling (Far Left / Far Right base) --- */
+/* --- Header Section --- */
 header {
-    background-color: var(--navy);
+    background-color: var(--primary-navy);
     color: var(--white);
-    padding: 1rem 5%;
+    padding: 1.5rem 5%;
 }
 
 .header-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centered on mobile */
-    gap: 15px;
+    align-items: center;
+    gap: 1rem;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 #logo {
@@ -46,68 +48,69 @@ header {
 }
 
 h1 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
-/* --- Mobile Navigation (Criterion 5) --- */
+/* --- Navigation: Criterion 5 (Responsive) --- */
 #menu-btn {
     background: none;
     border: 1px solid var(--white);
     color: var(--white);
-    padding: 8px 15px;
+    padding: 8px 12px;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-size: 1.2rem;
 }
 
 .nav-links {
-    display: none; /* Hidden by default on mobile */
+    display: none; /* Mobile default: Hidden */
     list-style: none;
     width: 100%;
 }
 
 .nav-links.open {
-    display: block; /* Toggled by JavaScript */
+    display: block; /* JS Toggled */
+    padding-top: 1rem;
 }
 
 .nav-links li a {
     display: block;
     color: var(--white);
     text-decoration: none;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
     font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Wayfinding (Criterion 5) */
+/* Wayfinding: Criterion 5 */
 .nav-links li a.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffcc00; /* Gold highlight for the active page */
+    color: var(--accent-gold);
+    border-left: 4px solid var(--accent-gold);
 }
 
-/* --- Main Content & Toggle --- */
+/* --- Main Content --- */
 .view-toggle {
     text-align: center;
-    padding: 20px;
-    background-color: var(--gray-bg);
+    padding: 1.5rem;
+    background-color: var(--light-gray);
 }
 
 .view-toggle button {
     padding: 10px 20px;
     margin: 0 5px;
-    background-color: var(--navy);
+    background-color: var(--primary-navy);
     color: var(--white);
     border: none;
     cursor: pointer;
     font-weight: bold;
 }
 
-/* --- Member Display (Criterion 9) --- */
+/* --- Directory Grid: Criterion 9 (Responsive) --- */
 #member-container {
-    padding: 20px;
+    padding: 1.5rem;
 }
 
-/* Mobile: Single Column Grid */
 #member-container.grid {
     display: flex;
     flex-direction: column;
@@ -116,67 +119,60 @@ h1 {
 }
 
 .member-card {
+    background: var(--white);
     border: 1px solid #ddd;
-    background-color: var(--white);
     padding: 20px;
     width: 100%;
-    max-width: 320px; /* Matching the card size in your screenshot */
+    max-width: 320px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* WebP Image styling (Criterion 7) */
 .member-card img {
-    height: 75px; /* Uniform height for alignment */
     width: auto;
-    max-width: 100%;
+    height: 80px; /* Repetition: Uniform height */
+    max-width: 150px;
     object-fit: contain;
     margin-bottom: 15px;
 }
 
-.member-card h3 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.member-card p {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
-}
-
-.member-card a {
+.member-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.member-card p { font-size: 0.85rem; margin-bottom: 4px; }
+.member-card a { 
+    display: inline-block;
+    margin: 10px 0;
     color: #0000ee;
-    text-decoration: underline;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
-/* --- Footer (Criterion 1) --- */
+/* --- Footer --- */
 footer {
-    background-color: var(--navy);
+    background-color: var(--primary-navy);
     color: var(--white);
-    padding: 30px 20px;
+    padding: 2rem 5%;
+    margin-top: auto;
     text-align: center;
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .footer-middle {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .footer-middle img {
     width: 24px;
     height: 24px;
-    filter: invert(1); /* Makes dark icons white for contrast */
+    filter: invert(1); /* Ensure contrast on dark background */
 }
 
 .footer-right p {
     font-size: 0.8rem;
-    margin-top: 5px;
+    opacity: 0.9;
 }
