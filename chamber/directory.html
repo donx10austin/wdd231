@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Directory | Lagos Chamber of Commerce</title>
-    <meta name="description" content="Official business directory for the Lagos Chamber of Commerce. Connect with top industries in Nigeria.">
+    <meta name="description" content="Official business directory for the Lagos Chamber of Commerce.">
     <meta name="author" content="Austin Anumudu">
     <link rel="icon" href="images/favicon.ico">
 
@@ -12,7 +12,6 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/images/chamber-og.jpg">
     <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Explore and connect with certified businesses in the Lagos region.">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/small.css">
@@ -20,8 +19,8 @@
 </head>
 <body>
     <header>
-        <div class="logo-area">
-            <img src="images/chamber-logo.jpg" alt="Lagos Chamber Logo" id="main-logo">
+        <div class="header-container">
+            <img src="images/chamber-logo.jpg" alt="Lagos Chamber Logo" id="logo">
             <h1>Lagos Chamber of Commerce</h1>
         </div>
         <button id="menu-btn" aria-label="Toggle Menu">☰</button>
@@ -40,34 +39,34 @@
             <button id="grid">Grid View</button>
             <button id="list">List View</button>
         </div>
-        <article id="member-container" class="grid"></article>
+        <article id="member-container" class="grid">
+            </article>
     </main>
 
     <footer>
         <div class="footer-container">
-            <div class="footer-branding">
-                <img src="images/chamber-logo.jpg" alt="Lagos Chamber Logo" class="footer-logo">
-                <div class="footer-contact">
-                    <p><strong>Lagos Chamber of Commerce</strong></p>
-                    <p>1 Victoria Island, Lagos</p>
-                    <p>info@lagoschamber.com</p>
-                </div>
+            <div class="footer-left">
+                <p><strong>Lagos Chamber of Commerce</strong></p>
+                <p>12 Marina Road, Lagos Island</p>
+                <p>info@lagoschamber.ng</p>
+                <p>(234) 800-CHAMBER</p>
             </div>
 
-            <div class="footer-social">
-                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <div class="footer-middle">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
             </div>
 
-            <div class="footer-dev">
-                <p>WDD 231 Class Project</p>
-                <p><strong>Austin Anumudu</strong></p>
+            <div class="footer-right">
+                <p>WDD231 Class Project</p>
+                <p>Austin Anumudu</p>
                 <p>&copy; <span id="currentyear"></span> Lagos Chamber</p>
                 <p id="lastModified"></p>
             </div>
         </div>
     </footer>
+
     <script src="js/members.js"></script>
 </body>
 </html>

@@ -1,50 +1,65 @@
-/* --- Navigation Desktop --- */
-#menu-btn {
-    display: none; /* Hide hamburger on desktop */
-}
+@media (min-width: 600px) {
+    /* --- Desktop Nav --- */
+    #menu-btn { display: none; }
+    .nav-links {
+        display: flex !important;
+        justify-content: center;
+        gap: 20px;
+    }
 
-.nav-links {
-    display: flex !important;
-    justify-content: center;
-}
+    /* --- Desktop Grid (3 Columns) --- */
+    #member-container.grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 20px;
+    }
 
-.nav-links li a:hover {
-    background-color: var(--secondary);
-    color: var(--primary);
-}
+    /* --- Desktop List View (Zebra Striping) --- */
+    #member-container.list {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
-/* --- Grid View Multi-Column --- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+    #member-container.list .member-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr; /* Name, Phone, Website */
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 0;
+        border-radius: 0;
+        padding: 0.75rem;
+    }
 
-/* --- List View Desktop --- */
-.list .member-card {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    text-align: left;
-    align-items: center;
-    margin-bottom: 0;
-}
+    #member-container.list .member-card:nth-child(even) {
+        background-color: #eeeeee; /* Gray Zebra Stripe from image 3.png */
+    }
 
-.list .member-card:nth-child(even) {
-    background-color: #e8e8e8; /* Zebra striping */
-}
+    #member-container.list img { display: none; } /* Hide icons in list view */
 
-/* --- Footer Desktop --- */
-.footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    /* --- Footer (3-Column Split like Wireframe 1.png) --- */
+    .footer-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
 
-.footer-branding {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    gap: 1rem;
+    .footer-left, .footer-middle, .footer-right {
+        flex: 1;
+    }
+
+    .footer-middle {
+        display: flex;
+        justify-content: center; /* Centers social icons */
+    }
+
+    .footer-right {
+        text-align: right; /* Pushes Student Info to the right */
+    }
 }

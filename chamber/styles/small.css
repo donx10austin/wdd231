@@ -1,49 +1,43 @@
 /* --- Global Variables --- */
 :root {
-    --primary: #004a99;
+    --primary: #003366; /* Navy Blue from Lagos Screenshot */
     --secondary: #ffcc00;
-    --accent: #f0f0f0;
     --text: #333;
     --white: #ffffff;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: Arial, sans-serif;
-    color: var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
+    color: var(--text);
 }
 
-/* --- Header & Nav --- */
-header, footer {
+/* --- Mobile Header --- */
+header {
     background-color: var(--primary);
     color: var(--white);
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
 }
 
-#main-logo {
+.header-container img {
     width: 80px;
     height: auto;
 }
 
 #menu-btn {
-    font-size: 2rem;
     background: none;
     border: none;
-    color: var(--white);
+    color: white;
+    font-size: 2rem;
     cursor: pointer;
-    padding: 0.5rem;
 }
 
 .nav-links {
     list-style: none;
-    display: none; /* Hidden by default on mobile */
+    display: none; /* Controlled by JS */
 }
 
 .nav-links.open {
@@ -51,60 +45,73 @@ header, footer {
 }
 
 .nav-links li a {
+    color: white;
+    text-decoration: none;
     display: block;
     padding: 1rem;
-    color: var(--white);
-    text-decoration: none;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* --- Directory Grid/List --- */
+/* --- Directory Main --- */
 .view-toggle {
     text-align: center;
-    margin: 1rem;
+    padding: 1rem;
 }
 
 .view-toggle button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid #fff;
     cursor: pointer;
-    background-color: var(--secondary);
-    border: none;
-    margin: 0.25rem;
 }
 
-/* Base Card Style */
-.grid, .list {
+/* Mobile Grid (Single Column) */
+#member-container.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
+    gap: 1rem;
 }
 
 .member-card {
-    background-color: var(--white);
     border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    width: 100%;
+    max-width: 350px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .member-card img {
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
+    margin-bottom: 10px;
 }
 
-/* Hide images in list view per instructions */
-.list .member-card img {
-    display: none;
+/* --- Mobile Footer (Stacked) --- */
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
 }
 
-/* --- Footer --- */
 .footer-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
 }
 
 .footer-social img {
-    width: 44px; /* Accessible touch target */
+    width: 44px; /* Accessible size */
     height: 44px;
-    margin: 0 10px;
 }
