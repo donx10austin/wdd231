@@ -1,76 +1,155 @@
-:root {
-    --primary-blue: #003366; 
-    --accent-gold: #ffcc00;
-    --light-bg: #f4f7f9;
-    --text-main: #333;
-    --text-white: #ffffff;
-}
-
-* { box-sizing: border-box; }
-
-body { 
-    font-family: 'Roboto', sans-serif; 
-    margin: 0; 
-    color: var(--text-main); 
-    background-color: var(--light-bg);
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: var(--primary-blue);
+    background-color: #003366; /* Deep Navy Blue */
+    color: white;
     padding: 1rem;
-    color: var(--text-white);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .branding {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 15px;
 }
 
-.logo { width: 60px; height: auto; margin-bottom: 0.5rem; }
-
-#menu { 
-    background: none; 
-    border: none; 
-    color: white; 
-    font-size: 2rem; 
-    cursor: pointer; 
+.logo {
+    border-radius: 5px;
 }
 
-nav ul {
+/* Navigation */
+#menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+nav {
+    width: 100%;
+}
+
+#nav-list {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0;
-    display: none;
-}
-
-nav ul.show { display: block; }
-
-nav a {
-    color: var(--text-white);
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    display: block;
-    font-weight: bold;
+    display: none; /* Hidden by default on mobile */
     text-align: center;
 }
 
-nav a.active { color: var(--accent-gold); }
-
-/* Grid/List Styles */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 1rem;
+#nav-list.show {
+    display: block;
 }
 
-section { background: white; padding: 1rem; border: 1px solid #ddd; text-align: center; }
-section img { max-width: 150px; height: auto; }
+#nav-list li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
 
-footer { background-color: var(--primary-blue); color: white; padding: 2rem; text-align: center; }
-.social-icon { filter: brightness(0) invert(1); }
+#nav-list li a:hover, .active {
+    background-color: #00509d;
+    font-weight: bold;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #eee;
+}
+
+.controls button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #003366;
+    background: white;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    background: #003366;
+    color: white;
+}
+
+/* Directory Members */
+#members {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.member-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.member-card img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.member-card h3 {
+    margin: 0.5rem 0;
+    color: #003366;
+}
+
+.category {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.membership-level {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    font-size: 0.85rem;
+}
+
+/* List View Overrides for Mobile (keeps it tidy) */
+.list .member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-social {
+    margin: 1.5rem 0;
+}
+
+.social-icon {
+    margin: 0 10px;
+    filter: brightness(0) invert(1); /* Makes icons white */
+}

@@ -1,37 +1,62 @@
-@media screen and (min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 5%;
-    }
+/* Navigation for Desktop */
+header {
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-    .branding {
-        flex-direction: row;
-        gap: 15px;
-        text-align: left;
-    }
+#menu {
+    display: none; /* Hide hamburger */
+}
 
-    #menu { display: none; }
+#nav-list {
+    display: flex; /* Show horizontal menu */
+}
 
-    nav ul {
-        display: flex !important;
-        gap: 1rem;
-        margin: 0;
-    }
+#nav-list li a {
+    border: none;
+}
 
-    nav a { padding: 0.5rem; }
+/* Grid View - 3 Columns */
+#members.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+.grid .member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
-    .footer-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+/* List View - Row Layout */
+#members.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list .member-card {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 0.8rem;
+}
+
+.list .member-card img {
+    max-width: 80px;
+    margin-bottom: 0;
+}
+
+.list .member-card h3 {
+    margin: 0;
+}
+
+/* Footer Layout */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
