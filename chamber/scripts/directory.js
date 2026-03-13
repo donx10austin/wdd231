@@ -1,41 +1,58 @@
-const url = "data/members.json";
-const container = document.querySelector("#member-container");
+const url = "data/members.json"; // Ensure your path is correct
+const cards = document.querySelector('#directory-cards');
 
-async function getMembers() {
+async function getMemberData() {
     const response = await fetch(url);
     const data = await response.json();
     displayMembers(data.members);
 }
 
 const displayMembers = (members) => {
-    container.innerHTML = "";
-    members.forEach((m) => {
-        const card = document.createElement("section");
-        card.className = "member-card";
-        card.innerHTML = `
-            <img src="${m.image}" alt="${m.name} logo">
-            <h3>${m.name}</h3>
-            <p>${m.address}</p>
-            <p>${m.phone}</p>
-            <a href="${m.website}" target="_blank">Visit Website</a>
-            <p class="membership-level"><strong>${m.membership}</strong></p>
-        `;
-        container.appendChild(card);
+    cards.innerHTML = ""; // Clear existing content
+
+    members.forEach((member) => {
+        let card = document.createElement('section');
+        let logo = document.createElement('img');
+        let name = document.createElement('h3');
+        let address = document.createElement('p');
+        let phone = document.createElement('p');
+        let website = document.createElement('a');
+
+        name.textContent = member.name;
+        address.textContent = member.address;
+        phone.textContent = member.phone;
+        
+        logo.setAttribute('src', member.image);
+        logo.setAttribute('alt', `Logo of ${member.name}`);
+        logo.setAttribute('loading', 'lazy');
+        logo.setAttribute('width', '100');
+
+        website.textContent = "Visit Website";
+        website.setAttribute('href', member.website);
+        website.setAttribute('target', '_blank');
+
+        card.appendChild(logo);
+        card.appendChild(name);
+        card.appendChild(address);
+        card.appendChild(phone);
+        card.appendChild(website);
+
+        cards.appendChild(card);
     });
-};
+}
 
-document.querySelector("#grid").addEventListener("click", () => {
-    container.classList.add("grid");
-    container.classList.remove("list");
+// Grid/List Toggle Logic
+const gridbutton = document.querySelector("#grid");
+const listbutton = document.querySelector("#list");
+
+gridbutton.addEventListener("click", () => {
+    cards.classList.add("grid");
+    cards.classList.remove("list");
 });
 
-document.querySelector("#list").addEventListener("click", () => {
-    container.classList.add("list");
-    container.classList.remove("grid");
+listbutton.addEventListener("click", () => {
+    cards.classList.add("list");
+    cards.classList.remove("grid");
 });
 
-// Footer Logic
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
-
-getMembers();
+getMemberData();
