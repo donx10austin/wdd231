@@ -1,35 +1,52 @@
 @media (min-width: 600px) {
-    /* HEADER: Left and Right alignment */
+    header {
+        background-color: #002147; /* Navy blue from your image */
+        padding: 20px 0;
+    }
+
     .header-container {
         display: flex;
+        /* THIS IS THE FIX: It forces the two children to opposite ends */
         justify-content: space-between; 
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 40px; /* Gives it breathing room from the screen edge */
     }
 
-    .logo-box { flex-direction: row; gap: 15px; }
-    .nav-links { flex-direction: row; gap: 2rem; margin-top: 0; }
-
-    /* FOOTER: Contact Left | Social Center | Meta Right */
-    .footer-top {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
+    /* Keep the logo and title together on the left */
+    .logo-box {
+        display: flex;
+        flex-direction: column; /* Matches your image: Logo on top, Text below */
+        align-items: flex-start;
+        gap: 10px;
     }
 
-    .footer-contact { text-align: left; }
-    .social-media { display: flex; justify-content: center; gap: 20px; }
-    .footer-meta { text-align: right; }
+    .main-logo {
+        width: 60px;
+        height: auto;
+        background-color: white; /* The white square background in your image */
+        padding: 5px;
+    }
 
-    /* Member Grid: 3 columns */
-    #member-container.grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+    header h1 {
+        color: white;
+        margin: 0;
+        font-size: 1.8rem;
+        white-space: nowrap;
+    }
+
+    /* Navigation pushed to the far right */
+    .nav-links {
+        display: flex;
+        list-style: none;
         gap: 30px;
-        max-width: 1100px;
-        margin: 40px auto;
+        margin: 0;
+    }
+
+    .nav-links a {
+        color: #0000ff; /* Blue links from your image */
+        text-decoration: none;
+        font-weight: bold;
     }
 }

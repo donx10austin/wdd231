@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lagos Chamber of Commerce - Directory</title>
-
+    <title>Lagos Chamber of Commerce - Member Directory</title>
+    
     <meta name="author" content="Austin Anumudu">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <meta name="description" content="Explore the Lagos Chamber of Commerce member directory. Connecting top businesses in Nigeria.">
-    <meta property="og:title" content="Lagos Chamber of Commerce - Member Directory">
+
+    <meta name="description" content="Official Member Directory of the Lagos Chamber of Commerce. Connect with top Nigerian businesses in Finance, Tech, and Manufacturing.">
+
+    <meta property="og:title" content="LCCI - Business Directory">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Connect with top Nigerian businesses like MTN, Access Bank, and Dangote Group.">
-    
-    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber-og.jpg">
-    <meta property="og:url" content="https://austinanumudu.github.io/wdd231/directory.html">
+    <meta property="og:description" content="Discover and connect with top local companies in Lagos, Nigeria. Join the Chamber of Commerce today.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,30 +22,41 @@
 
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
+    
     <script defer src="scripts/directory.js"></script>
 </head>
 <body>
     <header>
-        <nav class="header-container">
+        <div class="header-container">
             <div class="logo-box">
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="main-logo">
                 <h1>Lagos Chamber of Commerce</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="directory.html" class="active">DIRECTORY</a></li>
-                <li><a href="join.html">JOIN</a></li>
-                <li><a href="discover.html">DISCOVER</a></li>
-            </ul>
-        </nav>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li class="mode-toggle">
+                        <button id="dark-mode-btn" aria-label="Toggle Dark Mode">
+                            <img src="images/mode-icon.png" alt="Mode Toggle">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <div class="view-toggle">
+        <div class="controls">
             <button id="grid">Grid View</button>
             <button id="list">List View</button>
         </div>
-        <div id="member-container" class="grid"></div>
+        
+        <div id="member-container" class="grid">
+            </div>
     </main>
 
     <footer>
