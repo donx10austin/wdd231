@@ -1,11 +1,8 @@
-/* Apply the font to the whole body */
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
-    padding: 0;
 }
 
-/* Mobile First Layout */
 header, footer {
     background-color: #001a40;
     color: white;
@@ -20,8 +17,6 @@ header, footer {
     gap: 1rem;
 }
 
-.logo-box img { max-width: 100px; height: auto; }
-
 .nav-links {
     list-style: none;
     padding: 0;
@@ -30,44 +25,33 @@ header, footer {
     gap: 15px;
 }
 
-.nav-links a {
-    color: #a0c4ff; /* Lighter blue for AA Contrast compliance */
-    text-decoration: none;
-    font-weight: bold;
-}
+.nav-links a { color: #a0c4ff; text-decoration: none; font-weight: bold; }
+.nav-links a.active { color: #ffd700; }
 
-.nav-links a.active { color: #ffd700; } /* Wayfinding */
-
-/* --- NEW: Social Media Icon Layout --- */
+/* SOCIAL MEDIA FIX */
 .social-media {
     display: flex;
-    justify-content: center; /* Centers icons on mobile */
-    gap: 20px;               /* Professional spacing */
+    justify-content: center;
+    gap: 20px;
     margin: 1.5rem 0;
 }
 
 .social-media img {
+    /* This filter makes black/dark icons white */
+    filter: brightness(0) invert(1);
     transition: transform 0.3s ease;
-    /* Optional: This makes black icons appear white to match your footer text */
-    filter: brightness(0) invert(1); 
 }
 
-.social-media img:hover {
-    transform: scale(1.15); /* Interactive pop on hover */
-}
-
-/* Controls */
-.controls { padding: 20px; text-align: center; }
-button { 
-    padding: 10px 20px; 
-    cursor: pointer; 
-    background: #001a40; 
-    color: white; 
-    border: 1px solid #ffd700; 
+/* YouTube has a white box, so we keep it clear */
+.social-media img[alt*="YouTube"] {
+    filter: none; 
+    background-color: white;
     border-radius: 4px;
 }
 
-/* Grid Cards (Mobile) */
+.social-media img:hover { transform: scale(1.2); }
+
+/* GRID/LIST */
 #member-container.grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -78,18 +62,7 @@ button {
 .member-card {
     border: 1px solid #ddd;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.member-card img { 
-    width: 120px; 
-    height: auto; 
-    margin-bottom: 15px; 
-    object-fit: contain;
-}
-
-/* REQUIREMENT: No images in list view */
 #member-container.list .member-card img { display: none; }

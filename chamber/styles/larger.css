@@ -1,34 +1,35 @@
 /* Tablet and Desktop Styles */
 @media (min-width: 768px) {
 
-    /* HEADER: Pushes Logo to left and Nav to right */
+    /* HEADER: Branding left, Navigation right */
     .header-container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
+        padding: 0 20px;
     }
 
     .nav-links {
         flex-direction: row;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    /* MAIN: Layout Constrainer */
+    /* MAIN: Center the content */
     main {
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 2rem;
+        padding: 3rem 20px;
     }
 
-    /* GRID VIEW: 3-column layout (Principle of Repetition) */
+    /* GRID VIEW: Professional 3-column layout */
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
 
-    /* LIST VIEW: Detailed row layout */
+    /* LIST VIEW: Wide row layout */
     #member-container.list {
         display: flex;
         flex-direction: column;
@@ -39,24 +40,24 @@
         grid-template-columns: 2fr 1fr 1fr 1fr;
         align-items: center;
         text-align: left;
-        padding: 10px 20px;
+        padding: 15px 25px;
         border-radius: 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #ddd;
     }
 
-    /* FOOTER: Alignment of contact, social, and meta */
+    /* FOOTER: Flexbox for balanced layout */
     .footer-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
+        text-align: left;
     }
 
     .social-media {
-        justify-content: flex-start; /* Aligns with text on desktop */
-        margin: 0;
+        margin: 0; /* Removes mobile margin */
+        justify-content: center;
     }
 
     .footer-meta {
