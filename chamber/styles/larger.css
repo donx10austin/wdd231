@@ -1,5 +1,5 @@
 @media (min-width: 768px) {
-    /* Header: Far Left Logo, Far Right Nav */
+    /* Header: Logo Far Left, Nav Far Right */
     .header-container {
         flex-direction: row;
         justify-content: space-between;
@@ -7,35 +7,19 @@
         margin: 0 auto;
     }
 
-    .logo-box {
-        flex-direction: row;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
     .nav-links {
         flex-direction: row;
-        gap: 25px;
+        gap: 30px;
     }
 
-    /* Grid Layout: 3 Columns */
+    /* Grid: 3 Columns like your screenshot */
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 1200px;
-        margin: 0 auto;
     }
 
-    /* Footer: Spread out like your screenshot */
-    .footer-top {
+    /* List view logic */
+    #member-container.list {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-contact, .social-media, .footer-meta {
-        flex: 1;
+        flex-direction: column;
     }
 }

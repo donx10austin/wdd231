@@ -1,37 +1,31 @@
-/* General Reset */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Header - Mobile (Stacked) */
+/* Mobile View */
 header {
     background-color: #001a40;
     color: white;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
 }
 
 .header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 1rem;
 }
 
+.logo-box {
+    text-align: center;
+}
+
 .logo-box img {
-    width: 80px;
-    height: auto;
+    width: 100px;
 }
 
 .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
 }
 
 .nav-links a {
@@ -44,21 +38,6 @@ header {
     color: #ffd700;
 }
 
-/* Main Content & Buttons */
-.controls {
-    text-align: center;
-    padding: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #001a40;
-    color: white;
-    border: 1px solid #ccc;
-}
-
-/* Member Cards - Single Column Mobile */
 #member-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -67,28 +46,13 @@ button {
 }
 
 .member-card {
-    border: 1px solid #ddd;
-    padding: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
     text-align: center;
-    background: #fff;
-    border-radius: 8px;
+    background-color: #fff;
 }
 
 .member-card img {
-    max-width: 120px;
+    width: 150px;
     height: auto;
-}
-
-/* Footer - Mobile */
-footer {
-    background-color: #001a40;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.social-media img {
-    width: 24px;
-    margin: 0 10px;
-    filter: invert(1); /* Makes black icons white */
 }
