@@ -1,6 +1,8 @@
 /* Apply the font to the whole body */
 body {
     font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Mobile First Layout */
@@ -36,9 +38,34 @@ header, footer {
 
 .nav-links a.active { color: #ffd700; } /* Wayfinding */
 
+/* --- NEW: Social Media Icon Layout --- */
+.social-media {
+    display: flex;
+    justify-content: center; /* Centers icons on mobile */
+    gap: 20px;               /* Professional spacing */
+    margin: 1.5rem 0;
+}
+
+.social-media img {
+    transition: transform 0.3s ease;
+    /* Optional: This makes black icons appear white to match your footer text */
+    filter: brightness(0) invert(1); 
+}
+
+.social-media img:hover {
+    transform: scale(1.15); /* Interactive pop on hover */
+}
+
 /* Controls */
 .controls { padding: 20px; text-align: center; }
-button { padding: 10px 20px; cursor: pointer; background: #001a40; color: white; border: none; }
+button { 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    background: #001a40; 
+    color: white; 
+    border: 1px solid #ffd700; 
+    border-radius: 4px;
+}
 
 /* Grid Cards (Mobile) */
 #member-container.grid {
@@ -54,9 +81,15 @@ button { padding: 10px 20px; cursor: pointer; background: #001a40; color: white;
     background: white;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.member-card img { width: 120px; height: auto; margin-bottom: 15px; }
+.member-card img { 
+    width: 120px; 
+    height: auto; 
+    margin-bottom: 15px; 
+    object-fit: contain;
+}
 
 /* REQUIREMENT: No images in list view */
 #member-container.list .member-card img { display: none; }

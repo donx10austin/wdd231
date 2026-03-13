@@ -1,36 +1,65 @@
+/* Tablet and Desktop Styles */
 @media (min-width: 768px) {
-    /* Pushes Logo to far left and Nav to far right */
+
+    /* HEADER: Pushes Logo to left and Nav to right */
     .header-container {
         flex-direction: row;
         justify-content: space-between;
-        max-width: 1200px;
+        align-items: center;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
-    .nav-links { flex-direction: row; gap: 30px; }
+    .nav-links {
+        flex-direction: row;
+        gap: 2rem;
+    }
 
-    /* Repetition & Alignment: 3-Column Grid */
+    /* MAIN: Layout Constrainer */
+    main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* GRID VIEW: 3-column layout (Principle of Repetition) */
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 1200px;
-        margin: 0 auto;
+        gap: 30px;
     }
 
-    /* List View Styling (Rows) */
-    #member-container.list .member-card {
+    /* LIST VIEW: Detailed row layout */
+    #member-container.list {
         display: flex;
-        justify-content: space-between;
-        text-align: left;
-        padding: 10px 40px;
-        border-radius: 0;
+        flex-direction: column;
     }
 
-    /* Footer Spacing */
+    #member-container.list .member-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        align-items: center;
+        text-align: left;
+        padding: 10px 20px;
+        border-radius: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* FOOTER: Alignment of contact, social, and meta */
     .footer-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        text-align: left;
+        max-width: 1000px;
         margin: 0 auto;
+    }
+
+    .social-media {
+        justify-content: flex-start; /* Aligns with text on desktop */
+        margin: 0;
+    }
+
+    .footer-meta {
+        text-align: right;
     }
 }
