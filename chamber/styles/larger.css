@@ -1,52 +1,67 @@
-@media (min-width: 600px) {
-    header {
-        background-color: #002147; /* Navy blue from your image */
-        padding: 20px 0;
-    }
-
+@media (min-width: 700px) {
+    /* HEADER: Separates sections to far left and far right */
     .header-container {
         display: flex;
-        /* THIS IS THE FIX: It forces the two children to opposite ends */
         justify-content: space-between; 
         align-items: center;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 0 40px; /* Gives it breathing room from the screen edge */
+        padding: 20px 40px;
     }
 
-    /* Keep the logo and title together on the left */
     .logo-box {
         display: flex;
-        flex-direction: column; /* Matches your image: Logo on top, Text below */
+        flex-direction: column; 
         align-items: flex-start;
         gap: 10px;
     }
 
     .main-logo {
-        width: 60px;
-        height: auto;
-        background-color: white; /* The white square background in your image */
+        width: 70px;
+        background: white;
         padding: 5px;
     }
 
     header h1 {
         color: white;
-        margin: 0;
         font-size: 1.8rem;
-        white-space: nowrap;
+        margin: 0;
     }
 
-    /* Navigation pushed to the far right */
     .nav-links {
         display: flex;
-        list-style: none;
         gap: 30px;
-        margin: 0;
+        list-style: none;
     }
 
     .nav-links a {
-        color: #0000ff; /* Blue links from your image */
+        color: #0000ee; /* Blue color from your screenshot */
         text-decoration: none;
         font-weight: bold;
+    }
+
+    .nav-links a.active {
+        color: #ffcc00; /* Gold for the active directory page */
+    }
+
+    /* FOOTER: Perfectly centered social icons */
+    .footer-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        padding: 20px 40px;
+    }
+
+    .footer-contact { text-align: left; }
+    .social-media { display: flex; justify-content: center; gap: 20px; }
+    .footer-meta { text-align: right; }
+
+    /* GRID: 3 Columns as requested */
+    #member-container.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1200px;
+        margin: 40px auto;
     }
 }
