@@ -1,64 +1,198 @@
+/* --- ROOT VARIABLES --- */
 :root {
     --navy: #002147;
     --gold: #ffcc00;
     --white: #ffffff;
     --bg-gray: #f4f7f9;
     --text-dark: #333333;
+    --text-light: #555555;
     --border-color: #dddddd;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* --- BASE RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     background-color: var(--bg-gray);
     color: var(--text-dark);
+    line-height: 1.6;
 }
 
-header { background-color: var(--navy); color: var(--white); padding: 1rem 5%; }
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.5rem 5%;
+}
 
-.header-container { display: flex; flex-direction: column; align-items: center; }
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
 
 .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Mobile stack */
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .nav-links li a {
     color: var(--white);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a.active {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* --- VIEW TOGGLE BUTTONS --- */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     font-weight: bold;
 }
 
-.nav-links li a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
-
-/* Grid Cards */
-#member-container.grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
+/* --- MEMBER CONTAINER (GRID VIEW) --- */
+#member-container.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
 
 .member-card {
     background-color: var(--white);
     border: 1px solid var(--border-color);
-    padding: 30px 15px;
+    padding: 25px;
     width: 100%;
     max-width: 350px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.member-card img { height: 60px; object-fit: contain; margin-bottom: 15px; }
+.member-card img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
 
-/* Footer Icons Fixing Visibility */
-footer { background-color: var(--navy); color: var(--white); padding: 2rem 5%; font-size: 0.7rem; }
+.member-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
 
-.footer-top { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.member-card p {
+    font-size: 0.85rem;
+    margin: 3px 0;
+    color: var(--text-light);
+}
 
-.social-media { display: flex; gap: 15px; }
+.member-card a {
+    color: #0056b3;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.member-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- MEMBER CONTAINER (LIST VIEW) --- */
+#member-container.list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#member-container.list .member-card {
+    display: block;
+    max-width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    box-shadow: none;
+}
+
+#member-container.list .member-card img {
+    display: none; /* Rubric requirement: No images in list view */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 2.5rem 5%;
+    font-size: 0.8rem;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+}
 
 .social-media img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1); /* Forces black PNGs to appear white */
+    width: 28px;
+    height: 28px;
+    /* This filter makes black PNGs appear white for contrast */
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.footer-meta {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    width: 100%;
+    color: #ccc;
 }

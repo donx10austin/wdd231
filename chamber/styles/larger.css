@@ -1,38 +1,91 @@
+/* --- DESKTOP STYLES (Screen sizes 600px and above) --- */
 @media (min-width: 600px) {
-    /* Header Layout */
+
+    /* --- HEADER: Far-Right Navigation --- */
     .header-container {
         display: flex;
-        flex-direction: row; /* Horizontal row */
-        justify-content: space-between; /* Logo left, Nav right */
-        width: 100%;
+        flex-direction: row;        /* Side-by-side layout */
+        justify-content: space-between; /* Pushes Logo to Far-Left, Nav to Far-Right */
+        align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 10px 20px;
     }
 
-    .nav-links { flex-direction: row; gap: 2rem; }
+    .nav-links {
+        flex-direction: row;        /* Horizontal menu links */
+        gap: 2.5rem;                /* Generous spacing between links */
+    }
 
-    header h1 { margin-bottom: 0; }
+    header h1 {
+        margin-bottom: 0;           /* Removes mobile margin to align with nav */
+        font-size: 1.5rem;
+    }
 
-    /* Directory 3-Column Grid */
+    /* --- MEMBER CONTAINER: 3-Column Grid --- */
     #member-container.grid {
         display: grid;
+        /* Arranges the 7 members into 3 equal columns */
         grid-template-columns: repeat(3, 1fr); 
-        gap: 25px;
+        gap: 30px;
         max-width: 1100px;
-        margin: 30px auto;
+        margin: 40px auto;
+        padding: 0 20px;
     }
 
-    /* Footer Layout */
+    .member-card {
+        max-width: 100%;            /* Cards expand to fill the grid slot */
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .member-card:hover {
+        transform: scale(1.02);     /* Subtle lift effect on hover */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* --- LIST VIEW: Spreadsheet Style --- */
+    #member-container.list .member-card {
+        display: grid;
+        /* Columns: Name, Address, Phone, Website, Membership */
+        grid-template-columns: 1.5fr 2fr 1.2fr 1fr 1fr;
+        align-items: center;
+        padding: 15px 25px;
+        text-align: left;
+    }
+
+    #member-container.list .member-card * {
+        margin: 0;
+        padding: 0 5px;
+    }
+
+    /* --- FOOTER: 3-Section Layout --- */
     .footer-top {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Contact, Social, Meta */
+        grid-template-columns: 1fr 1fr 1fr; /* Contact | Social | Meta */
         align-items: center;
-        text-align: left;
         max-width: 1200px;
         margin: 0 auto;
+        text-align: center;
     }
 
-    .social-media { justify-content: center; }
+    .footer-contact {
+        text-align: left;           /* Contact info on the left */
+    }
 
-    .footer-meta { text-align: right; }
+    .social-media {
+        justify-content: center;    /* Icons stay centered */
+    }
+
+    .footer-meta {
+        text-align: right;          /* Author and Date on the right */
+        border-top: none;           /* Remove mobile divider */
+        padding-top: 0;
+    }
+}
+
+/* --- EXTRA LARGE SCREENS (Optional refinement) --- */
+@media (min-width: 1000px) {
+    #member-container.grid {
+        gap: 40px;                  /* More white space for readability */
+    }
 }
