@@ -4,9 +4,13 @@ const gridBtn = document.querySelector("#grid");
 const listBtn = document.querySelector("#list");
 
 async function getMembers() {
-    const response = await fetch(url);
-    const data = await response.json();
-    displayMembers(data.members);
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error("Error fetching member data:", error);
+    }
 }
 
 const displayMembers = (members) => {
@@ -14,13 +18,15 @@ const displayMembers = (members) => {
     members.forEach((member) => {
         const card = document.createElement('section');
         card.className = "member-card";
+        
+        // Audit Fix: Improved Alt text for SEO/Accessibility
         card.innerHTML = `
-            <img src="${member.image}" alt="Logo for ${member.name}" loading="lazy">
+            <img src="${member.image}" alt="Logo for ${member.name}" loading="lazy" width="150" height="100">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <a href="${member.website}" target="_blank">Visit Website</a>
-            <p><strong>Level: ${member.membership}</strong></p>
+            <p><strong>Membership: ${member.membership}</strong></p>
         `;
         container.appendChild(card);
     });
@@ -37,5 +43,7 @@ listBtn.addEventListener("click", () => {
 });
 
 getMembers();
+
+// Date Handlers
 document.querySelector('#currentyear').textContent = new Date().getFullYear();
 document.querySelector('#lastModified').textContent = `Last Modified: ${document.lastModified}`;
