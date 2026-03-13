@@ -1,5 +1,5 @@
 @media (min-width: 600px) {
-    /* Header: Far-Left Logo, Far-Right Nav */
+    /* HEADER: Left and Right alignment */
     .header-container {
         display: flex;
         justify-content: space-between; 
@@ -9,10 +9,9 @@
     }
 
     .logo-box { flex-direction: row; gap: 15px; }
+    .nav-links { flex-direction: row; gap: 2rem; margin-top: 0; }
 
-    .nav-links { flex-direction: row; gap: 2.5rem; margin-top: 0; }
-
-    /* Footer: 3-column Layout (Contact Left | Social Center | Meta Right) */
+    /* FOOTER: Contact Left | Social Center | Meta Right */
     .footer-top {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -22,13 +21,7 @@
     }
 
     .footer-contact { text-align: left; }
-
-    .social-media { 
-        display: flex; 
-        justify-content: center; 
-        gap: 20px; 
-    }
-
+    .social-media { display: flex; justify-content: center; gap: 20px; }
     .footer-meta { text-align: right; }
 
     /* Member Grid: 3 columns */

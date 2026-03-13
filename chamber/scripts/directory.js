@@ -7,7 +7,7 @@ async function getMembers() {
         const data = await response.json();
         displayMembers(data.members);
     } catch (error) {
-        console.error("Error loading members:", error);
+        console.error("Error loading JSON:", error);
     }
 }
 
@@ -17,7 +17,7 @@ const displayMembers = (members) => {
         const card = document.createElement("section");
         card.className = "member-card";
         card.innerHTML = `
-            <img src="${m.image}" alt="${m.name}" loading="lazy">
+            <img src="${m.image}" alt="${m.name} logo" loading="lazy">
             <h3>${m.name}</h3>
             <p>${m.address}</p>
             <p>${m.phone}</p>
