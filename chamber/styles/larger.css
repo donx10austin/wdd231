@@ -1,5 +1,5 @@
 @media (min-width: 768px) {
-    /* Header: Logo Far Left, Nav Far Right */
+    /* Pushes Logo to far left and Nav to far right */
     .header-container {
         flex-direction: row;
         justify-content: space-between;
@@ -7,19 +7,30 @@
         margin: 0 auto;
     }
 
-    .nav-links {
-        flex-direction: row;
-        gap: 30px;
-    }
+    .nav-links { flex-direction: row; gap: 30px; }
 
-    /* Grid: 3 Columns like your screenshot */
+    /* Repetition & Alignment: 3-Column Grid */
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    /* List view logic */
-    #member-container.list {
+    /* List View Styling (Rows) */
+    #member-container.list .member-card {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        padding: 10px 40px;
+        border-radius: 0;
+    }
+
+    /* Footer Spacing */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

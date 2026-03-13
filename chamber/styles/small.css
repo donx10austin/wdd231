@@ -1,8 +1,9 @@
-/* Mobile View */
-header {
+/* Mobile First Layout */
+header, footer {
     background-color: #001a40;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .header-container {
@@ -12,33 +13,30 @@ header {
     gap: 1rem;
 }
 
-.logo-box {
-    text-align: center;
-}
-
-.logo-box img {
-    width: 100px;
-}
+.logo-box img { max-width: 100px; height: auto; }
 
 .nav-links {
-    display: flex;
-    flex-direction: column;
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
 .nav-links a {
-    color: #4d4dff;
+    color: #a0c4ff; /* Lighter blue for AA Contrast compliance */
     text-decoration: none;
     font-weight: bold;
 }
 
-.nav-links a.active {
-    color: #ffd700;
-}
+.nav-links a.active { color: #ffd700; } /* Wayfinding */
 
-#member-container {
+/* Controls */
+.controls { padding: 20px; text-align: center; }
+button { padding: 10px 20px; cursor: pointer; background: #001a40; color: white; border: none; }
+
+/* Grid Cards (Mobile) */
+#member-container.grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -46,13 +44,14 @@ header {
 }
 
 .member-card {
-    border: 1px solid #ccc;
-    padding: 15px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
     text-align: center;
-    background-color: #fff;
 }
 
-.member-card img {
-    width: 150px;
-    height: auto;
-}
+.member-card img { width: 120px; height: auto; margin-bottom: 15px; }
+
+/* REQUIREMENT: No images in list view */
+#member-container.list .member-card img { display: none; }
