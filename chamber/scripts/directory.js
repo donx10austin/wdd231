@@ -2,9 +2,13 @@ const url = "data/members.json";
 const container = document.querySelector("#member-container");
 
 async function getMembers() {
-    const response = await fetch(url);
-    const data = await response.json();
-    displayMembers(data.members);
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error("Error loading members:", error);
+    }
 }
 
 const displayMembers = (members) => {

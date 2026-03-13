@@ -10,8 +10,6 @@ body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; }
 
 header { background-color: var(--navy); color: var(--white); padding: 1rem 5%; }
 
-.header-container { display: flex; flex-direction: column; align-items: center; }
-
 .logo-box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 
 .main-logo { width: 60px; height: auto; background-color: white; padding: 2px; }
@@ -20,22 +18,15 @@ header { background-color: var(--navy); color: var(--white); padding: 1rem 5%; }
 
 .nav-links li a { color: var(--white); text-decoration: none; font-weight: bold; }
 
-.nav-links li a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+.nav-links li a.active { color: var(--gold); border-bottom: 3px solid var(--gold); }
 
-/* Grid styles */
-#member-container.grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
-
-.member-card { background: white; border: 1px solid #ddd; padding: 20px; width: 100%; max-width: 350px; text-align: center; }
-
-.member-card img { height: 60px; margin-bottom: 10px; object-fit: contain; }
-
-/* Footer fix */
+/* Footer fix for icons */
 footer { background-color: var(--navy); color: var(--white); padding: 2rem 5%; font-size: 0.8rem; }
 
-.footer-top { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.footer-top { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
 
 .social-media img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1); /* Makes icons white */
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1); /* Makes black icons white */
 }
