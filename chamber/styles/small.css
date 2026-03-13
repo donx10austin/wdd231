@@ -1,11 +1,11 @@
-/* Mobile Styles */
+/* header layout */
 header {
-    display: flex;
-    flex-direction: column; /* Stacks logo and nav vertically */
-    align-items: center;
-    padding: 1rem;
-    background-color: #001a40; /* Your dark blue */
+    background-color: #001a40; /* Dark blue background */
     color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center;
     text-align: center;
 }
 
@@ -13,11 +13,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 .logo-area img {
-    width: 80px; 
+    width: 100px;
     height: auto;
 }
 
@@ -26,16 +26,16 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Links stay stacked on mobile */
-    gap: 10px;
+    flex-direction: column; /* Links stay stacked */
+    gap: 15px;
 }
 
 nav a {
-    color: #0000ff; /* Blue links */
+    color: #4d4dff; /* Bright blue for links */
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a.active {
-    color: #ffd700; /* Yellow for Directory */
+    color: #ffd700; /* Yellow for the current page */
 }

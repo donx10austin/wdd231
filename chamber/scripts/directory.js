@@ -1,58 +1,44 @@
-const url = "data/members.json"; // Ensure your path is correct
+const url = "data/members.json";
 const cards = document.querySelector('#directory-cards');
 
 async function getMemberData() {
-    const response = await fetch(url);
-    const data = await response.json();
-    displayMembers(data.members);
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
 }
 
 const displayMembers = (members) => {
-    cards.innerHTML = ""; // Clear existing content
+    cards.innerHTML = ""; // Clear loader text or old content
 
     members.forEach((member) => {
         let card = document.createElement('section');
-        let logo = document.createElement('img');
-        let name = document.createElement('h3');
-        let address = document.createElement('p');
-        let phone = document.createElement('p');
-        let website = document.createElement('a');
+        card.className = "member-card";
 
-        name.textContent = member.name;
-        address.textContent = member.address;
-        phone.textContent = member.phone;
-        
-        logo.setAttribute('src', member.image);
-        logo.setAttribute('alt', `Logo of ${member.name}`);
-        logo.setAttribute('loading', 'lazy');
-        logo.setAttribute('width', '100');
-
-        website.textContent = "Visit Website";
-        website.setAttribute('href', member.website);
-        website.setAttribute('target', '_blank');
-
-        card.appendChild(logo);
-        card.appendChild(name);
-        card.appendChild(address);
-        card.appendChild(phone);
-        card.appendChild(website);
+        card.innerHTML = `
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p><strong>Category:</strong> ${member.membership}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+        `;
 
         cards.appendChild(card);
     });
 }
 
-// Grid/List Toggle Logic
+// Initial Call
+getMemberData();
+
+// Optional: Grid/List Toggle (if you have buttons with id="grid" and id="list")
 const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
 
-gridbutton.addEventListener("click", () => {
-    cards.classList.add("grid");
-    cards.classList.remove("list");
-});
-
-listbutton.addEventListener("click", () => {
-    cards.classList.add("list");
-    cards.classList.remove("grid");
-});
-
-getMemberData();
+if (gridbutton && listbutton) {
+    gridbutton.addEventListener("click", () => cards.classList.add("grid"));
+    listbutton.addEventListener("click", () => cards.classList.remove("grid"));
+}
