@@ -1,20 +1,13 @@
-/* --- ROOT VARIABLES --- */
 :root {
     --navy: #002147;
     --gold: #ffcc00;
     --white: #ffffff;
     --bg-gray: #f4f7f9;
     --text-dark: #333333;
-    --text-light: #555555;
     --border-color: #dddddd;
 }
 
-/* --- BASE RESET --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -22,28 +15,14 @@ body {
     color: var(--text-dark);
 }
 
-/* --- HEADER & NAVIGATION --- */
-header {
-    background-color: var(--navy);
-    color: var(--white);
-    padding: 1rem 5%;
-}
+header { background-color: var(--navy); color: var(--white); padding: 1rem 5%; }
 
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+.header-container { display: flex; flex-direction: column; align-items: center; }
 
 .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Mobile stack */
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
@@ -53,42 +32,12 @@ header h1 {
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
-.nav-links li a.active {
-    color: var(--gold);
-    border-bottom: 2px solid var(--gold);
-}
+.nav-links li a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
 
-/* --- VIEW TOGGLE BUTTONS --- */
-.view-toggle {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.view-toggle button {
-    padding: 8px 16px;
-    margin: 0 5px;
-    background-color: var(--navy);
-    color: var(--white);
-    border: 1px solid var(--white);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-/* --- MEMBER CONTAINER (GRID VIEW) --- */
-#member-container.grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
+/* Grid Cards */
+#member-container.grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
 
 .member-card {
     background-color: var(--white);
@@ -97,96 +46,19 @@ header h1 {
     width: 100%;
     max-width: 350px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.member-card img {
-    height: 60px;
-    width: auto;
-    max-width: 150px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
+.member-card img { height: 60px; object-fit: contain; margin-bottom: 15px; }
 
-.member-card h3 {
-    font-size: 0.95rem;
-    margin: 10px 0;
-    color: #000;
-}
+/* Footer Icons Fixing Visibility */
+footer { background-color: var(--navy); color: var(--white); padding: 2rem 5%; font-size: 0.7rem; }
 
-.member-card p {
-    font-size: 0.75rem;
-    margin: 2px 0;
-    color: var(--text-light);
-}
+.footer-top { display: flex; flex-direction: column; align-items: center; gap: 20px; }
 
-.member-card a {
-    color: #0000ee;
-    font-size: 0.75rem;
-    text-decoration: underline;
-    margin: 10px 0;
-}
-
-.member-card p:last-child {
-    font-weight: bold;
-    color: #000;
-    margin-top: 10px;
-}
-
-/* --- MEMBER CONTAINER (LIST VIEW) --- */
-#member-container.list {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-#member-container.list .member-card {
-    display: block;
-    max-width: 100%;
-    text-align: left;
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
-}
-
-#member-container.list .member-card img {
-    display: none; /* Rubric requirement: List view without images */
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--navy);
-    color: var(--white);
-    padding: 2rem 5%;
-    font-size: 0.7rem;
-    line-height: 1.6;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-}
-
-.social-media {
-    display: flex;
-    gap: 15px;
-}
+.social-media { display: flex; gap: 15px; }
 
 .social-media img {
     width: 24px;
     height: 24px;
-    /* This filter makes black PNGs appear white */
-    filter: brightness(0) invert(1);
-}
-
-.footer-meta {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 15px;
-    width: 100%;
+    filter: brightness(0) invert(1); /* Forces black PNGs to appear white */
 }

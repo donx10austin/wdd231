@@ -1,95 +1,38 @@
-/* --- DESKTOP STYLES (Screen sizes 600px and above) --- */
 @media (min-width: 600px) {
-
-    /* --- HEADER: Far-Right Navigation --- */
+    /* Header Layout */
     .header-container {
         display: flex;
-        justify-content: space-between; /* Logo on left, Nav on right */
-        align-items: center;
+        flex-direction: row; /* Horizontal row */
+        justify-content: space-between; /* Logo left, Nav right */
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0.5rem 0;
     }
 
-    .nav-links {
-        flex-direction: row; /* Horizontal menu */
-        gap: 30px;
-    }
+    .nav-links { flex-direction: row; gap: 2rem; }
 
-    header h1 {
-        margin-bottom: 0; /* Align with nav */
-    }
+    header h1 { margin-bottom: 0; }
 
-    /* --- MEMBER CONTAINER: 3-Column Grid --- */
+    /* Directory 3-Column Grid */
     #member-container.grid {
         display: grid;
-        /* Matches your screenshot: 3 columns of equal size */
         grid-template-columns: repeat(3, 1fr); 
         gap: 25px;
         max-width: 1100px;
         margin: 30px auto;
-        padding: 0 20px;
     }
 
-    .member-card {
-        max-width: 100%; /* Allow cards to fill grid cells */
-        transition: transform 0.3s ease;
-    }
-
-    .member-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* --- LIST VIEW: Desktop Alignment --- */
-    #member-container.list .member-card {
-        display: grid;
-        /* Name, Address, Phone, Website, Category columns */
-        grid-template-columns: 2fr 2fr 1.5fr 1fr 1.2fr;
-        align-items: center;
-        padding: 12px 20px;
-        text-align: left;
-    }
-
-    #member-container.list .member-card * {
-        margin: 0;
-        padding: 0 5px;
-    }
-
-    /* --- FOOTER: 3-Section Layout --- */
+    /* Footer Layout */
     .footer-top {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Left: Info, Center: Social, Right: Meta */
+        grid-template-columns: 1fr 1fr 1fr; /* Contact, Social, Meta */
         align-items: center;
         text-align: left;
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    .footer-contact {
-        text-align: left;
-    }
+    .social-media { justify-content: center; }
 
-    .social-media {
-        justify-content: center; /* Icons stay in the very middle */
-        margin: 0;
-    }
-
-    .footer-meta {
-        text-align: right; /* Meta info on the far right */
-        border-top: none;
-        padding-top: 0;
-    }
-}
-
-/* --- LARGE SCREEN ADJUSTMENT (Optional polish) --- */
-@media (min-width: 1000px) {
-    #member-container.grid {
-        gap: 40px;
-    }
-    
-    .header-container, .footer-top {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    .footer-meta { text-align: right; }
 }
