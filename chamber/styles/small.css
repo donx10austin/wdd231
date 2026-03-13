@@ -1,41 +1,94 @@
-/* header layout */
-header {
-    background-color: #001a40; /* Dark blue background */
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Stacks elements vertically */
-    align-items: center;
-    text-align: center;
+/* General Reset */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.logo-area {
+/* Header - Mobile (Stacked) */
+header {
+    background-color: #001a40;
+    color: white;
+    padding: 1.5rem 1rem;
+}
+
+.header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    text-align: center;
+    gap: 1rem;
 }
 
-.logo-area img {
-    width: 100px;
+.logo-box img {
+    width: 80px;
     height: auto;
 }
 
-nav ul {
+.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Links stay stacked */
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-nav a {
-    color: #4d4dff; /* Bright blue for links */
+.nav-links a {
+    color: #4d4dff;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a.active {
-    color: #ffd700; /* Yellow for the current page */
+.nav-links a.active {
+    color: #ffd700;
+}
+
+/* Main Content & Buttons */
+.controls {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #001a40;
+    color: white;
+    border: 1px solid #ccc;
+}
+
+/* Member Cards - Single Column Mobile */
+#member-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.member-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.member-card img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Footer - Mobile */
+footer {
+    background-color: #001a40;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.social-media img {
+    width: 24px;
+    margin: 0 10px;
+    filter: invert(1); /* Makes black icons white */
 }

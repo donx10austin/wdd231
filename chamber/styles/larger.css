@@ -1,20 +1,41 @@
-/* Media Query for larger screens */
 @media (min-width: 768px) {
-    header {
-        flex-direction: row;        /* Side-by-side layout */
-        justify-content: space-between; /* Pushes Logo left, Nav right */
-        padding: 20px 5%;          /* Adds space on the outer edges */
+    /* Header: Far Left Logo, Far Right Nav */
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .logo-area {
-        flex-direction: row;        /* Puts logo next to "Lagos Chamber..." */
-        text-align: left;
-        margin-bottom: 0;
-        gap: 20px;
+    .logo-box {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 
-    nav ul {
-        flex-direction: row;        /* Puts links in a horizontal line */
-        gap: 30px;
+    .nav-links {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    /* Grid Layout: 3 Columns */
+    #member-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Footer: Spread out like your screenshot */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-contact, .social-media, .footer-meta {
+        flex: 1;
     }
 }
