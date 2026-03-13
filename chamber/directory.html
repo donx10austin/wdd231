@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Directory | Lagos Chamber of Commerce</title>
-    
-    <meta name="author" content="Austin Anumudu">
-    <meta name="description" content="Access the Lagos Chamber of Commerce directory to find and connect with top-rated local businesses in telecommunications, banking, and energy.">
-    <link rel="icon" href="images/chamber-logo.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <meta property="og:title" content="Lagos Chamber of Commerce Business Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:description" content="Explore the official Lagos Chamber of Commerce directory to find and connect with top-rated, certified local businesses across Lagos.">
-    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
-
+    <title>Lagos Chamber of Commerce - Directory</title>
+    <meta name="description" content="Explore the Lagos Chamber of Commerce member directory. Connecting top businesses in Nigeria including MTN, Glo, and Access Bank.">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 600px)">
-    <script src="scripts/directory.js" defer></script>
+    <link rel="stylesheet" href="styles/larger.css">
+    <script defer src="scripts/directory.js"></script>
 </head>
 <body>
     <header>
-        <h1>Lagos Chamber of Commerce</h1>
+        <nav class="header-container">
+            <div class="logo-box">
+                <h1>Lagos Chamber of Commerce</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="directory.html" class="active">DIRECTORY</a></li>
+                <li><a href="join.html">JOIN</a></li>
+                <li><a href="discover.html">DISCOVER</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <div class="view-toggle">
-            <button id="grid" class="active">Grid View</button>
+            <button id="grid">Grid View</button>
             <button id="list">List View</button>
         </div>
-        <article id="member-container" class="grid"></article>
+
+        <div id="member-container" class="grid">
+            </div>
     </main>
 
     <footer>
-        <div class="footer-info">
-            <p><strong>Lagos Chamber of Commerce</strong></p>
-            <p>12 Marina Road, Lagos Island</p>
-            <p>info@lagoschamber.ng</p>
-        </div>
-        <div class="social-links">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <p><strong>Lagos Chamber of Commerce</strong></p>
+                <p>12 Marina Road, Lagos Island</p>
+                <p>info@lagoschamber.ng</p>
             </div>
-        <div class="footer-copy">
-            <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231</p>
-            <p id="lastModified"></p>
+            
+            <div class="social-media">
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+
+            <div class="footer-meta">
+                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
         </div>
     </footer>
 </body>

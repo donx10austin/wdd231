@@ -1,16 +1,15 @@
-/* --- ROOT VARIABLES (Consistency & Wayfinding) --- */
+/* --- ROOT VARIABLES --- */
 :root {
     --navy: #002147;
     --gold: #ffcc00;
     --white: #ffffff;
-    --light-gray: #f9f9f9;
-    --border-color: #e0e0e0;
-    --text-main: #333333;
-    --text-heading: #000000;
-    --link-color: #0000ee;
+    --bg-gray: #f4f7f9;
+    --text-dark: #333333;
+    --text-light: #555555;
+    --border-color: #dddddd;
 }
 
-/* --- BASE STYLES --- */
+/* --- BASE RESET --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,35 +17,35 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--light-gray);
-    color: var(--text-main);
-    line-height: 1.5;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
 }
 
-/* --- HEADER (Wayfinding) --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     background-color: var(--navy);
     color: var(--white);
-    padding: 1.2rem;
-    text-align: left;
+    padding: 1rem 5%;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-/* --- NAVIGATION (Responsiveness) --- */
-nav {
-    background-color: var(--navy);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    padding: 10px;
-    gap: 15px;
+    flex-direction: column; /* Mobile stack */
+    align-items: center;
+    gap: 10px;
 }
 
 .nav-links li a {
@@ -54,49 +53,49 @@ nav {
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* Wayfinding: Highlight Active Page */
 .nav-links li a.active {
     color: var(--gold);
+    border-bottom: 2px solid var(--gold);
 }
 
-/* --- CONTROLS --- */
+/* --- VIEW TOGGLE BUTTONS --- */
 .view-toggle {
     display: flex;
     justify-content: center;
-    gap: 10px;
     padding: 20px;
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
 }
 
 .view-toggle button {
-    padding: 6px 12px;
+    padding: 8px 16px;
+    margin: 0 5px;
     background-color: var(--navy);
-    color: white;
-    border: 1px solid var(--navy);
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 0.75rem;
-    border-radius: 2px;
+    font-size: 0.8rem;
 }
 
-/* --- DIRECTORY CONTAINER (Proximity & Alignment) --- */
+/* --- MEMBER CONTAINER (GRID VIEW) --- */
 #member-container.grid {
     display: flex;
-    flex-direction: column; /* Mobile Stack */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px;
 }
 
-/* --- MEMBER CARD (Repetition & Screenshot Match) --- */
 .member-card {
     background-color: var(--white);
     border: 1px solid var(--border-color);
-    padding: 25px 15px;
+    padding: 30px 15px;
     width: 100%;
-    max-width: 320px;
+    max-width: 350px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -104,44 +103,42 @@ nav {
 }
 
 .member-card img {
-    height: 60px; /* Force uniform height for alignment */
+    height: 60px;
     width: auto;
-    max-width: 140px;
+    max-width: 150px;
     object-fit: contain;
     margin-bottom: 15px;
 }
 
 .member-card h3 {
     font-size: 0.95rem;
-    margin-bottom: 10px;
-    color: var(--text-heading);
+    margin: 10px 0;
+    color: #000;
 }
 
 .member-card p {
-    font-size: 0.7rem; /* Tiny text like screenshot */
+    font-size: 0.75rem;
     margin: 2px 0;
-    color: #555;
+    color: var(--text-light);
 }
 
 .member-card a {
-    font-size: 0.7rem;
-    color: var(--link-color);
+    color: #0000ee;
+    font-size: 0.75rem;
     text-decoration: underline;
     margin: 10px 0;
 }
 
-/* The Category line at the bottom */
 .member-card p:last-child {
     font-weight: bold;
-    color: var(--text-heading);
+    color: #000;
     margin-top: 10px;
 }
 
-/* --- LIST VIEW OVERRIDE --- */
+/* --- MEMBER CONTAINER (LIST VIEW) --- */
 #member-container.list {
-    display: block;
-    max-width: 900px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
 }
 
@@ -149,13 +146,14 @@ nav {
     display: block;
     max-width: 100%;
     text-align: left;
+    background: none;
     border: none;
     border-bottom: 1px solid var(--border-color);
     padding: 10px 0;
 }
 
 #member-container.list .member-card img {
-    display: none; /* Hide images in list view per rubric */
+    display: none; /* Rubric requirement: List view without images */
 }
 
 /* --- FOOTER --- */
@@ -163,20 +161,32 @@ footer {
     background-color: var(--navy);
     color: var(--white);
     padding: 2rem 5%;
-    font-size: 0.75rem;
-    text-align: left;
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+.footer-top {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
     gap: 15px;
-    margin-top: 40px;
 }
 
-.footer-info p {
-    margin: 3px 0;
+.social-media img {
+    width: 24px;
+    height: 24px;
+    /* This filter makes black PNGs appear white */
+    filter: brightness(0) invert(1);
 }
 
-.footer-copy {
-    text-align: right;
+.footer-meta {
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 10px;
+    padding-top: 15px;
+    width: 100%;
 }

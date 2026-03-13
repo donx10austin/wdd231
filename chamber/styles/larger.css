@@ -1,88 +1,95 @@
-/* --- DESKTOP STYLES (Min-width 600px) --- */
+/* --- DESKTOP STYLES (Screen sizes 600px and above) --- */
 @media (min-width: 600px) {
 
-    /* --- HEADER & NAV ALIGNMENT --- */
-    header {
-        padding: 1.5rem 5%;
+    /* --- HEADER: Far-Right Navigation --- */
+    .header-container {
+        display: flex;
+        justify-content: space-between; /* Logo on left, Nav on right */
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.5rem 0;
     }
 
-    /* --- DIRECTORY GRID (3-Column Repetition) --- */
+    .nav-links {
+        flex-direction: row; /* Horizontal menu */
+        gap: 30px;
+    }
+
+    header h1 {
+        margin-bottom: 0; /* Align with nav */
+    }
+
+    /* --- MEMBER CONTAINER: 3-Column Grid --- */
     #member-container.grid {
         display: grid;
-        /* Matches your screenshot: 3 cards per row */
+        /* Matches your screenshot: 3 columns of equal size */
         grid-template-columns: repeat(3, 1fr); 
-        gap: 30px;
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 40px;
+        gap: 25px;
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
 
     .member-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        max-width: 100%; /* Allow cards to fill grid cells */
+        transition: transform 0.3s ease;
     }
 
     .member-card:hover {
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transform: translateY(-3px);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* --- LIST VIEW ALIGNMENT --- */
+    /* --- LIST VIEW: Desktop Alignment --- */
     #member-container.list .member-card {
         display: grid;
-        /* Columns: Name, Address, Phone, Website, Category */
-        grid-template-columns: 2fr 2fr 1.5fr 1fr 1.5fr;
+        /* Name, Address, Phone, Website, Category columns */
+        grid-template-columns: 2fr 2fr 1.5fr 1fr 1.2fr;
         align-items: center;
-        padding: 15px 20px;
+        padding: 12px 20px;
+        text-align: left;
     }
 
-    #member-container.list .member-card h3 {
+    #member-container.list .member-card * {
         margin: 0;
-        font-size: 0.9rem;
+        padding: 0 5px;
     }
 
-    #member-container.list .member-card p,
-    #member-container.list .member-card a {
-        margin: 0;
-        padding: 0 10px;
-    }
-
-    /* --- FOOTER LAYOUT (Alignment & Proximity) --- */
-    footer {
+    /* --- FOOTER: 3-Section Layout --- */
+    .footer-top {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Left, Center (Icons), Right */
+        grid-template-columns: 1fr 1fr 1fr; /* Left: Info, Center: Social, Right: Meta */
         align-items: center;
         text-align: left;
-        padding: 2.5rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .footer-info {
-        grid-column: 1;
+    .footer-contact {
+        text-align: left;
     }
 
-    .social-links {
-        grid-column: 2;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
+    .social-media {
+        justify-content: center; /* Icons stay in the very middle */
+        margin: 0;
     }
 
-    .footer-copy {
-        grid-column: 3;
-        text-align: right;
+    .footer-meta {
+        text-align: right; /* Meta info on the far right */
         border-top: none;
         padding-top: 0;
     }
-
-    /* Ensure the 7th card (Dangote) centers or aligns correctly */
-    #member-container.grid section:last-child {
-        /* Optional: If you want the 7th card alone on the bottom row to center */
-        /* grid-column: 2; */
-    }
 }
 
-/* --- LARGE SCREEN POLISH --- */
+/* --- LARGE SCREEN ADJUSTMENT (Optional polish) --- */
 @media (min-width: 1000px) {
     #member-container.grid {
         gap: 40px;
+    }
+    
+    .header-container, .footer-top {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
