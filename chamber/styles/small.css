@@ -57,32 +57,23 @@ main {
     display: inline-block;
 }
 
-/* Footer Centering */
 footer {
     background-color: #003366;
     color: white;
-    padding: 2rem 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This centers everything horizontally */
+    align-items: center; /* Centers everything */
     text-align: center;
     gap: 1rem;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
 .social-links img {
-    width: 32px;
-    height: auto;
+    width: 30px;
     filter: brightness(0) invert(1); /* Makes icons white */
-}
-
-#lastModified {
-    color: #ffcc00; /* Yellow accent to make it visible */
-    font-size: 0.85rem;
-    margin-top: 5px;
 }

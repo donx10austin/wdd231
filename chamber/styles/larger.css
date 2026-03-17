@@ -1,54 +1,62 @@
+/* --- LARGER VIEWPORTS (Desktop) --- */
 @media screen and (min-width: 48rem) {
-    .header-content {
+
+    /* 1. HEADER: Forces Title LEFT and Nav RIGHT */
+    /* Make sure your HTML has <div class="header-container"> inside the <header> */
+    .header-container {
         display: flex;
-        justify-content: space-between; /* Pushes Title LEFT, Nav RIGHT */
+        justify-content: space-between; 
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 10px 5%;
+    }
+
+    header h1 {
+        margin: 0;
     }
 
     nav ul {
-        display: flex;
-        gap: 20px;
-    }
-
-    /* Footer Desktop Layout */
-    footer {
+        display: flex; /* Horizontal menu */
         flex-direction: row;
-        justify-content: space-between;
-        padding: 2rem 5%;
-    }
-}
-
-    header h1 { font-size: 1.5rem; }
-
-    nav ul {
-        display: flex; /* Horizontal Menu */
-        gap: 20px;
+        gap: 25px;
+        list-style: none;
     }
 
-    nav ul li a { border: none; }
+    nav ul li a {
+        border-bottom: none;
+        padding: 5px 10px;
+    }
 
-    /* LAYOUT GRID */
+    /* 2. MAIN CONTENT: Grid Layout */
     .grid-container {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
+        grid-template-columns: 2fr 1fr; /* Weather/Events split */
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     #spotlight-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
         gap: 20px;
     }
 
-    /* FOOTER DESKTOP */
+    /* 3. FOOTER: Professional Desktop Layout */
     footer {
-        flex-direction: row;
+        flex-direction: row; /* Side-by-side on desktop */
         justify-content: space-between;
+        align-items: center;
         padding: 2rem 5%;
     }
 
-    .social-links { order: 2; margin-bottom: 0; }
+    .social-links {
+        order: 2; /* Moves icons to the far right */
+        margin-bottom: 0;
+    }
+
+    .footer-top, .footer-bottom {
+        text-align: left;
+    }
 }
