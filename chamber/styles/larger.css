@@ -9,14 +9,14 @@
 
   /* Centered and wider containers on large screens (Alignment) */
   .header-container, main, .footer-top {
-    max-width: 100%; /* REQUIRED: Elastic wide ends */
-    margin: 0;
-    padding: 0 40px; /* Custom padding unique to the page */
+    max-width: 100%; /* REQUIRED for wide, elastic ends */
+    margin: 0; /* Aligns left */
+    padding: 0 40px; /* Custom padding on ends */
   }
 
-  /* Header structure (Flexbox, wide alignment) */
+  /* Header structure (Elasticity and Alignment) */
   .header-container {
-    display: flex;
+    display: flex; /* Flexbox unique to the page error correction */
     justify-content: space-between; /* REQUIRED: Aligns branding and nav to ends */
     align-items: center;
     padding: var(--spacing-md) 40px;
@@ -32,8 +32,9 @@
 
   /* Navigation (Horizontal links, aligned right) */
   .nav-links {
-    flex-direction: row; /* Horizontal flow */
+    flex-direction: row; /* Flex in a horizontal row */
     gap: 1.5rem;
+    width: auto;
   }
 
   /* Main padding */
@@ -43,23 +44,41 @@
 
   /* Hero Section (FIXED: Enforce Single-Column Layout on Desktop) */
   .hero-container {
-    grid-template-columns: 1fr; /* Single column stacking */
-    padding: 150px 40px; /* Enhanced robust padding for visual pleasant appearance */
+    grid-template-columns: 1fr; /* Single columnstack, not two columns */
+    padding: 150px 40px; /* Robust padding optimized for Lagos businesses */
   }
 
   .hero-text h2 {
     font-size: 2.2rem;
   }
 
-  /* Events/Forecast (FIXED: Stack vertically for proximity on desktop) */
+  /* Events/Forecast (FIXED: Stack vertically on desktop) */
   .events-highlight, .weather-forecast {
-    grid-template-columns: 1fr; /* Single column stack */
+    grid-template-columns: 1fr; /* Stack logical blocks vertically for proximity */
   }
 
-  /* Footer structure (Flexbox, wide alignment) */
+  /* Dedicated Lagos Logo Section on Desktop */
+  .lagos-logo {
+    display: flex; /* REQUIRED: Flexibility for central alignment */
+    justify-content: center; /* REQUIRED for wide horizontal alignment */
+    align-items: center;
+    background-color: #f0f0f0; /* standard principle to create a unique block */
+    padding: var(--spacing-lg) 40px; /* Aligns with content ends */
+    margin-bottom: var(--spacing-lg);
+    border-radius: 8px;
+  }
+
+  .lagos-identifier {
+    /* REQUIRED: Path now points to a JPG identifier */
+    width: 250px; 
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Footer structure (Elasticity and Alignment) */
   .footer-top {
     flex-direction: row;
-    justify-content: space-between; /* REQUIRED: Wide ends */
+    justify-content: space-between; /* REQUIRED: Wide horizontal ends */
     align-items: start;
     text-align: left;
     padding: var(--spacing-lg) 40px;
