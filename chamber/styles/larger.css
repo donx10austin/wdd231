@@ -1,66 +1,144 @@
-/* Tablet and Desktop Styles */
-@media (min-width: 768px) {
+/* --- Tablet and Desktop Styles --- */
+@media screen and (min-width: 768px) {
 
-    /* HEADER: Branding left, Navigation right */
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
+  /* --- Global & Reusable --- */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
 
-    .nav-links {
-        flex-direction: row;
-        gap: 2.5rem;
-    }
+  /* Centering containers on large screens */
+  .header-container, main, .footer-top {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
 
-    /* MAIN: Center the content */
-    main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 3rem 20px;
-    }
+  /* --- Header & Navigation --- */
+  .header-container {
+    flex-direction: row; /* Horizontal flow */
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
 
-    /* GRID VIEW: Professional 3-column layout */
-    #member-container.grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
+  .logo-box img {
+    width: 80px; /* Larger logo for desktop */
+  }
 
-    /* LIST VIEW: Wide row layout */
-    #member-container.list {
-        display: flex;
-        flex-direction: column;
-    }
+  .site-name {
+    font-size: 1.5rem;
+  }
 
-    #member-container.list .member-card {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        align-items: center;
-        text-align: left;
-        padding: 15px 25px;
-        border-radius: 0;
-        border-bottom: 1px solid #ddd;
-    }
+  /* Desktop Navigation */
+  .nav-links {
+    flex-direction: row; /* Horizontal links */
+    gap: 1.5rem;
+    width: auto;
+  }
 
-    /* FOOTER: Flexbox for balanced layout */
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        text-align: left;
-    }
+  .nav-links li {
+    width: auto;
+  }
 
-    .social-media {
-        margin: 0; /* Removes mobile margin */
-        justify-content: center;
-    }
+  .nav-links a {
+    padding: 5px 10px;
+    border-bottom: none; /* Remove mobile borders */
+  }
 
-    .footer-meta {
-        text-align: right;
-    }
+  .nav-links a.active {
+    border-bottom: 2px solid var(--accent-color);
+  }
+
+  /* --- Main Content --- */
+  main {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  /* Hero Section (Two-Column Layout) */
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    gap: var(--spacing-lg);
+    background-color: var(--primary-color); /* Add background to section */
+    overflow: hidden; /* Ensure image fits */
+    border-radius: 8px;
+    filter: none; /* Remove global filter */
+  }
+
+  .hero-image {
+    grid-column: 2; /* Move image to right */
+    height: 100%;
+    filter: none; /* Remove filter on image itself */
+  }
+
+  .hero-text {
+    position: static; /* Reset absolute positioning */
+    transform: none;
+    grid-column: 1; /* Text on the left */
+    padding: var(--spacing-lg);
+    width: auto;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
+
+  /* Events & Weather in side-by-side columns */
+  .events-highlight, .weather-forecast {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+  }
+
+  /* Or use Flexbox for events list */
+  .events-list {
+    flex-direction: row; /* Events side-by-side */
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+
+  .event-item {
+    flex: 1 1 300px; /* Grow, shrink, base width */
+  }
+
+  /* Forecast items horizontally */
+  .forecast-details {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+
+  /* Spotlight Grid (Repetition & Alignment) */
+  .spotlight-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptive grid */
+    gap: var(--spacing-lg);
+  }
+
+  /* --- Footer --- */
+  .footer-top {
+    flex-direction: row; /* Horizontal flow */
+    justify-content: space-between;
+    align-items: start;
+    text-align: left;
+  }
+
+  .footer-contact {
+    flex: 1;
+  }
+
+  .social-media {
+    flex: 1;
+    justify-content: center; /* Center icons in their space */
+    margin: 0;
+  }
+
+  .footer-meta {
+    flex: 1;
+    text-align: right;
+    border-top: none; /* Remove mobile border */
+    padding-top: 0;
+  }
 }

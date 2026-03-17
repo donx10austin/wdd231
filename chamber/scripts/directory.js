@@ -1,62 +1,128 @@
-// 1. Set the URL for the member data
-const url = "data/members.json";
-const container = document.querySelector('#member-container');
-const gridBtn = document.querySelector("#grid");
-const listBtn = document.querySelector("#list");
+// scripts/main.js
 
-// 2. Fetch the JSON data
-async function getMembers() {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error("Failed to fetch member data");
-        }
-        const data = await response.json();
-        displayMembers(data.members);
-    } catch (error) {
-        console.error("Error loading JSON:", error);
-        container.innerHTML = `<p class="error">Sorry, we couldn't load the directory at this time.</p>`;
+// --- Footer Date Handlers ---
+function setFooterDates() {
+    const currentYear = new Date().getFullYear();
+    const currentYearElement = document.querySelector('#currentyear');
+    if (currentYearElement) {
+        currentYearElement.textContent = currentYear;
+    }
+
+    const lastMod = document.lastModified;
+    const lastModifiedElement = document.querySelector('#lastModified');
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = `Last Modified: ${lastMod}`;
     }
 }
 
-// 3. Display the members
-const displayMembers = (members) => {
-    container.innerHTML = ""; // Clear existing content
+// --- Weather API Integration ---
+const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your actual API key
+const city = 'Lagos,NG';
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
-    members.forEach((member) => {
+async function fetchWeather() {
+    try {
+        const response = await fetch(weatherUrl);
+        if (!response.ok) throw new Error('Weather data fetch failed');
+        const data = await response.json();
+        displayCurrentWeather(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function displayCurrentWeather(data) {
+    document.querySelector('#current-temp').textContent = Math.round(data.main.temp);
+    document.querySelector('#weather-desc').textContent = data.weather[0].description;
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    const iconElement = document.querySelector('#weather-icon');
+    iconElement.src = iconUrl;
+    iconElement.alt = data.weather[0].description;
+}
+
+async function fetchForecast() {
+    try {
+        const response = await fetch(forecastUrl);
+        if (!response.ok) throw new Error('Forecast data fetch failed');
+        const data = await response.json();
+        displayForecast(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function displayForecast(data) {
+    const forecastList = document.querySelector('#forecast-list');
+    forecastList.innerHTML = ''; // Clear existing content
+
+    // Filter to get one forecast per day (e.g., at 12:00:00)
+    const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
+
+    dailyData.forEach(day => {
+        const date = new Date(day.dt * 1000);
+        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+        const temp = Math.round(day.main.temp);
+        const desc = day.weather[0].description;
+
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span class="forecast-day">${dayName}:</span>
+            <span class="forecast-temp">${temp}°F</span>,
+            <span class="forecast-desc">${desc}</span>
+        `;
+        forecastList.appendChild(li);
+    });
+}
+
+// --- Member Spotlight ---
+const membersUrl = 'data/members.json';
+
+async function fetchSpotlights() {
+    try {
+        const response = await fetch(membersUrl);
+        if (!response.ok) throw new Error('Member data fetch failed');
+        const data = await response.json();
+        displaySpotlights(data.members);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function displaySpotlights(members) {
+    const spotlightContainer = document.querySelector('#spotlight-container');
+    spotlightContainer.innerHTML = ''; // Clear placeholders
+
+    // Filter for Gold or Silver members
+    const eligibleMembers = members.filter(member => 
+        member.membership === 'Gold' || member.membership === 'Silver'
+    );
+
+    // Randomly select 2 or 3 members
+    const numberOfSpotlights = Math.floor(Math.random() * 2) + 2; // Generates 2 or 3
+    const shuffledMembers = eligibleMembers.sort(() => 0.5 - Math.random());
+    const selectedMembers = shuffledMembers.slice(0, numberOfSpotlights);
+
+    selectedMembers.forEach(member => {
         const card = document.createElement('section');
-        card.className = "member-card";
-
-        // Requirement: Lazy loading images and descriptive alt text
+        card.className = 'member-card spotlight-card';
         card.innerHTML = `
-            <img src="${member.image}" alt="Logo for ${member.name}" loading="lazy" width="150" height="100">
-            <h3>${member.name}</h3>
+            <img src="${member.image}" alt="Logo for ${member.name}" class="member-logo" loading="lazy">
+            <h4>${member.name}</h4>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <p><strong>Membership Level:</strong> ${member.membership}</p>
             <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
         `;
-        container.appendChild(card);
+        spotlightContainer.appendChild(card);
     });
 }
 
-// 4. Grid and List Toggle Events
-gridBtn.addEventListener("click", () => {
-    container.classList.add("grid");
-    container.classList.remove("list");
+// --- Initialization ---
+window.addEventListener('load', () => {
+    setFooterDates();
+    fetchWeather();
+    fetchForecast();
+    fetchSpotlights();
 });
-
-listBtn.addEventListener("click", () => {
-    container.classList.add("list");
-    container.classList.remove("grid");
-});
-
-// 5. Footer Date Handlers
-const currentYear = new Date().getFullYear();
-document.querySelector('#currentyear').textContent = currentYear;
-
-const lastMod = document.lastModified;
-document.querySelector('#lastModified').textContent = `Last Modified: ${lastMod}`;
-
-// 6. Initialize the page
-getMembers();
