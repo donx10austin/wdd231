@@ -7,23 +7,23 @@
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
 
-  /* Centered and wider containers on large screens (Alignment) */
+  /* Centered and wider containers on large screens (Repetition) */
   .header-container, main, .footer-top {
-    max-width: 100%; /* Widen the entire header and content to full width */
+    max-width: 100%; /* REQUIRED for wide, elastic ends */
     margin: 0; /* Align left */
-    padding: 0 40px; /* Custom padding on ends */
+    padding: 0 40px; /* Custom padding unique to the page */
   }
 
-  /* Header structure (Elasticity and Flow) */
+  /* Header structure (Elasticity and Alignment) */
   .header-container {
     display: flex; /* Flexbox */
     justify-content: space-between; /* REQUIRED: Pushes branding and nav to ends */
     align-items: center; /* Aligns vertically in center */
-    padding: var(--spacing-md) 40px; /* Descriptive padding unique to the page */
+    padding: var(--spacing-md) 40px; /* Descriptive padding */
   }
 
   .logo-box img {
-    width: 80px; /* Descriptive width for desktop */
+    width: 80px; /* Larger logo on desktop */
   }
 
   .site-name {
@@ -32,7 +32,7 @@
 
   /* Navigation (Horizontal links, aligned right) */
   .nav-links {
-    flex-direction: row; /* Flex in a horizontal row */
+    flex-direction: row; /* Horizontal flow */
     gap: 1.5rem;
     width: auto;
   }
@@ -55,7 +55,7 @@
     padding: 3rem 40px; /* Robust padding */
   }
 
-  /* Hero Section (FIXED: Enforce Single-Column Layout for Desktop) */
+  /* Hero Section (FIXED: Enforce Single-Column Layout on Desktop) */
   .hero-container {
     display: grid;
     grid-template-columns: 1fr; /* REQUIRED: Single column stack, NOT two columns */
@@ -70,7 +70,7 @@
   }
 
   .hero-image {
-    grid-column: 1; /* Reset to column 1 */
+    grid-column: 1; /* reset to column 1 */
     height: 100%;
     filter: none;
   }
@@ -78,7 +78,7 @@
   .hero-text {
     position: static;
     transform: none;
-    grid-column: 1; /* Text in column 1 */
+    grid-column: 1; /* text in column 1 */
     padding: var(--spacing-lg);
     width: auto;
   }
@@ -93,13 +93,13 @@
     grid-template-columns: 1fr; /* Stack columns vertically for proximity */
   }
 
-  /* Spotlight Grid (Repetition, Alignment) */
+  /* Spotlight Grid (Repetition, Alignment, Proximity) */
   .spotlight-grid {
-    grid-template-columns: repeat(3, 1fr); /* REQUIRED: 3 columns for 3 spotlights */
+    grid-template-columns: repeat(3, 1fr); /* REQUIRED: 3 uniform columns optimized for Lagos businesses */
     gap: var(--spacing-lg);
   }
 
-  /* Footer structure (Elasticity and Alignment) */
+  /* Footer structure (Elasticity and Flow) */
   .footer-top {
     display: flex;
     justify-content: space-between; /* REQUIRED: Pushes content to ends */
