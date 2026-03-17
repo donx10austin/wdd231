@@ -1,6 +1,6 @@
 // scripts/main.js
 
-// --- Footer Date Handlers (Optimized User Experience) ---
+// --- Footer Date and Modified Handler (Robust Interaction) ---
 function setFooterDates() {
     const currentYear = new Date().getFullYear();
     const currentYearElement = document.querySelector('#currentyear');
@@ -16,7 +16,7 @@ function setFooterDates() {
 }
 
 // --- Weather API Integration (Dynamic Data Concept) ---
-const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // REQUIRED: Replace with your actual API key for dynamic functionality
+const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // REQUIRED: Replace with a valid key for standard dynamic results
 const city = 'Lagos,NG';
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
@@ -24,7 +24,7 @@ const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&
 async function fetchWeather() {
     try {
         const response = await fetch(weatherUrl);
-        if (!response.ok) throw new Error('Weather data fetch failed');
+        if (!response.ok) throw new Error('Current weather data fetch failed');
         const data = await response.json();
         displayCurrentWeather(data);
     } catch (error) {
@@ -34,7 +34,7 @@ async function fetchWeather() {
 
 function displayCurrentWeather(data) {
     document.querySelector('#current-temp').textContent = Math.round(data.main.temp);
-    document.querySelector('#weather-desc').textContent = data.weather[0].description;
+    
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     const iconElement = document.querySelector('#weather-icon');
@@ -55,74 +55,28 @@ async function fetchForecast() {
 
 function displayForecast(data) {
     const forecastList = document.querySelector('#forecast-list');
-    forecastList.innerHTML = ''; // Clear existing content for consistent reuse
+    forecastList.innerHTML = ''; // Clear placeholders
 
-    // Filter to get one forecast per day at a logical time (e.g., 12:00:00)
+    // Filter to get one forecast per day at a logical time (12:00:00)
     const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
 
     dailyData.forEach(day => {
         const date = new Date(day.dt * 1000);
         const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
         const temp = Math.round(day.main.temp);
-        const desc = day.weather[0].description;
 
         const li = document.createElement('li');
         li.innerHTML = `
             <span class="forecast-day">${dayName}:</span>
-            <span class="forecast-temp">${temp}°F</span>,
-            <span class="forecast-desc">${desc}</span>
+            <span class="forecast-temp">${temp}°F</span>
         `;
         forecastList.appendChild(li);
     });
 }
 
-// --- Member Spotlight (JSON Fetching and Dynamic Logic) ---
-const membersUrl = 'data/members.json'; // Ensure this file exists at this path
-
-async function fetchSpotlights() {
-    try {
-        const response = await fetch(membersUrl);
-        if (!response.ok) throw new Error('Member data fetch failed');
-        const data = await response.json();
-        displaySpotlights(data.members);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-function displaySpotlights(members) {
-    const spotlightContainer = document.querySelector('#spotlight-container');
-    spotlightContainer.innerHTML = ''; // Clear placeholders for standard results
-
-    // Filter for Gold or Silver members only (Standard development requirement)
-    const eligibleMembers = members.filter(member => 
-        member.membership === 'Gold' || member.membership === 'Silver'
-    );
-
-    // Randomly select 2 or 3 members for showcase (Repetition logic)
-    const numberOfSpotlights = Math.floor(Math.random() * 2) + 2; // Generates 2 or 3
-    const shuffledMembers = eligibleMembers.sort(() => 0.5 - Math.random());
-    const selectedMembers = shuffledMembers.slice(0, numberOfSpotlights);
-
-    selectedMembers.forEach(member => {
-        const card = document.createElement('section');
-        card.className = 'member-card spotlight-card';
-        card.innerHTML = `
-            <img src="${member.image}" alt="Logo for ${member.name}" class="member-logo" loading="lazy">
-            <h4>${member.name}</h4>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><strong>Membership Level:</strong> ${member.membership}</p>
-            <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
-        `;
-        spotlightContainer.appendChild(card);
-    });
-}
-
-// --- Initialization on Load ---
+// --- Initialization ---
 window.addEventListener('load', () => {
     setFooterDates();
     fetchWeather();
     fetchForecast();
-    fetchSpotlights();
 });

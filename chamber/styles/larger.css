@@ -7,23 +7,23 @@
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
 
-  /* Centered and wider containers on large screens (Repetition) */
+  /* Centered and wider containers on large screens (Alignment) */
   .header-container, main, .footer-top {
-    max-width: 100%; /* REQUIRED for wide, elastic ends */
-    margin: 0; /* Align left */
+    max-width: 100%; /* REQUIRED: Elastic wide ends */
+    margin: 0;
     padding: 0 40px; /* Custom padding unique to the page */
   }
 
-  /* Header structure (Elasticity and Alignment) */
+  /* Header structure (Flexbox, wide alignment) */
   .header-container {
-    display: flex; /* Flexbox */
-    justify-content: space-between; /* REQUIRED: Pushes branding and nav to ends */
-    align-items: center; /* Aligns vertically in center */
-    padding: var(--spacing-md) 40px; /* Descriptive padding */
+    display: flex;
+    justify-content: space-between; /* REQUIRED: Aligns branding and nav to ends */
+    align-items: center;
+    padding: var(--spacing-md) 40px;
   }
 
   .logo-box img {
-    width: 80px; /* Larger logo on desktop */
+    width: 80px; /* Descriptive, unique width for desktop */
   }
 
   .site-name {
@@ -34,94 +34,34 @@
   .nav-links {
     flex-direction: row; /* Horizontal flow */
     gap: 1.5rem;
-    width: auto;
-  }
-
-  .nav-links li {
-    width: auto;
-  }
-
-  .nav-links a {
-    padding: 5px 10px;
-    border-bottom: none; /* Reset mobile border */
-  }
-
-  .nav-links a.active {
-    border-bottom: 2px solid var(--accent-color);
   }
 
   /* Main padding */
   main {
-    padding: 3rem 40px; /* Robust padding */
+    padding: 3rem 40px;
   }
 
   /* Hero Section (FIXED: Enforce Single-Column Layout on Desktop) */
   .hero-container {
-    display: grid;
-    grid-template-columns: 1fr; /* REQUIRED: Single column stack, NOT two columns */
-    align-items: center;
-    text-align: left;
-    gap: var(--spacing-lg);
-    background-color: var(--primary-color);
-    overflow: hidden;
-    border-radius: 8px;
-    filter: none;
-    padding: var(--spacing-lg);
-  }
-
-  .hero-image {
-    grid-column: 1; /* reset to column 1 */
-    height: 100%;
-    filter: none;
-  }
-
-  .hero-text {
-    position: static;
-    transform: none;
-    grid-column: 1; /* text in column 1 */
-    padding: var(--spacing-lg);
-    width: auto;
+    grid-template-columns: 1fr; /* Single column stacking */
+    padding: 150px 40px; /* Enhanced robust padding for visual pleasant appearance */
   }
 
   .hero-text h2 {
     font-size: 2.2rem;
-    margin-top: 0;
   }
 
-  /* Events/Forecast (FIXED: Stack vertically on desktop) */
+  /* Events/Forecast (FIXED: Stack vertically for proximity on desktop) */
   .events-highlight, .weather-forecast {
-    grid-template-columns: 1fr; /* Stack columns vertically for proximity */
+    grid-template-columns: 1fr; /* Single column stack */
   }
 
-  /* Spotlight Grid (Repetition, Alignment, Proximity) */
-  .spotlight-grid {
-    grid-template-columns: repeat(3, 1fr); /* REQUIRED: 3 uniform columns optimized for Lagos businesses */
-    gap: var(--spacing-lg);
-  }
-
-  /* Footer structure (Elasticity and Flow) */
+  /* Footer structure (Flexbox, wide alignment) */
   .footer-top {
-    display: flex;
-    justify-content: space-between; /* REQUIRED: Pushes content to ends */
+    flex-direction: row;
+    justify-content: space-between; /* REQUIRED: Wide ends */
     align-items: start;
     text-align: left;
-    padding: var(--spacing-lg) 40px; /* Wide ends */
-  }
-
-  .footer-contact {
-    flex: 1;
-  }
-
-  .social-media {
-    flex: 1;
-    justify-content: center;
-    margin: 0;
-  }
-
-  .footer-meta {
-    flex: 1;
-    text-align: right;
-    border-top: none; /* Reset mobile border */
-    padding-top: 0;
+    padding: var(--spacing-lg) 40px;
   }
 }
