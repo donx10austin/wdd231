@@ -57,28 +57,32 @@ main {
     display: inline-block;
 }
 
-/* FOOTER CENTERED */
+/* Footer Centering */
 footer {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: #003366;
+    color: white;
     padding: 2rem 1rem;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* This centers everything horizontally */
+    text-align: center;
+    gap: 1rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 1rem;
 }
 
 .social-links img {
-    width: 30px;
+    width: 32px;
     height: auto;
     filter: brightness(0) invert(1); /* Makes icons white */
 }
 
-footer p { margin: 0.2rem 0; }
+#lastModified {
+    color: #ffcc00; /* Yellow accent to make it visible */
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
