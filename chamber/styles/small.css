@@ -1,109 +1,156 @@
-:root {
-  --primary: #001a40;
-  --secondary: #007bff;
-  --accent: #ffd700;
-}
-
+/* ===== GENERAL ===== */
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* HEADER */
+h1, h2, h3 {
+    margin: 0.5em 0;
+}
+
+section {
+    padding: 15px;
+}
+
+/* ===== HEADER ===== */
 header {
-  background: var(--primary);
-  color: white;
+    background-color: #0b2c4d;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: #eee;
 }
 
-.logo-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
-.logo-box img {
-  width: 60px;
+nav li {
+    border-bottom: 1px solid #ccc;
 }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
 }
 
-.nav-links a {
-  color: #a0c4ff;
+nav a:hover {
+    background-color: #ddd;
 }
 
-.nav-links a.active {
-  color: var(--accent);
+/* ===== HERO ===== */
+.hero {
+    position: relative;
 }
 
-/* HERO */
-.hero-container {
-  position: relative;
-  background: url('../images/hero-image.jpg') center/cover;
-  border-radius: 10px;
-  margin: 20px;
-}
-
-.hero-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  border-radius: 10px;
+.hero img {
+    width: 100%;
+    height: auto;
 }
 
 .hero-text {
-  position: relative;
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
+    padding: 10px;
+    text-align: center;
 }
 
-/* BUTTONS */
-.btn-primary {
-  background: var(--secondary);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+.cta-button {
+    display: inline-block;
+    background-color: #0b2c4d;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
-.btn-outline {
-  border: 2px solid var(--secondary);
-  padding: 10px 20px;
-  display: inline-block;
+/* ===== EVENTS ===== */
+.events article {
+    margin-bottom: 15px;
 }
 
-/* EVENTS + WEATHER */
-.events-weather {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+/* ===== WEATHER ===== */
+.weather {
+    background-color: #f4f4f4;
 }
 
-.event-item, .weather-card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.forecast p {
+    margin: 5px 0;
 }
 
-/* FOOTER */
-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 20px;
+#weather-icon {
+    width: 80px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* ===== SPOTLIGHTS ===== */
+.spotlights {
+    background-color: #fafafa;
+}
+
+#spotlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #0b2c4d;
+    color: white;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* LEFT */
+.footer-left h3 {
+    font-size: 16px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* CENTER (icons) */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-center img {
+    width: 24px;
+    height: 24px;
+}
+
+/* RIGHT */
+.footer-right {
+    font-size: 14px;
+}
+
+/* LINKS */
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }

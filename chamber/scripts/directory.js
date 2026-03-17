@@ -1,18 +1,33 @@
-// FOOTER DATE
-document.getElementById("currentyear").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
+const url = "data/members.json";
+const container = document.querySelector("#directory-container");
 
+async function getMembers() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error("Error fetching members:", error);
+    }
+}
 
-// WEATHER (Replace with your API key)
-const apiKey = "YOUR_API_KEY";
+function displayMembers(members) {
+    container.innerHTML = "";
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=Lagos&units=imperial&appid=${apiKey}`;
+    members.forEach(member => {
+        const card = document.createElement("section");
 
-fetch(url)
-.then(res => res.json())
-.then(data => {
-  document.getElementById("current-temp").textContent = Math.round(data.main.temp);
+        card.innerHTML = `
+            <img src="${member.image}" alt="${member.name} logo">
+            <h3>${member.name}</h3>
+            <p>${member.membership}</p>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+        `;
 
-  const icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-  document.getElementById("weather-icon").src = icon;
-});
+        container.appendChild(card);
+    });
+}
+
+getMembers();

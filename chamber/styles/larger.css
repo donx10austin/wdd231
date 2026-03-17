@@ -1,24 +1,123 @@
-@media (min-width: 768px) {
-
-.header-container {
-  flex-direction: row;
-  justify-content: space-between;
+/* ===== GENERAL LAYOUT ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.nav-links {
-  flex-direction: row;
+/* ===== NAVIGATION (HORIZONTAL) ===== */
+nav ul {
+    display: flex;
+    justify-content: center;
 }
 
-/* HERO */
+nav li {
+    border: none;
+}
+
+nav a {
+    padding: 15px 20px;
+}
+
+/* ===== HERO (OVERLAY TEXT) ===== */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
 .hero-text {
-  padding: 120px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    max-width: 400px;
 }
 
-/* LAYOUT */
-.events-weather {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
+/* ===== EVENTS + WEATHER SIDE BY SIDE ===== */
+.events,
+.weather {
+    width: 48%;
 }
 
+.events-weather-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* OPTIONAL: if you wrap them later */
+.events-weather-container section {
+    flex: 1;
+}
+
+/* ===== SPOTLIGHTS GRID ===== */
+#spotlight-container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#spotlight-container > * {
+    flex: 1;
+}
+
+/* ===== FOOTER (MATCHES YOUR IMAGE) ===== */
+.footer {
+    background-color: #0b2c4d;
+    color: white;
+    padding: 20px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT */
+.footer-left {
+    text-align: left;
+}
+
+.footer-left h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* CENTER (SOCIAL ICONS) */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-center img {
+    width: 24px;
+    height: 24px;
+}
+
+/* RIGHT */
+.footer-right {
+    text-align: right;
+    font-size: 14px;
+}
+
+/* LINKS */
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }

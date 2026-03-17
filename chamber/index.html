@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Chamber of Commerce | Home</title>
 
-<title>Lagos Chamber of Commerce (LCCI)</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/small.css">
-<link rel="stylesheet" href="css/larger.css">
-
-<script defer src="scripts/main.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
 </head>
 
 <body>
 
 <header>
-  <div class="header-container">
-    <div class="logo-box">
-      <img src="images/logo.png" alt="Logo">
-      <div class="site-name">Lagos Chamber of Commerce</div>
-    </div>
-
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Directory</a></li>
-        <li><a href="#">Join</a></li>
-        <li><a href="#">Discover</a></li>
-      </ul>
-    </nav>
-  </div>
+    <h1>City Chamber of Commerce</h1>
 </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="join.html">Join</a></li>
+    </ul>
+</nav>
 
 <main>
 
-<h1>Welcome to LCCI</h1>
-
-<section class="hero-container">
-  <div class="hero-text">
-    <h2>Connecting Lagos Businesses</h2>
-    <p>Driving Nigeria’s economic growth through networking and advocacy.</p>
-    <a href="#" class="btn-primary">Become a Member</a>
-  </div>
+<!-- Hero -->
+<section class="hero">
+    <img src="images/lagos.jpg" alt="Lagos business district">
+    <div class="hero-text">
+        <h2>Welcome to the Lagos Chamber of Commerce</h2>
+        <p>Supporting local businesses and strengthening our community.</p>
+        <a href="join.html" class="cta-button">Join the Chamber</a>
+    </div>
 </section>
 
-<section class="events-weather">
+<!-- Events -->
+<section class="events">
+    <h2>Current Events</h2>
+    <article>
+        <h3>Business Networking Night</h3>
+        <p>Join local business owners for an evening of networking.</p>
+    </article>
+    <article>
+        <h3>Community Market Day</h3>
+        <p>Support local vendors and enjoy food and entertainment.</p>
+    </article>
+</section>
 
-  <div class="events-highlight">
-    <h2>Upcoming Events</h2>
+<!-- Weather -->
+<section class="weather">
+    <h2>Local Weather</h2>
+    <p>Current Temperature: <span id="current-temp"></span>°C</p>
+    <p>Conditions: <span id="weather-desc"></span></p>
 
-    <div class="events-list">
-      <div class="event-item">
-        <span>Oct 26</span>
-        <h3>Networking Breakfast</h3>
-        <p>Join our monthly networking event.</p>
-      </div>
-
-      <div class="event-item">
-        <span>Nov 15</span>
-        <h3>Business Forum</h3>
-        <p>Discuss policy and economic growth.</p>
-      </div>
+    <h3>3-Day Forecast</h3>
+    <div class="forecast">
+        <p><strong>Day 1:</strong> <span id="day1"></span>°C</p>
+        <p><strong>Day 2:</strong> <span id="day2"></span>°C</p>
+        <p><strong>Day 3:</strong> <span id="day3"></span>°C</p>
     </div>
 
-    <a href="#" class="btn-outline">See All Events</a>
-  </div>
+    <img id="weather-icon" src="images/hero.png" alt="weather icon">
+</section>
 
-  <div class="weather-forecast">
-    <h2>Lagos Weather</h2>
-
-    <div class="weather-card">
-      <img id="weather-icon" src="" alt="">
-      <p><strong>Temp:</strong> <span id="current-temp"></span>°F</p>
-
-      <ul id="forecast-list"></ul>
-    </div>
-  </div>
-
+<!-- Spotlights -->
+<section class="spotlights">
+    <h2>Business Spotlights</h2>
+    <div id="spotlight-container"></div>
 </section>
 
 </main>
 
-<footer>
-  <p>&copy; <span id="currentyear"></span> LCCI</p>
-  <p id="lastModified"></p>
+<!-- ✅ FULL FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left -->
+        <div class="footer-left">
+            <h3>Lagos Chamber of Commerce</h3>
+            <p>12 Marina Road, Lagos Island</p>
+            <p><a href="mailto:info@lagoschamber.ng">info@lagoschamber.ng</a></p>
+        </div>
+
+        <!-- Center -->
+        <div class="footer-center">
+            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-right">
+            <p>&copy; <span id="year"></span> | Austin Anumudu | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+
+    </div>
 </footer>
+
+<!-- JS FILES (KEPT ALL YOUR ORIGINALS) -->
+<script src="scripts/weather.js"></script>
+<script src="scripts/spotlights.js"></script>
+<script src="scripts/directory.js"></script>
+<script src="scripts/footer.js"></script>
 
 </body>
 </html>
