@@ -1,176 +1,38 @@
-/* css/small.css (Mobile-First Styles) */
-
-/* Custom CSS properties for consistent color and spacing (STANDARD) */
 :root {
-  --primary-color: #001a40; /* Dark Blue */
-  --secondary-color: #004a99; /* Medium Blue for CTAs */
-  --accent-color: #ffd700;   /* Gold */
-  --text-on-dark: #ffffff;
-  --text-on-light: #333333;
-  --link-color: #a0c4ff;
-  --body-font: "Roboto", sans-serif;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
+  --primary: #001a40;
+  --secondary: #007bff;
+  --accent: #ffd700;
 }
 
-/* Global resets and base styles (Proximity) */
 body {
-  font-family: var(--body-font);
   margin: 0;
-  color: var(--text-on-light);
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
 }
 
-h1, h2, h3 {
-  color: var(--primary-color);
-  margin-top: var(--spacing-lg);
-  margin-bottom: 0.5rem;
-}
-
-a {
-  color: var(--secondary-color);
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Button styles unique to the page error correction */
-.btn-primary, .btn-outline {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.btn-primary {
-  background-color: var(--secondary-color);
-  color: var(--text-on-dark);
-}
-
-.btn-outline {
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-}
-
-/* Header (Elastic layout for mobile, alignment) */
+/* HEADER */
 header {
-  background-color: var(--primary-color);
-  color: var(--text-on-dark);
-  padding: var(--spacing-md) 0;
+  background: var(--primary);
+  color: white;
 }
 
 .header-container {
   display: flex;
-  flex-direction: column; /* REQUIRED: Vertical stack for mobile */
+  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: 0 var(--spacing-md);
+  padding: 1rem;
 }
 
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.logo-box img {
-  width: 60px; /* Descriptive width for mobile ends */
-}
-
-.site-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Navigation (Vertical links for mobile ends) */
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* REQUIRED: Links in single column on mobile */
-  align-items: center;
   gap: 10px;
 }
 
-.nav-links a {
-  display: block;
-  color: var(--link-color);
+.logo-box img {
+  width: 60px;
 }
 
-.nav-links a.active {
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-}
-
-main {
-  padding: var(--spacing-lg) var(--spacing-md);
-}
-
-/* Hero Section (Background image and Legibility) */
-.hero-container {
-  /* REQUIRED: CSS background for the hero section */
-  background-image: url('../images/hero-image.jpg'); 
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  
-  /* Robust padding optimized for standard results */
-  padding: 100px 20px;
-  margin-bottom: var(--spacing-lg);
-  color: var(--text-on-dark);
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Standard principle to contrast text over dynamic backgrounds */
-.hero-text h2 {
-  color: var(--text-on-dark);
-  font-size: 1.5rem;
-  margin-top: 0;
-}
-
-/* Lagos Logo block on mobile */
-.lagos-logo {
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
-}
-
-.lagos-identifier {
-  width: 150px;
-  height: auto;
-}
-
-/* Logical blocks (Proximity, Stacking) */
-.weather-forecast, .events-highlight {
-  margin-bottom: var(--spacing-lg);
-}
-
-.weather-card, .event-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: var(--spacing-lg);
-  background-color: #fff;
-  text-align: center;
-}
-
-#weather-icon {
-  display: block; /* Ensures no horizontal flow error here */
-  width: 75px;
-  height: 75px;
-  margin: 0 auto 10px;
-  object-fit: contain;
-}
-
-.forecast-details {
+.nav-links {
   list-style: none;
   padding: 0;
   display: flex;
@@ -178,18 +40,70 @@ main {
   gap: 10px;
 }
 
-/* Footer (Stacking on mobile, wide alignment reset) */
-footer {
-  background-color: var(--primary-color);
-  color: var(--text-on-dark);
-  padding: var(--spacing-lg) 0;
+.nav-links a {
+  color: #a0c4ff;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* HERO */
+.hero-container {
+  position: relative;
+  background: url('../images/hero-image.jpg') center/cover;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+}
+
+.hero-text {
+  position: relative;
+  color: white;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.footer-top {
+/* BUTTONS */
+.btn-primary {
+  background: var(--secondary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-outline {
+  border: 2px solid var(--secondary);
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+/* EVENTS + WEATHER */
+.events-weather {
   display: flex;
-  flex-direction: column; /* Stack vertically for mobile proximity */
-  align-items: center;
-  gap: var(--spacing-md);
-  padding: 0 var(--spacing-md);
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.event-item, .weather-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }

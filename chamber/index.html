@@ -1,98 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lagos Chamber of Commerce (LCCI) - Empowering Lagos Business</title>
-    
-    <meta name="author" content="Your Name">
-    <meta name="description" content="Welcome to the Lagos Chamber of Commerce (LCCI). We advocate for business, foster networking, and drive economic growth in Lagos. Join us to elevate your enterprise.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>Lagos Chamber of Commerce (LCCI)</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/larger.css">
-    <script defer src="scripts/main.js"></script>
+<link rel="stylesheet" href="css/small.css">
+<link rel="stylesheet" href="css/larger.css">
+
+<script defer src="scripts/main.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-box">
-                <img src="images/logo.png" alt="LCCI Logo" width="80" height="80">
-                <div class="site-name">Lagos Chamber of Commerce</div>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <h1>Welcome to the Lagos Chamber of Commerce</h1>
+<header>
+  <div class="header-container">
+    <div class="logo-box">
+      <img src="images/logo.png" alt="Logo">
+      <div class="site-name">Lagos Chamber of Commerce</div>
+    </div>
 
-        <section class="hero-container">
-            <div class="hero-text">
-                <h2>Connecting Lagos Businesses. Driving Nigeria's Growth.</h2>
-                <p>Advocacy. Networking. Growth. Learn how LCCI can elevate your enterprise.</p>
-                <a href="join.html" class="btn-primary">Become a Member</a>
-            </div>
-        </section>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Discover</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      <section class="lagos-logo">
-    <img src="images/lagos.jpg" alt="Official Seal of Lagos State" class="lagos-identifier">
+<main>
+
+<h1>Welcome to LCCI</h1>
+
+<section class="hero-container">
+  <div class="hero-text">
+    <h2>Connecting Lagos Businesses</h2>
+    <p>Driving Nigeria’s economic growth through networking and advocacy.</p>
+    <a href="#" class="btn-primary">Become a Member</a>
+  </div>
 </section>
 
-        <section class="events-highlight">
-            <h2>Upcoming Events & Networking Opportunities</h2>
-            <div class="events-list">
-                <div class="event-item">
-                    <span class="event-date">Oct 26</span>
-                    <h3>Monthly Networking Breakfast</h3>
-                    <p>Join us for our signature networking event. Register today.</p>
-                </div>
-            </div>
-            <a href="discover.html" class="btn-outline">See All Events</a>
-        </section>
+<section class="events-weather">
 
-        <section class="weather-forecast">
-            <h2>Local Weather - Lagos, Nigeria</h2>
-            <div class="weather-card">
-                <img id="weather-icon" src="" alt="Weather condition icon" loading="lazy" width="75" height="75">
-                <div class="weather-details">
-                    <span class="label">Current Temperature:</span>
-                    <span id="current-temp" class="value"></span>
-                    <span class="unit">°F</span>
-                </div>
-                <h3>Three-Day Forecast</h3>
-                <ul id="forecast-list" class="forecast-details">
-                    </ul>
-            </div>
-        </section>
+  <div class="events-highlight">
+    <h2>Upcoming Events</h2>
 
-    </main>
+    <div class="events-list">
+      <div class="event-item">
+        <span>Oct 26</span>
+        <h3>Networking Breakfast</h3>
+        <p>Join our monthly networking event.</p>
+      </div>
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-contact">
-                <p><strong>Lagos Chamber of Commerce</strong></p>
-                <p>12 Marina Road, Lagos Island</p>
-                <p>info@lagoschamber.ng</p>
-            </div>
-            
-            <div class="footer-meta">
-                <p>&copy;<span id="currentyear"></span> | Your Name | WDD 231</p>
-                <p id="lastModified"></p>
-            </div>
-        </div>
-    </footer>
+      <div class="event-item">
+        <span>Nov 15</span>
+        <h3>Business Forum</h3>
+        <p>Discuss policy and economic growth.</p>
+      </div>
+    </div>
+
+    <a href="#" class="btn-outline">See All Events</a>
+  </div>
+
+  <div class="weather-forecast">
+    <h2>Lagos Weather</h2>
+
+    <div class="weather-card">
+      <img id="weather-icon" src="" alt="">
+      <p><strong>Temp:</strong> <span id="current-temp"></span>°F</p>
+
+      <ul id="forecast-list"></ul>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="currentyear"></span> LCCI</p>
+  <p id="lastModified"></p>
+</footer>
+
 </body>
 </html>
