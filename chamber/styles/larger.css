@@ -1,123 +1,86 @@
-/* --- DESKTOP LAYOUT (768px and up) --- */
+/* --- LARGER VIEWPORTS (Desktop) --- */
 @media screen and (min-width: 48rem) {
 
-    /* HEADER & NAV */
+    /* 1. Header & Navigation Layout */
     header {
-        padding: 2.5rem;
+        display: flex;
+        justify-content: space-between; /* Pushes Logo left and Nav right */
+        align-items: center;
+        padding: 1rem 5%; /* Adds breathing room on the sides */
+        text-align: left;
     }
 
     header h1 {
-        font-size: 2.5rem;
+        margin-bottom: 0; /* Removes the mobile bottom margin */
+        font-size: 1.8rem;
     }
 
     nav ul {
         flex-direction: row; /* Horizontal menu */
-        justify-content: center;
-    }
-
-    nav ul li {
-        flex: 1;
-        max-width: 200px;
+        background-color: transparent;
     }
 
     nav ul li a {
         border-bottom: none;
-        border-right: 1px solid #555;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
     }
 
-    nav ul li:last-child a {
-        border-right: none;
-    }
-
-    /* HERO SECTION */
-    .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 20px;
-        background-color: #f0f4f8;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .hero-text {
-        margin-top: 0;
+    /* Active/Hover effect with yellow underline */
+    nav ul li a:hover, 
+    nav ul li a.active {
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
         background-color: transparent;
-        color: #333;
-        text-align: left;
+    }
+
+    /* 2. Main Content Layout (Grid) */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Main content vs Sidebar */
+        gap: 2rem;
         padding: 2rem;
     }
 
-    .hero-text h2 {
-        font-size: 2.2rem;
-        color: #003366;
+    /* Hero section spans full width above the grid */
+    .hero {
+        grid-column: 1 / -1; 
+        text-align: left;
+        padding: 4rem 3rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
     }
 
-    /* MAIN CONTENT GRID */
-    main {
-        display: grid;
-        grid-template-columns: 2fr 1fr; /* Two columns: main content and sidebar */
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
+    .hero p {
+        margin-left: 0; /* Align text to left in desktop */
     }
 
-    .hero, .events, .spotlights {
-        grid-column: 1 / 2;
-    }
-
-    .weather {
-        grid-column: 2 / 3;
-        grid-row: 2 / 4; /* Sidebar height */
-        align-self: start;
-    }
-
-    /* WEATHER DESKTOP VIEW */
-    .weather-current {
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    .forecast {
-        grid-template-columns: 1fr; /* Keep stacked in sidebar, or 1fr 1fr 1fr for wide */
-    }
-
-    /* SPOTLIGHTS */
-    #spotlight-container {
+    /* 3. Section Specifics */
+    .events-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 1rem;
     }
 
-    /* FOOTER */
-    .footer-container {
-        flex-direction: row;
+    /* Sidebar sections (Weather, etc.) */
+    aside {
+        grid-column: 2;
+    }
+
+    /* Footer adjustments */
+    footer {
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
-        max-width: 1200px;
-        margin: 0 auto;
+        padding: 2rem 5%;
     }
 
-    .footer-center {
-        order: 2;
-    }
-
-    .footer-right {
-        order: 3;
-        border-top: none;
-        padding-top: 0;
-        text-align: right;
-    }
-}
-
-/* --- EXTRA LARGE VIEW (1024px and up) --- */
-@media screen and (min-width: 64rem) {
-    .forecast {
-        grid-template-columns: 1fr 1fr 1fr; /* Forecast goes horizontal on very wide screens */
-    }
-    
-    #spotlight-container {
-        grid-template-columns: 1fr 1fr 1fr;
+    footer p {
+        margin: 0;
     }
 }
