@@ -1,123 +1,123 @@
-/* ===== GENERAL LAYOUT ===== */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- DESKTOP LAYOUT (768px and up) --- */
+@media screen and (min-width: 48rem) {
+
+    /* HEADER & NAV */
+    header {
+        padding: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        flex-direction: row; /* Horizontal menu */
+        justify-content: center;
+    }
+
+    nav ul li {
+        flex: 1;
+        max-width: 200px;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        border-right: 1px solid #555;
+    }
+
+    nav ul li:last-child a {
+        border-right: none;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 20px;
+        background-color: #f0f4f8;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .hero-text {
+        margin-top: 0;
+        background-color: transparent;
+        color: #333;
+        text-align: left;
+        padding: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem;
+        color: #003366;
+    }
+
+    /* MAIN CONTENT GRID */
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Two columns: main content and sidebar */
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero, .events, .spotlights {
+        grid-column: 1 / 2;
+    }
+
+    .weather {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4; /* Sidebar height */
+        align-self: start;
+    }
+
+    /* WEATHER DESKTOP VIEW */
+    .weather-current {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .forecast {
+        grid-template-columns: 1fr; /* Keep stacked in sidebar, or 1fr 1fr 1fr for wide */
+    }
+
+    /* SPOTLIGHTS */
+    #spotlight-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-center {
+        order: 2;
+    }
+
+    .footer-right {
+        order: 3;
+        border-top: none;
+        padding-top: 0;
+        text-align: right;
+    }
 }
 
-/* ===== NAVIGATION (HORIZONTAL) ===== */
-nav ul {
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    border: none;
-}
-
-nav a {
-    padding: 15px 20px;
-}
-
-/* ===== HERO (OVERLAY TEXT) ===== */
-.hero {
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-.hero-text {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 20px;
-    max-width: 400px;
-}
-
-/* ===== EVENTS + WEATHER SIDE BY SIDE ===== */
-.events,
-.weather {
-    width: 48%;
-}
-
-.events-weather-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* OPTIONAL: if you wrap them later */
-.events-weather-container section {
-    flex: 1;
-}
-
-/* ===== SPOTLIGHTS GRID ===== */
-#spotlight-container {
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#spotlight-container > * {
-    flex: 1;
-}
-
-/* ===== FOOTER (MATCHES YOUR IMAGE) ===== */
-.footer {
-    background-color: #0b2c4d;
-    color: white;
-    padding: 20px 40px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* LEFT */
-.footer-left {
-    text-align: left;
-}
-
-.footer-left h3 {
-    margin: 0;
-    font-size: 16px;
-}
-
-.footer-left p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-/* CENTER (SOCIAL ICONS) */
-.footer-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-center img {
-    width: 24px;
-    height: 24px;
-}
-
-/* RIGHT */
-.footer-right {
-    text-align: right;
-    font-size: 14px;
-}
-
-/* LINKS */
-.footer a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+/* --- EXTRA LARGE VIEW (1024px and up) --- */
+@media screen and (min-width: 64rem) {
+    .forecast {
+        grid-template-columns: 1fr 1fr 1fr; /* Forecast goes horizontal on very wide screens */
+    }
+    
+    #spotlight-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

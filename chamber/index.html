@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Chamber of Commerce | Home</title>
+    <meta name="description" content="Official website of the Lagos Chamber of Commerce. Supporting local businesses and strengthening our community.">
+    <title>Lagos Chamber of Commerce | Home</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 </head>
@@ -13,10 +13,10 @@
 <body>
 
 <header>
-    <h1>City Chamber of Commerce</h1>
+    <h1>Lagos Chamber of Commerce</h1>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="directory.html">Directory</a></li>
@@ -27,72 +27,68 @@
 
 <main>
 
-<!-- Hero -->
-<section class="hero">
-    <img src="images/lagos.jpg" alt="Lagos business district">
-    <div class="hero-text">
-        <h2>Welcome to the Lagos Chamber of Commerce</h2>
-        <p>Supporting local businesses and strengthening our community.</p>
-        <a href="join.html" class="cta-button">Join the Chamber</a>
-    </div>
-</section>
+    <section class="hero">
+        <div class="hero-image-container">
+            <img src="images/lagos.jpg" alt="Lagos business district skyline" loading="eager">
+        </div>
+        <div class="hero-text">
+            <h2>Welcome to the Lagos Chamber of Commerce</h2>
+            <p>Supporting local businesses and strengthening our community.</p>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </div>
+    </section>
 
-<!-- Events -->
-<section class="events">
-    <h2>Current Events</h2>
-    <article>
-        <h3>Business Networking Night</h3>
-        <p>Join local business owners for an evening of networking.</p>
-    </article>
-    <article>
-        <h3>Community Market Day</h3>
-        <p>Support local vendors and enjoy food and entertainment.</p>
-    </article>
-</section>
+    <section class="events">
+        <h2>Current Events</h2>
+        <article>
+            <h3>Business Networking Night</h3>
+            <p>Join local business owners for an evening of networking.</p>
+        </article>
+        <article>
+            <h3>Community Market Day</h3>
+            <p>Support local vendors and enjoy food and entertainment.</p>
+        </article>
+    </section>
 
-<!-- Weather -->
-<section class="weather">
-    <h2>Local Weather</h2>
-    <p>Current Temperature: <span id="current-temp"></span>°C</p>
-    <p>Conditions: <span id="weather-desc"></span></p>
+    <section class="weather">
+        <h2>Local Weather</h2>
+        <div class="weather-current">
+            <img id="weather-icon" src="images/hero.png" alt="Current weather condition icon">
+            <p>Current Temperature: <span id="current-temp"></span>°C</p>
+            <p>Conditions: <span id="weather-desc"></span></p>
+        </div>
 
-    <h3>3-Day Forecast</h3>
-    <div class="forecast">
-        <p><strong>Day 1:</strong> <span id="day1"></span>°C</p>
-        <p><strong>Day 2:</strong> <span id="day2"></span>°C</p>
-        <p><strong>Day 3:</strong> <span id="day3"></span>°C</p>
-    </div>
+        <h3>3-Day Forecast</h3>
+        <div class="forecast">
+            <div class="forecast-day"><strong>Day 1:</strong> <span id="day1"></span>°C</div>
+            <div class="forecast-day"><strong>Day 2:</strong> <span id="day2"></span>°C</div>
+            <div class="forecast-day"><strong>Day 3:</strong> <span id="day3"></span>°C</div>
+        </div>
+    </section>
 
-    <img id="weather-icon" src="images/hero.png" alt="weather icon">
-</section>
-
-<!-- Spotlights -->
-<section class="spotlights">
-    <h2>Business Spotlights</h2>
-    <div id="spotlight-container"></div>
-</section>
+    <section class="spotlights">
+        <h2>Business Spotlights</h2>
+        <div id="spotlight-container">
+            </div>
+    </section>
 
 </main>
 
-<!-- ✅ FULL FOOTER -->
 <footer class="footer">
     <div class="footer-container">
 
-        <!-- Left -->
         <div class="footer-left">
             <h3>Lagos Chamber of Commerce</h3>
             <p>12 Marina Road, Lagos Island</p>
             <p><a href="mailto:info@lagoschamber.ng">info@lagoschamber.ng</a></p>
         </div>
 
-        <!-- Center -->
         <div class="footer-center">
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener"><img src="images/youtube.png" alt="Visit our YouTube channel"></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener"><img src="images/twitter.png" alt="Follow us on Twitter"></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="Connect on LinkedIn"></a>
         </div>
 
-        <!-- Right -->
         <div class="footer-right">
             <p>&copy; <span id="year"></span> | Austin Anumudu | WDD 231</p>
             <p id="lastModified"></p>
@@ -101,11 +97,10 @@
     </div>
 </footer>
 
-<!-- JS FILES (KEPT ALL YOUR ORIGINALS) -->
-<script src="scripts/weather.js"></script>
-<script src="scripts/spotlights.js"></script>
-<script src="scripts/directory.js"></script>
-<script src="scripts/footer.js"></script>
+<script src="scripts/weather.js" defer></script>
+<script src="scripts/spotlights.js" defer></script>
+<script src="scripts/directory.js" defer></script>
+<script src="scripts/footer.js" defer></script>
 
 </body>
 </html>
