@@ -1,6 +1,6 @@
-/* --- Global Styles --- */
+/* css/small.css (Mobile-First Styles) */
+
 :root {
-  /* Efficient use of variables for consistency (Repetition) */
   --primary-color: #001a40; /* Dark Blue */
   --secondary-color: #004a99; /* Medium Blue for CTAs */
   --accent-color: #ffd700;   /* Gold */
@@ -21,7 +21,7 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: var(--h-font);
   color: var(--primary-color);
   margin-top: var(--spacing-lg);
@@ -43,7 +43,6 @@ img {
   height: auto;
 }
 
-/* --- Reusable Components (Repetition & Alignment) --- */
 .btn-primary, .btn-secondary, .btn-outline {
   display: inline-block;
   padding: 0.8rem 1.5rem;
@@ -61,7 +60,6 @@ img {
 
 .btn-primary:hover {
   background-color: var(--primary-color);
-  color: var(--text-on-dark);
 }
 
 .btn-secondary {
@@ -70,8 +68,7 @@ img {
 }
 
 .btn-secondary:hover {
-  background-color: #ffc800; /* A slightly deeper gold */
-  color: var(--primary-color);
+  background-color: #ffc800; /* Deeper gold */
 }
 
 .btn-outline {
@@ -85,7 +82,6 @@ img {
   color: var(--text-on-dark);
 }
 
-/* Base Card Styles */
 .member-card, .weather-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -95,7 +91,6 @@ img {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* --- Header & Navigation (Consistent Blueprint) --- */
 header {
   background-color: var(--primary-color);
   color: var(--text-on-dark);
@@ -104,7 +99,7 @@ header {
 
 .header-container {
   display: flex;
-  flex-direction: column; /* Stacked vertically for mobile */
+  flex-direction: column; /* Stack vertically on mobile */
   align-items: center;
   gap: var(--spacing-md);
   padding: 0 var(--spacing-md);
@@ -117,7 +112,7 @@ header {
 }
 
 .logo-box img {
-  width: 60px; /* Smaller logo for mobile */
+  width: 60px; /* Small logo on mobile */
   height: auto;
 }
 
@@ -126,13 +121,12 @@ header {
   font-weight: bold;
 }
 
-/* Mobile Navigation */
 .nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Stack links vertically */
+  flex-direction: column; /* Stack link elements vertically on mobile */
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -156,7 +150,6 @@ header {
   border-bottom: 2px solid var(--accent-color);
 }
 
-/* --- Main Content (Proximity & Repetition) --- */
 main {
   padding: var(--spacing-lg) var(--spacing-md);
 }
@@ -166,7 +159,6 @@ main h1 {
   margin-bottom: var(--spacing-lg);
 }
 
-/* Hero Section */
 .hero-container {
   position: relative;
   text-align: center;
@@ -178,7 +170,7 @@ main h1 {
   width: 100%;
   height: auto;
   object-fit: cover;
-  filter: brightness(0.7); /* Darken image for text readability */
+  filter: brightness(0.7); /* Standard principle to ensure text legibility */
 }
 
 .hero-text {
@@ -199,7 +191,6 @@ main h1 {
   margin-bottom: var(--spacing-md);
 }
 
-/* Events Section */
 .events-highlight {
   margin-bottom: var(--spacing-lg);
 }
@@ -221,7 +212,6 @@ main h1 {
   display: block;
 }
 
-/* Weather Section */
 .weather-forecast {
   margin-bottom: var(--spacing-lg);
 }
@@ -242,9 +232,10 @@ main h1 {
   color: var(--secondary-color);
 }
 
-.weather-icon {
+#weather-icon {
   width: 50px;
   height: 50px;
+  object-fit: contain;
 }
 
 .forecast-details {
@@ -260,7 +251,6 @@ main h1 {
   color: var(--primary-color);
 }
 
-/* Spotlight Section (No Horizontal Scroll) */
 .member-spotlight {
   text-align: center;
   margin-bottom: var(--spacing-lg);
@@ -268,7 +258,7 @@ main h1 {
 
 .spotlight-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Single column for mobile */
+  grid-template-columns: 1fr; /* Single column stacking on mobile */
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-md);
 }
@@ -282,7 +272,6 @@ main h1 {
   margin-bottom: var(--spacing-sm);
 }
 
-/* --- Footer (Consistent Blueprint) --- */
 footer {
   background-color: var(--primary-color);
   color: var(--text-on-dark);
@@ -292,7 +281,7 @@ footer {
 
 .footer-top {
   display: flex;
-  flex-direction: column; /* Stacked for mobile */
+  flex-direction: column; /* Stacking order on mobile */
   align-items: center;
   gap: var(--spacing-md);
   padding: 0 var(--spacing-md);
@@ -302,7 +291,6 @@ footer {
   margin: 5px 0;
 }
 
-/* Social Media Icons (filter efficiency) */
 .social-media {
   display: flex;
   justify-content: center;
@@ -310,12 +298,10 @@ footer {
 }
 
 .social-media img {
-  /* This filter makes black/dark icons white */
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
-/* YouTube exception (keeps white box) */
 .social-media img[alt*="YouTube"] {
   filter: none; 
   background-color: #fff;

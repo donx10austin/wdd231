@@ -1,4 +1,6 @@
-// --- Footer Date Handlers ---
+// scripts/main.js
+
+// --- Footer Date Handlers (Optimized User Experience) ---
 function setFooterDates() {
     const currentYear = new Date().getFullYear();
     const currentYearElement = document.querySelector('#currentyear');
@@ -13,8 +15,8 @@ function setFooterDates() {
     }
 }
 
-// --- Weather API Integration ---
-const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your actual API key
+// --- Weather API Integration (Dynamic Data Concept) ---
+const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // REQUIRED: Replace with your actual API key for dynamic functionality
 const city = 'Lagos,NG';
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
@@ -53,9 +55,9 @@ async function fetchForecast() {
 
 function displayForecast(data) {
     const forecastList = document.querySelector('#forecast-list');
-    forecastList.innerHTML = ''; // Clear existing content
+    forecastList.innerHTML = ''; // Clear existing content for consistent reuse
 
-    // Filter to get one forecast per day (e.g., at 12:00:00)
+    // Filter to get one forecast per day at a logical time (e.g., 12:00:00)
     const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
 
     dailyData.forEach(day => {
@@ -74,8 +76,8 @@ function displayForecast(data) {
     });
 }
 
-// --- Member Spotlight ---
-const membersUrl = 'data/members.json';
+// --- Member Spotlight (JSON Fetching and Dynamic Logic) ---
+const membersUrl = 'data/members.json'; // Ensure this file exists at this path
 
 async function fetchSpotlights() {
     try {
@@ -90,14 +92,14 @@ async function fetchSpotlights() {
 
 function displaySpotlights(members) {
     const spotlightContainer = document.querySelector('#spotlight-container');
-    spotlightContainer.innerHTML = ''; // Clear placeholders
+    spotlightContainer.innerHTML = ''; // Clear placeholders for standard results
 
-    // Filter for Gold or Silver members
+    // Filter for Gold or Silver members only (Standard development requirement)
     const eligibleMembers = members.filter(member => 
         member.membership === 'Gold' || member.membership === 'Silver'
     );
 
-    // Randomly select 2 or 3 members
+    // Randomly select 2 or 3 members for showcase (Repetition logic)
     const numberOfSpotlights = Math.floor(Math.random() * 2) + 2; // Generates 2 or 3
     const shuffledMembers = eligibleMembers.sort(() => 0.5 - Math.random());
     const selectedMembers = shuffledMembers.slice(0, numberOfSpotlights);
@@ -117,7 +119,7 @@ function displaySpotlights(members) {
     });
 }
 
-// --- Initialization ---
+// --- Initialization on Load ---
 window.addEventListener('load', () => {
     setFooterDates();
     fetchWeather();
