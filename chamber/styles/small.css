@@ -1,5 +1,6 @@
 /* --- Global Styles --- */
 :root {
+  /* Efficient use of variables for consistency (Repetition) */
   --primary-color: #001a40; /* Dark Blue */
   --secondary-color: #004a99; /* Medium Blue for CTAs */
   --accent-color: #ffd700;   /* Gold */
@@ -7,7 +8,7 @@
   --text-on-light: #333333;
   --link-color: #a0c4ff;
   --body-font: "Roboto", sans-serif;
-  --h-font: "Roboto", sans-serif; /* You can define a separate heading font */
+  --h-font: "Roboto", sans-serif;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;

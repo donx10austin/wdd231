@@ -85,25 +85,6 @@
     margin-top: 0;
   }
 
-  /* Events & Weather in side-by-side columns */
-  .events-highlight, .weather-forecast {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: start;
-  }
-
-  /* Or use Flexbox for events list */
-  .events-list {
-    flex-direction: row; /* Events side-by-side */
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-  }
-
-  .event-item {
-    flex: 1 1 300px; /* Grow, shrink, base width */
-  }
-
   /* Forecast items horizontally */
   .forecast-details {
     flex-direction: row;

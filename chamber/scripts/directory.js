@@ -1,5 +1,3 @@
-// scripts/main.js
-
 // --- Footer Date Handlers ---
 function setFooterDates() {
     const currentYear = new Date().getFullYear();
