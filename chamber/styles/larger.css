@@ -1,86 +1,40 @@
-/* --- LARGER VIEWPORTS (Desktop) --- */
 @media screen and (min-width: 48rem) {
-
-    /* 1. Header & Navigation Layout */
+    /* SPLIT HEADER */
     header {
         display: flex;
-        justify-content: space-between; /* Pushes Logo left and Nav right */
+        justify-content: space-between; /* Title Left, Nav Right */
         align-items: center;
-        padding: 1rem 5%; /* Adds breathing room on the sides */
-        text-align: left;
+        padding: 1rem 5%;
     }
 
-    header h1 {
-        margin-bottom: 0; /* Removes the mobile bottom margin */
-        font-size: 1.8rem;
-    }
+    header h1 { font-size: 1.5rem; }
 
     nav ul {
-        flex-direction: row; /* Horizontal menu */
-        background-color: transparent;
+        display: flex; /* Horizontal Menu */
+        gap: 20px;
     }
 
-    nav ul li a {
-        border-bottom: none;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s ease;
-    }
+    nav ul li a { border: none; }
 
-    /* Active/Hover effect with yellow underline */
-    nav ul li a:hover, 
-    nav ul li a.active {
-        color: var(--secondary-color);
-        border-bottom: 2px solid var(--secondary-color);
-        background-color: transparent;
-    }
-
-    /* 2. Main Content Layout (Grid) */
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
+    /* LAYOUT GRID */
+    .grid-container {
         display: grid;
-        grid-template-columns: 2fr 1fr; /* Main content vs Sidebar */
-        gap: 2rem;
-        padding: 2rem;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
     }
 
-    /* Hero section spans full width above the grid */
-    .hero {
-        grid-column: 1 / -1; 
-        text-align: left;
-        padding: 4rem 3rem;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 300px;
-    }
-
-    .hero p {
-        margin-left: 0; /* Align text to left in desktop */
-    }
-
-    /* 3. Section Specifics */
-    .events-grid {
+    #spotlight-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
-    /* Sidebar sections (Weather, etc.) */
-    aside {
-        grid-column: 2;
-    }
-
-    /* Footer adjustments */
+    /* FOOTER DESKTOP */
     footer {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         padding: 2rem 5%;
     }
 
-    footer p {
-        margin: 0;
-    }
+    .social-links { order: 2; margin-bottom: 0; }
 }

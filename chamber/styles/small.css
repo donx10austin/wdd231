@@ -1,149 +1,84 @@
-/* --- ROOT VARIABLES --- */
+/* ROOT VARIABLES */
 :root {
-    --primary-color: #003366;    /* Dark Blue from image */
-    --secondary-color: #ffcc00;  /* Yellow Accent */
-    --text-color: #333333;
-    --light-bg: #f4f4f4;
+    --primary: #003366;
+    --accent: #ffcc00;
     --white: #ffffff;
-    --font-main: "Roboto", sans-serif;
-}
-
-/* --- RESET & BASE --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-main);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- HEADER --- */
+/* HEADER MOBILE */
 header {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: var(--white);
     padding: 1rem;
     text-align: center;
 }
 
-header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-/* --- NAVIGATION (Mobile Menu) --- */
-nav {
-    background-color: #002244; /* Slightly darker blue */
-}
-
 nav ul {
     list-style: none;
-    display: flex;
-    flex-direction: column; /* Stacked for small screens */
+    padding: 0;
 }
 
 nav ul li a {
     display: block;
     color: var(--white);
     text-decoration: none;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 500;
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-nav ul li a:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    position: relative;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-join {
-    display: inline-block;
-    background-color: #0055aa; /* Bright blue button */
-    color: var(--white);
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
+nav ul li a.active {
+    color: var(--accent);
     font-weight: bold;
 }
 
-/* --- MAIN CONTENT SECTIONS --- */
+/* MAIN MOBILE */
 main {
     padding: 1rem;
 }
 
-section {
-    margin-bottom: 2rem;
-}
-
-h3 {
-    border-left: 5px solid var(--primary-color);
-    padding-left: 10px;
+.hero {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
     margin-bottom: 1rem;
-    color: var(--primary-color);
 }
 
-/* --- CARDS (Events, Weather) --- */
-.card {
-    background: var(--white);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.join-button {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.event-date {
-    font-weight: bold;
-    color: var(--primary-color);
-    display: block;
-}
-
-/* --- FOOTER --- */
+/* FOOTER CENTERED */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
-    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer p {
-    margin: 0.5rem 0;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-#lastModified {
-    color: var(--secondary-color);
-    display: block;
-    margin-top: 10px;
+.social-links img {
+    width: 30px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Makes icons white */
 }
 
-/* --- UTILITIES --- */
-.hidden {
-    display: none;
-}
+footer p { margin: 0.2rem 0; }
