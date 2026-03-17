@@ -2,36 +2,37 @@
 
 @media screen and (min-width: 768px) {
 
-  /* Common elements optimized for desktop */
+  /* Common elements optimized for desktop views */
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
 
-  /* Centered and wider containers on large screens (Repetition) */
+  /* Centered and wider containers on large screens (Alignment) */
   .header-container, main, .footer-top {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    max-width: 100%; /* Widen the entire header and content to full width */
+    margin: 0; /* Align left */
+    padding: 0 40px; /* Custom padding on ends */
   }
 
-  /* Header structure (Flexbox) */
+  /* Header structure (Elasticity and Flow) */
   .header-container {
-    flex-direction: row; /* Horizontal flow for branding and navigation */
-    justify-content: space-between;
-    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* REQUIRED: Pushes branding and nav to ends */
+    align-items: center; /* Aligns vertically in center */
+    padding: var(--spacing-md) 40px; /* Descriptive padding unique to the page */
   }
 
   .logo-box img {
-    width: 80px; /* Larger logo on desktop views */
+    width: 80px; /* Descriptive width for desktop */
   }
 
   .site-name {
     font-size: 1.5rem;
   }
 
-  /* Navigation (Horizontal links) */
+  /* Navigation (Horizontal links, aligned right) */
   .nav-links {
-    flex-direction: row; /* Horizontal flow for link elements */
+    flex-direction: row; /* Flex in a horizontal row */
     gap: 1.5rem;
     width: auto;
   }
@@ -51,13 +52,13 @@
 
   /* Main padding */
   main {
-    padding: 3rem var(--spacing-lg);
+    padding: 3rem 40px; /* Robust padding */
   }
 
-  /* Hero Section (Two-Column Layout for larger devices) */
+  /* Hero Section (FIXED: Enforce Single-Column Layout for Desktop) */
   .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* REQUIRED: Single column stack, NOT two columns */
     align-items: center;
     text-align: left;
     gap: var(--spacing-lg);
@@ -65,10 +66,11 @@
     overflow: hidden;
     border-radius: 8px;
     filter: none;
+    padding: var(--spacing-lg);
   }
 
   .hero-image {
-    grid-column: 2; /* Image on the right */
+    grid-column: 1; /* Reset to column 1 */
     height: 100%;
     filter: none;
   }
@@ -76,7 +78,7 @@
   .hero-text {
     position: static;
     transform: none;
-    grid-column: 1; /* Text on the left */
+    grid-column: 1; /* Text in column 1 */
     padding: var(--spacing-lg);
     width: auto;
   }
@@ -86,25 +88,24 @@
     margin-top: 0;
   }
 
-  /* Forecast items horizontally (Flexbox) */
-  .forecast-details {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--spacing-md);
+  /* Events/Forecast (FIXED: Stack vertically on desktop) */
+  .events-highlight, .weather-forecast {
+    grid-template-columns: 1fr; /* Stack columns vertically for proximity */
   }
 
-  /* Spotlight Grid (Repetition, Alignment, Proximity) */
+  /* Spotlight Grid (Repetition, Alignment) */
   .spotlight-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Custom grid optimized for Lagos businesses */
+    grid-template-columns: repeat(3, 1fr); /* REQUIRED: 3 columns for 3 spotlights */
     gap: var(--spacing-lg);
   }
 
-  /* Footer structure (Flexbox, horizontal flow) */
+  /* Footer structure (Elasticity and Alignment) */
   .footer-top {
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-between; /* REQUIRED: Pushes content to ends */
     align-items: start;
     text-align: left;
+    padding: var(--spacing-lg) 40px; /* Wide ends */
   }
 
   .footer-contact {
