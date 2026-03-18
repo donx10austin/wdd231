@@ -1,16 +1,29 @@
+/* =============================
+   CSS VARIABLES & RESET
+   ============================= */
 :root {
     --lcci-green: #2e7d32;
-    --dark-bg: #1a1a1a;
-    --light-text: #ffffff;
+    --text-dark: #1f2b1f;
+    --border-light: #e5e5e5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     font-family: "Inter", system-ui, sans-serif;
     line-height: 1.6;
-    color: #222;
-    background: #ffffff;
+    color: var(--text-dark);
+    background-color: #ffffff;
 }
 
+/* =============================
+   ACCESSIBILITY
+   ============================= */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -19,57 +32,78 @@ body {
     clip: rect(0 0 0 0);
 }
 
-/* Header */
+/* =============================
+   HEADER
+   ============================= */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+}
+
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px;
+    padding: 18px 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo {
     width: 42px;
+    height: auto;
 }
 
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--lcci-green);
+}
+
+/* Navigation pushed right */
 .primary-nav ul {
     list-style: none;
     display: flex;
-    gap: 14px;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Buttons */
-.btn {
-    padding: 12px 24px;
-    border-radius: 999px;
-    font-weight: 700;
+.primary-nav a {
     text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dark);
 }
 
-.btn.primary {
-    background: var(--lcci-green);
-    color: white;
+.primary-nav a:hover {
+    color: var(--lcci-green);
 }
 
-.btn.secondary {
-    border: 2px solid white;
-    color: white;
-}
-
-/* Hero */
+/* =============================
+   HERO
+   ============================= */
 .hero {
     position: relative;
     min-height: 85vh;
     display: flex;
     align-items: center;
     padding: 0 6%;
-    color: white;
+    color: #ffffff;
     background: url("../images/lagos.jpg") center / cover no-repeat;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
 }
 
 .hero-content {
@@ -81,15 +115,65 @@ body {
 .hero h1 {
     font-size: 2.6rem;
     line-height: 1.15;
+    margin-bottom: 18px;
 }
 
 .hero h1 span {
     color: #b7f5c4;
 }
 
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+}
+
 .hero-actions {
-    margin-top: 28px;
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+/* =============================
+   BUTTONS
+   ============================= */
+.btn {
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn.primary {
+    background: var(--lcci-green);
+    color: #ffffff;
+}
+
+.btn.secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+/* =============================
+   FOOTER
+   ============================= */
+footer {
+    border-top: 1px solid var(--border-light);
+    padding: 40px 24px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.social-links {
+    display: flex;
+    gap: 18px;
+}
+
+.social-links img {
+    width: 32px;
+    height: auto;
 }

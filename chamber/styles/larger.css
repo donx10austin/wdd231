@@ -1,5 +1,21 @@
 @media (min-width: 1024px) {
 
+    /* Header layout */
+    .header-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 22px 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .primary-nav ul {
+        gap: 42px;
+    }
+
+    /* Hero */
     .hero {
         min-height: 90vh;
     }
@@ -12,9 +28,11 @@
         max-width: 800px;
     }
 
+    /* Footer */
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 }
+``
