@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lagos Chamber of Commerce</title>
+    <title>Lagos Chamber of Commerce | LCCI Home</title>
+    <meta name="description" content="Official website of the Lagos Chamber of Commerce and Industry. Driving commerce and connecting businesses in Lagos, Nigeria.">
     <meta name="author" content="Austin Anumudu">
     <link rel="icon" href="favicon.ico">
     
@@ -22,13 +23,17 @@
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <img src="images/logo.png" alt="LCCI Logo" class="main-logo">
+                <img src="images/logo.png" alt="LCCI Official Logo" class="main-logo">
                 <div class="logo-text">
                     <h1>LCCI</h1>
                     <p>Lagos Chamber of Commerce</p>
                 </div>
             </div>
+
             <nav>
+                <button id="menu-button" aria-label="Toggle Navigation">
+                    <span>&#9776;</span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="directory.html">Directory</a></li>
@@ -48,34 +53,53 @@
             </div>
         </section>
 
-        <section class="weather-box">
-            <h3>Lagos Weather</h3>
-            <div id="weather-info">
-                <img id="weather-icon" src="" alt="">
-                <span id="current-temp"></span>
-                <span id="weather-desc"></span>
-            </div>
-            <div id="forecast-container"></div>
-        </section>
+        <div class="info-grid">
+            <section class="weather-box">
+                <h3>Lagos Local Weather</h3>
+                <div id="weather-info">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <span id="current-temp">--°C</span>
+                    <span id="weather-desc">Loading...</span>
+                </div>
+                <div id="forecast-container"></div>
+            </section>
+
+            <section class="join-info">
+                <h3>Member Benefits</h3>
+                <p>Access exclusive networking events, policy advocacy, and business training.</p>
+                <a href="join.html">Learn More &rarr;</a>
+            </section>
+        </div>
+
+        <hr class="section-divider">
 
         <h2 class="section-title">Member Spotlights</h2>
-        <section id="spotlight-grid"></section>
+        <section id="spotlight-grid">
+            </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-top">
                 <p><strong>Lagos Chamber of Commerce</strong></p>
-                <p>12 Marina Road, Lagos Island</p>
-                <p>info@lagoschamber.ng</p>
+                <p>12 Marina Road, Lagos Island, Nigeria</p>
+                <p>Email: <a href="mailto:info@lagoschamber.ng">info@lagoschamber.ng</a></p>
             </div>
+            
             <div class="social-links">
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://twitter.com" target="_blank" aria-label="LCCI on Twitter">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LCCI on LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://youtube.com" target="_blank" aria-label="LCCI on YouTube">
+                    <img src="images/youtube.png" alt="YouTube">
+                </a>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | Lagos, Nigeria</p>
+                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231 Project</p>
                 <p id="lastModified"></p>
             </div>
         </div>
