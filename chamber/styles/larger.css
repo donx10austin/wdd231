@@ -5,7 +5,6 @@
         max-width: 1400px;
         margin: 0 auto;
         padding: 22px 60px;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -28,10 +27,27 @@
         max-width: 800px;
     }
 
-    /* Footer */
+    /* =============================
+       FOOTER (Desktop Layout)
+       ============================= */
     .footer-content {
-        display: flex;
+        flex-direction: row; /* Side-by-side */
         justify-content: space-between;
         align-items: center;
+        text-align: left;
+    }
+
+    /* Pushes social links to the exact center */
+    .footer-contact, .footer-copy {
+        flex: 1;
+    }
+
+    .social-links {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .footer-copy {
+        text-align: right;
     }
 }

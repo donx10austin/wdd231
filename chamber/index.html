@@ -6,84 +6,65 @@
 
     <title>LCCI | Lagos Chamber of Commerce and Industry</title>
 
-    <!-- Meta -->
     <meta name="description"
           content="The Lagos Chamber of Commerce and Industry connects, empowers, and represents businesses across Lagos through advocacy, education, and economic development.">
     <meta name="author" content="Austin Anumudu">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/lcci-logo.jpg">
 
-    <!-- Open Graph -->
-    <meta property="og:title"
-          content="Lagos Chamber of Commerce and Industry">
-    <meta property="og:description"
-          content="The Lagos Chamber of Commerce and Industry empowers businesses across Lagos through advocacy, education, and economic development.">
-    <meta property="og:image"
-          content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
-    <meta property="og:url"
-          content="https://donx10austin.github.io/wdd231/chamber/index.html">
+    <meta property="og:title" content="Lagos Chamber of Commerce and Industry">
+    <meta property="og:description" content="The Lagos Chamber of Commerce and Industry empowers businesses across Lagos through advocacy, education, and economic development.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <!-- Scripts -->
     <script src="scripts/footer.js" defer></script>
     <script src="scripts/chat.js" defer></script>
 </head>
 
 <body>
 
-   <!-- Header -->
-<header class="site-header">
-    <div class="header-inner">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <span class="brand-text">LCCI</span>
+            </a>
 
-        <a href="index.html" class="brand">
-            <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
-            <span class="brand-text">LCCI</span>
-        </a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <nav class="primary-nav" aria-label="Primary navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
-``
-
-    <!-- Main -->
     <main>
-
-        <!-- Hero -->
         <section class="hero" aria-labelledby="hero-heading">
             <div class="hero-overlay"></div>
-
             <div class="hero-content">
                 <h1 id="hero-heading">
                     Consistently advocating for a
                     <span>better business environment</span>
                 </h1>
-
                 <p>
                     The Lagos Chamber of Commerce and Industry connects,
                     champions, and empowers businesses across Lagos through
                     advocacy, insight, and impactful programs.
                 </p>
-
                 <div class="hero-actions">
                     <a href="join.html" class="btn primary">Join Us</a>
                     <a href="discover.html" class="btn secondary">What We Do</a>
@@ -91,13 +72,8 @@
             </div>
         </section>
 
-        <!-- Chat Widget -->
-        <div class="chat-widget"
-             role="dialog"
-             aria-labelledby="chat-title">
-
+        <div class="chat-widget" role="dialog" aria-labelledby="chat-title">
             <h2 id="chat-title" class="visually-hidden">Help Chat</h2>
-
             <div class="chat-bubble">
                 <button class="chat-close" aria-label="Close chat">✕</button>
                 <p>
@@ -105,19 +81,15 @@
                     We are online and ready to assist you.
                 </p>
             </div>
-
             <button class="chat-button" aria-label="Open help chat">
                 <span class="chat-notice" aria-hidden="true">1</span>
                 <span aria-hidden="true">💬</span>
             </button>
         </div>
-
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
-
             <div class="footer-contact">
                 <p><strong>Commerce House</strong></p>
                 <p>18 B Isaac John, Victoria Island, Lagos</p>
@@ -134,7 +106,6 @@
                 <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
                 <p id="lastModified"></p>
             </div>
-
         </div>
     </footer>
 
