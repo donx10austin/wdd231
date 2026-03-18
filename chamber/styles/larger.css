@@ -1,43 +1,71 @@
+/* --- LARGER.CSS (Desktop Styles) --- */
+
 @media screen and (min-width: 768px) {
+    /* Header Alignment Logic */
     .header-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; /* Pushes Logo Left, Nav Right */
         align-items: center;
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 10px 20px;
     }
 
-    nav ul { flex-direction: row; }
+    .logo-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-    /* --- Hero Section --- */
+    .main-logo {
+        width: 60px;
+        height: auto;
+    }
+
+    .logo-text h1 { font-size: 1.5rem; margin: 0; }
+    .logo-text p { font-size: 0.8rem; margin: 0; opacity: 0.8; }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    .nav-links a.active {
+        border-bottom: 3px solid #d4af37; /* Gold accent */
+        padding-bottom: 5px;
+    }
+
+    /* Hero Section */
     .hero {
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/lagos-hero.jpg');
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/lagos-hero.jpg');
         background-size: cover;
-        height: 300px;
+        background-position: center;
+        height: 400px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        margin-bottom: 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
     }
 
-    /* --- Spotlight Grid (Home Page) --- */
+    /* Spotlight Grid */
     #spotlight-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    /* --- Directory Toggle Logic --- */
-    
-    /* Grid View */
+    /* --- Directory Layouts --- */
     #directory-container.grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
     }
 
-    /* List View */
     #directory-container.list {
         display: flex;
         flex-direction: column;
@@ -48,65 +76,46 @@
         grid-template-columns: 1fr 2fr 1fr 1fr;
         align-items: center;
         text-align: left;
-        margin-bottom: 0;
-        border-radius: 0;
-        border-bottom: none;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
     }
 
-    #directory-container.list .member-card:last-child {
-        border-bottom: 1px solid #ddd;
-    }
-
-    #directory-container.list .member-card img {
-        display: none; /* Cleaner list view without logos */
-    }
-
-    /* Toggle Buttons Style */
-    .menu {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    #grid, #list {
-        padding: 10px 20px;
-        cursor: pointer;
-        background: var(--primary);
-        color: white;
-        border: none;
-        margin: 0 5px;
-    }
+    #directory-container.list .member-card img { display: none; }
 }
 
-/* Fix the Footer Spacing */
+/* --- Footer Polish (Applied to all sizes but optimized for larger) --- */
 footer {
-    padding: 3rem 1rem; /* Adds breathing room */
+    background-color: #1a1a1a;
+    padding: 4rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
-/* Space out the social icons */
 .social-links {
     display: flex;
-    gap: 25px;
+    justify-content: center;
+    gap: 30px;
 }
 
 .social-links img {
     width: 35px;
-    height: auto;
-    filter: brightness(0) invert(1); /* Makes all icons white */
+    filter: brightness(0) invert(1); /* All white icons */
     transition: 0.3s ease;
 }
 
-.social-links img:hover {
-    transform: scale(1.1);
-}
+.social-links img:hover { transform: scale(1.1); }
 
-/* Center the Member Directory title and add space */
-h2 {
+h2.section-title {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0 1.5rem;
     font-size: 2.2rem;
     color: #003366;
 }
