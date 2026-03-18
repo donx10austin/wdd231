@@ -1,59 +1,20 @@
-/* ==============================
-   TABLET
-   ============================== */
-@media (min-width: 768px) {
-
-    .header-inner {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+@media (min-width: 1024px) {
 
     .hero {
-        padding: 100px 8%;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
+        min-height: 90vh;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .top-links {
-        justify-content: center;
-    }
-}
-
-/* ==============================
-   DESKTOP
-   ============================== */
-@media (min-width: 1024px) {
-
-    .header-inner {
-        max-width: 1200px;
-        margin: 0 auto;
+        font-size: 3.4rem;
     }
 
     .hero-content {
-        max-width: 560px;
-    }
-
-    .hero h1 {
-        font-size: 3.2rem;
-    }
-
-    footer {
-        padding: 70px 10%;
+        max-width: 800px;
     }
 
     .footer-content {
-        flex-direction: row;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .footer-copy {
-        text-align: right;
     }
 }

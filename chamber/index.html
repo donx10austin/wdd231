@@ -12,26 +12,27 @@
     <meta name="author" content="Austin Anumudu">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/lcci-logo.jpg">
 
     <!-- Open Graph -->
     <meta property="og:title"
-          content="LCCI – Empowering Businesses Across Lagos">
+          content="Lagos Chamber of Commerce and Industry">
     <meta property="og:description"
-          content="LCCI advocates for a stronger business environment in Lagos through policy engagement, education, and enterprise support programs.">
+          content="The Lagos Chamber of Commerce and Industry empowers businesses across Lagos through advocacy, education, and economic development.">
     <meta property="og:image"
-          content="https://example.com/images/og-image.jpg">
+          content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
     <meta property="og:url"
-          content="https://example.com/index.html">
+          content="https://donx10austin.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
 
-    <!-- Google Fonts (REQUIRED FORMAT) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
           rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
@@ -42,70 +43,50 @@
 
 <body>
 
-    <!-- Top Utility Bar -->
-    <div class="top-bar">
-        <nav class="top-links" aria-label="Utility navigation">
-            <a href="#">Press Release</a>
-            <a href="#">Upcoming Events</a>
-            <a href="#">Ethics &amp; Corporate Governance</a>
-            <a href="#">Business Education</a>
-        </nav>
-    </div>
-
     <!-- Header -->
     <header>
         <div class="header-inner">
             <a href="index.html" class="brand">
-                <img src="images/lcci-logo.jpg"
-                     alt="Lagos Chamber of Commerce and Industry logo"
-                     class="logo">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
                 <span>LCCI</span>
             </a>
 
-            <div class="nav-wrap">
-                <nav class="primary-nav" aria-label="Primary navigation">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="directory.html">Directory</a></li>
-                        <li><a href="join.html">Join</a></li>
-                        <li><a href="discover.html">Discover</a></li>
-                    </ul>
-                </nav>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
 
-                <a href="join.html" class="btn primary">Join Us</a>
-            </div>
+            <a href="join.html" class="btn primary">Join Us</a>
         </div>
     </header>
 
     <!-- Main -->
     <main>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-inner">
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-overlay"></div>
 
-                <div class="hero-content">
-                    <h1>
-                        Consistently advocating for a
-                        <span>better business environment</span>
-                    </h1>
+            <div class="hero-content">
+                <h1 id="hero-heading">
+                    Consistently advocating for a
+                    <span>better business environment</span>
+                </h1>
 
-                    <p>
-                        We connect, champion, and empower businesses across Lagos
-                        through advocacy, insight, and impactful programs.
-                    </p>
+                <p>
+                    The Lagos Chamber of Commerce and Industry connects,
+                    champions, and empowers businesses across Lagos through
+                    advocacy, insight, and impactful programs.
+                </p>
 
-                    <div class="hero-actions">
-                        <a href="join.html" class="btn primary">Join Us</a>
-                        <a href="discover.html" class="btn secondary">What We Do</a>
-                    </div>
+                <div class="hero-actions">
+                    <a href="join.html" class="btn primary">Join Us</a>
+                    <a href="discover.html" class="btn secondary">What We Do</a>
                 </div>
-
-                <div class="hero-image">
-                    <img src="images/hero-graphic.png"
-                         alt="Business growth and collaboration illustration">
-                </div>
-
             </div>
         </section>
 
@@ -119,8 +100,8 @@
             <div class="chat-bubble">
                 <button class="chat-close" aria-label="Close chat">✕</button>
                 <p>
-                    Welcome! If you need help, simply reply to this message —
-                    we are online and ready to assist you.
+                    Welcome! If you need help, simply reply to this message.
+                    We are online and ready to assist you.
                 </p>
             </div>
 
@@ -138,7 +119,7 @@
 
             <div class="footer-contact">
                 <p><strong>Commerce House</strong></p>
-                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>18 B Isaac John, Victoria Island, Lagos</p>
                 <p>info@lagoschamber.com</p>
             </div>
 
@@ -158,3 +139,4 @@
 
 </body>
 </html>
+``
