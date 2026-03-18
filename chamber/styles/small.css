@@ -45,6 +45,68 @@ nav a {
     border-radius: 4px;
 }
 
+/* --- Hero Section (Mobile Optimized) --- */
+.hero {
+    position: relative;
+    padding: 60px 5%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /* Use the Lagos image you uploaded */
+    background: linear-gradient(rgba(0, 34, 68, 0.7), rgba(0, 34, 68, 0.7)), 
+                url("../images/lagos.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    width: 100%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: #d4af37; /* LCCI Gold accent */
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #f0f0f0;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons on mobile */
+    gap: 12px;
+}
+
+/* Base Button Styles for Hero */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background-color: #2e7d32;
+    color: #fff;
+}
+
+.btn.secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
 /* Service Grid */
 .grid {
     display: grid;
@@ -79,14 +141,19 @@ nav a {
     color: #4CAF50;
 }
 
-.more {
-    color: #2e7d32;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Mobile Tweak */
+/* Mobile Tweak for Very Small Screens */
 @media (max-width: 600px) {
-    header { flex-direction: column; gap: 15px; }
-    nav ul { gap: 15px; }
+    header { 
+        flex-direction: column; 
+        gap: 15px; 
+        text-align: center;
+    }
+    nav ul { 
+        gap: 10px; 
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
 }

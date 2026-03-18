@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LCCI | Lagos Chamber of Commerce and Industry</title>
-
+    <meta name="description" content="Official website of the Lagos Chamber of Commerce and Industry. Driving commerce, connecting businesses, and influencing policy in Lagos, Nigeria.">
+    <meta name="author" content="Austin Anumudu">
+    <link rel="icon" href="favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/footer.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlights.js" defer></script>
+    <script src="scripts/chat.js" defer></script>
 </head>
 <body>
-    <!-- Top utility bar -->
     <div class="top-bar">
         <div class="top-links">
             <a href="#">Press Release</a>
@@ -21,76 +30,65 @@
         </div>
     </div>
 
-    <!-- Main navigation -->
     <header>
         <div class="header-inner">
             <a href="index.html" class="brand">
-                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <img src="images/logo.png" alt="LCCI Official Logo" class="logo">
                 <span>LCCI</span>
-            </a>
-
+            </div>
+            
             <div class="nav-wrap">
                 <nav class="primary-nav" aria-label="Primary">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="directory.html">Directory</a></li>
                         <li><a href="join.html">Join</a></li>
                         <li><a href="discover.html">Discover</a></li>
                     </ul>
                 </nav>
-
                 <a href="join.html" class="btn primary">Join Us</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero section -->
     <main>
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1>...consistently advocating for a <span>better business environment</span></h1>
-                <p>We connect, champion and empower businesses across Lagos through advocacy, insights and impactful programs.</p>
+                <p>We connect, champion and empower businesses across Lagos through advocacy, insights, and impactful programs.</p>
 
                 <div class="hero-actions">
-                    <a href="join.html" class="btn">Join Us</a>
-                    <a href="#" class="btn secondary">What We Do</a>
+                    <a href="join.html" class="btn primary large">Become a Member</a>
+                    <a href="#" class="btn secondary large">Our Impact</a>
                 </div>
             </div>
-
-            <div class="hero-graphic"></div>
         </section>
 
-        <!-- Chat widget -->
-        <div class="chat-widget" aria-label="Help chat">
-            <div class="chat-bubble">
-                <button class="chat-close" aria-label="Close chat">✕</button>
-                <p>Welcome to our site, if you need help simply reply to this message, we are online and ready to help.</p>
-            </div>
-            <button class="chat-button" aria-label="Open chat">
-                <span class="chat-notice" aria-hidden="true">1</span>
-                <span class="chat-icon">💬</span>
-            </button>
-        </div>
-    </main>
-    <script src="scripts/chat.js" defer></script>
+        </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-contact">
-                <p><strong>Commerce House</strong></p>
+                <p><strong>LCCI Commerce House</strong></p>
                 <p>1 Idowu Taylor St, Victoria Island, Lagos</p>
-                <p>info@lagoschamber.com</p>
+                <p>Email: <a href="mailto:info@lagoschamber.ng">info@lagoschamber.ng</a></p>
             </div>
             
             <div class="social-links">
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LCCI on LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="LCCI on Twitter">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://youtube.com" target="_blank" aria-label="LCCI on YouTube">
+                    <img src="images/youtube.png" alt="YouTube">
+                </a>
             </div>
             
             <div class="footer-copy">
-                <p>&copy;<span id="current-year"></span> | Austin Anumudu | Lagos, Nigeria</p>
+                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231 Project</p>
                 <p id="lastModified"></p>
             </div>
         </div>
