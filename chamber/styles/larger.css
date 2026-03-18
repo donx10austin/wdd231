@@ -4,10 +4,55 @@
     --dark-bg: #1a1a1a;
     --border-color: #333;
     --text-grey: #888;
+    --hero-bg: url("../images/hero.png");
 }
 
 body {
     font-size: 18px; /* Slightly larger base font for desktop readability */
+    min-height: 100vh;
+    background: linear-gradient(150deg, rgba(241,247,242,0.95), rgba(255,255,255,0.95));
+}
+
+/* --- Top utility bar (shown on home page) --- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 8%;
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1500;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.top-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.top-cta {
+    background: var(--lcci-green);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.top-cta:hover {
+    background: #1b5e20;
 }
 
 .container {
@@ -18,15 +63,92 @@ body {
 
 /* --- Header & Horizontal Navigation --- */
 header {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.92);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 25px 8%;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 22px 8%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top: 50px; /* below the top utility bar */
+    z-index: 1200;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand .logo {
+    width: 48px;
+    height: auto;
+    display: block;
+}
+
+.brand span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--lcci-green);
+}
+
+.primary-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-nav a {
+    color: #2b2b2b;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 4px;
+    transition: color 0.2s ease;
+}
+
+.primary-nav a:hover {
+    color: var(--lcci-green);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+    background: var(--lcci-green);
+    color: #fff;
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(46, 125, 50, 0.3);
+    color: var(--lcci-green);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
 }
 
 .logo-text {
@@ -66,6 +188,130 @@ nav a:hover {
 .join-btn:hover {
     background-color: #1b5e20;
     transform: translateY(-2px);
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    padding: 0 8%;
+    background: linear-gradient(130deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72)),
+        var(--hero-bg) center/cover no-repeat;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 120%;
+    height: 140%;
+    background: radial-gradient(circle at 20% 20%, rgba(46, 125, 50, 0.3), transparent 65%);
+    transform: rotate(18deg);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle at 80% 15%, rgba(46, 125, 50, 0.25), transparent 62%);
+    transform: rotate(-18deg);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 540px;
+    z-index: 2;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    color: #17291d;
+    margin: 0;
+}
+
+.hero-content span {
+    color: var(--lcci-green);
+}
+
+.hero-content p {
+    margin: 18px 0 0;
+    font-size: 1.15rem;
+    max-width: 520px;
+    color: #354a3f;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.hero-graphic {
+    display: none;
+}
+
+/* --- Chat widget --- */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    z-index: 1600;
+}
+
+.chat-bubble {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 16px 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    max-width: 280px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.chat-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: var(--lcci-green);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.chat-button:hover {
+    transform: translateY(-2px);
+}
+
+.chat-notice {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    background: #ff3b30;
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 /* --- Directory Grid (3 Columns) --- */
@@ -191,5 +437,59 @@ footer {
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 900px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 5%;
+    }
+
+    .top-links {
+        gap: 12px;
+    }
+
+    header {
+        padding: 18px 5%;
+        top: 110px; /* account for stacked top bar */
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .primary-nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 0 5%;
+        min-height: 70vh;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .chat-widget {
+        bottom: 16px;
+        right: 16px;
+        width: calc(100% - 32px);
+        justify-content: flex-end;
+    }
+
+    .chat-bubble {
+        max-width: 240px;
     }
 }
