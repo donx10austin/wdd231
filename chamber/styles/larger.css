@@ -278,6 +278,35 @@ nav a:hover {
     max-width: 280px;
     font-size: 0.95rem;
     line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    position: relative;
+}
+
+.chat-widget.open .chat-bubble {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.chat-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #444;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.chat-close:hover {
+    background: rgba(0,0,0,0.05);
 }
 
 .chat-button {
