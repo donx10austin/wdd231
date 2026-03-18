@@ -51,3 +51,12 @@
         text-align: right;
     }
 }
+
+.info-grid {
+    flex-direction: row; /* Side-by-side on desktop */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card {
+    flex: 1;
+}

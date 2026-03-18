@@ -190,3 +190,61 @@ footer {
     font-size: 0.85rem;
     opacity: 0.8;
 }
+
+/* =============================
+   EVENTS SECTION
+   ============================= */
+.events {
+    padding: 40px 24px;
+    background-color: #f9f9f9; /* Light grey to separate it from other sections */
+}
+
+.events h2 {
+    text-align: center;
+    color: var(--lcci-navy);
+    margin-bottom: 30px;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--lcci-green);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--lcci-green);
+    font-size: 0.9rem;
+}
+
+/* For larger screens in larger.css */
+@media (min-width: 1024px) {
+    .events-container {
+        flex-direction: row; /* Side-by-side events on desktop */
+    }
+    .event-card {
+        flex: 1;
+    }
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

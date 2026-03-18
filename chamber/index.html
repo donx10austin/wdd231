@@ -15,8 +15,6 @@
     <meta property="og:title" content="Lagos Chamber of Commerce and Industry">
     <meta property="og:description" content="The Lagos Chamber of Commerce and Industry empowers businesses across Lagos through advocacy, education, and economic development.">
     <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
 
@@ -29,6 +27,8 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/footer.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlights.js" defer></script>
     <script src="scripts/chat.js" defer></script>
 </head>
 
@@ -43,7 +43,7 @@
 
             <nav class="primary-nav" aria-label="Primary navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
                     <li><a href="discover.html">Discover</a></li>
@@ -72,14 +72,44 @@
             </div>
         </section>
 
+        <section class="info-grid">
+            <div id="weather-card" class="card">
+                <h2>Lagos Weather</h2>
+                <div id="weather-info">Loading current weather...</div>
+                <div id="forecast-info"></div>
+            </div>
+
+            <div id="spotlight-card" class="card spotlight-container">
+                <h2>Member Spotlight</h2>
+                <div id="spotlight-content">
+                    <h3 id="spotlight-name"></h3>
+                    <p id="spotlight-desc"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="events" aria-labelledby="events-heading">
+            <h2 id="events-heading">Upcoming Events</h2>
+            <div class="events-container">
+                <article class="event-card">
+                    <h3>Lagos Business Summit 2026</h3>
+                    <p class="event-date">March 25, 2026</p>
+                    <p>Join industry leaders at Commerce House for a day of networking and growth strategies.</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>SME Export Workshop</h3>
+                    <p class="event-date">April 02, 2026</p>
+                    <p>Learn how to take your Lagos-based business to the global market with our expert panel.</p>
+                </article>
+            </div>
+        </section>
+
         <div class="chat-widget" role="dialog" aria-labelledby="chat-title">
             <h2 id="chat-title" class="visually-hidden">Help Chat</h2>
             <div class="chat-bubble">
                 <button class="chat-close" aria-label="Close chat">✕</button>
-                <p>
-                    Welcome! If you need help, simply reply to this message.
-                    We are online and ready to assist you.
-                </p>
+                <p>Welcome! Need help? Reply to this message. We are online.</p>
             </div>
             <button class="chat-button" aria-label="Open help chat">
                 <span class="chat-notice" aria-hidden="true">1</span>

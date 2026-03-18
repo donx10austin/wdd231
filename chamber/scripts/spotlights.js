@@ -1,30 +1,23 @@
-const spotlightMembers = [
-    { name: "Adkan Nig. Ltd", message: "Leading the way in Nigerian infrastructure." },
-    { name: "Lifewood Data", message: "Expert data entry and technology solutions." },
-    { name: "Lagos Commerce", message: "Connecting businesses to the world." }
-];
+async function getSpotlightMembers() {
+    const response = await fetch('data/members.json');
+    const data = await response.json();
+    
+    // Access the array inside the 'members' key
+    const allMembers = data.members;
 
-let currentIndex = 0;
+    // 1. FILTER: Only Gold and Silver
+    const qualifiedMembers = allMembers.filter(member => 
+        member.membershipLevel === "Gold" || member.membershipLevel === "Silver"
+    );
 
-function rotateSpotlight() {
-    const title = document.querySelector('#spotlight-name');
-    const desc = document.querySelector('#spotlight-desc');
-    const container = document.querySelector('.spotlight-container');
+    // 2. SHUFFLE: Randomize
+    const shuffled = qualifiedMembers.sort(() => 0.5 - Math.random());
 
-    if (!title || !desc || !container) return;
+    // 3. SELECT: Pick 2 or 3
+    const spotlightMembers = shuffled.slice(0, 3);
 
-    container.style.opacity = 0;
-
-    setTimeout(() => {
-        title.textContent = spotlightMembers[currentIndex].name;
-        desc.textContent = spotlightMembers[currentIndex].message;
-
-        container.style.opacity = 1;
-        currentIndex = (currentIndex + 1) % spotlightMembers.length;
-    }, 500);
+    // 4. DISPLAY: Call your function to build the HTML cards
+    displaySpotlights(spotlightMembers);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    rotateSpotlight();
-    setInterval(rotateSpotlight, 5000);
-});
+getSpotlightMembers();
