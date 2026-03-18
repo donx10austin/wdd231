@@ -1,31 +1,43 @@
-const spotlightUrl = 'data/members.json';
+// --- SPOTLIGHTS.JS ---
+const membersData = "data/members.json";
 
-async function loadSpotlights() {
+async function getSpotlights() {
     try {
-        const response = await fetch(spotlightUrl);
+        const response = await fetch(membersData);
         const data = await response.json();
-        
-        const spotlightGrid = document.querySelector('#spotlight-grid');
-        if (!spotlightGrid) return;
+        const members = data.members;
 
-        // Shuffle and take 3
-        const shuffled = data.members.sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 3);
+        // Shuffle and pick 3 random members
+        const shuffled = [...members].sort(() => 0.5 - Math.random());
+        const selectedMembers = shuffled.slice(0, 3);
 
-        spotlightGrid.innerHTML = "";
-        selected.forEach(member => {
-            const card = document.createElement('section');
-            card.className = 'spotlight-card';
-            card.innerHTML = `
-                <h3>${member.name}</h3>
-                <img src="${member.image}" alt="${member.name}" loading="lazy">
-                <p><strong>${member.membership}</strong></p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Website</a>
-            `;
-            spotlightGrid.appendChild(card);
-        });
-    } catch (e) { console.log(e); }
+        displaySpotlights(selectedMembers);
+    } catch (error) {
+        console.error("Error loading spotlights:", error);
+    }
 }
 
-loadSpotlights();
+function displaySpotlights(members) {
+    const spotlightGrid = document.querySelector('#spotlight-grid');
+    if (!spotlightGrid) return;
+
+    spotlightGrid.innerHTML = ""; // Clear existing
+
+    members.forEach(member => {
+        const card = document.createElement('section');
+        card.className = 'spotlight-card';
+        
+        card.innerHTML = `
+            <h3>${member.name}</h3>
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
+            <p class="membership-tag">${member.membership}</p>
+            <div class="spotlight-contact">
+                <p>${member.phone}</p>
+                <a href="${member.website}" target="_blank">Visit Site</a>
+            </div>
+        `;
+        spotlightGrid.appendChild(card);
+    });
+}
+
+getSpotlights();
