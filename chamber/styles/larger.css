@@ -76,3 +76,37 @@
         margin: 0 5px;
     }
 }
+
+/* Fix the Footer Spacing */
+footer {
+    padding: 3rem 1rem; /* Adds breathing room */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Space out the social icons */
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links img {
+    width: 35px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Makes all icons white */
+    transition: 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Center the Member Directory title and add space */
+h2 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.2rem;
+    color: #003366;
+}
