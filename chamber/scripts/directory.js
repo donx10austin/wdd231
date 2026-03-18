@@ -1,65 +1,33 @@
-const membersUrl = "data/members.json";
-const directoryDisplay = document.querySelector("#directory-container");
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+document.addEventListener('DOMContentLoaded', async () => {
+    const grid = document.querySelector('.services-grid');
+    const search = document.querySelector('#directory-search');
 
-async function getMembers() {
-    try {
-        const response = await fetch(membersUrl);
-        const data = await response.json();
-        displayMembers(data.members);
-    } catch (error) {
-        console.error("Error fetching members:", error);
+    async function loadMembers(filter = "") {
+        try {
+            const response = await fetch('members.json');
+            const data = await response.json();
+            
+            grid.innerHTML = "";
+            const filtered = data.members.filter(m => 
+                m.name.toLowerCase().includes(filter.toLowerCase()) ||
+                m.membership.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            filtered.forEach(m => {
+                const card = document.createElement('div');
+                card.className = 'card'; // Ensure .card style is in your CSS
+                card.innerHTML = `
+                    <img src="${m.image}" alt="${m.name}" style="width:60px; margin-bottom:15px;">
+                    <h3>${m.name}</h3>
+                    <p><strong>${m.membership}</strong></p>
+                    <p>${m.address}</p>
+                    <a href="${m.website}" target="_blank" class="more-link">Visit Site</a>
+                `;
+                grid.appendChild(card);
+            });
+        } catch (e) { console.error("Data load failed", e); }
     }
-}
 
-function displayMembers(members) {
-    directoryDisplay.innerHTML = "";
-    members.forEach((member) => {
-        let card = document.createElement("section");
-        card.className = "member-card";
-
-        card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
-            <h3>${member.name}</h3>
-            <p class="membership-tag">${member.membership}</p>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-        `;
-        directoryDisplay.appendChild(card);
-    });
-}
-
-// Toggle Listeners
-gridButton?.addEventListener("click", () => {
-    directoryDisplay.classList.add("grid");
-    directoryDisplay.classList.remove("list");
+    search.addEventListener('input', (e) => loadMembers(e.target.value));
+    loadMembers();
 });
-
-listButton?.addEventListener("click", () => {
-    directoryDisplay.classList.add("list");
-    directoryDisplay.classList.remove("grid");
-});
-
-getMembers();
-
-const visitDisplay = document.querySelector("#visit-message");
-const lastVisit = window.localStorage.getItem("lastVisit-ls");
-const msPerDay = 86400000;
-const currentVisit = Date.now();
-
-if (visitDisplay) {
-    if (!lastVisit) {
-        visitDisplay.textContent = "Welcome! Let us know if you have any questions.";
-    } else {
-        const daysPassed = (currentVisit - lastVisit) / msPerDay;
-        if (daysPassed < 1) {
-            visitDisplay.textContent = "Back so soon! Awesome!";
-        } else {
-            const roundedDays = Math.floor(daysPassed);
-            visitDisplay.textContent = `You last visited ${roundedDays} ${roundedDays === 1 ? "day" : "days"} ago.`;
-        }
-    }
-    localStorage.setItem("lastVisit-ls", currentVisit);
-}

@@ -1,43 +1,30 @@
-// --- SPOTLIGHTS.JS ---
-const membersData = "data/members.json";
+// spotlight.js - Cycles through featured members
+const spotlightMembers = [
+    { name: "Adkan Nig. Ltd", message: "Leading the way in Nigerian Infrastructure." },
+    { name: "Lifewood Data", message: "Expert Data Entry & Tech Solutions." },
+    { name: "Lagos Commerce", message: "Connecting Businesses to the World." }
+];
 
-async function getSpotlights() {
-    try {
-        const response = await fetch(membersData);
-        const data = await response.json();
-        const members = data.members;
+let currentIndex = 0;
 
-        // Shuffle and pick 3 random members
-        const shuffled = [...members].sort(() => 0.5 - Math.random());
-        const selectedMembers = shuffled.slice(0, 3);
+function rotateSpotlight() {
+    const spotlightTitle = document.querySelector('#spotlight-name');
+    const spotlightDesc = document.querySelector('#spotlight-desc');
+    
+    if (spotlightTitle && spotlightDesc) {
+        // Simple fade out/in effect using opacity
+        const container = document.querySelector('.spotlight-container');
+        container.style.opacity = 0;
 
-        displaySpotlights(selectedMembers);
-    } catch (error) {
-        console.error("Error loading spotlights:", error);
+        setTimeout(() => {
+            spotlightTitle.textContent = spotlightMembers[currentIndex].name;
+            spotlightDesc.textContent = spotlightMembers[currentIndex].message;
+            container.style.opacity = 1;
+            currentIndex = (currentIndex + 1) % spotlightMembers.length;
+        }, 500);
     }
 }
 
-function displaySpotlights(members) {
-    const spotlightGrid = document.querySelector('#spotlight-grid');
-    if (!spotlightGrid) return;
-
-    spotlightGrid.innerHTML = ""; // Clear existing
-
-    members.forEach(member => {
-        const card = document.createElement('section');
-        card.className = 'spotlight-card';
-        
-        card.innerHTML = `
-            <h3>${member.name}</h3>
-            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
-            <p class="membership-tag">${member.membership}</p>
-            <div class="spotlight-contact">
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Site</a>
-            </div>
-        `;
-        spotlightGrid.appendChild(card);
-    });
-}
-
-getSpotlights();
+// Run rotation every 5 seconds
+setInterval(rotateSpotlight, 5000);
+document.addEventListener('DOMContentLoaded', rotateSpotlight);
