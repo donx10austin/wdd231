@@ -95,3 +95,96 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-left: 5px solid var(--lcci-green); /* Visual consistency */
 }
+
+/* Card Colors and Layout */
+.card {
+    background-color: #f4f7f4; /* Light tint to distinguish sections */
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 5px solid var(--lcci-green);
+    margin-bottom: 20px;
+}
+
+.spotlight-item {
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Badge Colors */
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+.badge.gold { background-color: #d4af37; }
+.badge.silver { background-color: #a0a0a0; }
+
+.spotlight-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.spotlight-header img {
+    width: 50px;
+    height: auto;
+}
+
+/* Container for the Weather and Spotlight cards */
+.info-grid {
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Base Card Styling with Color */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 6px solid var(--lcci-green); /* The green accent from the logo */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--lcci-navy);
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Weather Specific Styling */
+.weather-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-icon {
+    background: #e8f5e9; /* Light green circle background */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.temp {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.desc {
+    margin: 0;
+    color: var(--lcci-green);
+    font-weight: 700;
+    text-transform: capitalize;
+}

@@ -1,43 +1,41 @@
-const currentTemp = document.querySelector('#weather-info');
-const weatherIcon = document.createElement('img'); // For the weather icon
-const captionDesc = document.createElement('span');
+const weatherContainer = document.querySelector('#weather-info');
 
-// 1. API URL (Lagos, Nigeria)
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=Lagos,NG&units=metric&appid=YOUR_API_KEY';
+// Lagos, Nigeria Coordinates or City ID
+const lat = 6.45;
+const lon = 3.40;
+const apiKey = 'YOUR_OPENWEATHER_API_KEY'; // Replace with your actual key
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 async function apiFetch() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(weatherUrl);
         if (response.ok) {
             const data = await response.json();
-            displayResults(data);
+            displayWeather(data);
         } else {
             throw Error(await response.text());
         }
     } catch (error) {
-        console.log(error);
-        currentTemp.textContent = "Weather unavailable";
+        console.error(error);
+        weatherContainer.innerHTML = `<p class="error">Unable to load weather data.</p>`;
     }
 }
 
-function displayResults(data) {
-    // Format temperature to 0 decimal places
-    currentTemp.innerHTML = `<strong>${data.main.temp.toFixed(0)}°C</strong> - `;
-    
-    // Get description and capitalize each word
+function displayWeather(data) {
+    const temp = data.main.temp.toFixed(0);
     const desc = data.weather[0].description;
-    const capitalizedDesc = desc.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
-    // Icon Setup
-    const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    weatherIcon.setAttribute('src', iconsrc);
-    weatherIcon.setAttribute('alt', capitalizedDesc);
-    
-    captionDesc.textContent = capitalizedDesc;
-    
-    // Append to the container
-    currentTemp.appendChild(weatherIcon);
-    currentTemp.appendChild(captionDesc);
+    const iconSrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+    weatherContainer.innerHTML = `
+        <div class="weather-display">
+            <img src="${iconSrc}" alt="${desc}" class="weather-icon">
+            <div class="weather-stats">
+                <p class="temp">${temp}°C</p>
+                <p class="desc">${desc.charAt(0).toUpperCase() + desc.slice(1)}</p>
+                <p class="humidity">Humidity: ${data.main.humidity}%</p>
+            </div>
+        </div>
+    `;
 }
 
 apiFetch();

@@ -30,13 +30,15 @@
 
     .hero h1 { font-size: 3.8rem; }
 
+    @media (min-width: 1024px) {
     .info-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 40px;
         max-width: 1200px;
         margin: 40px auto;
     }
+}
 
     .footer-content {
         max-width: 1200px;
