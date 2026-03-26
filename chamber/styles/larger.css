@@ -1,39 +1,109 @@
+/* ============================================================
+    LARGER VIEWPORT (Desktop) - 1024px and Up
+   ============================================================ */
 @media (min-width: 1024px) {
-    /* Header layout */
+
+    /* --- Header & Navigation --- */
     .header-inner {
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 22px 60px;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    /* Hide Hamburger on Desktop */
+    .logo {
+        height: 55px; 
+        width: auto;
+    }
+
     #menu {
-        display: none;
+        display: none; /* Hide hamburger on desktop */
     }
 
     .primary-nav ul {
-        display: flex; /* Always visible */
-        flex-direction: row;
+        display: flex;
         position: static;
-        padding: 0;
+        flex-direction: row;
+        gap: 40px;
+        background: transparent;
         box-shadow: none;
         border: none;
-        gap: 42px;
+        padding: 0;
     }
 
-    /* Wayfinding for Desktop */
+    .primary-nav a {
+        padding: 5px 0;
+        font-size: 0.95rem;
+    }
+
     .primary-nav a.active {
+        color: var(--lcci-green);
         border-left: none;
-        padding-left: 0;
         border-bottom: 3px solid var(--lcci-green);
     }
 
-    /* Footer (Existing Desktop Layout) */
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+    /* --- Hero Section --- */
+    .hero {
+        min-height: 85vh;
+        padding: 0 10%;
     }
 
-    /* ... keep your existing .hero and .info-grid desktop styles ... */
+    .hero h1 {
+        font-size: 3.8rem;
+    }
+
+    /* --- Grids --- */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+
+    .events-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- Footer Desktop Spread --- */
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 40px 0;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex: 1;
+    }
+
+    .footer-contact, .footer-copy {
+        flex: 1;
+    }
+
+    .footer-copy {
+        text-align: right;
+    }
+
+    .footer-social img {
+        width: 30px;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-social img:hover {
+        transform: scale(1.15);
+    }
 }

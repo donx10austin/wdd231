@@ -1,37 +1,19 @@
-// chat.js — Simple toggle for the chat widget.
+document.addEventListener('DOMContentLoaded', () => {
+    const chatButton = document.querySelector('.chat-button');
+    const chatBubble = document.querySelector('.chat-bubble');
+    const chatClose = document.querySelector('.chat-close');
+    const chatNotice = document.querySelector('.chat-notice');
 
-window.addEventListener('DOMContentLoaded', () => {
-    const widget = document.querySelector('.chat-widget');
-    const toggleButton = widget?.querySelector('.chat-button');
-    const closeButton = widget?.querySelector('.chat-close');
-
-    if (!widget || !toggleButton || !closeButton) return;
-
-    const openChat = () => {
-        widget.classList.add('open');
-        toggleButton.setAttribute('aria-label', 'Close chat');
-    };
-
-    const closeChat = () => {
-        widget.classList.remove('open');
-        toggleButton.setAttribute('aria-label', 'Open chat');
-    };
-
-    toggleButton.addEventListener('click', () => {
-        widget.classList.toggle('open');
-        if (widget.classList.contains('open')) {
-            openChat();
-        } else {
-            closeChat();
-        }
+    // 1. Open the chat bubble
+    chatButton.addEventListener('click', () => {
+        chatBubble.classList.add('active');
+        // Hide the "1" notification once clicked
+        if (chatNotice) chatNotice.style.display = 'none';
     });
 
-    closeButton.addEventListener('click', closeChat);
-
-    // Close chat on Escape key
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && widget.classList.contains('open')) {
-            closeChat();
-        }
+    // 2. Close the chat bubble
+    chatClose.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents the click from re-opening the bubble
+        chatBubble.classList.remove('active');
     });
 });
