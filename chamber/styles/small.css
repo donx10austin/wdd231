@@ -55,7 +55,7 @@ body {
 }
 
 /* =============================
-   4. NAVIGATION (Merged & Cleaned)
+   4. NAVIGATION
    ============================= */
 #menu {
     background: none;
@@ -92,7 +92,6 @@ body {
     transition: 0.3s;
 }
 
-/* Wayfinding: Active Link styling (Mobile) */
 .primary-nav a.active {
     background-color: var(--lcci-green);
     color: var(--white);
@@ -173,7 +172,7 @@ body {
 }
 
 /* =============================
-   7. WEATHER, SPOTLIGHTS & FORECAST
+   7. WEATHER & SPOTLIGHTS
    ============================= */
 .weather-display, .spotlight-header {
     display: flex;
@@ -199,8 +198,6 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.spotlight-header img { width: 50px; height: auto; }
-
 .badge {
     padding: 4px 10px;
     border-radius: 4px;
@@ -211,18 +208,48 @@ body {
 .badge.gold { background-color: #d4af37; }
 .badge.silver { background-color: #a0a0a0; }
 
-#forecast-info {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border-light);
-}
-
-.forecast-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+/* =============================
+   8. FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: var(--white);
+    padding: 30px 5%;
     text-align: center;
+    margin-top: 40px;
 }
 
-.forecast-day { background: var(--bg-light); padding: 10px; border-radius: 5px; }
-.forecast-day img { width: 35px; }
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-social a {
+    color: var(--white);
+    font-size: 1.6rem;
+    transition: transform 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #b7f5c4;
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    font-size: 0.85rem;
+}
+
+#lastModified span {
+    color: #b7f5c4;
+    font-weight: bold;
+}

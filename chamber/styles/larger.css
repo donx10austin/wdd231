@@ -8,6 +8,8 @@
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .header-inner {
@@ -22,51 +24,66 @@
     .primary-nav ul {
         display: flex !important;
         flex-direction: row;
-        gap: 30px; /* Balanced spacing */
+        gap: 30px;
+        border: none; /* Remove mobile border */
     }
 
     .primary-nav a {
-        padding: 10px 15px;
+        padding: 10px 0; /* Vertical padding only */
         color: var(--lcci-navy);
         font-weight: 700;
-        text-decoration: none;
+        transition: color 0.3s;
     }
 
-    /* Desktop Wayfinding: Underline instead of solid background */
+    /* Desktop Wayfinding: Clean underline */
     .primary-nav a.active {
         background: none;
         color: var(--lcci-green);
-        border-bottom: 4px solid var(--lcci-green);
-        padding-bottom: 8px;
-        border-radius: 0;
+        border-bottom: 3px solid var(--lcci-green);
+        padding-bottom: 5px;
         font-weight: 800;
+    }
+
+    .primary-nav a:hover {
+        background: none; /* Remove mobile hover bg */
+        color: var(--lcci-green);
     }
 
     /* 3. HERO SECTION */
     .hero {
         min-height: 80vh;
-        padding-left: 10%;
+        padding: 0 10%;
     }
 
     .hero h1 { 
         font-size: 3.8rem; 
-        max-width: 800px; /* Prevents text from stretching too wide */
+        max-width: 800px; 
     }
 
     /* 4. DASHBOARD GRID */
     .info-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns for Weather/Spotlight */
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
         gap: 40px;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        flex-direction: row; /* Override mobile flex-column */
     }
 
-    /* 5. FOOTER */
+    /* 5. FOOTER - Horizontal Layout */
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
+        text-align: left;
+    }
+
+    .footer-social {
+        margin: 0; 
+    }
+
+    .footer-copy {
+        border-top: none; /* Remove mobile separator */
+        padding-top: 0;
     }
 }

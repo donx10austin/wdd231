@@ -4,26 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="author" content="Austin Anumudu">
-    
     <title>LCCI | Lagos Chamber of Commerce and Industry</title>
-    </head>
-    
+    <meta name="author" content="Austin Anumudu">
+    <meta name="description" content="Official portal of the Lagos Chamber of Commerce and Industry (LCCI). Supporting business growth in Lagos through networking, advocacy, and economic development.">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/index.html">
     <meta property="og:title" content="LCCI | Lagos Chamber of Commerce and Industry">
-    <meta property="og:description" content="Join the Lagos Chamber of Commerce to connect with industry leaders, empower your business, and advocate for a better Lagos economy.">
+    <meta property="og:description" content="Join the Lagos Chamber of Commerce to connect with industry leaders and empower your business.">
     <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/chamber-og.jpg">
 
     <link rel="icon" href="images/lcci-logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 1024px)">
 
+    <script src="scripts/menu.js" defer></script>
     <script src="scripts/footer.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlights.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="header-inner">
@@ -56,19 +64,18 @@
         </section>
 
         <section class="info-grid">
-    <div class="card weather-card">
-        <h2>Lagos Weather</h2>
-        <div id="weather-info">
+            <div class="card weather-card">
+                <h2>Lagos Weather</h2>
+                <div id="weather-info">
+                    </div>
             </div>
-    </div>
 
-    <section class="card spotlight-card">
-    <h2>Member Spotlight</h2>
-    <div id="spotlight-content">
-        </div>
-</section>
-
-<script src="scripts/spotlights.js" defer></script>
+            <section class="card spotlight-card">
+                <h2>Member Spotlight</h2>
+                <div id="spotlight-content">
+                    </div>
+            </section>
+        </section>
     </main>
 
     <footer>
@@ -77,6 +84,19 @@
                 <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
                 <p>+234 1 277 1600</p>
             </div>
+
+            <div class="footer-social">
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
             <div class="footer-copy">
                 <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
                 <p id="lastModified"></p>
