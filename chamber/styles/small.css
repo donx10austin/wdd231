@@ -1,13 +1,12 @@
 /* =============================
-   1. GLOBAL VARIABLES & RESET
+   1. VARIABLES & RESET
    ============================= */
 :root {
     --lcci-navy: #0b1c3a;
-    --lcci-green: #2e7d32; 
+    --lcci-green: #2e7d32;
     --lcci-light-green: #b7f5c4;
     --white: #ffffff;
     --text-dark: #1a1a1a;
-    --grey: #f4f4f4;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -20,105 +19,54 @@ body {
 }
 
 /* =============================
-   2. HEADER & NAVIGATION
+   2. HEADER (Fixes Coloring)
    ============================= */
 header {
-    background: var(--white);
+    background-color: var(--white); /* Ensures the header is white */
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes logo and menu button apart */
     align-items: center;
     padding: 10px 5%;
 }
 
-.logo { height: 50px; width: auto; }
+.logo {
+    height: 60px; /* Adjusted for better visibility */
+    width: auto;
+    display: block;
+}
 
-/* Navigation links - hidden by default for mobile menu */
+/* Navigation - Hidden on mobile for toggle */
 .navigation {
-    display: none; 
+    display: none;
     list-style: none;
     padding: 0;
-}
-
-/* When the menu is toggled via JS */
-.navigation.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    z-index: 1000;
-}
-
-.navigation li a {
-    display: block;
-    padding: 15px 5%;
-    text-decoration: none;
-    color: var(--lcci-navy);
-    font-weight: 700;
-}
-
-.navigation li a.active {
-    color: var(--lcci-green);
-    border-left: 5px solid var(--lcci-green);
+    margin: 0;
 }
 
 /* =============================
-   3. HERO SECTION (Matches Screenshot)
-   ============================ */
+   3. HERO SECTION (Mobile)
+   ============================= */
 .hero {
     min-height: 60vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 40px 5%;
     color: var(--white);
-    text-align: center; /* Mobile center */
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
-                url("../images/lagos.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("../images/lagos-hero.jpg") center/cover no-repeat;
 }
 
-.hero h1 { 
-    font-size: 2.2rem; 
-    line-height: 1.1; 
-    margin-bottom: 20px; 
-}
+.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
+.hero h1 span { color: var(--lcci-light-green); display: block; }
 
-.hero h1 span { 
-    color: var(--lcci-light-green); 
-    display: block; 
-}
-
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-.btn {
-    padding: 12px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    width: 250px;
-}
-
-.btn-primary { background-color: var(--lcci-green); color: white; }
+.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; }
+.btn-primary { background: var(--lcci-green); color: white; }
 .btn-secondary { border: 2px solid white; color: white; }
-
-/* =============================
-   4. FOOTER
-   ============================= */
-footer {
-    background: var(--lcci-navy);
-    color: white;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-.footer-social img { width: 24px; filter: brightness(0) invert(1); margin: 0 10px; }
