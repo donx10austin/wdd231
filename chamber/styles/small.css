@@ -70,3 +70,73 @@ header {
 .btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; }
 .btn-primary { background: var(--lcci-green); color: white; }
 .btn-secondary { border: 2px solid white; color: white; }
+
+/* small.css */
+header {
+    background-color: #ffffff; /* Explicit white background */
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Logo left, Nav right */
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px; /* Consistent height */
+    width: auto;
+}
+
+.site-name {
+    color: #0b1c3a; /* Navy color */
+    font-weight: 800;
+    font-size: 1rem;
+    display: none; /* Hide text on very small phones to save space */
+}
+
+@media (min-width: 400px) {
+    .site-name { display: block; }
+}
+
+/* Mobile Nav - Basic list reset */
+.nav-links {
+    display: none; /* Hide by default for mobile menu toggle */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* This colors the header and ensures it isn't transparent */
+header {
+    background-color: #ffffff; 
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Pushes Logo left and Nav right */
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.logo {
+    height: 55px;
+    width: auto;
+}
+
+.site-name {
+    font-weight: 800;
+    color: #0b1c3a;
+    font-size: 1.1rem;
+}
