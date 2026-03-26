@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Lagos Chamber of Commerce and Industry (LCCI) to grow your business network and access exclusive benefits.">
+    <meta name="author" content="Austin Anumudu">
+    <title>Join | Lagos Chamber of Commerce and Industry</title>
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    
+    <script src="scripts/join.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/lcci-logo.png" alt="LCCI Logo">
+            <nav>
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="join-container">
+        <section class="join-form-wrapper">
+            <h1>Membership Application</h1>
+            <form method="get" action="thankyou.html" class="join-form">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+                    <label>First Name* <input type="text" name="fname" required title="Please enter your first name" autocomplete="given-name">
+                    </label>
+
+                    <label>Last Name* <input type="text" name="lname" required title="Please enter your last name" autocomplete="family-name">
+                    </label>
+
+                    <label>Organizational Title 
+                        <input type="text" name="title" autocomplete="organization-title" 
+                               pattern="[A-Za-z\s\-]{7,}" 
+                               title="Minimum 7 characters. Only letters, hyphens, and spaces allowed.">
+                    </label>
+
+                    <label>Email Address* <input type="email" name="email" required placeholder="example@domain.com" 
+                               title="Enter a valid email address" autocomplete="email">
+                    </label>
+
+                    <label>Mobile Number* <input type="tel" name="phone" required title="Enter your mobile phone number" autocomplete="tel">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Business Details</legend>
+                    <label>Business Name* <input type="text" name="orgname" required title="Enter your organization's legal name" autocomplete="organization">
+                    </label>
+
+                    <label>Membership Level*
+                        <select name="membership" required title="Select your membership tier">
+                            <option value="" disabled selected>Select a Level...</option>
+                            <option value="np">NP Membership (Non-Profit)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>Business Description
+                        <textarea name="description" title="Provide a brief description of your organization"></textarea>
+                    </label>
+                </fieldset>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Apply for Membership" class="submit-btn">
+            </form>
+        </section>
+
+        <aside class="membership-info">
+            <h2>Membership Levels</h2>
+            <div class="card">
+                <h3>NP Membership</h3>
+                <button class="open-modal" data-target="modal-np">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>Bronze Membership</h3>
+                <button class="open-modal" data-target="modal-bronze">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>Silver Membership</h3>
+                <button class="open-modal" data-target="modal-silver">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>Gold Membership</h3>
+                <button class="open-modal" data-target="modal-gold">Learn More</button>
+            </div>
+        </aside>
+
+        <dialog id="modal-np">
+            <button class="close-modal">&times;</button>
+            <h3>NP Membership</h3>
+            <p><strong>Cost:</strong> Free</p>
+            <p>For non-profit organizations. Includes basic directory listing and networking access.</p>
+        </dialog>
+
+        <dialog id="modal-bronze">
+            <button class="close-modal">&times;</button>
+            <h3>Bronze Membership</h3>
+            <p><strong>Cost:</strong> ₦50,000 / year</p>
+            <p>Includes standard listing, training discounts, and member spotlight on rotating basis.</p>
+        </dialog>
+
+        <dialog id="modal-silver">
+            <button class="close-modal">&times;</button>
+            <h3>Silver Membership</h3>
+            <p><strong>Cost:</strong> ₦150,000 / year</p>
+            <p>Includes priority listing, event discounts, and home page advertisement space.</p>
+        </dialog>
+
+        <dialog id="modal-gold">
+            <button class="close-modal">&times;</button>
+            <h3>Gold Membership</h3>
+            <p><strong>Cost:</strong> ₦300,000 / year</p>
+            <p>Full VIP benefits, event sponsorship, and premium advertising placement.</p>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

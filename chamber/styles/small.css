@@ -1,11 +1,12 @@
 /* =============================
-   1. VARIABLES
+   1. VARIABLES (Unified)
    ============================= */
 :root {
-    --lcci-green: #2e7d32;
-    --lcci-navy: #1a2a44;
+    --lcci-navy: #0b1c3a;   /* Updated to match your screenshot dark navy */
+    --lcci-green: #4ade80;  /* Updated to match your screenshot neon green */
     --text-dark: #1f2b1f;
     --white: #ffffff;
+    --grey: #f4f4f4;
     --bg-light: #f4f7f4;
     --border-light: #e0e0e0;
 }
@@ -22,10 +23,11 @@ body {
     font-family: "Inter", sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    background-color: var(--white);
 }
 
 /* =============================
-   3. HEADER & LOGO
+   3. HEADER & NAVIGATION
    ============================= */
 .header-inner {
     display: flex;
@@ -35,35 +37,17 @@ body {
     background-color: var(--white);
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
 .logo {
     height: 50px;
     width: auto;
-    display: block;
 }
 
-.brand-text {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--lcci-green);
-}
-
-/* =============================
-   4. NAVIGATION
-   ============================= */
 #menu {
     background: none;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     color: var(--lcci-green);
-    padding: 10px;
 }
 
 #menu::before { content: "☰"; }
@@ -74,7 +58,6 @@ body {
     list-style: none; 
     padding: 0;
     margin: 0;
-    background-color: var(--white);
 }
 
 .primary-nav ul.show { 
@@ -89,7 +72,6 @@ body {
     text-decoration: none;
     color: var(--lcci-navy);
     font-weight: 700;
-    transition: 0.3s;
 }
 
 .primary-nav a.active {
@@ -97,52 +79,51 @@ body {
     color: var(--white);
 }
 
-.primary-nav a:hover {
-    color: var(--lcci-green);
-    background-color: var(--bg-light);
-}
-
 /* =============================
-   5. HERO SECTION
+   4. JOIN FORM & RESULTS
    ============================= */
-.hero {
-    min-height: 60vh;
-    padding: 40px 5%;
+.join-form fieldset {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.join-form label {
     display: flex;
-    align-items: center;
-    background-color: var(--lcci-navy); 
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                      url("../images/lagos.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: var(--white);
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
-.hero h1 { 
-    font-size: 2.2rem; 
-    line-height: 1.1; 
-    margin-bottom: 20px; 
+.join-form input, .join-form select, .join-form textarea {
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.hero h1 span { 
-    color: #b7f5c4; 
-    display: block; 
+#results {
+    background-color: var(--grey);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 5%;
+    text-align: left;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
+#results p {
+    margin: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
 }
 
-.btn.primary { background-color: var(--lcci-green); color: var(--white); }
-.btn.secondary { border: 2px solid var(--white); color: var(--white); margin-left: 10px; }
+#results strong {
+    color: var(--lcci-navy);
+}
 
 /* =============================
-   6. DASHBOARD CARDS
+   5. CARDS & ANIMATIONS
    ============================= */
 .info-grid {
     padding: 20px 5%;
@@ -152,64 +133,26 @@ body {
 }
 
 .card {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 12px;
+    background: var(--white);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
     border-top: 6px solid var(--lcci-green);
     border-left: 1px solid var(--border-light);
     border-right: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
-    margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
 }
 
-.card h2 {
-    margin-top: 0;
-    color: var(--lcci-navy);
-    font-size: 1.2rem;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 10px;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =============================
-   7. WEATHER & SPOTLIGHTS
-   ============================= */
-.weather-display, .spotlight-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.weather-icon {
-    background-color: #e8f5e9;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-}
-
-.temp { font-size: 2rem; font-weight: 800; margin: 0; }
-.desc { color: var(--lcci-green); font-weight: 700; text-transform: capitalize; margin: 0; }
-
-.spotlight-item {
-    background-color: var(--bg-light);
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.badge {
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: var(--white);
-}
-.badge.gold { background-color: #d4af37; }
-.badge.silver { background-color: #a0a0a0; }
-
-/* =============================
-   8. FOOTER
+   6. FOOTER (Matches your image)
    ============================= */
 footer {
     background-color: var(--lcci-navy);
@@ -219,28 +162,22 @@ footer {
     margin-top: 40px;
 }
 
-.footer-contact p {
-    margin: 5px 0;
-    font-size: 0.9rem;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .footer-social {
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin: 20px 0;
 }
 
-.footer-social a {
-    color: var(--white);
-    font-size: 1.6rem;
-    transition: transform 0.3s, color 0.3s;
-    text-decoration: none;
-}
-
-.footer-social a:hover {
-    color: #b7f5c4;
-    transform: scale(1.1);
+.footer-social img {
+    width: 24px;
+    filter: brightness(0) invert(1); /* Makes icons white */
 }
 
 .footer-copy {
@@ -249,7 +186,7 @@ footer {
     font-size: 0.85rem;
 }
 
-#lastModified span {
-    color: #b7f5c4;
+#lastModified {
+    color: var(--lcci-green);
     font-weight: bold;
 }
