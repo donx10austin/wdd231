@@ -1,87 +1,67 @@
 /* =============================
-   1. VARIABLES (Unified)
+   1. VARIABLES & RESET
    ============================= */
 :root {
-    --lcci-navy: #0b1c3a;   /* Updated to match your screenshot dark navy */
-    --lcci-green: #4ade80;  /* Updated to match your screenshot neon green */
-    --text-dark: #1f2b1f;
+    --lcci-navy: #0b1c3a;   
+    --lcci-green: #1b5e20;  /* Darker green for AAA contrast */
+    --lcci-accent: #4ade80; /* Neon green for borders only */
+    --text-dark: #1a1a1a;
     --white: #ffffff;
     --grey: #f4f4f4;
-    --bg-light: #f4f7f4;
     --border-light: #e0e0e0;
 }
 
-/* =============================
-   2. RESET & BASE
-   ============================= */
-*, *::before, *::after { 
-    box-sizing: border-box; 
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--white);
 }
 
 /* =============================
-   3. HEADER & NAVIGATION
+   2. MOBILE HEADER (Stacked)
    ============================= */
-.header-inner {
+.header-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 5%;
+    padding: 1rem;
     background-color: var(--white);
+    border-bottom: 2px solid var(--lcci-navy);
 }
 
-.logo {
+.header-content img {
     height: 50px;
     width: auto;
 }
 
-#menu {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--lcci-green);
-}
-
-#menu::before { content: "☰"; }
-#menu.show::before { content: "✕"; }
-
-.primary-nav ul { 
-    display: none; 
-    list-style: none; 
+.navigation {
+    list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    gap: 15px;
 }
 
-.primary-nav ul.show { 
-    display: flex; 
-    flex-direction: column; 
-    border-top: 1px solid var(--border-light);
-}
-
-.primary-nav a {
-    display: block;
-    padding: 15px 5%;
+.navigation a {
     text-decoration: none;
     color: var(--lcci-navy);
     font-weight: 700;
+    font-size: 0.9rem;
 }
 
-.primary-nav a.active {
-    background-color: var(--lcci-green);
-    color: var(--white);
+.navigation a.active {
+    color: var(--lcci-green);
+    border-bottom: 2px solid var(--lcci-green);
 }
 
 /* =============================
-   4. JOIN FORM & RESULTS
+   3. JOIN FORM & CARDS
    ============================= */
+.join-container { padding: 20px 5%; }
+
 .join-form fieldset {
     border: 1px solid var(--border-light);
     border-radius: 8px;
@@ -103,33 +83,15 @@ body {
     border-radius: 4px;
 }
 
-#results {
-    background-color: var(--grey);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 2rem 5%;
-    text-align: left;
-}
-
-#results p {
-    margin: 0.8rem 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 4px;
-}
-
-#results strong {
-    color: var(--lcci-navy);
-}
-
-/* =============================
-   5. CARDS & ANIMATIONS
-   ============================= */
-.info-grid {
-    padding: 20px 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.submit-btn {
+    background-color: var(--lcci-navy);
+    color: var(--white);
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .card {
@@ -142,51 +104,76 @@ body {
     border-right: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    animation: fadeInUp 0.8s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =============================
-   6. FOOTER (Matches your image)
+   4. FOOTER (Mobile)
    ============================= */
 footer {
     background-color: var(--lcci-navy);
     color: var(--white);
     padding: 30px 5%;
     text-align: center;
-    margin-top: 40px;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
-}
-
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
 }
 
 .footer-social img {
     width: 24px;
-    filter: brightness(0) invert(1); /* Makes icons white */
-}
-
-.footer-copy {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
-    font-size: 0.85rem;
+    filter: brightness(0) invert(1);
 }
 
 #lastModified {
-    color: var(--lcci-green);
+    color: var(--lcci-accent);
     font-weight: bold;
+}
+
+/* --- Thank You Page Specifics --- */
+.thanks-container {
+    padding: 40px 5%;
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.thanks-card {
+    background: var(--white);
+    max-width: 600px;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 8px solid var(--lcci-green);
+}
+
+.success-icon {
+    background-color: var(--lcci-green);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+
+.thanks-card h1 {
+    margin-bottom: 1rem;
+    color: var(--lcci-navy);
+}
+
+.thanks-actions {
+    margin-top: 2rem;
+}
+
+.thanks-actions .submit-btn {
+    text-decoration: none;
+    display: inline-block;
 }

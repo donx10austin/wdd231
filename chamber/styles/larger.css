@@ -1,13 +1,12 @@
 /* =============================================================
-   LCCI DESKTOP VIEW (800px and up)
-   This handles the transition from mobile-stack to desktop-grid.
+   LCCI DESKTOP STYLES (800px and up)
    ============================================================= */
 @media (min-width: 800px) {
 
-    /* 1. MASTER LAYOUT CONTAINERS */
-    .header-inner, 
-    .info-grid, 
-    .join-container,
+    /* 1. SHARED LAYOUT CONSTRAINTS */
+    .header-content, 
+    .join-container, 
+    .directory-container,
     .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -15,77 +14,61 @@
         padding-right: 20px;
     }
 
-    /* 2. NAVIGATION & WAYFINDING */
-    #menu { 
-        display: none !important; /* Hide hamburger on desktop */
-    }
-
-    .primary-nav ul {
-        display: flex !important;
-        flex-direction: row;
-        gap: 30px;
-        border: none;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .primary-nav a {
-        padding: 10px 0;
-        color: var(--lcci-navy);
-        font-weight: 700;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    /* Desktop Wayfinding: Clean underline for the active page */
-    .primary-nav a.active {
-        color: var(--lcci-green);
-        border-bottom: 3px solid var(--lcci-green);
-        padding-bottom: 5px;
-        font-weight: 800;
-    }
-
-    .primary-nav a:hover {
-        color: var(--lcci-green);
-    }
-
-    /* 3. HERO SECTION (Home Page) */
-    .hero {
-        min-height: 60vh;
+    /* 2. HEADER: Logo Left, Nav Far Right */
+    .header-content {
         display: flex;
+        flex-direction: row; /* Horizontal */
+        justify-content: space-between; /* Pushes Logo left, Nav right */
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        padding: 20px;
     }
 
-    .hero h1 { 
-        font-size: 3.5rem; 
-        max-width: 850px; 
+    .navigation {
+        display: flex !important; /* Force show on desktop */
+        flex-direction: row;
+        gap: 40px;
+        margin: 0;
     }
 
-    /* 4. JOIN PAGE GRID */
+    .navigation a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+    }
+
+    /* High Contrast Hover & Active States */
+    .navigation a:hover {
+        color: var(--lcci-green);
+    }
+
+    .navigation a.active {
+        border-bottom: 3px solid var(--lcci-green);
+        background-color: transparent; /* Remove mobile background-color if present */
+        color: var(--lcci-green);
+    }
+
+    /* 3. JOIN PAGE: Side-by-Side Grid */
     .join-container {
         display: grid;
-        grid-template-columns: 1.5fr 1fr; /* Form (60%) | Cards (40%) */
+        grid-template-columns: 1.6fr 1fr; /* Form takes 60%, Cards take 40% */
         gap: 50px;
         align-items: start;
         margin-top: 40px;
-    }
-
-    /* 5. DASHBOARD / INFO GRID (Home Page) */
-    .info-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 40px;
-        margin-top: 60px;
         margin-bottom: 60px;
     }
 
-    /* 6. FOOTER - Precise Horizontal Layout (Matches your image) */
+    /* 4. DIRECTORY PAGE: Grid View */
+    /* This ensures your directory cards don't stretch too wide on desktop */
+    .directory-container.grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    /* 5. FOOTER: Professional 3-Column Layout */
     .footer-content {
         display: grid;
-        grid-template-columns: 1fr auto 1fr; /* Left | Center | Right */
+        grid-template-columns: 1fr auto 1fr; /* Left (Contact) | Center (Social) | Right (Info) */
         align-items: center;
         text-align: left;
         padding: 40px 20px;
@@ -105,17 +88,20 @@
         text-align: right;
     }
 
-    .footer-copy {
-        border-top: none; 
+    /* Remove mobile-only borders in footer */
+    .footer-info {
+        border-top: none;
         padding-top: 0;
     }
 }
 
 /* =============================================================
-   ULTRA-WIDE ADJUSTMENTS (Optional - 1200px+)
+   ULTRA-WIDE ADJUSTMENTS (1240px+)
    ============================================================= */
-@media (min-width: 1200px) {
-    .hero h1 {
-        font-size: 4rem;
+@media (min-width: 1240px) {
+    /* Slight padding adjustment for massive screens */
+    .header-content, .join-container, .footer-content {
+        padding-left: 0;
+        padding-right: 0;
     }
 }

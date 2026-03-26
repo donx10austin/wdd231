@@ -1,44 +1,46 @@
-// Grab the current URL from the browser's address bar
+// 1. Get the full URL from the browser
 const currentUrl = window.location.href;
 
-// Split the URL into two halves at the '?'
+// 2. Split the URL to get only the data after the '?'
 const everything = currentUrl.split('?');
 
-// Check if there is actually data in the URL
+// 3. If there is data to process...
 if (everything.length > 1) {
-    // Separate each "key=value" pair into an array
+    // Split the string into an array of "key=value" pairs
     const formData = everything[1].split('&');
 
-    // Helper function to find and clean up the values
+    // Helper function to extract and clean values based on the 'name' attribute
     function getFormValue(key) {
         let value = "";
         formData.forEach((element) => {
             if (element.startsWith(key)) {
-                // Split at '=' and get the second half, then decode symbols like %40 (@)
+                // Decode symbols like %40 (@) and replace '+' with spaces
                 value = decodeURIComponent(element.split('=')[1]);
-                // Replace '+' with spaces if the browser used them for encoding
                 value = value.replace(/\+/g, ' ');
             }
         });
         return value;
     }
 
-    // Target the div with id="results" in your thankyou.html
+    // 4. Target the 'results' div in thankyou.html
     const resultsContainer = document.querySelector('#results');
 
-    // Build the output using the 'name' attributes from your join.html form
-    resultsContainer.innerHTML = `
-        <h3>Application Summary</h3>
-        <p><strong>First Name:</strong> ${getFormValue('fname')}</p>
-        <p><strong>Last Name:</strong> ${getFormValue('lname')}</p>
-        <p><strong>Email Address:</strong> ${getFormValue('email')}</p>
-        <p><strong>Mobile Number:</strong> ${getFormValue('phone')}</p>
-        <p><strong>Business Name:</strong> ${getFormValue('orgname')}</p>
-        <p><strong>Submitted On:</strong> ${new Date(getFormValue('timestamp')).toLocaleString('en-NG')}</p>
-    `;
+    if (resultsContainer) {
+        // Build the HTML output using your form's specific 'name' attributes
+        resultsContainer.innerHTML = `
+            <div class="summary-item">
+                <p><strong>Full Name:</strong> ${getFormValue('fname')} ${getFormValue('lname')}</p>
+                <p><strong>Email:</strong> ${getFormValue('email')}</p>
+                <p><strong>Phone:</strong> ${getFormValue('phone')}</p>
+                <p><strong>Organization:</strong> ${getFormValue('orgname')}</p>
+                <p><strong>Membership Tier:</strong> ${getFormValue('membership').toUpperCase()}</p>
+                <p><strong>Date Submitted:</strong> ${new Date(getFormValue('timestamp')).toLocaleString('en-NG')}</p>
+            </div>
+        `;
+    }
 }
 
-// Global "Last Modified" for the footer
+// 5. Global Footer Logic (Last Modified)
 const lastModif = document.querySelector("#lastModified");
 if (lastModif) {
     lastModif.textContent = document.lastModified;
