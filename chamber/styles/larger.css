@@ -1,62 +1,39 @@
 @media (min-width: 1024px) {
-
     /* Header layout */
     .header-inner {
         max-width: 1400px;
         margin: 0 auto;
         padding: 22px 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    }
+
+    /* Hide Hamburger on Desktop */
+    #menu {
+        display: none;
     }
 
     .primary-nav ul {
+        display: flex; /* Always visible */
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        box-shadow: none;
+        border: none;
         gap: 42px;
     }
 
-    /* Hero */
-    .hero {
-        min-height: 90vh;
+    /* Wayfinding for Desktop */
+    .primary-nav a.active {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 3px solid var(--lcci-green);
     }
 
-    .hero h1 {
-        font-size: 3.4rem;
-    }
-
-    .hero-content {
-        max-width: 800px;
-    }
-
-    /* =============================
-       FOOTER (Desktop Layout)
-       ============================= */
+    /* Footer (Existing Desktop Layout) */
     .footer-content {
-        flex-direction: row; /* Side-by-side */
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         text-align: left;
     }
 
-    /* Pushes social links to the exact center */
-    .footer-contact, .footer-copy {
-        flex: 1;
-    }
-
-    .social-links {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .footer-copy {
-        text-align: right;
-    }
-}
-
-.info-grid {
-    flex-direction: row; /* Side-by-side on desktop */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.card {
-    flex: 1;
+    /* ... keep your existing .hero and .info-grid desktop styles ... */
 }

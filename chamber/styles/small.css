@@ -3,13 +3,20 @@
    ============================= */
 :root {
     --lcci-green: #2e7d32;
-    --lcci-navy: #1a2a44; /* New brand color */
+    --lcci-navy: #1a2a44;
     --text-dark: #1f2b1f;
+    --text-muted: #444444; /* Added for AA contrast on white */
     --border-light: #e5e5e5;
+    --active-gold: #ffc107;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Fix: No horizontal scrolling */
+    width: 100%;
 }
 
 body {
@@ -21,230 +28,86 @@ body {
 }
 
 /* =============================
-   ACCESSIBILITY
-   ============================= */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-}
-
-/* =============================
-   HEADER
+   HEADER & NAVIGATION (Updated for Hamburger)
    ============================= */
 .site-header {
     background-color: #ffffff;
     border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 24px;
+    padding: 12px 24px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+/* Hamburger Button Styles */
+#menu {
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--lcci-navy);
+    padding: 5px;
 }
 
-.logo {
-    width: 42px;
-    height: auto;
-}
+#menu::before { content: "☰"; }
+#menu.show::before { content: "✕"; }
 
-.brand-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--lcci-green);
-}
-
+/* Navigation List */
 .primary-nav ul {
     list-style: none;
-    display: flex;
-    gap: 28px;
-    margin: 0;
-    padding: 0;
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 2px solid var(--lcci-green);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.primary-nav ul.show {
+    display: flex; /* Shown when clicked */
+}
+
+/* Wayfinding - Active Link */
+.primary-nav a.active {
+    color: var(--lcci-green);
+    border-left: 4px solid var(--lcci-green);
+    padding-left: 8px;
 }
 
 .primary-nav a {
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
+    font-size: 1rem;
+    display: block;
+    padding: 10px 0;
     color: var(--text-dark);
 }
 
-.primary-nav a:hover {
-    color: var(--lcci-green);
-}
-
 /* =============================
-   HERO
+   HERO (Contrast Fix)
    ============================= */
-.hero {
-    position: relative;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    padding: 0 6%;
-    color: #ffffff;
-    background: url("../images/lagos.jpg") center / cover no-repeat;
-}
-
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.65); /* Darkened for AA contrast */
 }
 
-.hero-content {
-    position: relative;
-    max-width: 720px;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 2.6rem;
-    line-height: 1.15;
-    margin-bottom: 18px;
-}
-
-.hero h1 span {
-    color: #b7f5c4;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    margin-bottom: 28px;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-/* =============================
-   BUTTONS
-   ============================= */
-.btn {
-    padding: 12px 24px;
-    border-radius: 999px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn.primary {
-    background: var(--lcci-green);
-    color: #ffffff;
-}
-
-.btn.secondary {
-    border: 2px solid #ffffff;
-    color: #ffffff;
-}
-
-/* =============================
-   FOOTER (Mobile First)
-   ============================= */
-footer {
-    background-color: var(--lcci-navy);
-    color: #ffffff;
-    padding: 40px 24px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Stacked on mobile */
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-contact p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 18px;
-}
-
-.social-links img {
-    width: 32px; /* Standardize all social icons */
+/* Ensure all images are responsive to prevent horizontal scroll */
+img {
+    max-width: 100%;
     height: auto;
 }
 
-.footer-copy p {
-    font-size: 0.85rem;
-    opacity: 0.8;
-}
-
-/* =============================
-   EVENTS SECTION
-   ============================= */
-.events {
-    padding: 40px 24px;
-    background-color: #f9f9f9; /* Light grey to separate it from other sections */
-}
-
-.events h2 {
-    text-align: center;
-    color: var(--lcci-navy);
-    margin-bottom: 30px;
-}
-
-.events-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.event-card {
-    background: white;
-    padding: 20px;
-    border-left: 5px solid var(--lcci-green);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.event-date {
-    font-weight: bold;
-    color: var(--lcci-green);
-    font-size: 0.9rem;
-}
-
-/* For larger screens in larger.css */
-@media (min-width: 1024px) {
-    .events-container {
-        flex-direction: row; /* Side-by-side events on desktop */
-    }
-    .event-card {
-        flex: 1;
-    }
-}
-
-.info-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+/* ... keep your existing .btn, .events, and .footer styles ... */
