@@ -1,42 +1,71 @@
+/* =============================
+   ONE SOLID DESKTOP VIEW
+   ============================= */
 @media (min-width: 800px) {
+    /* 1. The Header Alignment */
     .header-content {
         display: flex;
-        justify-content: space-between; /* This is the "Magic" line that pushes Nav to the right */
+        justify-content: space-between; /* Pushes Logo left, Nav right */
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         padding: 10px 2%;
+        background-color: #ffffff; 
     }
 
+    /* 2. The Navigation List */
     .nav-links {
-        display: flex !important; /* Makes links horizontal */
-        list-style: none;         /* Removes the bullet points */
-        gap: 30px;                /* Spacing between links */
+        display: flex !important; /* Force show links horizontally */
+        list-style: none; /* Removes bullet points */
+        gap: 30px;
         margin: 0;
         padding: 0;
     }
 
+    /* 3. The Links */
     .nav-links li a {
         text-decoration: none;
-        color: #0b1c3a;
+        color: #0b1c3a; /* Navy theme */
         font-weight: 700;
+        transition: color 0.3s;
     }
-}
-    .nav-links li a.active, 
-    .nav-links li a:hover {
-        color: #2e7d32;
+
+    /* 4. The Active/Hover State (Must be inside the media query) */
+    .nav-links li a:hover,
+    .nav-links li a.active {
+        color: #2e7d32; /* LCCI Green */
         border-bottom: 3px solid #2e7d32;
     }
 
-    /* Hero Left Alignment */
+    /* 5. Home Hero Alignment */
     .hero {
         text-align: left;
         justify-content: flex-start;
         padding-left: 10%;
         min-height: 80vh;
+        display: flex; /* Ensure flex is active for alignment */
+        flex-direction: column;
     }
 
     .hero h1 { font-size: 4rem; max-width: 850px; }
-    .btn-group { flex-direction: row; }
+    
+    .btn-group { 
+        display: flex;
+        flex-direction: row; 
+        gap: 20px;
+    }
+    
     .btn { width: auto; }
-}
+
+    /* 6. Info Grid (Weather/Spotlight) and Join Main Layout */
+    .info-grid, .join-main {
+        display: flex;
+        flex-direction: row; /* Side-by-side on desktop */
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 2%;
+    }
+
+    .card { flex: 1; } /* Makes cards equal width */
+} /* End of media query */

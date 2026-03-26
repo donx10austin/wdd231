@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCCI Member Directory - Lagos Chamber of Commerce</title>
+    <title>Member Directory | Lagos Chamber of Commerce</title>
     
     <meta name="author" content="Austin Anumudu">
-    <meta name="description" content="Official Member Directory of the Lagos Chamber of Commerce. Connecting top businesses and industry leaders in Lagos, Nigeria.">
+    <meta name="description" content="LCCI Business Directory - Connecting industry leaders across Lagos, Nigeria.">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    
+    <script defer src="scripts/main.js"></script>
     <script defer src="scripts/directory.js"></script>
 </head>
 <body>
     <header>
-    <div class="header-content">
-        <a href="index.html" class="logo-box">
-            <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
-            <span class="site-name">Lagos Chamber of Commerce</span>
-        </a>
-
-        <nav class="primary-nav">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>>
-
-    <main>
-        <h1>Member Directory</h1>
-        <div class="controls">
-            <button id="grid">Grid View</button>
-            <button id="list">List View</button>
+        <div class="header-content">
+            <a href="index.html" class="logo-box">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <div class="site-name">Lagos Chamber of Commerce</div>
+            </a>
+            <nav class="primary-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
         </div>
-        <div id="member-container" class="grid"></div>
+    </header>
+
+    <main class="directory-container">
+        <section class="directory-header">
+            <h1>Member Directory</h1>
+            <p>Explore our network of verified business leaders and organizations in Lagos.</p>
+            
+            <div class="view-controls">
+                <button id="grid" class="active-btn">Grid View</button>
+                <button id="list">List View</button>
+            </div>
+        </section>
+
+        <div id="member-container" class="grid">
+            <p class="status-msg">Loading members...</p>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-contact">
-                <p><strong>Lagos Chamber of Commerce</strong></p>
-                <p>12 Marina Road, Lagos Island</p>
-                <p>info@lagoschamber.ng</p>
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
             </div>
             
             <div class="footer-social">
-                <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube" width="30" height="30"></a>
-                <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter" width="30" height="30"></a>
-                <a href="#" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
+                <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube" width="24"></a>
+                <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter" width="24"></a>
+                <a href="#" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" width="24"></a>
             </div>
 
             <div class="footer-meta">
-                <p>&copy; 2026 | Austin Anumudu | WDD 231</p>
+                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
                 <p>Last Modified: <span id="lastModified"></span></p>
             </div>
         </div>

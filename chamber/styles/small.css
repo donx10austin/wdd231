@@ -5,6 +5,13 @@
     --lcci-navy: #0b1c3a;
     --lcci-green: #2e7d32;
     --white: #ffffff;
+    --light-grey: #f9f9f9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -44,14 +51,60 @@ header {
 }
 
 .nav-links {
-    display: none; /* Mobile menu hidden by default */
+    display: none; /* Hidden on mobile until toggled */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 /* =============================
-   2. DIRECTORY (Grid/List)
+   2. HERO SECTION (Home Page)
+   ============================= */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 5%;
+    color: #ffffff;
+    /* Ensure the path to your hero image is correct */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("../images/lagos-hero.jpg") center/cover no-repeat;
+}
+
+.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
+.hero .highlight { color: #b7f5c4; display: block; }
+
+.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; text-align: center; }
+.btn-primary { background: var(--lcci-green); color: white; }
+.btn-secondary { border: 2px solid white; color: white; }
+
+/* =============================
+   3. CARDS (Weather, Spotlight, Join Info)
+   ============================ */
+.card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--lcci-navy);
+    color: var(--white);
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* =============================
+   4. DIRECTORY & FORMS
    ============================= */
 #member-container.grid {
     display: grid;
@@ -60,29 +113,33 @@ header {
     padding: 20px;
 }
 
-#member-container.list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-}
-
 .member-card {
-    background: #f9f9f9;
+    background: var(--light-grey);
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
 }
 
-#member-container.list .member-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+/* Simple Join Form styling */
+.join-form fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.join-form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.join-form input, .join-form select, .join-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
 }
 
 /* =============================
-   3. FOOTER
+   5. FOOTER
    ============================= */
 footer {
     background-color: var(--lcci-navy);
@@ -93,5 +150,5 @@ footer {
 
 .footer-social img {
     margin: 0 10px;
-    filter: brightness(0) invert(1); /* Makes icons white */
+    filter: brightness(0) invert(1);
 }
