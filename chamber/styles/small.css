@@ -50,11 +50,34 @@ header {
     .site-name { display: block; }
 }
 
+/* --- Navigation & Hamburger --- */
+#menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--lcci-navy);
+    cursor: pointer;
+}
+
 .nav-links {
-    display: none; /* Hidden on mobile until toggled */
+    display: none; /* Hidden on mobile by default */
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+/* Class added via JS to show menu */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    background: var(--white);
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid var(--lcci-green);
+    z-index: 1000;
 }
 
 /* =============================
@@ -68,7 +91,6 @@ header {
     text-align: center;
     padding: 40px 5%;
     color: #ffffff;
-    /* Ensure the path to your hero image is correct */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url("../images/lagos-hero.jpg") center/cover no-repeat;
 }
@@ -82,7 +104,7 @@ header {
 .btn-secondary { border: 2px solid white; color: white; }
 
 /* =============================
-   3. CARDS (Weather, Spotlight, Join Info)
+   3. CARDS (Weather & Spotlight)
    ============================ */
 .card {
     background: var(--white);
@@ -120,35 +142,36 @@ header {
     text-align: center;
 }
 
-/* Simple Join Form styling */
 .join-form fieldset {
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
 }
 
-.join-form label {
-    display: block;
-    margin-bottom: 15px;
-}
-
-.join-form input, .join-form select, .join-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-}
-
 /* =============================
-   5. FOOTER
+   5. FOOTER (Merged & Finalized)
    ============================= */
 footer {
     background-color: var(--lcci-navy);
     color: white;
-    padding: 30px 5%;
+    padding: 40px 5%;
+    font-size: 0.9rem;
     text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .footer-social img {
+    width: 24px;
     margin: 0 10px;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Makes icons white */
+}
+
+.highlight-date {
+    color: #4ade80; /* Bright green */
+    font-weight: bold;
 }
