@@ -2,9 +2,9 @@
    1. GLOBAL VARIABLES & RESET
    ============================= */
 :root {
-    --lcci-navy: #0b1c3a;   
-    --lcci-green: #2e7d32;  /* High Contrast Green */
-    --lcci-light-green: #b7f5c4; /* Hero Highlight Green */
+    --lcci-navy: #0b1c3a;
+    --lcci-green: #2e7d32; 
+    --lcci-light-green: #b7f5c4;
     --white: #ffffff;
     --text-dark: #1a1a1a;
     --grey: #f4f4f4;
@@ -21,14 +21,14 @@ body {
 }
 
 /* =============================
-   2. HEADER & NAVIGATION (Mobile First)
+   2. HEADER & NAVIGATION
    ============================= */
 .header-content {
     display: flex;
-    justify-content: space-between; /* Logo Left | Hamburger Right */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-    background-color: var(--white);
+    background: var(--white);
     border-bottom: 1px solid var(--border-light);
     position: relative;
 }
@@ -38,20 +38,18 @@ body {
     width: auto;
 }
 
-/* Navigation List - Hidden for Mobile Hamburger */
 .navigation {
-    display: none; 
+    display: none; /* Hidden for mobile hamburger */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Toggle this class via JS */
 .navigation.show {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 70px; /* Adjust based on header height */
+    top: 70px;
     left: 0;
     width: 100%;
     background: var(--white);
@@ -74,7 +72,7 @@ body {
 }
 
 /* =============================
-   3. HERO SECTION
+   3. HERO SECTION (Matches Screenshot)
    ============================= */
 .hero {
     min-height: 60vh;
@@ -111,9 +109,10 @@ body {
 }
 
 /* =============================
-   4. CARDS & MODALS
+   4. DIRECTORY & JOIN CONTENT
    ============================= */
-.directory-container { padding: 20px 5%; }
+.directory-container { padding: 20px; }
+.join-container { padding: 20px 5%; }
 
 .member-card {
     background: var(--white);
@@ -124,26 +123,15 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Modal Styling */
 dialog {
     border: none;
     border-radius: 12px;
     padding: 2rem;
     max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 dialog::backdrop { background-color: rgba(0, 0, 0, 0.7); }
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--lcci-navy);
-}
 
 /* =============================
    5. FOOTER
