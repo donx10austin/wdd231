@@ -1,110 +1,48 @@
 /* =============================
-   DESKTOP VIEW (1024px and up)
+   DESKTOP VIEW (800px and up)
    ============================= */
-@media (min-width: 1024px) {
-    /* 1. LAYOUT CONTAINERS */
-    .header-inner, 
-    .info-grid, 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .header-inner {
-        padding: 20px 0;
-    }
-
-    /* 2. NAVIGATION & WAYFINDING */
-    #menu { 
-        display: none !important; 
-    }
-
-    .primary-nav ul {
+@media (min-width: 800px) {
+    
+    .navigation {
         display: flex !important;
         flex-direction: row;
         gap: 30px;
-        border: none; /* Remove mobile border */
     }
 
-    .primary-nav a {
-        padding: 10px 0; /* Vertical padding only */
-        color: var(--lcci-navy);
-        font-weight: 700;
-        transition: color 0.3s;
-    }
-
-    /* Desktop Wayfinding: Clean underline */
-    .primary-nav a.active {
-        background: none;
-        color: var(--lcci-green);
+    .navigation li a.active {
+        border-left: none;
         border-bottom: 3px solid var(--lcci-green);
-        padding-bottom: 5px;
-        font-weight: 800;
     }
 
-    .primary-nav a:hover {
-        background: none; /* Remove mobile hover bg */
-        color: var(--lcci-green);
-    }
-
-    /* 3. HERO SECTION */
+    /* 2. HERO SECTION */
     .hero {
+        text-align: left;
+        padding-left: 10%;
         min-height: 80vh;
-        padding: 0 10%;
     }
 
     .hero h1 { 
-        font-size: 3.8rem; 
+        font-size: 4rem; 
         max-width: 800px; 
     }
 
-    /* 4. DASHBOARD GRID */
-    .info-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 40px;
-        margin-top: 60px;
-        margin-bottom: 60px;
-        flex-direction: row; /* Override mobile flex-column */
+    .btn-group {
+        flex-direction: row;
+        justify-content: flex-start;
     }
 
-    /* 5. FOOTER - Horizontal Layout */
+    .btn { width: auto; }
+
+    /* 3. DIRECTORY GRID */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
-    }
-
-    .footer-social {
-        margin: 0; 
-    }
-
-    .footer-copy {
-        border-top: none; /* Remove mobile separator */
-        padding-top: 0;
-    }
-}
-
-/* Only triggers on screens wider than 800px */
-@media (min-width: 800px) {
-    .join-container {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr; /* Form takes 60%, Cards take 40% */
-        gap: 40px;
-        align-items: start;
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-info {
-        text-align: right;
     }
 }
