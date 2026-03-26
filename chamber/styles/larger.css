@@ -1,77 +1,43 @@
-/* =============================================================
+/* =========================================
    LCCI DESKTOP STYLES (800px and up)
-   ============================================================= */
+   ========================================= */
 @media (min-width: 800px) {
-    /* 1. HEADER & NAVIGATION */
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between; /* Logo Left | Nav Right */
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
+    
+    .hero {
+        text-align: left; /* Aligned left like the image */
+        justify-content: flex-start;
+        padding-left: 10%;
     }
 
-    #menu {
-        display: none; /* Hide hamburger icon on desktop */
+    .hero-content {
+        max-width: 800px;
     }
 
-    .navigation {
-        display: flex !important; /* Forces nav to show in a row */
-        flex-direction: row;
-        gap: 35px;
-        position: static; /* Remove mobile absolute positioning */
-        width: auto;
-        box-shadow: none;
-    }
-
-    .navigation li a {
-        padding: 10px 0;
-        border-bottom: none;
-    }
-
-    /* Green underline for active page to match screenshot */
-    .navigation li a.active {
-        background: none;
-        color: var(--lcci-green);
-        border-bottom: 3px solid var(--lcci-green);
-    }
-
-    .navigation li a:hover {
-        color: var(--lcci-green);
-    }
-
-    /* 2. HERO SECTION */
+    /* Large Typography */
     .hero h1 { 
-        font-size: 3.8rem; 
-        max-width: 900px; 
+        font-size: 4.5rem; 
+        letter-spacing: -1.5px;
     }
 
-    /* 3. JOIN PAGE LAYOUT */
-    .join-container {
-        display: grid;
-        grid-template-columns: 1.6fr 1fr;
-        gap: 50px;
-        max-width: 1200px;
-        margin: 40px auto;
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 600px;
     }
 
-    /* 4. DIRECTORY PAGE LAYOUT (Only if using .grid class) */
-    .directory-container.grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+    /* Desktop Buttons (Horizontal) */
+    .btn-group {
+        flex-direction: row; /* Side by side */
+        justify-content: flex-start;
     }
 
-    /* 5. FOOTER (Professional 3-Column) */
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: left;
+    .btn {
+        width: auto; /* Buttons shrink to fit text */
     }
 
-    .footer-social { justify-self: center; }
-    .footer-info { justify-self: end; text-align: right; }
+    /* Navigation Adjustment */
+    .navigation {
+        display: flex !important;
+        flex-direction: row;
+        gap: 30px;
+    }
 }

@@ -1,6 +1,6 @@
-/* =============================
+/* =========================================
    1. GLOBAL VARIABLES & RESET
-   ============================= */
+   ========================================= */
 :root {
     --lcci-navy: #0b1c3a;
     --lcci-green: #2e7d32; 
@@ -8,7 +8,6 @@
     --white: #ffffff;
     --text-dark: #1a1a1a;
     --grey: #f4f4f4;
-    --border-light: #e0e0e0;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -20,126 +19,68 @@ body {
     color: var(--text-dark);
 }
 
-/* =============================
-   2. HEADER & NAVIGATION
-   ============================= */
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    background: var(--white);
-    border-bottom: 1px solid var(--border-light);
-    position: relative;
-}
-
-.logo {
-    height: 50px;
-    width: auto;
-}
-
-.navigation {
-    display: none; /* Hidden for mobile hamburger */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navigation.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.navigation li a {
-    display: block;
-    padding: 15px 5%;
-    text-decoration: none;
-    color: var(--lcci-navy);
-    font-weight: 700;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.navigation li a.active {
-    color: var(--lcci-green);
-    border-bottom: 3px solid var(--lcci-green);
-}
-
-/* =============================
-   3. HERO SECTION (Matches Screenshot)
-   ============================= */
+/* =========================================
+   2. HERO SECTION (Mobile)
+   ========================================= */
 .hero {
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 40px 5%;
     color: var(--white);
+    /* Dark overlay ensures white text is readable */
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                 url("../images/lagos-hero.jpg") center/cover no-repeat;
 }
 
-.hero h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 20px; }
-.hero h1 span { color: var(--lcci-light-green); display: block; }
+.hero-content { width: 100%; }
+
+.hero h1 { 
+    font-size: 2.2rem; 
+    line-height: 1.1; 
+    margin-bottom: 20px; 
+    font-weight: 800;
+}
+
+.hero h1 span { 
+    color: var(--lcci-light-green); 
+    display: block; 
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Mobile Buttons (Stacked) */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: 700;
+    width: 100%;
+    max-width: 280px;
+    transition: 0.3s;
+}
 
 .btn-primary { 
     background-color: var(--lcci-green); 
     color: white; 
-    padding: 12px 28px; 
-    border-radius: 50px; 
-    text-decoration: none;
-    font-weight: bold;
+    border: 2px solid var(--lcci-green);
 }
 
 .btn-secondary { 
     border: 2px solid white; 
     color: white; 
-    padding: 12px 28px; 
-    border-radius: 50px; 
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 10px;
 }
-
-/* =============================
-   4. DIRECTORY & JOIN CONTENT
-   ============================= */
-.directory-container { padding: 20px; }
-.join-container { padding: 20px 5%; }
-
-.member-card {
-    background: var(--white);
-    padding: 20px;
-    border: 1px solid #ddd;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-/* Modal Styling */
-dialog {
-    border: none;
-    border-radius: 12px;
-    padding: 2rem;
-    max-width: 500px;
-}
-
-dialog::backdrop { background-color: rgba(0, 0, 0, 0.7); }
-
-/* =============================
-   5. FOOTER
-   ============================= */
-footer { 
-    background: var(--lcci-navy); 
-    color: white; 
-    padding: 30px 5%; 
-    text-align: center; 
-}
-.footer-social img { width: 24px; filter: brightness(0) invert(1); }
