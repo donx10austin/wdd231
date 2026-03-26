@@ -2,42 +2,37 @@
    ONE SOLID DESKTOP VIEW
    ============================= */
 @media (min-width: 800px) {
-    /* 1. The Container */
     .header-content {
         display: flex;
-        justify-content: space-between; /* Pushes Logo left, Nav right */
+        justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         padding: 10px 2%;
-        background-color: #ffffff; /* Fixes white header */
     }
 
-    /* 2. The Navigation List */
     .nav-links {
-        display: flex !important; /* Force show links */
-        list-style: none; /* Removes bullet points */
+        display: flex !important;
+        list-style: none;
         gap: 30px;
         margin: 0;
         padding: 0;
     }
 
-    /* 3. The Links */
     .nav-links li a {
         text-decoration: none;
-        color: #0b1c3a; /* Navy theme */
+        color: #0b1c3a;
         font-weight: 700;
         transition: color 0.3s;
     }
 
-    /* 4. The Active/Hover State */
-    .nav-links li a:hover,
-    .nav-links li a.active {
-        color: #2e7d32; /* Green theme */
+    .nav-links li a.active, 
+    .nav-links li a:hover {
+        color: #2e7d32;
         border-bottom: 3px solid #2e7d32;
     }
 
-    /* 5. Hero Alignment */
+    /* Hero Left Alignment */
     .hero {
         text-align: left;
         justify-content: flex-start;

@@ -1,15 +1,21 @@
 /* =============================
    1. GLOBAL & HEADER
    ============================= */
+:root {
+    --lcci-navy: #0b1c3a;
+    --lcci-green: #2e7d32;
+    --white: #ffffff;
+}
+
 header {
-    background-color: #ffffff; /* Explicit white background */
+    background-color: var(--white);
     border-bottom: 1px solid #ddd;
     width: 100%;
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between; /* Logo left, Nav right */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
 }
@@ -22,48 +28,70 @@ header {
 }
 
 .logo {
-    height: 55px; /* Consistent height */
+    height: 55px;
     width: auto;
 }
 
 .site-name {
-    color: #0b1c3a; /* Navy color */
+    color: var(--lcci-navy);
     font-weight: 800;
     font-size: 1.1rem;
-    display: none; /* Hide on very small screens */
+    display: none;
 }
 
 @media (min-width: 450px) {
     .site-name { display: block; }
 }
 
-/* Navigation - Hidden on mobile for toggle menu */
 .nav-links {
-    display: none; 
+    display: none; /* Mobile menu hidden by default */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 /* =============================
-   2. HERO SECTION
+   2. DIRECTORY (Grid/List)
    ============================= */
-.hero {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 5%;
-    color: #ffffff;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url("../images/lagos-hero.jpg") center/cover no-repeat;
+#member-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
-.hero h1 span { color: #b7f5c4; display: block; }
+#member-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
 
-.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; text-align: center; }
-.btn-primary { background: #2e7d32; color: white; }
-.btn-secondary { border: 2px solid white; color: white; }
+.member-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+#member-container.list .member-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+/* =============================
+   3. FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.footer-social img {
+    margin: 0 10px;
+    filter: brightness(0) invert(1); /* Makes icons white */
+}

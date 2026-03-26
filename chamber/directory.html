@@ -10,37 +10,28 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
-    <meta property="og:title" content="LCCI Business Directory - Connecting Lagos Industry Leaders">
-    <meta property="og:description" content="Discover and connect with top-rated businesses in Lagos. Our directory features verified industry leaders, innovative startups, and global corporations.">
-    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     <script defer src="scripts/directory.js"></script>
 </head>
 <body>
- <header>
-    <div class="header-content">
-        <a href="index.html" class="logo-box">
-            <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
-            <div class="site-name">Lagos Chamber of Commerce</div>
-        </a>
-        <nav class="primary-nav">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-box">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <div class="site-name">Lagos Chamber of Commerce</div>
+            </a>
+            <nav class="primary-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <main>
         <h1>Member Directory</h1>
         <div class="controls">
@@ -51,22 +42,22 @@
     </main>
 
     <footer>
-        <div class="footer-top">
+        <div class="footer-content">
             <div class="footer-contact">
                 <p><strong>Lagos Chamber of Commerce</strong></p>
                 <p>12 Marina Road, Lagos Island</p>
                 <p>info@lagoschamber.ng</p>
             </div>
             
-            <div class="social-media">
-                <a href="#" target="_blank"><img src="images/youtube.png" alt="Visit our YouTube channel" width="30" height="30"></a>
-                <a href="#" target="_blank"><img src="images/twitter.png" alt="Follow us on Twitter" width="30" height="30"></a>
-                <a href="#" target="_blank"><img src="images/linkedin.png" alt="Connect with us on LinkedIn" width="30" height="30"></a>
+            <div class="footer-social">
+                <a href="#" target="_blank"><img src="images/youtube.png" alt="YouTube" width="30" height="30"></a>
+                <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter" width="30" height="30"></a>
+                <a href="#" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
             </div>
 
             <div class="footer-meta">
-                <p>&copy;<span id="currentyear"></span> | Austin Anumudu | WDD 231</p>
-                <p id="lastModified"></p>
+                <p>&copy; 2026 | Austin Anumudu | WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
             </div>
         </div>
     </footer>
