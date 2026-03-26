@@ -1,43 +1,26 @@
-/* =========================================
-   LCCI DESKTOP STYLES (800px and up)
-   ========================================= */
+/* larger.css */
 @media (min-width: 800px) {
-    
     .hero {
-        text-align: left; /* Aligned left like the image */
+        text-align: left; /* Image alignment */
         justify-content: flex-start;
         padding-left: 10%;
+        min-height: 80vh;
     }
 
     .hero-content {
         max-width: 800px;
     }
 
-    /* Large Typography */
     .hero h1 { 
-        font-size: 4.5rem; 
-        letter-spacing: -1.5px;
+        font-size: 4rem; 
+        font-weight: 700;
     }
 
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 600px;
-    }
-
-    /* Desktop Buttons (Horizontal) */
     .btn-group {
-        flex-direction: row; /* Side by side */
-        justify-content: flex-start;
+        flex-direction: row; /* Side by side buttons */
     }
 
     .btn {
-        width: auto; /* Buttons shrink to fit text */
-    }
-
-    /* Navigation Adjustment */
-    .navigation {
-        display: flex !important;
-        flex-direction: row;
-        gap: 30px;
+        width: auto;
     }
 }
