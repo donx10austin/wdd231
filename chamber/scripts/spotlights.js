@@ -6,14 +6,17 @@ async function getSpotlights() {
         const response = await fetch(membersUrl);
         const data = await response.json();
         
-        // Filter: Only Gold and Silver members
+        // 1. Filter: Only Gold (3) and Silver (2) levels
         const eligibleMembers = data.members.filter(m => 
             m.membershipLevel === "Gold" || m.membershipLevel === "Silver"
         );
 
-        // Shuffle and pick 2-3 members randomly
+        // 2. Shuffle the filtered array randomly
         const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, Math.floor(Math.random() * 2) + 2);
+
+        // 3. Select 2 to 3 members
+        const count = Math.floor(Math.random() * 2) + 2; // Returns 2 or 3
+        const selected = shuffled.slice(0, count);
 
         displaySpotlights(selected);
     } catch (error) {
@@ -25,23 +28,26 @@ function displaySpotlights(members) {
     spotlightContainer.innerHTML = "";
     
     members.forEach(member => {
-        const item = document.createElement('div');
-        item.className = 'spotlight-item';
-        // Applying specific color coding based on level
+        const card = document.createElement('div');
+        card.className = 'spotlight-item';
+        
+        // Lowercase the level for the CSS badge class (gold/silver)
         const levelClass = member.membershipLevel.toLowerCase();
 
-        item.innerHTML = `
+        card.innerHTML = `
             <div class="spotlight-header">
-                <img src="${member.image}" alt="${member.name}">
+                <img src="${member.image}" alt="${member.name} logo">
                 <div>
                     <h3>${member.name}</h3>
-                    <span class="badge ${levelClass}">${member.membershipLevel}</span>
+                    <span class="badge ${levelClass}">${member.membershipLevel} Member</span>
                 </div>
             </div>
-            <p>${member.phone}</p>
-            <a href="${member.website}" target="_blank">Website</a>
+            <hr>
+            <p><strong>Phone:</strong> ${member.phone}</p>
+            <p><strong>URL:</strong> <a href="${member.website}" target="_blank">${member.website.replace('https://', '')}</a></p>
+            <p><em>${member.membership} Industry</em></p>
         `;
-        spotlightContainer.appendChild(item);
+        spotlightContainer.appendChild(card);
     });
 }
 
