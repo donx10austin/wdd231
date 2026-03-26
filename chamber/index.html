@@ -4,56 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LCCI | Lagos Chamber of Commerce and Industry</title>
-    <meta name="description" content="The Lagos Chamber of Commerce and Industry connects, empowers, and represents businesses across Lagos.">
-    <meta name="author" content="Austin Anumudu">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/index.html">
+    <meta property="og:title" content="LCCI | Lagos Chamber of Commerce and Industry">
+    <meta property="og:description" content="Join the Lagos Chamber of Commerce to connect with industry leaders, empower your business, and advocate for a better Lagos economy.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/chamber-og.jpg">
 
     <link rel="icon" href="images/lcci-logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/footer.js" defer></script>
     <script src="scripts/weather.js" defer></script>
-    <script src="scripts/directory.js" defer></script> </head>
-
+    <script src="scripts/spotlights.js" defer></script>
+</head>
 <body>
-    <header class="site-header">
+    <header>
         <div class="header-inner">
             <a href="index.html" class="brand">
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
                 <span class="brand-text">LCCI</span>
             </a>
-
             <button id="menu" aria-label="Toggle Menu"></button>
-
-            <nav class="primary-nav" aria-label="Primary navigation">
+            <nav class="primary-nav">
                 <ul id="primary-nav-list">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="directory.html">DIRECTORY</a></li>
+                    <li><a href="join.html">JOIN</a></li>
+                    <li><a href="discover.html">DISCOVER</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero" aria-labelledby="hero-heading">
-            <div class="hero-overlay"></div>
+        <section class="hero">
             <div class="hero-content">
-                <h1 id="hero-heading">
-                    Consistently advocating for a
-                    <span>better business environment</span>
-                </h1>
-                <p>
-                    The Lagos Chamber of Commerce and Industry connects,
-                    champions, and empowers businesses across Lagos through
-                    advocacy, insight, and impactful programs.
-                </p>
+                <h1>Consistently advocating for a <span>better business environment</span></h1>
+                <p>The Lagos Chamber of Commerce and Industry connects, champions, and empowers businesses across Lagos.</p>
                 <div class="hero-actions">
                     <a href="join.html" class="btn primary">Join Us</a>
                     <a href="discover.html" class="btn secondary">What We Do</a>
@@ -62,53 +52,25 @@
         </section>
 
         <section class="info-grid">
-            <div id="weather-card" class="card">
+            <div class="card">
                 <h2>Lagos Weather</h2>
-                <div id="weather-info">Loading current weather...</div>
-                <div id="forecast-info"></div>
+                <div id="weather-info">Loading...</div>
             </div>
-
-            <div id="spotlight-card" class="card">
+            <div class="card">
                 <h2>Member Spotlight</h2>
-                <div id="spotlight-content">
-                    </div>
-            </div>
-        </section>
-
-        <section class="events" aria-labelledby="events-heading">
-            <h2 id="events-heading">Upcoming Events</h2>
-            <div class="events-container">
-                <article class="event-card">
-                    <h3>Lagos Business Summit 2026</h3>
-                    <p class="event-date">March 25, 2026</p>
-                    <p>Join industry leaders at Commerce House for networking and growth.</p>
-                </article>
-                <article class="event-card">
-                    <h3>SME Export Workshop</h3>
-                    <p class="event-date">April 02, 2026</p>
-                    <p>Take your Lagos-based business to the global market.</p>
-                </article>
+                <div id="spotlight-content"></div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <div class="footer-content">
             <div class="footer-contact">
-                <h3>LCCI HQ</h3>
-                <p>1 Idowu Taylor Street,</p>
-                <p>Victoria Island, Lagos</p>
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
                 <p>+234 1 277 1600</p>
             </div>
-
-            <div class="footer-social">
-                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#" aria-label="YouTube"><img src="images/youtube.png" alt="YouTube"></a>
-            </div>
-
             <div class="footer-copy">
-                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
+                <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
                 <p id="lastModified"></p>
             </div>
         </div>

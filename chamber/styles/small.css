@@ -1,227 +1,74 @@
-/* =============================
-   CSS VARIABLES & RESET
-   ============================= */
 :root {
     --lcci-green: #2e7d32;
     --lcci-navy: #1a2a44;
     --text-dark: #1f2b1f;
-    --text-muted: #595959; /* Increased for AA contrast */
     --white: #ffffff;
-    --border-light: #e5e5e5;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-html, body {
-    overflow-x: hidden; /* Fix: No horizontal scrolling */
-    width: 100%;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Inter", sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
 }
 
-/* =============================
-   HEADER & NAVIGATION
-   ============================= */
+/* Header & Logo Fix */
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 5%;
+    padding: 10px 5%;
     background: var(--white);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo {
-    height: 40px; /* Constrained for mobile audit */
+    height: 50px; /* One rule to rule them all */
     width: auto;
 }
 
-#menu {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--lcci-navy);
+.brand-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--lcci-green);
 }
 
+/* Nav Menu (Mobile Hidden) */
 #menu::before { content: "☰"; }
 #menu.show::before { content: "✕"; }
 
-/* Mobile Menu - Hidden by default */
-.primary-nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Height of header */
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    padding: 20px;
-    z-index: 100;
-    border-bottom: 3px solid var(--lcci-green);
-    list-style: none;
-    margin: 0;
-}
+.primary-nav ul { display: none; list-style: none; padding: 0; }
+.primary-nav ul.show { display: flex; flex-direction: column; }
 
-.primary-nav ul.show { display: flex; }
-
-.primary-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 700;
-    padding: 15px 0;
-    display: block;
-}
-
-/* Wayfinding - Mobile */
-.primary-nav a.active {
-    color: var(--lcci-green);
-    border-left: 4px solid var(--lcci-green);
-    padding-left: 10px;
-}
-
-/* =============================
-   HERO SECTION
-   ============================= */
+/* Hero Section */
 .hero {
-    position: relative;
-    min-height: 70vh;
+    min-height: 60vh;
+    padding: 40px 5%;
     display: flex;
     align-items: center;
-    padding: 40px 5%;
-    color: var(--white);
-    background: url("../images/lagos.jpg") center / cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("../images/lagos.jpg") center/cover no-repeat;
+    color: white;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Audit-safe contrast */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-}
-
-.hero h1 {
-    font-size: 2.2rem;
-    line-height: 1.1;
-}
-
-.hero h1 span {
-    color: #b7f5c4; /* Target Image Highlight */
-    display: block;
-}
-
-/* Buttons */
-.hero-actions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+.hero h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 20px; }
+.hero h1 span { color: #b7f5c4; display: block; }
 
 .btn {
+    display: inline-block;
     padding: 12px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
 }
 
-.btn.primary { background: var(--lcci-green); color: var(--white); }
-.btn.secondary { border: 2px solid var(--white); color: var(--white); }
-
-/* Prevent Horizontal Scroll */
-img { max-width: 100%; height: auto; }
-
-/* --- Chat Widget Styling --- */
-.chat-widget {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 2000;
-}
-
-.chat-bubble {
-    display: none; /* Hidden by default */
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-    width: 280px;
-    margin-bottom: 15px;
-    position: relative;
-    border: 1px solid var(--border-light);
-}
-
-/* This is what the JS toggles */
-.chat-bubble.active {
-    display: block;
-    animation: fadeInSlide 0.3s ease-out;
-}
-
-@keyframes fadeInSlide {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.chat-button {
-    background: var(--lcci-green);
-    border: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    float: right;
-}
-
-.spotlight-item {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-top: 5px solid var(--lcci-navy);
-}
-
-.spotlight-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.spotlight-header img {
-    width: 60px;
-    height: auto;
-}
-
-/* Membership Badges for visual repetition */
-.membership-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: white;
-}
-
-.membership-badge.gold { background: #d4af37; }
-.membership-badge.silver { background: #a0a0a0; }
-
-.spotlight-item a {
-    display: inline-block;
-    margin-top: 10px;
-    color: var(--lcci-green);
-    font-weight: 700;
-}
+.btn.primary { background: var(--lcci-green); color: white; }
+.btn.secondary { border: 2px solid white; color: white; margin-left: 10px; }
