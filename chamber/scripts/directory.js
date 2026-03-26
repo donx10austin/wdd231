@@ -1,35 +1,44 @@
-// --- Inside renderSpotlights function ---
-function renderSpotlights(members) {
-    const eligible = members.filter(m => 
-        // Use 'membershipLevel' to match your JSON keys
-        m.membershipLevel.toLowerCase() === 'gold' || 
-        m.membershipLevel.toLowerCase() === 'silver'
-    );
+const mainContainer = document.querySelector('#directory-container');
+const gridBtn = document.querySelector('#grid-btn');
+const listBtn = document.querySelector('#list-btn');
+const membersUrl = "data/members.json";
 
-    const shuffled = eligible.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 3);
+async function getMembers() {
+    const response = await fetch(membersUrl);
+    const data = await response.json();
+    displayMembers(data.members);
+}
 
-    spotlightContainer.innerHTML = ""; 
-    
-    selected.forEach(m => {
-        const spot = document.createElement('div');
-        spot.className = 'spotlight-item';
-        spot.innerHTML = `
-            <img src="${m.image}" alt="${m.name}" style="width:50px;">
-            <h3>${m.name}</h3>
-            <p><strong>${m.membershipLevel} Member</strong></p> <p>${m.membership}</p> <a href="${m.website}" target="_blank">Visit Site</a>
+function displayMembers(members) {
+    mainContainer.innerHTML = ""; // Clear existing content
+
+    members.forEach((member) => {
+        const card = document.createElement('section');
+        card.className = "member-card";
+
+        card.innerHTML = `
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
+            <div class="member-info">
+                <h3>${member.name}</h3>
+                <p class="membership-level">${member.membershipLevel} Member</p>
+                <p>${member.address}</p>
+                <p>${member.phone}</p>
+                <a href="${member.website}" target="_blank">Visit Website</a>
+            </div>
         `;
-        spotlightContainer.appendChild(spot);
+        mainContainer.appendChild(card);
     });
 }
 
-// --- Inside renderDirectory function ---
-function renderDirectory(members, filter) {
-    grid.innerHTML = "";
-    const filtered = members.filter(m => 
-        m.name.toLowerCase().includes(filter.toLowerCase()) ||
-        m.membershipLevel.toLowerCase().includes(filter.toLowerCase()) || // Updated
-        m.membership.toLowerCase().includes(filter.toLowerCase())
-    );
-    // ... rest of the rendering code
-}
+// Toggle logic
+gridBtn.addEventListener('click', () => {
+    mainContainer.classList.add('grid-view');
+    mainContainer.classList.remove('list-view');
+});
+
+listBtn.addEventListener('click', () => {
+    mainContainer.classList.add('list-view');
+    mainContainer.classList.remove('grid-view');
+});
+
+getMembers();
