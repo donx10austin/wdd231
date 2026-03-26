@@ -1,28 +1,122 @@
-/* small.css */
+/* =============================
+   1. VARIABLES
+   ============================= */
 :root {
-    --lcci-navy: #0b1c3a;
-    --lcci-green: #2e7d32; 
-    --lcci-light-green: #b7f5c4;
+    --lcci-green: #2e7d32;
+    --lcci-navy: #1a2a44;
+    --text-dark: #1f2b1f;
     --white: #ffffff;
+    --bg-light: #f4f7f4;
+    --border-light: #e0e0e0;
+}
+
+/* =============================
+   2. RESET & BASE
+   ============================= */
+*, *::before, *::after { 
+    box-sizing: border-box; 
 }
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
 }
 
-/* Hero Section - Mobile First */
-.hero {
-    position: relative;
-    min-height: 60vh;
+/* =============================
+   3. HEADER & LOGO
+   ============================= */
+.header-inner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center; /* Centered on mobile */
-    padding: 40px 5%;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: var(--white);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.brand-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--lcci-green);
+}
+
+/* =============================
+   4. NAVIGATION
+   ============================= */
+#menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--lcci-green);
+    padding: 10px;
+}
+
+#menu::before { content: "☰"; }
+#menu.show::before { content: "✕"; }
+
+.primary-nav ul { 
+    display: none; 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+}
+
+.primary-nav ul.show { 
+    display: flex; 
+    flex-direction: column; 
+    border-top: 1px solid var(--border-light);
+}
+
+.primary-nav a {
+    display: block;
+    padding: 15px 5%;
+    text-decoration: none;
+    color: var(--lcci-navy);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-nav a.active {
+    background-color: var(--lcci-green);
     color: var(--white);
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url("../images/lagos-hero.jpg") center/cover no-repeat;
+}
+
+.primary-nav a:hover {
+    color: var(--lcci-green);
+    background-color: var(--bg-light);
+}
+
+/* =============================
+   5. HERO SECTION
+   ============================= */
+.hero {
+    min-height: 60vh;
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    background-color: var(--lcci-navy); 
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                      url("../images/lagos.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--white);
 }
 
 .hero h1 { 
@@ -32,29 +126,220 @@ body {
 }
 
 .hero h1 span { 
-    color: var(--lcci-light-green); 
+    color: #b7f5c4; 
     display: block; 
 }
 
-.hero p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-}
-
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
 .btn {
-    padding: 12px 30px;
+    display: inline-block;
+    padding: 12px 28px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    width: 250px;
+    font-weight: 700;
 }
 
-.btn-primary { background: var(--lcci-green); color: white; }
-.btn-secondary { border: 2px solid white; color: white; }
+.btn.primary { background-color: var(--lcci-green); color: var(--white); }
+.btn.secondary { border: 2px solid var(--white); color: var(--white); margin-left: 10px; }
+
+/* =============================
+   6. DASHBOARD CARDS
+   ============================= */
+.info-grid {
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 6px solid var(--lcci-green);
+    border-left: 1px solid var(--border-light);
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--lcci-navy);
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+}
+
+/* =============================
+   7. WEATHER & SPOTLIGHTS
+   ============================= */
+.weather-display, .spotlight-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-icon {
+    background-color: #e8f5e9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.temp { font-size: 2rem; font-weight: 800; margin: 0; }
+.desc { color: var(--lcci-green); font-weight: 700; text-transform: capitalize; margin: 0; }
+
+.spotlight-item {
+    background-color: var(--bg-light);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--white);
+}
+.badge.gold { background-color: #d4af37; }
+.badge.silver { background-color: #a0a0a0; }
+
+/* =============================
+   8. FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: var(--white);
+    padding: 30px 5%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-social a {
+    color: var(--white);
+    font-size: 1.6rem;
+    transition: transform 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #b7f5c4;
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    font-size: 0.85rem;
+}
+
+#lastModified span {
+    color: #b7f5c4;
+    font-weight: bold;
+}
+
+/* --- LCCI Variables --- */
+:root {
+    --lcci-navy: #0b1c3a;
+    --lcci-green: #4ade80;
+    --white: #ffffff;
+    --grey: #f4f4f4;
+}
+
+/* --- Footer (Matches your screenshot) --- */
+footer {
+    background-color: var(--lcci-navy);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-social img {
+    width: 24px;
+    filter: brightness(0) invert(1);
+    margin: 0 10px;
+}
+
+#lastModified {
+    color: var(--lcci-green);
+}
+
+/* --- Form Basics (Mobile First) --- */
+.join-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.join-form input, .join-form select, .join-form textarea {
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* --- Membership Cards Animation --- */
+.card {
+    background: var(--grey);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--lcci-navy);
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#results {
+    background-color: var(--grey);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+#results p {
+    margin: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+}
+
+#results strong {
+    color: var(--lcci-navy);
+}
