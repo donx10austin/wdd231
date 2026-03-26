@@ -1,84 +1,13 @@
 /* =============================
-   1. VARIABLES & RESET
-   ============================= */
-:root {
-    --lcci-navy: #0b1c3a;
-    --lcci-green: #2e7d32;
-    --lcci-light-green: #b7f5c4;
-    --white: #ffffff;
-    --text-dark: #1a1a1a;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    font-family: "Inter", "Roboto", sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-}
-
-/* =============================
-   2. HEADER (Fixes Coloring)
+   1. GLOBAL & HEADER
    ============================= */
 header {
-    background-color: var(--white); /* Ensures the header is white */
+    background-color: #ffffff; /* Explicit white background */
     border-bottom: 1px solid #ddd;
     width: 100%;
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between; /* Pushes logo and menu button apart */
-    align-items: center;
-    padding: 10px 5%;
-}
-
-.logo {
-    height: 60px; /* Adjusted for better visibility */
-    width: auto;
-    display: block;
-}
-
-/* Navigation - Hidden on mobile for toggle */
-.navigation {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* =============================
-   3. HERO SECTION (Mobile)
-   ============================= */
-.hero {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 5%;
-    color: var(--white);
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url("../images/lagos-hero.jpg") center/cover no-repeat;
-}
-
-.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
-.hero h1 span { color: var(--lcci-light-green); display: block; }
-
-.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; }
-.btn-primary { background: var(--lcci-green); color: white; }
-.btn-secondary { border: 2px solid white; color: white; }
-
-/* small.css */
-header {
-    background-color: #ffffff; /* Explicit white background */
-    border-bottom: 1px solid #e0e0e0;
-    width: 100%;
-}
-
-.header-container {
     display: flex;
     justify-content: space-between; /* Logo left, Nav right */
     align-items: center;
@@ -89,54 +18,52 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo {
-    height: 50px; /* Consistent height */
+    height: 55px; /* Consistent height */
     width: auto;
 }
 
 .site-name {
     color: #0b1c3a; /* Navy color */
     font-weight: 800;
-    font-size: 1rem;
-    display: none; /* Hide text on very small phones to save space */
+    font-size: 1.1rem;
+    display: none; /* Hide on very small screens */
 }
 
-@media (min-width: 400px) {
+@media (min-width: 450px) {
     .site-name { display: block; }
 }
 
-/* Mobile Nav - Basic list reset */
+/* Navigation - Hidden on mobile for toggle menu */
 .nav-links {
-    display: none; /* Hide by default for mobile menu toggle */
+    display: none; 
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-/* This colors the header and ensures it isn't transparent */
-header {
-    background-color: #ffffff; 
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-}
-
-.header-content {
+/* =============================
+   2. HERO SECTION
+   ============================= */
+.hero {
+    min-height: 60vh;
     display: flex;
-    justify-content: space-between; /* Pushes Logo left and Nav right */
     align-items: center;
-    padding: 10px 5%;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 5%;
+    color: #ffffff;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("../images/lagos-hero.jpg") center/cover no-repeat;
 }
 
-.logo {
-    height: 55px;
-    width: auto;
-}
+.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
+.hero h1 span { color: #b7f5c4; display: block; }
 
-.site-name {
-    font-weight: 800;
-    color: #0b1c3a;
-    font-size: 1.1rem;
-}
+.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; text-align: center; }
+.btn-primary { background: #2e7d32; color: white; }
+.btn-secondary { border: 2px solid white; color: white; }

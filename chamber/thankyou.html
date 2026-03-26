@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining the Lagos Chamber of Commerce and Industry. Your application has been received.">
+    <meta name="description" content="Thank you for joining the Lagos Chamber of Commerce and Industry.">
     <meta name="author" content="Austin Anumudu">
-    <title>Thank You | Lagos Chamber of Commerce and Industry</title>
+    <title>Thank You | LCCI</title>
     
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     
@@ -16,14 +15,16 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="index.html">
-                <img src="images/lcci-logo.png" alt="LCCI Logo">
+            <a href="index.html" class="logo-box">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <span class="site-name">Lagos Chamber of Commerce</span>
             </a>
-            <nav>
-                <ul class="navigation">
+            <nav class="primary-nav">
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,18 +32,18 @@
 
     <main class="thanks-container">
         <section class="thanks-card">
-            <div class="success-icon">✓</div>
-            <h1>Submission Received!</h1>
-            <p>Thank you for applying to the Lagos Chamber of Commerce and Industry. We have received your information and will review your application shortly.</p>
+            <div class="success-icon" style="font-size: 3rem; color: var(--lcci-green); margin-bottom: 20px;">✓</div>
+            <h1>Application Received!</h1>
+            <p>Thank you for applying to the Lagos Chamber of Commerce. Your information has been submitted for review.</p>
             
-            <hr>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
 
-            <div id="results">
+            <div id="results" class="results-box">
                 <p>Loading your submission details...</p>
             </div>
 
-            <div class="thanks-actions">
-                <a href="index.html" class="submit-btn">Return to Home</a>
+            <div class="thanks-actions" style="margin-top: 40px;">
+                <a href="index.html" class="btn btn-primary">Return to Home</a>
             </div>
         </section>
     </main>
@@ -50,8 +51,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-contact">
-                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-                <p>+234 1 277 1600</p>
+                <p>12 Marina Road, Lagos Island</p>
+                <p>info@lagoschamber.ng</p>
             </div>
             <div class="footer-social">
                 <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
