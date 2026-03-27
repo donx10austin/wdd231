@@ -291,3 +291,50 @@ footer {
         margin: 0 auto;
     }
 }
+
+/* =============================
+   HEADER & NAVIGATION (Global)
+   ============================= */
+header {
+    background-color: var(--white); /* Uses the #ffffff from your :root */
+    border-bottom: 2px solid var(--lcci-green); /* Adds the green LCCI accent line */
+    width: 100%;
+    position: sticky; /* Optional: keeps header at top while scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-name {
+    color: var(--lcci-navy); /* Uses the #0b1c3a from your :root */
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+#menu {
+    background: none;
+    border: none;
+    color: var(--lcci-navy);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-links li a {
+    color: var(--lcci-navy);
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover, 
+.nav-links li a.active {
+    color: var(--lcci-green);
+}
