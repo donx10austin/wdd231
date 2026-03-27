@@ -1,5 +1,5 @@
 /* =============================
-   1. GLOBAL & HEADER
+   1. VARIABLES & GLOBAL
    ============================= */
 :root {
     --lcci-navy: #0b1c3a;
@@ -12,8 +12,18 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sticky footer logic */
 }
 
+main {
+    flex: 1; /* Pushes footer to bottom */
+}
+
+/* =============================
+   2. HEADER & NAVIGATION
+   ============================= */
 header {
     background-color: var(--white);
     border-bottom: 1px solid #ddd;
@@ -34,10 +44,7 @@ header {
     gap: 15px;
 }
 
-.logo {
-    height: 55px;
-    width: auto;
-}
+.logo { height: 55px; width: auto; }
 
 .site-name {
     color: var(--lcci-navy);
@@ -50,7 +57,6 @@ header {
     .site-name { display: block; }
 }
 
-/* --- Navigation & Hamburger --- */
 #menu {
     font-size: 2rem;
     background: none;
@@ -60,13 +66,12 @@ header {
 }
 
 .nav-links {
-    display: none; /* Hidden on mobile by default */
+    display: none;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Class added via JS to show menu */
 .nav-links.show {
     display: flex;
     flex-direction: column;
@@ -80,8 +85,15 @@ header {
     z-index: 1000;
 }
 
+/* Active Page Highlighting */
+.nav-links a.active {
+    color: var(--lcci-green);
+    border-bottom: 2px solid var(--lcci-green);
+    padding-bottom: 5px;
+}
+
 /* =============================
-   2. HERO SECTION (Home Page)
+   3. HERO & CARDS
    ============================= */
 .hero {
     min-height: 60vh;
@@ -100,12 +112,7 @@ header {
 
 .btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
 .btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; text-align: center; }
-.btn-primary { background: var(--lcci-green); color: white; }
-.btn-secondary { border: 2px solid white; color: white; }
 
-/* =============================
-   3. CARDS (Weather & Spotlight)
-   ============================ */
 .card {
     background: var(--white);
     border: 1px solid #ddd;
@@ -114,16 +121,8 @@ header {
     overflow: hidden;
 }
 
-.card-header {
-    background-color: var(--lcci-navy);
-    color: var(--white);
-    padding: 10px;
-    text-align: center;
-}
-
-.card-body {
-    padding: 15px;
-}
+.card-header { background-color: var(--lcci-navy); color: var(--white); padding: 10px; text-align: center; }
+.card-body { padding: 15px; }
 
 /* =============================
    4. DIRECTORY & FORMS
@@ -142,61 +141,32 @@ header {
     text-align: center;
 }
 
-/* Update this in your small.css */
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 .join-form fieldset {
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 25px;
     display: flex;
-    flex-direction: column; /* Stacks everything vertically */
-    gap: 15px; /* Adds breathing room between inputs */
-}
-
-.join-form label {
-    display: flex;
     flex-direction: column;
-    font-weight: bold;
-    color: var(--lcci-navy);
+    gap: 15px;
 }
 
-.join-form input, 
-.join-form select, 
-.join-form textarea {
-    padding: 12px; /* Makes the tap target larger for fingers */
+.join-form label { font-weight: bold; color: var(--lcci-navy); }
+
+/* Form inputs styling */
+.join-form input, .join-form select, .join-form textarea {
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-top: 5px;
-    font-size: 1rem; /* Prevents iOS from zooming in automatically */
+    font-size: 1rem;
 }
 
-/* =============================
-   5. FOOTER (Merged & Finalized)
-   ============================= */
-footer {
-    background-color: var(--lcci-navy);
-    color: white;
-    padding: 40px 5%;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.footer-social img {
-    width: 24px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1); /* Makes icons white */
-}
-
-.highlight-date {
-    color: #4ade80; /* Bright green */
-    font-weight: bold;
-}
-
+/* Modals */
 dialog {
     border: none;
     border-radius: 8px;
@@ -205,31 +175,19 @@ dialog {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5); /* Dims the background */
-}
+dialog::backdrop { background-color: rgba(0, 0, 0, 0.5); }
+.close-modal { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.2rem; cursor: pointer; }
 
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-/* Center the main container */
+/* =============================
+   5. THANK YOU & FOOTER
+   ============================= */
 .thanks-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh; /* Keeps it centered vertically */
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 40px 20px;
 }
 
-/* The Card itself */
 .thanks-card {
     background: white;
     padding: 2.5rem;
@@ -238,49 +196,62 @@ dialog::backdrop {
     max-width: 500px;
     width: 100%;
     text-align: center;
-    border-top: 8px solid #006633; /* LCCI Green Accent */
+    border-top: 8px solid var(--lcci-green);
 }
 
-/* Success Checkmark */
-.success-icon {
-    font-size: 4rem;
-    color: #006633;
-    margin-bottom: 1rem;
-}
-
-/* The Results List */
 .results-box {
-    text-align: left; /* Keep the data easy to read */
+    text-align: left;
     background: #f1f1f1;
     padding: 1.5rem;
     border-radius: 8px;
     margin: 20px 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
 
-.results-box p {
-    margin: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
-}
+.btn-primary { background: var(--lcci-green); color: white; }
 
-.results-box p:last-child {
-    border-bottom: none;
-}
-
-/* The Button */
-.btn-primary {
-    display: inline-block;
-    background-color: #006633;
+footer {
+    background-color: var(--lcci-navy);
     color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    padding: 40px 5%;
+    text-align: center;
 }
 
-.btn-primary:hover {
-    background-color: #004d26;
+.footer-social img {
+    width: 24px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
+}
+
+.attribution-bar {
+    background-color: #e0e0e0;
+    color: #666;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+/* --- Weather & Forecast Styling --- */
+#forecast-info {
+    margin-top: 20px;
+}
+
+.forecast-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.forecast-day {
+    flex: 1;
+    border-right: 1px solid #eee;
+}
+
+.forecast-day:last-child {
+    border-right: none;
+}
+
+.forecast-day img {
+    width: 40px;
+    height: auto;
 }
