@@ -93,7 +93,7 @@ header {
 }
 
 /* =============================
-   3. HERO & CARDS
+   3. HERO & CARDS (Home Page)
    ============================= */
 .hero {
     min-height: 60vh;
@@ -103,8 +103,10 @@ header {
     text-align: center;
     padding: 40px 5%;
     color: #ffffff;
+    /* --- FIX THIS LINE BELOW --- */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url("../images/lagos-hero.jpg") center/cover no-repeat;
+    /* ----------------------------- */
 }
 
 .hero h1 { font-size: 2.2rem; margin-bottom: 20px; }

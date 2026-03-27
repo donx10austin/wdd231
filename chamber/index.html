@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     
-    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/footer.js"></script>
     <script defer src="scripts/weather.js"></script>
-    <script defer src="scripts/spotlight.js"></script>
+    <script defer src="scripts/spotlights.js"></script>
 </head>
 <body>
     <header>
@@ -28,6 +28,9 @@
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
                 <div class="site-name">Lagos Chamber of Commerce</div>
             </a>
+
+            <button id="menu" aria-label="Toggle Menu">☰</button>
+
             <nav class="primary-nav">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -40,36 +43,24 @@
     </header>
 
     <main>
-        <section class="hero home-hero">
+        <section class="hero">
             <div class="hero-content">
                 <h1>Consistently advocating for a <span class="highlight">better business environment</span></h1>
                 <p>The Lagos Chamber of Commerce and Industry connects, champions, and empowers businesses across Lagos.</p>
                 <div class="btn-group">
                     <a href="join.html" class="btn btn-primary">Join Us</a>
-                    <a href="discover.html" class="btn btn-secondary">What We Do</a>
+                    <a href="directory.html" class="btn btn-secondary">Our Members</a>
                 </div>
             </div>
         </section>
 
         <section class="info-grid">
-            <div class="card weather-card">
-                <div class="card-header">
-                    <h2>Lagos Weather</h2>
-                </div>
-                <div class="card-body" id="weather-details">
-                    <p>Loading weather data...</p>
-                </div>
+            <div id="weather-info">
+                <p>Loading weather data...</p>
             </div>
 
-            <div class="card spotlight-card">
-                <div class="card-header">
-                    <h2>Member Spotlight</h2>
-                </div>
-                <div class="card-body">
-                    <div id="spotlight-container">
-                        <p>Loading member spotlights...</p>
-                    </div>
-                </div>
+            <div id="spotlight-content">
+                <p>Loading member spotlights...</p>
             </div>
         </section>
     </main>
@@ -88,8 +79,8 @@
         </div>
 
         <div class="footer-meta">
-            <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
-            <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
+            <p id="lastModified"></p>
         </div>
     </div>
 </footer>
@@ -97,3 +88,5 @@
 <div class="attribution-bar">
     <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
 </div>
+</body>
+</html>
