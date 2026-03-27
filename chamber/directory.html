@@ -11,7 +11,7 @@
     <meta property="og:title" content="LCCI Member Directory">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
-    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/chamber-og.jpg">
     <meta property="og:description" content="Discover and connect with top-rated businesses in Lagos.">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     
     <script defer src="scripts/footer.js"></script>
+    <script defer src="scripts/menu.js"></script>
     <script defer src="scripts/directory.js"></script>
+    <script defer src="scripts/weather.js"></script>
 </head>
 <body>
     <header>
@@ -48,6 +50,26 @@
     </header>
 
     <main class="directory-container">
+        <section class="weather-section">
+            <div class="card">
+                <div class="card-header">Lagos Weather & Forecast</div>
+                <div id="weather-info" class="card-body weather-flex">
+                    <div class="current-weather-info">
+                        <div id="current-temp">--°C</div>
+                        <figure>
+                            <img id="weather-icon" src="" alt="Weather Icon">
+                            <figcaption id="weather-desc">Loading weather...</figcaption>
+                        </figure>
+                    </div>
+                    <div class="forecast-box">
+                        <h3>3-Day Forecast</h3>
+                        <div id="forecast-info" class="forecast-grid">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="directory-header">
             <h1>Member Directory</h1>
             <p>Explore our network of verified business leaders and organizations in Lagos.</p>
@@ -63,28 +85,28 @@
         </div>
     </main>
 
-   <footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-            <p>+234 1 277 1600</p>
-        </div>
-        
-        <div class="footer-social">
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
 
-        <div class="footer-meta">
-            <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
-            <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            <div class="footer-meta">
+                <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
+                <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            </div>
         </div>
+    </footer>
+
+    <div class="attribution-bar">
+        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
     </div>
-</footer>
-
-<div class="attribution-bar">
-    <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
-</div>
 </body>
 </html>

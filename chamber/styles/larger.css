@@ -223,3 +223,17 @@
     }
 
 } 
+
+#spotlight-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.spotlight-card img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}

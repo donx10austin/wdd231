@@ -1,40 +1,42 @@
+/* =============================
+   WEATHER & FORECAST API
+   ============================= */
 const weatherContainer = document.querySelector('#weather-info');
 
-// Only run if the container exists on the page
 if (weatherContainer) {
+    // 1. Setup Elements
     const forecastContainer = document.createElement('div');
     forecastContainer.id = 'forecast-info';
     weatherContainer.insertAdjacentElement('afterend', forecastContainer);
 
-    // Coordinates for Lagos, Nigeria
+    // 2. Configuration (Lagos, Nigeria)
     const lat = 6.45;
     const lon = 3.40;
-    const apiKey = 'YOUR_API_KEY'; // MUST replace this with your actual key
-
-    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    const apiKey = 'YOUR_ACTUAL_API_KEY'; // Replace this!
+    
+    // We only need the Forecast URL because it contains CURRENT weather too!
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     async function getWeatherData() {
         try {
-            const response = await fetch(currentUrl);
-            if (!response.ok) throw new Error("Current weather failed");
+            const response = await fetch(forecastUrl);
+            if (!response.ok) throw new Error("Weather API failed");
             const data = await response.json();
+            
+            // Call both display functions with the same data
             displayCurrentWeather(data);
-
-            const fResponse = await fetch(forecastUrl);
-            if (!fResponse.ok) throw new Error("Forecast failed");
-            const fData = await fResponse.json();
-            displayForecast(fData);
+            displayForecast(data);
         } catch (error) {
             console.error("Weather error:", error);
-            weatherContainer.innerHTML = "<p>Weather data unavailable.</p>";
+            weatherContainer.innerHTML = "<p>Weather data currently unavailable.</p>";
         }
     }
 
     function displayCurrentWeather(data) {
-        const temp = data.main.temp.toFixed(0);
-        const desc = data.weather[0].description;
-        const iconSrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        const current = data.list[0]; // The very first entry is the current time
+        const temp = current.main.temp.toFixed(0);
+        const desc = current.weather[0].description;
+        const iconSrc = `https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`;
 
         weatherContainer.innerHTML = `
             <div class="weather-current card">
@@ -43,14 +45,13 @@ if (weatherContainer) {
                     <img src="${iconSrc}" alt="${desc}">
                     <p class="temp"><strong>${temp}°C</strong></p>
                     <p class="desc">${desc.toUpperCase()}</p>
-                    <p>Humidity: ${data.main.humidity}%</p>
+                    <p>Humidity: ${current.main.humidity}%</p>
                 </div>
-            </div>
-        `;
+            </div>`;
     }
 
     function displayForecast(data) {
-        // Filter for noon readings for the next 3 days
+        // Filter for 12:00 PM readings for the next 3 days
         const dailyForecast = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
         
         forecastContainer.innerHTML = `
@@ -62,7 +63,7 @@ if (weatherContainer) {
         const grid = forecastContainer.querySelector('.forecast-grid');
 
         dailyForecast.forEach(day => {
-            const date = new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' });
+            const date = new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' });
             const temp = day.main.temp.toFixed(0);
             
             const dayDiv = document.createElement('div');
@@ -70,8 +71,7 @@ if (weatherContainer) {
             dayDiv.innerHTML = `
                 <p><strong>${date}</strong></p>
                 <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="icon">
-                <p>${temp}°C</p>
-            `;
+                <p>${temp}°C</p>`;
             grid.appendChild(dayDiv);
         });
     }
