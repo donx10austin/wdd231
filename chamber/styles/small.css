@@ -1,9 +1,30 @@
 /* =============================
-   6. GLOBAL NAVY HEADER & NAV
+    1. VARIABLES & GLOBAL
+   ============================= */
+:root {
+    --lcci-navy: #0b1c3a;
+    --lcci-green: #2e7d32;
+    --white: #ffffff;
+    --light-grey: #f9f9f9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main { flex: 1; }
+
+/* =============================
+    2. HEADER & NAVIGATION (Navy Theme)
    ============================= */
 header {
     background-color: var(--lcci-navy);
-    border-bottom: 2px solid var(--lcci-green);
+    border-bottom: 3px solid var(--lcci-green);
     width: 100%;
     position: sticky;
     top: 0;
@@ -17,39 +38,109 @@ header {
     padding: 10px 5%;
 }
 
-.site-name {
-    color: var(--white); /* White text for Navy background */
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: none; /* Hidden on very small mobile */
+.logo-box {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
 }
 
-@media (min-width: 450px) {
-    .site-name { display: block; }
+.logo { height: 50px; width: auto; }
+
+.site-name {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: none;
 }
+
+@media (min-width: 450px) { .site-name { display: block; } }
 
 #menu {
     font-size: 2rem;
     background: none;
     border: none;
-    color: var(--white); /* White menu button */
+    color: var(--white);
     cursor: pointer;
 }
 
-.nav-links li a {
-    color: var(--white); /* White links for mobile menu */
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
+.nav-links {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-links li a:hover, 
-.nav-links li a.active {
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--lcci-navy);
+    width: 100%;
+    padding: 20px;
+    border-bottom: 3px solid var(--lcci-green);
+    z-index: 1000;
+}
+
+.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 0;
+    font-weight: 700;
+    display: block;
+}
+
+.nav-links a.active {
     color: var(--lcci-green);
 }
 
-/* Ensure the mobile dropdown is also Navy */
-.nav-links.show {
-    background: var(--lcci-navy);
-    border-bottom: 3px solid var(--lcci-green);
+/* =============================
+    3. HERO & CARDS
+   ============================= */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 5%;
+    color: #ffffff;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("../images/lagos-hero.jpg") center/cover no-repeat;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-header { background-color: var(--lcci-navy); color: var(--white); padding: 10px; text-align: center; }
+
+/* =============================
+    4. FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: white;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.footer-social img {
+    width: 24px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
+}
+
+.attribution-bar {
+    background-color: #e0e0e0;
+    color: #666;
+    padding: 15px;
+    font-size: 0.8rem;
+    text-align: center;
 }
