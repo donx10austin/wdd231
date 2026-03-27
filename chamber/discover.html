@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Lagos | LCCI</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    
+    <script defer src="scripts/footer.js"></script>
+    <script defer src="scripts/discover.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-box">
+                <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
+                <div class="site-name">Lagos Chamber of Commerce</div>
+            </a>
+
+            <button id="menu" aria-label="Toggle Menu">☰</button>
+
+            <nav class="primary-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="discover-grid">
+        <aside class="sidebar">
+            <div class="card">
+                <div class="card-header">Welcome</div>
+                <div class="card-body" id="visitor-message">
+                    </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Lagos Stats</div>
+                <div class="card-body">
+                    <p><strong>Population:</strong> 15M+</p>
+                    <p><strong>Economy:</strong> Largest in Africa</p>
+                </div>
+            </div>
+        </aside>
+
+        <section class="gallery">
+            <h2>Experience Lagos</h2>
+            
+            <figure>
+                <img src="images/lagos-bridge.jpg" 
+                     data-src="images/lagos-bridge.jpg" 
+                     alt="Lekki-Ikoyi Link Bridge" 
+                     loading="lazy" 
+                     class="lazy">
+                <figcaption>The iconic Lekki-Ikoyi Link Bridge at night.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/national-theatre.jpg" 
+                     data-src="images/national-theatre.jpg" 
+                     alt="National Arts Theatre" 
+                     loading="lazy" 
+                     class="lazy">
+                <figcaption>The National Arts Theatre in Iganmu.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/eko-atlantic.jpg" 
+                     data-src="images/eko-atlantic.jpg" 
+                     alt="Eko Atlantic City" 
+                     loading="lazy" 
+                     class="lazy">
+                <figcaption>Modern developments at Eko Atlantic.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+
+            <div class="footer-meta">
+                <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="attribution-bar">
+        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
+    </div>
+</body>
+</html>

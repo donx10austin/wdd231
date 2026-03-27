@@ -92,9 +92,6 @@ header {
     padding-bottom: 5px;
 }
 
-/* =============================
-   3. HERO & CARDS (Home Page)
-   ============================= */
 .hero {
     min-height: 60vh;
     display: flex;
@@ -102,11 +99,11 @@ header {
     justify-content: center;
     text-align: center;
     padding: 40px 5%;
-    color: #ffffff;
-    /* --- FIX THIS LINE BELOW --- */
+    color: #ffffff; /* Makes your text white so it stands out */
+    
+    /* This line is what "adds" the image */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url("../images/lagos-hero.jpg") center/cover no-repeat;
-    /* ----------------------------- */
 }
 
 .hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
@@ -256,4 +253,41 @@ footer {
 .forecast-day img {
     width: 40px;
     height: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* --- Discover Page Layout --- */
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery figure {
+    margin: 0 0 20px 0;
+    border: 1px solid #ddd;
+    background: #eee;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.5s;
+}
+
+/* Desktop layout for Discover */
+@media (min-width: 800px) {
+    .discover-grid {
+        grid-template-columns: 300px 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
