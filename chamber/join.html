@@ -6,6 +6,7 @@
     <title>Join the Chamber | Lagos Chamber of Commerce</title>
     
     <meta name="author" content="Austin Anumudu">
+    
     <meta name="description" content="Apply for membership with the Lagos Chamber of Commerce. Join Austin Anumudu and other business leaders to grow your network and influence in Nigeria.">
 
     <meta property="og:title" content="Join LCCI - Membership Application">
@@ -46,14 +47,14 @@
         </div>
     </header>
 
-    <main class="join-container">
-        <section class="join-header">
+    <main class="join-main">
+        <section class="join-hero">
             <h1>Membership Application</h1>
-            <p>Complete the form below to begin your journey with the LCCI business network.</p>
+            <p>Connect with the heartbeat of Lagos business and industry.</p>
         </section>
 
-        <div class="join-grid">
-            <form method="get" action="thankyou.html" class="join-form">
+        <div class="join-layout">
+            <form method="get" action="thankyou.html" class="custom-form">
                 <fieldset>
                     <legend>Applicant Information</legend>
                     
@@ -66,7 +67,7 @@
                     </label>
 
                     <label>Organization Title: 
-                        <input type="text" name="org-title" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{10,}" title="Enter your professional title (minimum 10 characters, letters/spaces only).">
+                        <input type="text" name="org-title" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{10,}" title="Enter your professional title (minimum 10 characters).">
                     </label>
 
                     <label>Email Address: 
@@ -84,42 +85,85 @@
 
                 <fieldset>
                     <legend>Membership Level</legend>
-                    <div class="radio-group">
-                        <label><input type="radio" name="level" value="np"> Non-Profit (Free)</label>
-                        <label><input type="radio" name="level" value="bronze"> Bronze Member</label>
-                        <label><input type="radio" name="level" value="silver"> Silver Member</label>
-                        <label><input type="radio" name="level" value="gold"> Gold Member</label>
+                    <div class="membership-options">
+                        <label class="radio-label">
+                            <input type="radio" name="level" value="np"> Non-Profit (Free)
+                            <button type="button" class="open-modal" data-target="np-info" aria-label="Non-Profit Details">ℹ️</button>
+                        </label>
+                        
+                        <label class="radio-label">
+                            <input type="radio" name="level" value="bronze"> Bronze Member
+                            <button type="button" class="open-modal" data-target="bronze-info" aria-label="Bronze Details">ℹ️</button>
+                        </label>
+                        
+                        <label class="radio-label">
+                            <input type="radio" name="level" value="silver"> Silver Member
+                            <button type="button" class="open-modal" data-target="silver-info" aria-label="Silver Details">ℹ️</button>
+                        </label>
+                        
+                        <label class="radio-label">
+                            <input type="radio" name="level" value="gold"> Gold Member
+                            <button type="button" class="open-modal" data-target="gold-info" aria-label="Gold Details">ℹ️</button>
+                        </label>
                     </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Business Description</legend>
                     <label>Organization Description: 
-                        <textarea name="description" rows="5" title="Provide a brief description of your organization's activities and goals."></textarea>
+                        <textarea name="description" rows="5" title="Provide a brief description of your organization's mission and activities."></textarea>
                     </label>
                 </fieldset>
 
-                <input type="hidden" id="timestamp" name="timestamp" value="">
+                <input type="hidden" id="timestamp" name="timestamp">
 
-                <input type="submit" value="Submit Application" class="btn-primary">
+                <button type="submit" class="submit-btn">Submit Application</button>
             </form>
 
-            <aside class="membership-info">
-                <h2>Membership Tiers</h2>
-                <div class="card level-card">
-                    <h3>Bronze</h3>
-                    <p>Standard directory listing and event access.</p>
+            <aside class="level-benefits">
+                <h2>Why Join LCCI?</h2>
+                <div class="benefit-card">
+                    <h3>Networking</h3>
+                    <p>Exclusive access to over 2,000 corporate leaders in Lagos.</p>
                 </div>
-                <div class="card level-card">
-                    <h3>Silver</h3>
-                    <p>Enhanced listing, home page spotlights, and training discounts.</p>
+                <div class="benefit-card">
+                    <h3>Advocacy</h3>
+                    <p>We represent your business interests to the government.</p>
                 </div>
-                <div class="card level-card">
-                    <h3>Gold</h3>
-                    <p>Premium spotlight positioning, VIP events, and full media coverage.</p>
+                <div class="benefit-card">
+                    <h3>Growth</h3>
+                    <p>Training and certification programs for your staff.</p>
                 </div>
             </aside>
         </div>
+
+        <dialog id="np-info" class="info-modal">
+            <button type="button" class="close-modal" aria-label="Close">❌</button>
+            <h3>Non-Profit Level</h3>
+            <p>Cost: $0.00/year</p>
+            <p>Includes directory listing and access to general workshops.</p>
+        </dialog>
+
+        <dialog id="bronze-info" class="info-modal">
+            <button type="button" class="close-modal" aria-label="Close">❌</button>
+            <h3>Bronze Level</h3>
+            <p>Cost: $100/year</p>
+            <p>Includes directory listing, training discounts, and monthly newsletters.</p>
+        </dialog>
+
+        <dialog id="silver-info" class="info-modal">
+            <button type="button" class="close-modal" aria-label="Close">❌</button>
+            <h3>Silver Level</h3>
+            <p>Cost: $250/year</p>
+            <p>Includes Bronze benefits plus home page spotlights and VIP event access.</p>
+        </dialog>
+
+        <dialog id="gold-info" class="info-modal">
+            <button type="button" class="close-modal" aria-label="Close">❌</button>
+            <h3>Gold Level</h3>
+            <p>Cost: $500/year</p>
+            <p>Includes all Silver benefits plus premium spotlight placement and media coverage.</p>
+        </dialog>
     </main>
 
     <footer>
