@@ -85,3 +85,24 @@
         text-align: right; /* Shorter text shifts to the far right */
     }
 }
+
+/* Add this inside your @media (min-width: 800px) block */
+@media (min-width: 800px) {
+    .join-form fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Creates a two-column layout */
+        gap: 20px;
+    }
+
+    /* Make the Business Description take up the full width */
+    .join-form label:last-of-type,
+    .join-form .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .join-form input[type="submit"] {
+        width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+}

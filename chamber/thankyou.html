@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    <link rel="icon" href="favicon.ico">
     
     <script src="scripts/thanks.js" defer></script>
 </head>
@@ -32,38 +33,46 @@
 
     <main class="thanks-container">
         <section class="thanks-card">
-            <div class="success-icon" style="font-size: 3rem; color: var(--lcci-green); margin-bottom: 20px;">✓</div>
+            <div class="success-icon">✓</div>
             <h1>Application Received!</h1>
             <p>Thank you for applying to the Lagos Chamber of Commerce. Your information has been submitted for review.</p>
             
-            <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
+            <hr class="thanks-divider">
 
             <div id="results" class="results-box">
                 <p>Loading your submission details...</p>
             </div>
 
-            <div class="thanks-actions" style="margin-top: 40px;">
-                <a href="index.html" class="btn btn-primary">Return to Home</a>
+            <div class="thanks-actions">
+                <a href="index.html" class="btn-primary">Return to Home</a>
             </div>
         </section>
     </main>
 
-  <footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-            <p>+234 1 277 1600</p>
-        </div>
-        
-        <div class="footer-social">
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
 
-        <div class="footer-meta">
-            <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
-            <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            <div class="footer-meta">
+                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
+                <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            </div>
         </div>
+    </footer>
+
+    <div class="attribution-bar">
+        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
     </div>
-</footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join | Lagos Chamber of Commerce</title>
+    <title>Join the LCCI | Membership Application</title>
     
+    <meta property="og:title" content="Join the Lagos Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/join.html">
+    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/images/og-image.jpg">
+    <meta property="og:description" content="Become a member of the LCCI. Apply now to access exclusive networking and business benefits.">
+
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
-    
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/join.js" defer></script>
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
     <header>
@@ -56,13 +60,12 @@
                             <option value="gold">Gold (₦300,000)</option>
                         </select>
                     </label>
-                    <label>Business Description
+                    <label class="full-width">Business Description
                         <textarea name="description" rows="4"></textarea>
                     </label>
                 </fieldset>
 
                 <input type="hidden" id="timestamp" name="timestamp">
-                
                 <input type="submit" value="Apply for Membership" class="submit-btn">
             </form>
         </section>
@@ -98,24 +101,54 @@
                 </div>
             </div>
         </aside>
+
+        <dialog id="modal-np">
+            <button class="close-modal">X</button>
+            <h2>NP Benefits</h2>
+            <p>Basic listing in the member directory and access to public chamber events.</p>
+        </dialog>
+        <dialog id="modal-bronze">
+            <button class="close-modal">X</button>
+            <h2>Bronze Benefits</h2>
+            <p>Includes NP benefits plus access to monthly training workshops.</p>
+        </dialog>
+        <dialog id="modal-silver">
+            <button class="close-modal">X</button>
+            <h2>Silver Benefits</h2>
+            <p>Includes Bronze benefits plus featured placement in the monthly newsletter.</p>
+        </dialog>
+        <dialog id="modal-gold">
+            <button class="close-modal">X</button>
+            <h2>Gold Benefits</h2>
+            <p>Full access, VIP networking events, and homepage spotlights.</p>
+        </dialog>
     </main>
 
     <footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-            <p>+234 1 277 1600</p>
-        </div>
-        
-        <div class="footer-social">
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 1 277 1600</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
 
-        <div class="footer-meta">
-            <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
-            <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            <div class="footer-meta">
+                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
+                <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+            </div>
         </div>
+    </footer>
+
+    <div class="attribution-bar">
+        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
     </div>
-</footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/join.js"></script>
+</body>
+</html>

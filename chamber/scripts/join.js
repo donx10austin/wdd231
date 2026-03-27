@@ -1,52 +1,33 @@
-/* ==========================================
-   1. FORM TIMESTAMP
-   ========================================== */
-// This records the exact second the user opened the form
-const timestampField = document.querySelector('#timestamp');
-if (timestampField) {
-    timestampField.value = new Date().toISOString();
-}
+// 1. Handle the Membership Modals
+const openButtons = document.querySelectorAll(".open-modal");
+const closeButtons = document.querySelectorAll(".close-modal");
 
-/* ==========================================
-   2. MEMBERSHIP MODAL LOGIC
-   ========================================== */
-// Select all "Learn More" buttons and close buttons
-const modalButtons = document.querySelectorAll('.open-modal');
-const closeButtons = document.querySelectorAll('.close-modal');
-
-// Open the correct modal based on the data-target attribute
-modalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-target');
+// Loop through all "Learn More" buttons
+openButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modalId = button.getAttribute("data-target");
         const modal = document.getElementById(modalId);
-        
         if (modal) {
-            modal.showModal(); // Opens the <dialog> element
+            modal.showModal(); // Opens the <dialog>
         }
     });
 });
 
-// Close the modal when the 'X' button is clicked
+// Loop through all "X" close buttons
 closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('dialog');
+    button.addEventListener("click", () => {
+        const modal = button.closest("dialog");
         if (modal) {
-            modal.close();
+            modal.close(); // Closes the <dialog>
         }
     });
 });
 
-// Close modal if the user clicks the backdrop (outside the box)
-window.addEventListener('click', (event) => {
-    if (event.target.tagName === 'DIALOG') {
-        event.target.close();
-    }
-});
-
-/* ==========================================
-   3. FOOTER DATE LOGIC
-   ========================================== */
-const lastModifiedElement = document.querySelector("#lastModified");
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = document.lastModified;
+// 2. Set the Hidden Timestamp
+// This records the date/time when the page was loaded
+const timestampField = document.getElementById("timestamp");
+if (timestampField) {
+    const now = new Date();
+    timestampField.value = now.toISOString(); 
+    // Example: 2026-03-27T12:00:00.000Z
 }
