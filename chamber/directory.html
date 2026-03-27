@@ -10,15 +10,20 @@
 
     <meta property="og:title" content="LCCI Member Directory">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://austinanumudu.github.io/wdd231/chamber/directory.html">
-    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/images/og-image.jpg">
-    <meta property="og:description" content="Discover and connect with top-rated businesses in Lagos. Browse our official LCCI directory to find trusted partners and grow your professional network today.">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/directory.html">
+    <meta property="og:image" content="https://austinanumudu.github.io/wdd231/chamber/chamber-og.jpg">
+    <meta property="og:description" content="Discover and connect with top-rated businesses in Lagos.">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     
-    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/footer.js"></script>
     <script defer src="scripts/directory.js"></script>
 </head>
 <body>
@@ -28,6 +33,9 @@
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
                 <div class="site-name">Lagos Chamber of Commerce</div>
             </a>
+
+            <button id="menu" aria-label="Toggle Menu">☰</button>
+
             <nav class="primary-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -69,7 +77,7 @@
         </div>
 
         <div class="footer-meta">
-            <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
+            <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
             <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
         </div>
     </div>
@@ -78,3 +86,5 @@
 <div class="attribution-bar">
     <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
 </div>
+</body>
+</html>

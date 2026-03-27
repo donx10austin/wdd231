@@ -1,33 +1,13 @@
 /* =============================
-   1. VARIABLES & GLOBAL
-   ============================= */
-:root {
-    --lcci-navy: #0b1c3a;
-    --lcci-green: #2e7d32;
-    --white: #ffffff;
-    --light-grey: #f9f9f9;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Sticky footer logic */
-}
-
-main {
-    flex: 1; /* Pushes footer to bottom */
-}
-
-/* =============================
-   2. HEADER & NAVIGATION
+   6. GLOBAL NAVY HEADER & NAV
    ============================= */
 header {
-    background-color: var(--white);
-    border-bottom: 1px solid #ddd;
+    background-color: var(--lcci-navy);
+    border-bottom: 2px solid var(--lcci-green);
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-content {
@@ -37,20 +17,11 @@ header {
     padding: 10px 5%;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
-}
-
-.logo { height: 55px; width: auto; }
-
 .site-name {
-    color: var(--lcci-navy);
+    color: var(--white); /* White text for Navy background */
     font-weight: 800;
     font-size: 1.1rem;
-    display: none;
+    display: none; /* Hidden on very small mobile */
 }
 
 @media (min-width: 450px) {
@@ -61,274 +32,12 @@ header {
     font-size: 2rem;
     background: none;
     border: none;
-    color: var(--lcci-navy);
-    cursor: pointer;
-}
-
-.nav-links {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    background: var(--white);
-    width: 100%;
-    padding: 20px;
-    border-bottom: 2px solid var(--lcci-green);
-    z-index: 1000;
-}
-
-/* Active Page Highlighting */
-.nav-links a.active {
-    color: var(--lcci-green);
-    border-bottom: 2px solid var(--lcci-green);
-    padding-bottom: 5px;
-}
-
-.hero {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 5%;
-    color: #ffffff; /* Makes your text white so it stands out */
-    
-    /* This line is what "adds" the image */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url("../images/lagos-hero.jpg") center/cover no-repeat;
-}
-
-.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
-.hero .highlight { color: #b7f5c4; display: block; }
-
-.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; width: 220px; text-align: center; }
-
-.card {
-    background: var(--white);
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.card-header { background-color: var(--lcci-navy); color: var(--white); padding: 10px; text-align: center; }
-.card-body { padding: 15px; }
-
-/* =============================
-   4. DIRECTORY & FORMS
-   ============================= */
-#member-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.member-card {
-    background: var(--light-grey);
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-}
-
-.member-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.join-form fieldset {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.join-form label { font-weight: bold; color: var(--lcci-navy); }
-
-/* Form inputs styling */
-.join-form input, .join-form select, .join-form textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-/* Modals */
-dialog {
-    border: none;
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 400px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-dialog::backdrop { background-color: rgba(0, 0, 0, 0.5); }
-.close-modal { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.2rem; cursor: pointer; }
-
-/* =============================
-   5. THANK YOU & FOOTER
-   ============================= */
-.thanks-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-.thanks-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    border-top: 8px solid var(--lcci-green);
-}
-
-.results-box {
-    text-align: left;
-    background: #f1f1f1;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.btn-primary { background: var(--lcci-green); color: white; }
-
-footer {
-    background-color: var(--lcci-navy);
-    color: white;
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.footer-social img {
-    width: 24px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
-}
-
-.attribution-bar {
-    background-color: #e0e0e0;
-    color: #666;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
-}
-
-/* --- Weather & Forecast Styling --- */
-#forecast-info {
-    margin-top: 20px;
-}
-
-.forecast-grid {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.forecast-day {
-    flex: 1;
-    border-right: 1px solid #eee;
-}
-
-.forecast-day:last-child {
-    border-right: none;
-}
-
-.forecast-day img {
-    width: 40px;
-    height: auto;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-/* --- Discover Page Layout --- */
-.discover-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-}
-
-.gallery figure {
-    margin: 0 0 20px 0;
-    border: 1px solid #ddd;
-    background: #eee;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: filter 0.5s;
-}
-
-/* Desktop layout for Discover */
-@media (min-width: 800px) {
-    .discover-grid {
-        grid-template-columns: 300px 1fr;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}
-
-/* =============================
-   HEADER & NAVIGATION (Global)
-   ============================= */
-header {
-    background-color: var(--white); /* Uses the #ffffff from your :root */
-    border-bottom: 2px solid var(--lcci-green); /* Adds the green LCCI accent line */
-    width: 100%;
-    position: sticky; /* Optional: keeps header at top while scrolling */
-    top: 0;
-    z-index: 1000;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.site-name {
-    color: var(--lcci-navy); /* Uses the #0b1c3a from your :root */
-    font-weight: 800;
-    font-size: 1.2rem;
-}
-
-#menu {
-    background: none;
-    border: none;
-    color: var(--lcci-navy);
-    font-size: 2rem;
+    color: var(--white); /* White menu button */
     cursor: pointer;
 }
 
 .nav-links li a {
-    color: var(--lcci-navy);
+    color: var(--white); /* White links for mobile menu */
     text-decoration: none;
     font-weight: 700;
     transition: 0.3s;
@@ -337,4 +46,10 @@ header {
 .nav-links li a:hover, 
 .nav-links li a.active {
     color: var(--lcci-green);
+}
+
+/* Ensure the mobile dropdown is also Navy */
+.nav-links.show {
+    background: var(--lcci-navy);
+    border-bottom: 3px solid var(--lcci-green);
 }
