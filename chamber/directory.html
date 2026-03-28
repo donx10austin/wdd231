@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
     
     <script defer src="scripts/footer.js"></script>
+    <script defer src="scripts/weather.js"></script>
     <script defer src="scripts/directory.js"></script>
 </head>
 <body>
@@ -47,26 +48,26 @@
         </div>
     </header>
 
-   <main class="directory-container">
-    <section class="weather-section">
-        <div class="card">
-            <div class="card-header">Lagos Weather & Forecast</div>
-            <div id="weather-info" class="card-body weather-flex">
-                <div class="current-weather-info">
-                    <div id="current-temp">--°C</div>
-                    <figure id="weather-figure">
-                        <figcaption id="weather-desc">Loading weather...</figcaption>
-                    </figure>
-                </div>
-                <div class="forecast-box">
-                    <h3>3-Day Forecast</h3>
-                    <div id="forecast-info" class="forecast-grid">
-                        </div>
+    <main class="directory-container">
+        <section class="weather-section">
+            <div class="card">
+                <div class="card-header">Lagos Weather & Forecast</div>
+                <div id="weather-info" class="card-body weather-flex">
+                    <div class="current-weather-info">
+                        <div id="current-temp">--°C</div>
+                        <figure id="weather-figure">
+                            <figcaption id="weather-desc">Loading weather...</figcaption>
+                        </figure>
+                    </div>
+                    <div class="forecast-box">
+                        <h3>3-Day Forecast</h3>
+                        <div id="forecast-info" class="forecast-grid">
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+
         <section class="directory-header">
             <h1>Member Directory</h1>
             <p>Explore our network of verified business leaders and organizations in Lagos.</p>
@@ -77,9 +78,11 @@
             </div>
         </section>
 
-        <div id="member-container" class="grid">
-            <p class="status-msg">Loading members...</p>
-        </div>
+        <section class="members-display">
+            <div id="member-container" class="grid">
+                <p class="status-msg">Loading members...</p>
+            </div>
+        </section>
     </main>
 
     <footer>
