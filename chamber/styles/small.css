@@ -193,3 +193,15 @@ footer {
     padding: 30px 5%;
     text-align: center;
 }
+
+/* This hides the text from the screen but keeps it for the Validator/Screen Readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
