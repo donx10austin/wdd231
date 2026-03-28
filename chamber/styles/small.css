@@ -187,6 +187,17 @@ header {
 /* =============================
    5. FOOTER
    ============================= */
+   footer {
+
+    background-color: var(--lcci-navy);
+
+    color: white;
+
+    padding: 30px 5%;
+
+    text-align: center;
+
+}
 /* Layout for the social media section */
 .footer-social {
     display: flex;
