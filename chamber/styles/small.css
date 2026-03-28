@@ -44,9 +44,35 @@ header {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* This prevents items from stretching to full height */
     padding: 10px 5%;
 }
+
+/* --- LOGO FIXES START HERE --- */
+.logo-box {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.logo {
+    height: 60px;    /* Force the giant peacock to shrink */
+    width: auto;      /* Keep the bird's proportions correct */
+    display: block;
+}
+
+.site-name {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: none;    /* Hide text on very small phones to save space */
+}
+
+@media (min-width: 500px) {
+    .site-name { display: block; } /* Show text on slightly larger screens */
+}
+/* --- LOGO FIXES END HERE --- */
 
 #menu {
     font-size: 2.2rem;
@@ -67,7 +93,7 @@ header {
     left: 0;
     width: 100%;
     text-align: center;
-    z-index: 1001; /* Ensure it stays on top */
+    z-index: 1001; 
 }
 
 .nav-links.show { display: block; }
@@ -78,8 +104,13 @@ header {
     color: var(--white);
     text-decoration: none;
     font-weight: 700;
+    transition: 0.3s;
 }
 
+.nav-links li a:hover {
+    color: var(--lcci-accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
 /* =============================
    3. HERO & CARDS
    ============================= */
