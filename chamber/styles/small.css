@@ -185,50 +185,60 @@ header {
 }
 
 /* =============================
-   5. FOOTER
+   FOOTER STYLING
    ============================= */
-   footer {
-
-    background-color: var(--lcci-navy);
-
+footer {
+    background-color: var(--lcci-navy); /* Matches Header */
     color: white;
-
-    padding: 30px 5%;
-
+    padding: 40px 5%;
     text-align: center;
-
 }
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
 /* Layout for the social media section */
 .footer-social {
     display: flex;
-    justify-content: center; /* Centers icons horizontally */
-    gap: 20px;               /* Space between icons */
-    margin: 20px 0;          /* Space above and below the icons */
+    justify-content: center; 
+    gap: 25px;               
+    margin: 25px 0;          
 }
 
-/* Specific styling for the icons */
+/* Make icons white and consistent size */
 .footer-social img {
-    width: 25px;             /* Standard size for social icons */
+    width: 28px;             
     height: auto;
     transition: transform 0.3s ease;
-    
-    /* CRITICAL: If your icons are black, this turns them white 
-       so they show up on your navy background! */
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1); /* Turns black icons white */
 }
 
-/* Hover effect to show they are clickable */
 .footer-social img:hover {
     transform: scale(1.2);
-    filter: brightness(1); /* Returns to original color on hover */
+    filter: brightness(1); /* Shows original color on hover */
 }
 
-/* Ensure the copyright/date text looks clean */
+/* Bottom meta info */
 .footer-meta {
     font-size: 0.85rem;
-    line-height: 1.5;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.highlight-date {
+    color: #ffcc00; /* Optional: makes the date stand out slightly */
+}
+
+/* Attribution Bar (The very bottom strip) */
+.attribution-bar {
+    background-color: #00152e; /* Slightly darker than navy */
+    color: #aaaaaa;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.7rem;
 }
 
 /* This hides the text from the screen but keeps it for the Validator/Screen Readers */
