@@ -43,11 +43,12 @@ header {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* This prevents items from stretching to full height */
+    justify-content: space-between; /* Pushes Logo left, Nav right */
+    align-items: center;
     padding: 10px 5%;
+    width: 100%; /* Ensures it spans the full header */
+    box-sizing: border-box;
 }
-
 /* --- LOGO FIXES START HERE --- */
 .logo-box {
     display: flex;
@@ -101,10 +102,15 @@ header {
 .nav-links li a {
     display: block;
     padding: 15px;
-    color: var(--white);
+    color: #ffffff !important; /* Force white color */
     text-decoration: none;
     font-weight: 700;
-    transition: 0.3s;
+    text-transform: uppercase; /* Professional look */
+}
+
+/* Ensure they stay white even after being clicked */
+.nav-links li a:visited {
+    color: #ffffff;
 }
 
 .nav-links li a:hover {

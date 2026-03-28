@@ -1,236 +1,105 @@
-/* =============================
-
+/* =============================================
    ONE SOLID DESKTOP VIEW (800px+)
-
-   ============================= */
+   ============================================= */
 
 @media (min-width: 800px) {
 
-   
-
     /* --- 1. HEADER & NAVIGATION --- */
-
     #menu {
-
         display: none; /* Hide hamburger menu on desktop */
-
     }
-
-
 
     .header-content {
-
         display: flex;
-
         justify-content: space-between;
-
         align-items: center;
-
         max-width: 1200px;
-
         margin: 0 auto;
-
         padding: 10px 2%;
-
     }
-
-
 
     .nav-links {
-
         display: flex !important; /* Force horizontal layout */
-
+        position: static;          /* CRITICAL: Pulls it back from mobile absolute positioning */
+        background: none;
+        width: auto;
         list-style: none;
-
-        gap: 30px;
-
+        gap: 20px;
         margin: 0;
-
         padding: 0;
-
     }
-
-
 
     .nav-links li a {
-
         text-decoration: none;
-
-        color: #0b1c3a;
-
+        color: #ffffff !important; /* Keep it white for the Navy background */
         font-weight: 700;
-
         transition: color 0.3s ease;
-
+        padding: 5px 10px;
     }
-
-
 
     .nav-links li a:hover,
-
     .nav-links li a.active {
-
-        color: #2e7d32; /* LCCI Green */
-
+        color: #2e7d32 !important; /* LCCI Green on hover */
         border-bottom: 3px solid #2e7d32;
-
     }
-
-
 
     /* --- 2. HOME HERO & SPOTLIGHTS --- */
-
     .hero {
-
         text-align: left;
-
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-
         padding-left: 10%;
-
         min-height: 70vh;
-
     }
-
-
 
     .hero h1 { font-size: 3.5rem; max-width: 800px; }
 
-   
-
     .btn-group {
-
         display: flex;
-
         flex-direction: row;
-
         gap: 20px;
-
     }
-
-   
-
-    .btn { width: auto; }
-
-
 
     #spotlight-content {
-
         display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
+        grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns for desktop */
         gap: 20px;
-
         max-width: 1200px;
-
-        margin: 0 auto;
-
+        margin: 20px auto;
     }
-
-
 
     /* --- 3. PAGE LAYOUTS (Join Form) --- */
-
-    .join-main {
-
-        max-width: 1000px;
-
-        margin: 40px auto;
-
-        padding: 0 2%;
-
-    }
-
-
-
     .join-form fieldset {
-
         display: grid;
-
         grid-template-columns: 1fr 1fr;
-
         gap: 20px;
-
     }
 
-
-
-    .join-form label:last-of-type,
-
-    .join-form .full-width,
-
-    .membership-cards {
-
+    .join-form .full-width {
         grid-column: 1 / -1;
-
     }
-
-
 
     /* --- 4. DIRECTORY GRID ADJUSTMENT --- */
-
     #member-container.grid {
-
         display: grid;
-
         grid-template-columns: repeat(3, 1fr);
-
         max-width: 1200px;
-
         margin: 0 auto;
-
     }
-
-
 
     /* --- 5. FOOTER --- */
-
     .footer-content {
-
         display: flex;
-
-        flex-direction: row;
-
         justify-content: space-between;
-
         align-items: center;
-
         max-width: 1200px;
-
         margin: 0 auto;
-
         text-align: left;
-
     }
-
-
-
-    .footer-social {
-
-        flex: 1;
-
-        text-align: center;
-
-    }
-
-
-
-    .footer-meta {
-
-        text-align: right;
-
-    }
-
-} 
-
-#spotlight-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
 }
 
+/* GLOBAL SPOTLIGHT FIX (Outside Media Query for fallback) */
 .spotlight-card img {
     max-width: 150px;
     height: auto;
