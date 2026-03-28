@@ -1,58 +1,42 @@
-/* =============================
-   HOME PAGE SPOTLIGHT LOGIC
-   ============================= */
 const spotlightContainer = document.querySelector('#spotlight-content');
-const membersUrl = "data/members.json";
 
-if (spotlightContainer) {
-    async function getSpotlights() {
-        try {
-            const response = await fetch(membersUrl);
-            const data = await response.json();
-            
-            // 1. FILTER: Only Gold and Silver (Adjust strings if your JSON uses numbers)
-            const eligibleMembers = data.members.filter(m => 
-                m.membershipLevel === "Gold" || m.membershipLevel === "Silver" || 
-                m.membershipLevel === 3 || m.membershipLevel === 2
-            );
-
-            // 2. SHUFFLE: Randomize
-            const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
-
-            // 3. SLICE: Select exactly 3
-            const selected = shuffled.slice(0, 3);
-
-            displaySpotlights(selected);
-        } catch (error) {
-            console.error("Error loading spotlights:", error);
-        }
-    }
-
-    function displaySpotlights(members) {
-        spotlightContainer.innerHTML = "";
+async function getSpotlights() {
+    try {
+        const response = await fetch('data/members.json');
+        const data = await response.json();
         
-        members.forEach(member => {
-            // Determine the display level (handles both string and number JSON data)
-            let levelDisplay = member.membershipLevel;
-            if (levelDisplay === 3) levelDisplay = "Gold";
-            if (levelDisplay === 2) levelDisplay = "Silver";
+        // 1. Filter for Gold and Silver only (Lagos requirements)
+        const eligibleMembers = data.members.filter(m => 
+            m.membershipLevel === 'Gold' || m.membershipLevel === 'Silver'
+        );
 
-            const card = `
-                <div class="card spotlight-card">
-                    <div class="card-header">${member.name}</div>
-                    <div class="card-body">
-                        <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy">
-                        <p class="membership-badge"><strong>${levelDisplay} Member</strong></p>
-                        <hr>
-                        <p><strong>Phone:</strong> ${member.phone}</p>
-                        <p>${member.address}</p>
-                        <a href="${member.website}" target="_blank" class="btn-primary">Visit Website</a>
-                    </div>
-                </div>
-            `;
-            spotlightContainer.innerHTML += card;
-        });
+        // 2. Shuffle and pick 3 random members
+        const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 3);
+
+        displaySpotlights(selected);
+    } catch (error) {
+        console.error("Error loading spotlights:", error);
     }
-
-    getSpotlights();
 }
+
+function displaySpotlights(members) {
+    spotlightContainer.innerHTML = ""; // Clear placeholders
+
+    members.forEach(member => {
+        const card = document.createElement('section');
+        card.className = "spotlight-card card";
+        
+        card.innerHTML = `
+            <h3>${member.name}</h3>
+            <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
+            <p class="membership-tag">${member.membershipLevel} Member</p>
+            <hr>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+        `;
+        spotlightContainer.appendChild(card);
+    });
+}
+
+getSpotlights();
