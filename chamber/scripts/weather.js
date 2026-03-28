@@ -29,21 +29,27 @@ if (weatherContainer) {
         }
     }
 
-    function displayCurrentWeather(data) {
-        const current = data.list[0]; 
-        const temp = Math.round(current.main.temp);
-        const desc = current.weather[0].description;
-        const iconSrc = `https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`;
+   function displayCurrentWeather(data) {
+    // 1. Extract the data
+    const current = data.list[0];
+    const temp = Math.round(current.main.temp);
+    const desc = current.weather[0].description;
+    const humidity = current.main.humidity;
+    const iconSrc = `https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`;
 
-        // Injecting the HTML directly fixes the "empty src" validation error
-        weatherContainer.innerHTML = `
-            <div class="weather-current">
+    // 2. Inject the HTML
+    // This replaces the "Loading weather..." text and the --°C with real data
+    weatherContainer.innerHTML = `
+        <div class="weather-current">
+            <figure>
                 <img src="${iconSrc}" alt="${desc}" id="weather-icon">
-                <p class="temp"><strong>${temp}°C</strong></p>
-                <p class="desc">${desc.toUpperCase()}</p>
-                <p>Humidity: ${current.main.humidity}%</p>
-            </div>`;
-    }
+                <figcaption id="weather-desc">${desc.toUpperCase()}</figcaption>
+            </figure>
+            <p class="temp"><strong>${temp}°C</strong></p>
+            <p class="humidity">Humidity: ${humidity}%</p>
+        </div>
+    `;
+}
 
     function displayForecast(data) {
         if (!forecastGrid) return;
