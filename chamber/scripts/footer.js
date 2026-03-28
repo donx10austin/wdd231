@@ -1,39 +1,37 @@
-// 1. Set the current year for the copyright
-const yearSpan = document.querySelector("#current-year");
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
+/* =============================
+   SHARED SITE LOGIC (Header & Footer)
+   ============================= */
 
-// 2. Set the last modified date
-const lastModifiedElement = document.querySelector("#lastModified");
-if (lastModifiedElement) {
-    // This format keeps the label and the date together cleanly
-    lastModifiedElement.innerHTML = `Last Modified: <span class="highlight-date">${document.lastModified}</span>`;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Set the current year for the copyright
+    const yearSpan = document.querySelector("#current-year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
-// 3. Handle the Hamburger Menu in the header
-const menuButton = document.querySelector('#menu');
-const navigation = document.querySelector('.nav-links');
+    // 2. Set the last modified date
+    const lastModifiedElement = document.querySelector("#lastModified");
+    if (lastModifiedElement) {
+        // document.lastModified provides the date the file was last saved
+        lastModifiedElement.textContent = document.lastModified;
+    }
 
-if (menuButton && navigation) {
-    menuButton.addEventListener('click', () => {
-        navigation.classList.toggle('show');
-        // Toggle the button text/icon
-        menuButton.textContent = navigation.classList.contains('show') ? '❌' : '☰';
-    });
-}
+    // 3. Handle the Hamburger Menu (Header)
+    const menuButton = document.querySelector('#menu');
+    const navigation = document.querySelector('.nav-links');
 
-// 1. Set the current year
-document.querySelector('#current-year').textContent = new Date().getFullYear();
-
-// 2. Set the last modified date
-document.querySelector('#lastModified').textContent = document.lastModified;
-
-// 3. Hamburger Menu Toggle
-const mainnav = document.querySelector('.nav-links');
-const hambutton = document.querySelector('#menu');
-
-hambutton.addEventListener('click', () => {
-    mainnav.classList.toggle('show');
-    hambutton.classList.toggle('show');
+    if (menuButton && navigation) {
+        menuButton.addEventListener('click', () => {
+            navigation.classList.toggle('show');
+            
+            // Toggle the button icon between Hamburger and X
+            if (navigation.classList.contains('show')) {
+                menuButton.textContent = '❌';
+                menuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                menuButton.textContent = '☰';
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 });

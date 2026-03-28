@@ -1,29 +1,25 @@
 /* =============================
-   WEATHER & FORECAST API
+   WEATHER & 3-DAY FORECAST API
    ============================= */
 const weatherContainer = document.querySelector('#weather-info');
+const forecastGrid = document.querySelector('.forecast-grid');
 
 if (weatherContainer) {
-    // 1. Setup Elements
-    const forecastContainer = document.createElement('div');
-    forecastContainer.id = 'forecast-info';
-    weatherContainer.insertAdjacentElement('afterend', forecastContainer);
-
-    // 2. Configuration (Lagos, Nigeria)
+    // 1. Configuration (Lagos, Nigeria)
     const lat = 6.45;
     const lon = 3.40;
-    const apiKey = 'YOUR_ACTUAL_API_KEY'; // Replace this!
+    const apiKey = 'YOUR_ACTUAL_API_KEY'; // Replace with your real OpenWeatherMap Key
     
-    // We only need the Forecast URL because it contains CURRENT weather too!
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    // Using the 5-day/3-hour forecast URL
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     async function getWeatherData() {
         try {
-            const response = await fetch(forecastUrl);
-            if (!response.ok) throw new Error("Weather API failed");
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("Weather API failed to respond.");
             const data = await response.json();
             
-            // Call both display functions with the same data
+            // Execute both displays using the same data object
             displayCurrentWeather(data);
             displayForecast(data);
         } catch (error) {
@@ -33,46 +29,42 @@ if (weatherContainer) {
     }
 
     function displayCurrentWeather(data) {
-        const current = data.list[0]; // The very first entry is the current time
-        const temp = current.main.temp.toFixed(0);
+        // The first item in the 'list' array is the closest to the current time
+        const current = data.list[0]; 
+        const temp = Math.round(current.main.temp);
         const desc = current.weather[0].description;
         const iconSrc = `https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`;
 
         weatherContainer.innerHTML = `
-            <div class="weather-current card">
-                <div class="card-header">Current Weather</div>
-                <div class="card-body">
-                    <img src="${iconSrc}" alt="${desc}">
-                    <p class="temp"><strong>${temp}°C</strong></p>
-                    <p class="desc">${desc.toUpperCase()}</p>
-                    <p>Humidity: ${current.main.humidity}%</p>
-                </div>
+            <div class="weather-current">
+                <img src="${iconSrc}" alt="${desc}">
+                <p class="temp"><strong>${temp}°C</strong></p>
+                <p class="desc">${desc.toUpperCase()}</p>
+                <p>Humidity: ${current.main.humidity}%</p>
             </div>`;
     }
 
     function displayForecast(data) {
-        // Filter for 12:00 PM readings for the next 3 days
-        const dailyForecast = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
+        if (!forecastGrid) return;
+
+        // Filter: Find readings for 12:00 PM (noon) to get a consistent daily temperature
+        // We take 3 days starting from tomorrow
+        const dailyForecast = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(1, 4);
         
-        forecastContainer.innerHTML = `
-            <div class="card">
-                <div class="card-header">3-Day Forecast</div>
-                <div class="card-body forecast-grid"></div>
-            </div>`;
-        
-        const grid = forecastContainer.querySelector('.forecast-grid');
+        forecastGrid.innerHTML = ""; // Clear any placeholders
 
         dailyForecast.forEach(day => {
             const date = new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' });
-            const temp = day.main.temp.toFixed(0);
+            const temp = Math.round(day.main.temp);
+            const icon = day.weather[0].icon;
             
             const dayDiv = document.createElement('div');
             dayDiv.className = "forecast-day";
             dayDiv.innerHTML = `
                 <p><strong>${date}</strong></p>
-                <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="icon">
+                <img src="https://openweathermap.org/img/wn/${icon}.png" alt="forecast icon">
                 <p>${temp}°C</p>`;
-            grid.appendChild(dayDiv);
+            forecastGrid.appendChild(dayDiv);
         });
     }
 

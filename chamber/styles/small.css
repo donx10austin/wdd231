@@ -31,7 +31,7 @@ main {
 }
 
 /* =============================
-   2. HEADER & NAVIGATION (Consolidated)
+   2. HEADER & NAVIGATION
    ============================= */
 header {
     background-color: var(--lcci-navy);
@@ -46,26 +46,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-}
-
-.logo-box {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
-}
-
-.logo { height: 50px; width: auto; }
-
-.site-name {
-    color: var(--white);
-    font-weight: 800;
-    font-size: 1.2rem;
-    display: none;
-}
-
-@media (min-width: 500px) {
-    .site-name { display: block; }
 }
 
 #menu {
@@ -87,6 +67,7 @@ header {
     left: 0;
     width: 100%;
     text-align: center;
+    z-index: 1001; /* Ensure it stays on top */
 }
 
 .nav-links.show { display: block; }
@@ -97,21 +78,15 @@ header {
     color: var(--white);
     text-decoration: none;
     font-weight: 700;
-    transition: 0.3s;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--lcci-accent);
 }
 
 /* =============================
-   3. HERO & BUTTONS
+   3. HERO & CARDS
    ============================= */
 .hero {
     min-height: 60vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -121,119 +96,37 @@ header {
                 url("../images/lagos-hero.jpg") center/cover no-repeat;
 }
 
-.hero h1 { font-size: 2.2rem; margin-bottom: 20px; }
-.btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
 .btn-primary { 
     background: var(--lcci-green); 
     color: white; 
     padding: 12px 28px; 
     border-radius: 50px; 
     text-decoration: none; 
-    font-weight: bold; 
-}
-
-/* =============================
-   4. CARDS, WEATHER & DIRECTORY
-   ============================= */
-.card {
-    background: var(--white);
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.card-header { background-color: var(--lcci-navy); color: var(--white); padding: 12px; text-align: center; font-weight: bold; }
-.card-body { padding: 20px; }
-
-.weather-flex { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; align-items: center; }
-#current-temp { font-size: 2.5rem; font-weight: bold; color: var(--lcci-navy); }
-
-.forecast-grid { display: flex; justify-content: space-around; text-align: center; margin-top: 15px; }
-.forecast-day { flex: 1; border-right: 1px solid #eee; }
-.forecast-day:last-child { border-right: none; }
-
-#member-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* =============================
-   5. SPOTLIGHTS & BADGES
-   ============================= */
-.membership-badge {
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
     font-weight: bold;
-    text-transform: uppercase;
+    display: inline-block;
     margin-top: 10px;
 }
 
-.gold-badge { background-color: #ffd700; color: #000; }
-.silver-badge { background-color: #c0c0c0; color: #000; }
+/* Weather & Forecast Mobile Grid */
+.forecast-grid { 
+    display: flex; 
+    justify-content: space-around; 
+    text-align: center; 
+    margin-top: 15px; 
+}
+
+.forecast-day { flex: 1; border-right: 1px solid #eee; }
+.forecast-day:last-child { border-right: none; }
 
 /* =============================
-   6. FOOTER
+   4. CUSTOM FORM (JOIN PAGE)
    ============================= */
-footer {
-    background-color: var(--lcci-navy);
-    color: white;
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.footer-social img {
-    width: 24px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
-}
-
-.attribution-bar {
-    background-color: #e0e0e0;
-    color: #666;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
-}
-
-/* =============================
-   7. DESKTOP ADAPTATION
-   ============================= */
-@media (min-width: 800px) {
-    #menu { display: none; }
-    
-    .nav-links {
-        display: flex !important;
-        position: static;
-        width: auto;
-        background: none;
-    }
-    
-    .nav-links li a { padding: 10px 15px; }
-    
-    .nav-links a.active {
-        border-bottom: 2px solid var(--lcci-green);
-    }
-}
-
-/* Custom Form Styling - No Frameworks Allowed */
 .custom-form fieldset {
     border: 1px solid var(--lcci-green);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: var(--white);
-}
-
-.custom-form label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: var(--lcci-navy);
 }
 
 .custom-form input, 
@@ -244,61 +137,22 @@ footer {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Critical for alignment */
+    box-sizing: border-box;
 }
 
-.submit-btn {
-    background-color: var(--lcci-green);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.submit-btn:hover { background-color: var(--lcci-navy); }
-
-/* Align Radio Buttons and Info Icons */
 .membership-item {
     display: flex;
     align-items: center;
-    gap: 12px; /* Space between text and icon */
+    gap: 12px;
     margin-bottom: 12px;
 }
 
-.membership-item label {
-    margin-bottom: 0; /* Override the default label margin */
-    cursor: pointer;
+/* =============================
+   5. FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
 }
-
-.open-modal {
-    background: none;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.open-modal:hover {
-    background-color: var(--lcci-accent);
-    border-color: var(--lcci-green);
-}
-
-/* Dialog / Modal Styling */
-.modal-box {
-    border: none;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    max-width: 400px;
-}
-
-.modal-box::backdrop { background-color: rgba(0,0,0,0.6); }
