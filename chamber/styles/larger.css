@@ -106,3 +106,74 @@
     display: block;
     margin: 10px auto;
 }
+
+@media (min-width: 800px) {
+
+    /* --- 1. HEADER & NAVIGATION --- */
+    #menu {
+        display: none; 
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 2%;
+    }
+
+    .nav-links {
+        display: flex !important; 
+        position: static;          
+        background: none;
+        width: auto;
+        list-style: none;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #ffffff !important; 
+        font-weight: 700;
+        padding: 5px 10px;
+    }
+
+    /* DESKTOP WAYFINDING: Green highlight */
+    .nav-links li a:hover,
+    .nav-links li a.active {
+        color: #b7f5c4 !important; /* LCCI Accent Green */
+        border-bottom: 3px solid #2e7d32;
+    }
+
+    /* --- 2. LAYOUT (Proximity & Alignment) --- */
+    .join-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .custom-form fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* Items that should span both columns */
+    .custom-form label:has(textarea),
+    .custom-form .membership-options {
+        grid-column: 1 / -1;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+}
