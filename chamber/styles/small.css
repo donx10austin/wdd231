@@ -162,37 +162,71 @@ header {
 .membership-item:nth-child(4) { animation-delay: 0.4s; }
 
 /* =============================
-   4. FOOTER & CONTRAST FIXES
+   FOOTER STYLING - UPDATED
    ============================= */
 footer {
-    background-color: var(--lcci-navy);
-    color: var(--white); /* White text on navy = AA Pass */
+    background-color: var(--lcci-navy); /* Matches Header */
+    color: white;
     padding: 40px 5%;
     text-align: center;
 }
 
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Layout for the social media section */
 .footer-social {
     display: flex;
     justify-content: center; 
-    gap: 25px;               
-    margin: 25px 0;          
+    gap: 30px; /* Slightly wider gap for professional separation */
+    margin: 30px 0;
 }
 
-/* Keep red border until you confirm images/youtube.png exists! */
+/* 1. Base style for the image container (the <a> link) */
 .footer-social a { 
-    border: 1px solid red; 
     display: inline-block;
-    min-width: 30px;
-    min-height: 30px;
+    transition: transform 0.3s ease; /* For the hover effect */
+    vertical-align: middle;
 } 
 
+/* 2. THE FIX: Targeting the images. We removed the invert filter. */
 .footer-social img {
-    width: 28px;             
-    height: auto;
-    filter: brightness(0) invert(1); 
-    transition: transform 0.3s ease;
+    width: auto; /* Allow natural aspect ratio */
+    height: 30px; /* Force consistent visual weight */
+    display: block;
+    
+    /* NEW: Contrast Enhancement. This filter makes dark things darker
+       and white things whiter. For your YouTube image, it will make
+       the white box slightly more distinct against a slightly darker text. */
+    filter: contrast(110%) brightness(95%);
+    
+    /* CRITICAL FIX: Since your file has a white box, we can use CSS
+       to subtly mask it. The following properties tell the browser
+       to use the shape of the elements in the image to 'knock out'
+       the white background when rendering against a dark field. */
+    mix-blend-mode: color-dodge; /* Blend the text and play button shapes nicely */
 }
 
+/* Special adjustment specifically for the YouTube logo image */
+.footer-social img[src*="youtube"] {
+    /* Use 'mix-blend-mode: normal' to stop color-dodge and let
+       the image render with its natural colors. On a very dark
+       background, this makes the white background box look intentional,
+       while the play button and text colors pop. This is often the
+       cleanest look with this type of image on dark fields. */
+    mix-blend-mode: normal; 
+}
+
+/* 3. The professional Hover Effect (it will grow now) */
+.footer-social a:hover {
+    transform: scale(1.15); /* Subtly grow on hover */
+}
+
+/* --- Keep existing bottom meta fixes for AA contrast --- */
+
+/* Bottom meta info */
 .footer-meta {
     font-size: 0.85rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -200,10 +234,14 @@ footer {
     margin-top: 10px;
 }
 
-/* AA CONTRAST: Lightened attribution text */
+.highlight-date {
+    color: #ffcc00; /* Contrast approved */
+}
+
+/* Attribution Bar (The very bottom strip) */
 .attribution-bar {
-    background-color: #000a16; 
-    color: #eeeeee; 
+    background-color: #000a16; /* AA Contrast Approved */
+    color: #eeeeee; /* Lightened for AA Contrast Approved */
     text-align: center;
     padding: 15px;
     font-size: 0.75rem;
