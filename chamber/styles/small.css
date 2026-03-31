@@ -180,48 +180,42 @@ footer {
 .footer-social {
     display: flex;
     justify-content: center; 
-    gap: 30px; /* Slightly wider gap for professional separation */
+    gap: 30px; 
     margin: 30px 0;
+    align-items: center; /* Ensures all icons sit on the same middle line */
 }
 
 /* 1. Base style for the image container (the <a> link) */
 .footer-social a { 
     display: inline-block;
-    transition: transform 0.3s ease; /* For the hover effect */
+    transition: transform 0.3s ease; /* Makes the "Grow" effect smooth */
     vertical-align: middle;
+    text-decoration: none;
 } 
 
-/* 2. THE FIX: Targeting the images. We removed the invert filter. */
+/* 2. THE FIX: Targeting the images */
 .footer-social img {
-    width: auto; /* Allow natural aspect ratio */
-    height: 30px; /* Force consistent visual weight */
+    width: auto; 
+    height: 30px; /* Force consistent visual height for all 3 icons */
     display: block;
-    
-    /* NEW: Contrast Enhancement. This filter makes dark things darker
-       and white things whiter. For your YouTube image, it will make
-       the white box slightly more distinct against a slightly darker text. */
-    filter: contrast(110%) brightness(95%);
-    
-    /* CRITICAL FIX: Since your file has a white box, we can use CSS
-       to subtly mask it. The following properties tell the browser
-       to use the shape of the elements in the image to 'knock out'
-       the white background when rendering against a dark field. */
-    mix-blend-mode: color-dodge; /* Blend the text and play button shapes nicely */
 }
 
-/* Special adjustment specifically for the YouTube logo image */
+/* FIX FOR TWITTER & LINKEDIN: Turns black shapes into white shapes */
+.footer-social img[src*="twitter"], 
+.footer-social img[src*="linkedin"] {
+    filter: brightness(0) invert(1);
+}
+
+/* FIX FOR YOUTUBE: Prevents the white box from turning black */
 .footer-social img[src*="youtube"] {
-    /* Use 'mix-blend-mode: normal' to stop color-dodge and let
-       the image render with its natural colors. On a very dark
-       background, this makes the white background box look intentional,
-       while the play button and text colors pop. This is often the
-       cleanest look with this type of image on dark fields. */
-    mix-blend-mode: normal; 
+    filter: none; 
+    mix-blend-mode: normal;
+    border-radius: 4px; /* Optional: adds a tiny round to the white box corners */
 }
 
-/* 3. The professional Hover Effect (it will grow now) */
+/* 3. The professional Hover Effect (It will grow now!) */
 .footer-social a:hover {
-    transform: scale(1.15); /* Subtly grow on hover */
+    transform: scale(1.2); 
 }
 
 /* --- Keep existing bottom meta fixes for AA contrast --- */
