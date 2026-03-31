@@ -1,34 +1,31 @@
-// 1. EXTRACT DATA FROM THE URL
-// This looks at the "query string" (everything after the ? in the URL)
-const urlParams = new URLSearchParams(window.location.search);
+// Get the full URL
+const currentUrl = window.location.href;
 
-// 2. TARGET THE RESULTS BOX
-const resultsContainer = document.querySelector('#results');
+// Split the URL to get only the parameters after the '?'
+const everything = currentUrl.split('?');
 
-if (resultsContainer && urlParams.has('fname')) {
-    // Clear the "Loading..." message
-    resultsContainer.innerHTML = '';
+if (everything.length > 1) {
+    const formData = everything[1].split('&');
 
-    // Create a list of the submitted data
-    const submissionData = [
-        { label: 'First Name', value: urlParams.get('fname') },
-        { label: 'Last Name', value: urlParams.get('lname') },
-        { label: 'Email', value: urlParams.get('email') },
-        { label: 'Phone', value: urlParams.get('phone') },
-        { label: 'Membership Level', value: urlParams.get('membership') },
-        { label: 'Submission Date', value: new Date().toLocaleString() }
-    ];
+    // Function to extract and display data
+    function show(key) {
+        formData.forEach((element) => {
+            if (element.startsWith(key)) {
+                // Get the value after the '='
+                let value = element.split('=')[1];
+                // Decode URL characters (like %40 for @) and replace + with spaces
+                value = decodeURIComponent(value).replace(/\+/g, ' ');
+                // Place it in the correct span
+                document.getElementById(`res-${key}`).textContent = value;
+            }
+        });
+    }
 
-    // Build the HTML to display the data
-    submissionData.forEach(item => {
-        const p = document.createElement('p');
-        p.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
-        resultsContainer.appendChild(p);
-    });
-}
-
-// 3. FOOTER DATE LOGIC (Always keep this!)
-const lastModified = document.querySelector("#lastModified");
-if (lastModified) {
-    lastModified.textContent = document.lastModified;
+    // Call the function for each field in your form
+    show("fname");
+    show("lname");
+    show("email");
+    show("phone");
+    show("orgname");
+    show("timestamp");
 }

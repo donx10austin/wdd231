@@ -26,11 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. Set the Hidden Timestamp (Consolidated)
-    // This records exactly when the user loaded the form
+    // 2. Set the Hidden Timestamp
+    // We use toLocaleString so it's readable on the Thank You page
     const timestampField = document.getElementById("timestamp");
     if (timestampField) {
-        timestampField.value = new Date().toISOString();
-        // Returns format like: 2026-03-27T18:45:00.000Z
+        const now = new Date();
+        // Format: "3/31/2026, 3:15:00 PM" (or based on user's local settings)
+        timestampField.value = now.toLocaleString();
     }
 });

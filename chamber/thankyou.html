@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining the Lagos Chamber of Commerce and Industry.">
-    <meta name="author" content="Austin Anumudu">
-    <title>Thank You | LCCI</title>
-    
+    <title>Submission Received | LCCI</title>
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
-    <link rel="icon" href="favicon.ico">
-    
-    <script src="scripts/thanks.js" defer></script>
+    <script defer src="scripts/thankyou.js"></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo-box">
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
-                <span class="site-name">Lagos Chamber of Commerce</span>
+                <div class="site-name">Lagos Chamber of Commerce</div>
             </a>
+            <button id="menu">☰</button>
             <nav class="primary-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -31,48 +27,54 @@
         </div>
     </header>
 
-    <main class="thanks-container">
-        <section class="thanks-card">
-            <div class="success-icon">✓</div>
-            <h1>Application Received!</h1>
-            <p>Thank you for applying to the Lagos Chamber of Commerce. Your information has been submitted for review.</p>
+    <main>
+        <section class="thank-you-card">
+            <h1>Thank You for Joining!</h1>
+            <p>We have received your application. Here is the information you provided:</p>
             
-            <hr class="thanks-divider">
-
             <div id="results" class="results-box">
-                <p>Loading your submission details...</p>
+                <p><strong>First Name:</strong> <span id="res-fname"></span></p>
+                <p><strong>Last Name:</strong> <span id="res-lname"></span></p>
+                <p><strong>Email:</strong> <span id="res-email"></span></p>
+                <p><strong>Phone:</strong> <span id="res-phone"></span></p>
+                <p><strong>Organization:</strong> <span id="res-orgname"></span></p>
+                <p><strong>Submission Date:</strong> <span id="res-timestamp"></span></p>
             </div>
 
-            <div class="thanks-actions">
-                <a href="index.html" class="btn-primary">Return to Home</a>
-            </div>
+            <a href="index.html" class="btn-primary">Back to Home</a>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-contact">
-                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-                <p>+234 8081387067</p>
+                <p><strong>Lagos Chamber of Commerce</strong></p>
+                <p>1 Commerce House, Lagos Island</p>
+                <p>Lagos, Nigeria</p>
+                <p>info@lcci.org.ng</p>
+                <p>+234 1 234 5678</p>
             </div>
-            
+
             <div class="footer-social">
-                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://youtube.com" target="_blank">
+                    <img src="images/youtube.png" alt="YouTube Icon">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="images/twitter.png" alt="Twitter Icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn Icon">
+                </a>
             </div>
 
             <div class="footer-meta">
-                <p>&copy; 2026 Austin Anumudu | Lagos, Nigeria</p>
-                <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+                <p>WDD 231 Class Project</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
             </div>
         </div>
+        <div class="attribution-bar">
+            <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
+        </div>
     </footer>
-
-    <div class="attribution-bar">
-        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
-    </div>
-
-    <script src="scripts/main.js"></script>
 </body>
 </html>
