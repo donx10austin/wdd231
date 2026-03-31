@@ -184,6 +184,8 @@ header {
     margin-bottom: 12px;
 }
 
+
+
 /* =============================
    FOOTER STYLING
    ============================= */
@@ -206,6 +208,12 @@ footer {
     gap: 25px;               
     margin: 25px 0;          
 }
+
+/* Debugging line: helps locate missing icons */
+.footer-social a { 
+    border: 1px solid red; 
+    display: inline-block; 
+} 
 
 /* Make icons white and consistent size */
 .footer-social img {
@@ -251,4 +259,15 @@ footer {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* =============================
+   WAYFINDING (Active Link Styling)
+   ============================= */
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffcc00;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
