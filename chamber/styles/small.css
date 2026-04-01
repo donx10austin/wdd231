@@ -370,25 +370,27 @@ footer {
     margin: 20px 0;
     border-radius: 8px;
     background: #ffffff;
-    overflow: hidden; /* Ensures header background stays inside radius */
+    overflow: hidden; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .lcci-box-header {
-    background-color: var(--light-grey);
+    /* FIXED: Using Navy background + White text to pass WCAG AA Contrast */
+    background-color: var(--lcci-navy);
+    color: var(--white); 
     padding: 15px;
     margin: 0;
     font-size: 1.25rem;
     border-bottom: 1px solid #ddd;
-    color: var(--lcci-navy);
     font-weight: 700;
+    text-align: center;
 }
 
 .lcci-box-content {
     padding: 20px;
 }
 
-/* Home Page Action Buttons (Replacing btn-primary/secondary) */
+/* Home Page Action Buttons */
 .lcci-action-group {
     display: flex;
     justify-content: center;
