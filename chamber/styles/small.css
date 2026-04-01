@@ -185,37 +185,96 @@ header {
 .lcci-spotlight-card img { max-width: 150px; height: auto; }
 
 /* =============================
-    5. DISCOVER PAGE (Vertical Alignment)
+    5. DISCOVER PAGE & GALLERY
    ============================= */
+
+/* The main container for all location cards */
 .gallery-container {
+    display: grid;
+    /* This creates the multi-column look on desktops */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Individual Location Card - Matches your screenshot */
+.location-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column; /* Vertically aligns images */
-    gap: 20px;
+    flex-direction: column; /* Content inside (Title, Img, Text) stacks vertically */
+    transition: transform 0.3s ease;
 }
 
-.gallery-container figure {
-    margin: 0;
-    width: 100%;
+.location-card:hover {
+    transform: translateY(-5px);
 }
 
-.gallery-container img {
+.location-card h2 {
+    font-size: 1.5rem;
+    color: var(--lcci-navy);
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.location-card img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 220px; /* Fixed height for that uniform look in your screenshot */
     object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.location-card address {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.location-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Pushes the button to the bottom if text is short */
+    margin-bottom: 20px;
+}
+
+/* Learn More Button - Grey style from your screenshot */
+.learn-more-btn {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #e0e0e0;
 }
 
 /* =============================
-    6. FOOTER
+    6. FOOTER & ATTRIBUTION
    ============================= */
 footer {
     background-color: var(--lcci-navy);
     color: white;
     padding: 40px 5%;
     text-align: center;
+    margin-top: 40px;
 }
 
-.footer-social img { height: 30px; width: auto; margin: 0 15px; }
+.footer-social img { 
+    height: 30px; 
+    width: auto; 
+    margin: 0 15px; 
+}
 
 /* Icon Filters for High Contrast */
 .footer-social img[src*="twitter"], 
