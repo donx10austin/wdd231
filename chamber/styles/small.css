@@ -338,3 +338,11 @@ footer {
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* Ensure the H1 spans the full width of the grid on all views */
+.discover-grid h1 {
+    grid-column: 1 / -1; 
+    text-align: center;
+    color: var(--lcci-navy);
+    margin-bottom: 10px;
+}
