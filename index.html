@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Austin Anumudu</title>
+    <title>WDD 231 Course Portal | Austin Anumudu</title>
     
-    <meta name="description" content="WDD 231 Course Portal for Austin Anumudu. This site features web development projects, course work, and credits.">
+    <meta name="description" content="Welcome to Austin Anumudu's WDD 231 Course Portal. Explore professional web development projects, course certificates, and coding credits from Lagos, Nigeria.">
     <meta name="author" content="Austin Anumudu">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WDD 231 Course Portal | Austin Anumudu"> 
+    <meta property="og:description" content="Explore the professional web development journey of Austin Anumudu. View WDD 231 projects, course certificates, and coding milestones.">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/index.html">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/images/og-image.jpg">
+    <meta property="og:image:alt" content="Austin Anumudu Web Development Portfolio Preview">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -22,56 +29,64 @@
     <header>
         <div class="site-branding">
             <div class="icon-placeholder"></div>
-            <h1>Site Name</h1>
+            <h1>Austin Anumudu</h1>
         </div>
         <nav>
             <ul class="navigation">
-                <li><a href="#" class="active">HOME</a></li>
-                <li><a href="chamber/directory.html">CHAMBER PROJECT</a></li>
-                <li><a href="#">FINAL PROJECT</a></li>
-                <li><a href="https://github.com/austin-anumudu" target="_blank">GITHUB REPO</a></li>
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="chamber/index.html">CHAMBER</a></li>
+                <li><a href="https://github.com/austin-anumudu" target="_blank" rel="noopener">GITHUB</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="main-grid">
-            <section class="card">
-                <h2 class="card-header">About Me</h2>
-                <div class="card-content">
-                    <p>Welcome! I’m Austin Anumudu, a Software Development student at BYU-Idaho based in Lagos, Nigeria. I am passionate about bridging the gap between creative design and robust logic to build impactful, functional tools.</p>
+            <section class="portal-box">
+                <h2 class="portal-box-header">About Me</h2>
+                <div class="portal-box-content">
+                    <p>Welcome! I’m Austin Anumudu, a Software Development student at BYU-Idaho based in Lagos, Nigeria. I am passionate about bridging the gap between creative design and robust logic to build impactful tools.</p>
                 </div>
             </section>
-            <section class="card">
-                <h2 class="card-header">Student Photo</h2>
-                <div class="card-content photo-box">
-                    <img src="images/austin-photo.webp" alt="Austin Anumudu">
+
+            <section class="portal-box">
+                <h2 class="portal-box-header">Student Photo</h2>
+                <div class="portal-box-content photo-box">
+                    <img src="images/austin-photo.webp" alt="Austin Anumudu - Software Development Student" loading="lazy" width="300" height="400">
                 </div>
             </section>
         </div>
 
-        <section class="card">
-            <h2 class="card-header">Web Certificate Courses</h2>
-            <div class="card-content">
+        <section class="portal-box">
+            <h2 class="portal-box-header">Web Certificate Courses</h2>
+            <div class="portal-box-content">
                 <div class="filters">
-                    <button id="all">All</button>
-                    <button id="cse">CSE</button>
-                    <button id="wdd">WDD</button>
+                    <button id="all" class="filter-btn">All</button>
+                    <button id="cse" class="filter-btn">CSE</button>
+                    <button id="wdd" class="filter-btn">WDD</button>
                 </div>
-                <div id="course-list"></div>
-                <p class="credit-msg">Total credits: <span id="total-credits"></span></p>
+                <div id="course-list" class="course-display"></div>
+                <p class="credit-msg">Total credits: <span id="total-credits" class="highlight-text"></span></p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="#"><img src="images/linkedin-logo.png" alt="LinkedIn Profile"></a>
-            <a href="#"><img src="images/github-logo.png" alt="GitHub Profile"></a>
-            <a href="#"><img src="images/x-logo.png" alt="X Profile"></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="Visit Austin's LinkedIn Profile">
+                <img src="images/linkedin-logo.png" alt="LinkedIn Logo">
+            </a>
+            <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" aria-label="Visit Austin's YouTube Channel">
+                <img src="images/youtube-logo.png" alt="YouTube Logo">
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener" aria-label="Visit Austin's Twitter Profile">
+                <img src="images/x-logo.png" alt="Twitter Logo">
+            </a>
         </div>
-        <p>&copy; <span id="currentyear"></span> ● Austin Anumudu ● Lagos, Nigeria</p>
-        <p id="lastModified"></p>
+        <div class="footer-meta">
+            <p>&copy; <span id="currentyear"></span> ● Austin Anumudu ● Lagos, Nigeria</p>
+            <p id="lastModified" class="highlight-date"></p>
+        </div>
     </footer>
 </body>
 </html>
