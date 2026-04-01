@@ -240,3 +240,71 @@ footer {
     padding: 15px;
     font-size: 0.75rem;
 }
+
+.hero {
+    /* This links to the image you uploaded earlier */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/lagos-hero.jpg");
+    
+    /* This ensures the image covers the whole area without stretching weirdly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* This gives the section height so the image is visible */
+    min-height: 60vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Makes your text readable over the image */
+}
+
+@media (min-width: 800px) {
+    #menu {
+        display: none; /* Hide the hamburger icon on desktop */
+    }
+
+    .nav-links {
+        display: flex !important; /* Show the links in a row */
+        position: static;
+        width: auto;
+        background: none;
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        padding: 5px 10px;
+    }
+
+    /* Horizontal highlight instead of left-border for desktop */
+    .nav-links li a.active {
+        border-left: none;
+        border-bottom: 3px solid var(--lcci-gold);
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--lcci-gold); /* Makes the "better business environment" stand out */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 10px;
+}
+.btn-primary { background-color: var(--lcci-green); color: white; }
+.btn-secondary { background-color: var(--white); color: var(--lcci-navy); }
