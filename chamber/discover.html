@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Lagos | LCCI</title>
+    <title>Discover Lagos | Lagos Chamber of Commerce</title>
     
+    <meta name="description" content="Explore the economic and cultural landmarks of Lagos, Nigeria. From the Lekki-Ikoyi Link Bridge to Eko Atlantic City.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 641px)">
     
     <script defer src="scripts/footer.js"></script>
-    <script defer src="scripts/discover.js"></script>
+    <script defer src="scripts/discover.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -38,51 +40,28 @@
     </header>
 
     <main class="discover-grid">
+        
         <aside class="sidebar">
             <div class="card">
-                <div class="card-header">Welcome</div>
+                <div class="card-header">Welcome Back</div>
                 <div class="card-body" id="visitor-message">
-                    </div>
+                    Loading visitor information...
+                </div>
             </div>
+
             <div class="card">
-                <div class="card-header">Lagos Stats</div>
+                <div class="card-header">Lagos Quick Stats</div>
                 <div class="card-body">
-                    <p><strong>Population:</strong> 15M+</p>
-                    <p><strong>Economy:</strong> Largest in Africa</p>
+                    <p><strong>Population:</strong> 20M+</p>
+                    <p><strong>Economy:</strong> 5th Largest in Africa</p>
+                    <p><strong>Tech Hub:</strong> 2,000+ Startups</p>
                 </div>
             </div>
         </aside>
 
-        <section class="gallery">
-            <h2>Experience Lagos</h2>
-            
-            <figure>
-                <img src="images/lagos-bridge.jpg" 
-                     data-src="images/lagos-bridge.jpg" 
-                     alt="Lekki-Ikoyi Link Bridge" 
-                     loading="lazy" 
-                     class="lazy">
-                <figcaption>The iconic Lekki-Ikoyi Link Bridge at night.</figcaption>
-            </figure>
+        <section class="gallery-container">
+            </section>
 
-            <figure>
-                <img src="images/national-theatre.jpg" 
-                     data-src="images/national-theatre.jpg" 
-                     alt="National Arts Theatre" 
-                     loading="lazy" 
-                     class="lazy">
-                <figcaption>The National Arts Theatre in Iganmu.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/eko-atlantic.jpg" 
-                     data-src="images/eko-atlantic.jpg" 
-                     alt="Eko Atlantic City" 
-                     loading="lazy" 
-                     class="lazy">
-                <figcaption>Modern developments at Eko Atlantic.</figcaption>
-            </figure>
-        </section>
     </main>
 
     <footer>

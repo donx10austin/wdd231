@@ -1,26 +1,38 @@
-// 1. Visitor Message Logic (localStorage)
-const visitorMessage = document.querySelector("#visitor-message");
-const now = Date.now();
-const lastVisit = localStorage.getItem("lastVisit");
+import { locations } from '../data/locations.mjs';
 
-if (!lastVisit) {
-    visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
+// --- VISITOR MESSAGE LOGIC ---
+const visitDisplay = document.querySelector("#visitor-message");
+const now = Date.now();
+const msInDay = 86400000;
+const lastVisit = Number(window.localStorage.getItem("lastVisit-ls")) || 0;
+
+if (lastVisit === 0) {
+    visitDisplay.textContent = "Welcome! Let us know if you have any questions.";
 } else {
-    const daysSince = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-    
-    if (daysSince < 1) {
-        visitorMessage.textContent = "Back so soon! Awesome!";
+    const timeDiff = now - lastVisit;
+    if (timeDiff < msInDay) {
+        visitDisplay.textContent = "Back so soon! Awesome!";
     } else {
-        visitorMessage.textContent = `You last visited ${daysSince} ${daysSince === 1 ? "day" : "days"} ago.`;
+        const days = Math.floor(timeDiff / msInDay);
+        visitDisplay.textContent = `You last visited ${days} ${days === 1 ? "day" : "days"} ago.`;
     }
 }
+window.localStorage.setItem("lastVisit-ls", now);
 
-localStorage.setItem("lastVisit", now);
+// --- GALLERY GENERATION ---
+const gallery = document.querySelector(".gallery-container");
 
-// 2. Simple Lazy Loading Check
-const images = document.querySelectorAll("img[loading='lazy']");
-images.forEach(img => {
-    if (img.dataset.src) {
-        img.src = img.dataset.src;
-    }
+locations.forEach(loc => {
+    const card = document.createElement("section");
+    card.className = "location-card";
+    card.innerHTML = `
+        <h2>${loc.name}</h2>
+        <figure>
+            <img src="${loc.image}" alt="${loc.name}" loading="lazy" width="300" height="200">
+        </figure>
+        <address>${loc.address}</address>
+        <p>${loc.description}</p>
+        <button class="learn-btn">Learn More</button>
+    `;
+    gallery.appendChild(card);
 });

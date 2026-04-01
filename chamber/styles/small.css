@@ -308,3 +308,33 @@ footer {
 }
 .btn-primary { background-color: var(--lcci-green); color: white; }
 .btn-secondary { background-color: var(--white); color: var(--lcci-navy); }
+
+/* small.css - Default Mobile View */
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "welcome"
+        "gallery";
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar { 
+    grid-area: welcome; 
+}
+
+.gallery-container { 
+    grid-area: gallery;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Add basic card styling here so they look good on mobile too */
+.location-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
