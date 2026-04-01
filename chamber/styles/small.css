@@ -232,155 +232,21 @@ footer {
 }
 
 /* =============================
-    5. HERO, DISCOVER GRID & CUSTOM COMPONENTS
+    5. HOME PAGE COMPONENTS (Consolidated & Clean)
    ============================= */
-.hero {
-    /* 1. Fallback color and Path Fix with Overlay */
-    background-color: var(--lcci-navy);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url("../images/lagos-hero.jpg");
-    
-    /* 2. Background Positioning */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* 3. Layout and Sizing */
-    min-height: 60vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    /* 4. Typography */
-    color: white;
-    padding: 2rem; /* Adds a safety buffer for smaller screens */
-}
 
-/* HOME PAGE SPECIFIC: Custom classes to pass "No Framework" check */
+/* Main container for Weather and Spotlights */
 .lcci-info-box {
     border: 1px solid #ddd;
     margin: 20px 0;
     border-radius: 8px;
-    background: #fff;
-    overflow: hidden;
-}
-
-.lcci-box-header {
-    background-color: #f4f4f4;
-    padding: 15px;
-    margin: 0;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #ddd;
-    color: var(--lcci-navy);
-}
-
-.lcci-box-content {
-    padding: 20px;
-}
-
-/* CUSTOM BUTTONS (Home Page) */
-.lcci-button-main, .lcci-button-alt {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    margin: 10px;
-    transition: 0.3s;
-}
-.lcci-button-main { background-color: var(--lcci-green); color: white; border: none; }
-.lcci-button-alt { background-color: var(--white); color: var(--lcci-navy); border: 2px solid var(--lcci-navy); }
-
-/* EXISTING BUTTONS (Keeping these so other pages don't spoil) */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    margin: 10px;
-}
-.btn-primary { background-color: var(--lcci-green); color: white; }
-.btn-secondary { background-color: var(--white); color: var(--lcci-navy); }
-
-/* DISCOVER GRID & RESPONSIVE LOGIC */
-@media (min-width: 800px) {
-    #menu { display: none; }
-    .nav-links {
-        display: flex !important;
-        position: static;
-        width: auto;
-        background: none;
-        gap: 20px;
-    }
-    .nav-links li a { padding: 5px 10px; }
-    .nav-links li a.active {
-        border-left: none;
-        border-bottom: 3px solid var(--lcci-gold);
-    }
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.discover-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "title"
-        "welcome"
-        "gallery";
-    gap: 20px;
-    padding: 20px;
-}
-
-.discover-grid h1 {
-    grid-area: title;
-    grid-column: 1 / -1; 
-    text-align: center;
-    color: var(--lcci-navy);
-    margin-bottom: 10px;
-}
-
-.sidebar { grid-area: welcome; }
-.gallery-container { 
-    grid-area: gallery;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.location-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* =============================
-    6. HOME PAGE CUSTOM CLASSES (Consolidated)
-   ============================= */
-
-.lcci-info-box {
-    border: 1px solid #ddd;
-    margin: 20px 0;
-    border-radius: 8px;
-    background: #ffffff;
+    background: var(--white);
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* Header for the boxes - FIXED for Color Contrast */
 .lcci-box-header {
-    /* FIX: Navy background + White text for AA Contrast Pass */
     background-color: var(--lcci-navy);
     color: var(--white); 
     padding: 15px;
@@ -395,23 +261,51 @@ footer {
     padding: 20px;
 }
 
+/* Action Buttons - Custom (No Framework) */
 .lcci-button-main, .lcci-button-alt {
+    display: inline-block;
     padding: 12px 28px;
-    border-radius: 4px;
     text-decoration: none;
+    border-radius: 4px;
     font-weight: 700;
     transition: all 0.3s ease;
-    display: inline-block;
+    margin: 10px;
 }
 
-.lcci-button-main {
-    background-color: var(--lcci-green);
-    color: white;
-    border: none;
+.lcci-button-main { 
+    background-color: var(--lcci-green); 
+    color: white; 
+    border: none; 
 }
 
-.lcci-button-alt {
+.lcci-button-alt { 
+    background-color: var(--white); 
+    color: var(--lcci-navy); 
+    border: 2px solid var(--lcci-navy); 
+}
+
+.lcci-button-main:hover, .lcci-button-alt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Spotlight Specific Grid */
+#spotlight-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.lcci-spotlight-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
     background-color: var(--white);
-    color: var(--lcci-navy);
-    border: 2px solid var(--lcci-navy);
+    border-radius: 5px;
+}
+
+.lcci-spotlight-card img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px 0;
 }
