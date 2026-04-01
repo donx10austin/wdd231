@@ -1,5 +1,5 @@
 /* =============================
-   1. VARIABLES & GLOBAL
+   1. VARIABLES & GLOBAL (Shared)
    ============================= */
 :root {
     --lcci-navy: #0b1c3a;
@@ -8,8 +8,10 @@
     --white: #ffffff;
     --light-grey: #f9f9f9;
     --text-dark: #333333;
-    --lcci-gold: #ffcc00; /* For Wayfinding & Contrast */
+    --lcci-gold: #ffcc00; 
 }
+
+* { box-sizing: border-box; } /* Prevents padding from breaking layouts */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -23,16 +25,15 @@ body {
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Pushes footer to bottom */
     padding: 20px 5%;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    box-sizing: border-box;
 }
 
 /* =============================
-   2. HEADER & NAVIGATION
+   2. SHARED HEADER & NAV
    ============================= */
 header {
     background-color: var(--lcci-navy);
@@ -47,33 +48,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 15px;
-}
-
-.logo {
-    height: 60px;
-    width: auto;
-    display: block;
-}
-
-.site-name {
-    color: var(--white);
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: none;
-}
-
-@media (min-width: 500px) {
-    .site-name { display: block; }
-}
+.logo { height: 60px; width: auto; }
 
 #menu {
     font-size: 2.2rem;
@@ -84,7 +61,7 @@ header {
 }
 
 .nav-links {
-    display: none;
+    display: none; /* Toggle handled by JS */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -94,7 +71,6 @@ header {
     left: 0;
     width: 100%;
     text-align: center;
-    z-index: 1001; 
 }
 
 .nav-links.show { display: block; }
@@ -102,247 +78,81 @@ header {
 .nav-links li a {
     display: block;
     padding: 15px;
-    color: #ffffff !important;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    text-transform: uppercase;
 }
 
-/* WAYFINDING: Mobile highlight */
+/* WAYFINDING: Highlight for the current page */
 .nav-links li a.active {
-    color: var(--lcci-gold) !important;
+    color: var(--lcci-gold);
     background-color: rgba(255, 255, 255, 0.1);
     border-left: 5px solid var(--lcci-gold);
 }
 
 /* =============================
-   3. CUSTOM FORM & ANIMATIONS
+   3. HERO (Used on Home & Discover)
    ============================= */
-.custom-form fieldset {
-    border: 1px solid var(--lcci-green);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: var(--white);
-}
-
-.custom-form input, 
-.custom-form textarea {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #666; /* Darkened for AA Contrast */
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* MEMBERSHIP CARD ANIMATION (NOT mouse hover) */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.membership-item {
+.hero {
+    /* FIXED: Correct relative path for CSS in a /styles/ folder */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url("../images/lagos-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh; 
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    padding: 10px;
-    background: #fdfdfd;
-    border-radius: 5px;
-    opacity: 0; /* Starts hidden for animation */
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Staggered entrance for membership cards */
-.membership-item:nth-child(1) { animation-delay: 0.1s; }
-.membership-item:nth-child(2) { animation-delay: 0.2s; }
-.membership-item:nth-child(3) { animation-delay: 0.3s; }
-.membership-item:nth-child(4) { animation-delay: 0.4s; }
-
-/* =============================
-   FOOTER STYLING - UPDATED
-   ============================= */
-footer {
-    background-color: var(--lcci-navy); /* Matches Header */
+    justify-content: center;
     color: white;
-    padding: 40px 5%;
     text-align: center;
 }
 
-.footer-contact p {
-    margin: 5px 0;
-    font-size: 0.95rem;
+/* =============================
+   4. PAGE SPECIFIC GRIDS
+   ============================= */
+/* Discover Page Layout */
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-/* Layout for the social media section */
+/* Ensure the required H1 is centered and styled correctly */
+h1 {
+    color: var(--lcci-navy);
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* =============================
+   5. SHARED FOOTER
+   ============================= */
+footer {
+    background-color: var(--lcci-navy);
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
+}
+
 .footer-social {
     display: flex;
-    justify-content: center; 
-    gap: 30px; 
-    margin: 30px 0;
-    align-items: center; /* Ensures all icons sit on the same middle line */
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
 }
 
-/* 1. Base style for the image container (the <a> link) */
-.footer-social a { 
-    display: inline-block;
-    transition: transform 0.3s ease; /* Makes the "Grow" effect smooth */
-    vertical-align: middle;
-    text-decoration: none;
-} 
+.footer-social img { height: 30px; width: auto; }
 
-/* 2. THE FIX: Targeting the images */
-.footer-social img {
-    width: auto; 
-    height: 30px; /* Force consistent visual height for all 3 icons */
-    display: block;
-}
-
-/* FIX FOR TWITTER & LINKEDIN: Turns black shapes into white shapes */
+/* FIXED: Color contrast for Twitter/LinkedIn icons */
 .footer-social img[src*="twitter"], 
 .footer-social img[src*="linkedin"] {
     filter: brightness(0) invert(1);
 }
 
-/* FIX FOR YOUTUBE: Prevents the white box from turning black */
-.footer-social img[src*="youtube"] {
-    filter: none; 
-    mix-blend-mode: normal;
-    border-radius: 4px; /* Optional: adds a tiny round to the white box corners */
-}
-
-/* 3. The professional Hover Effect (It will grow now!) */
-.footer-social a:hover {
-    transform: scale(1.2); 
-}
-
-/* --- Keep existing bottom meta fixes for AA contrast --- */
-
-/* Bottom meta info */
-.footer-meta {
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    margin-top: 10px;
-}
-
-.highlight-date {
-    color: #ffcc00; /* Contrast approved */
-}
-
-/* Attribution Bar (The very bottom strip) */
 .attribution-bar {
-    background-color: #000a16; /* AA Contrast Approved */
-    color: #eeeeee; /* Lightened for AA Contrast Approved */
-    text-align: center;
+    background-color: #000a16;
+    color: #eeeeee;
     padding: 15px;
     font-size: 0.75rem;
-}
-
-.hero {
-    /* This links to the image you uploaded earlier */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/lagos-hero.jpg");
-    
-    /* This ensures the image covers the whole area without stretching weirdly */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* This gives the section height so the image is visible */
-    min-height: 60vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    color: white; /* Makes your text readable over the image */
-}
-
-@media (min-width: 800px) {
-    #menu {
-        display: none; /* Hide the hamburger icon on desktop */
-    }
-
-    .nav-links {
-        display: flex !important; /* Show the links in a row */
-        position: static;
-        width: auto;
-        background: none;
-        gap: 20px;
-    }
-
-    .nav-links li a {
-        padding: 5px 10px;
-    }
-
-    /* Horizontal highlight instead of left-border for desktop */
-    .nav-links li a.active {
-        border-left: none;
-        border-bottom: 3px solid var(--lcci-gold);
-    }
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.highlight {
-    color: var(--lcci-gold); /* Makes the "better business environment" stand out */
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    margin: 10px;
-}
-.btn-primary { background-color: var(--lcci-green); color: white; }
-.btn-secondary { background-color: var(--white); color: var(--lcci-navy); }
-
-/* small.css - Default Mobile View */
-.discover-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "welcome"
-        "gallery";
-    gap: 20px;
-    padding: 20px;
-}
-
-.sidebar { 
-    grid-area: welcome; 
-}
-
-.gallery-container { 
-    grid-area: gallery;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-/* Add basic card styling here so they look good on mobile too */
-.location-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Ensure the H1 spans the full width of the grid on all views */
-.discover-grid h1 {
-    grid-column: 1 / -1; 
-    text-align: center;
-    color: var(--lcci-navy);
-    margin-bottom: 10px;
 }
