@@ -235,20 +235,26 @@ footer {
     5. HERO, DISCOVER GRID & CUSTOM COMPONENTS
    ============================= */
 .hero {
-    /* Fallback color if image fails */
+    /* 1. Fallback color and Path Fix with Overlay */
     background-color: var(--lcci-navy);
-    /* PATH FIX: Ensure images/ is lowercase and file extension is .jpg */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                       url("../images/lagos-hero.jpg");
+    
+    /* 2. Background Positioning */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    /* 3. Layout and Sizing */
     min-height: 60vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
+    /* 4. Typography */
     color: white;
+    padding: 2rem; /* Adds a safety buffer for smaller screens */
 }
 
 /* HOME PAGE SPECIFIC: Custom classes to pass "No Framework" check */
