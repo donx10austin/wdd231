@@ -361,21 +361,20 @@ footer {
 }
 
 /* =============================
-    6. HOME PAGE CUSTOM CLASSES (Non-Framework)
+    6. HOME PAGE CUSTOM CLASSES (Consolidated)
    ============================= */
 
-/* Box/Card Styling */
 .lcci-info-box {
     border: 1px solid #ddd;
     margin: 20px 0;
     border-radius: 8px;
     background: #ffffff;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .lcci-box-header {
-    /* FIXED: Using Navy background + White text to pass WCAG AA Contrast */
+    /* FIX: Navy background + White text for AA Contrast Pass */
     background-color: var(--lcci-navy);
     color: var(--white); 
     padding: 15px;
@@ -388,15 +387,6 @@ footer {
 
 .lcci-box-content {
     padding: 20px;
-}
-
-/* Home Page Action Buttons */
-.lcci-action-group {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
 }
 
 .lcci-button-main, .lcci-button-alt {
@@ -418,9 +408,4 @@ footer {
     background-color: var(--white);
     color: var(--lcci-navy);
     border: 2px solid var(--lcci-navy);
-}
-
-.lcci-button-main:hover, .lcci-button-alt:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
