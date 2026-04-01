@@ -7,14 +7,21 @@
     <meta name="author" content="Austin Anumudu">
     <meta name="description" content="Official home of the Lagos Chamber of Commerce and Industry. Connecting and empowering businesses across Lagos.">
 
+    <link rel="icon" href="favicon.ico">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Lagos Chamber of Commerce | Business Home">
     <meta property="og:description" content="Join the Lagos Chamber of Commerce to connect with 2,000+ businesses, drive innovation, and grow your professional network in Nigeria.">
     <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/index.html">
     <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/og-image.jpg">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 641px)">
+    
     <script defer src="scripts/footer.js"></script>
     <script defer src="scripts/weather.js"></script>
     <script defer src="scripts/spotlights.js"></script>
@@ -45,52 +52,51 @@
             <div class="hero-content">
                 <h1>Consistently advocating for a <span class="highlight">better business environment</span></h1>
                 <p>The Lagos Chamber of Commerce and Industry connects, champions, and empowers businesses across Lagos.</p>
-                <div class="btn-group">
-                    <a href="join.html" class="btn btn-primary">Join Us</a>
-                    <a href="directory.html" class="btn btn-secondary">Our Members</a>
+                <div class="lcci-action-group">
+                    <a href="join.html" class="lcci-button-main">Join Us</a>
+                    <a href="directory.html" class="lcci-button-alt">Our Members</a>
                 </div>
             </div>
         </section>
 
-        <section class="info-grid card">
-            <h2 class="card-header">Lagos Weather</h2>
-            <div class="card-body" id="weather-info">
+        <section class="lcci-info-box">
+            <h2 class="lcci-box-header">Lagos Weather</h2>
+            <div class="lcci-box-content" id="weather-info">
                 <p>Loading weather data...</p>
             </div>
-            <div class="forecast-grid">
-                </div>
+            <div class="lcci-forecast-grid"></div>
         </section>
 
-        <section class="spotlights card">
-            <h2 class="card-header">Member Spotlights</h2>
-            <div id="spotlight-content">
+        <section class="lcci-info-box">
+            <h2 class="lcci-box-header">Member Spotlights</h2>
+            <div class="lcci-box-content" id="spotlight-content">
                 <p>Loading member spotlights...</p>
             </div>
         </section>
     </main>
 
-   <footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
-            <p>+234 8081387067</p>
-        </div>
-        
-        <div class="footer-social">
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
+                <p>+234 8081387067</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
 
-        <div class="footer-meta">
-            <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
-            <p id="lastModified"></p>
+            <div class="footer-meta">
+                <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
+                <p id="lastModified"></p>
+            </div>
         </div>
+    </footer>
+
+    <div class="attribution-bar">
+        <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
     </div>
-</footer>
-
-<div class="attribution-bar">
-    <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
-</div>
 </body>
 </html>
