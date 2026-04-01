@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-NG">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Chamber | Lagos Chamber of Commerce</title>
+    <title>Join LCCI | Lagos Chamber of Commerce</title>
     
     <meta name="author" content="Austin Anumudu">
-    <meta name="description" content="Apply for membership with the Lagos Chamber of Commerce. Join Austin Anumudu and other business leaders to grow your network and influence in Nigeria.">
-
-    <meta property="og:title" content="Join LCCI - Membership Application">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://donx10austin.github.io/wdd231/chamber/join.html">
-    <meta property="og:image" content="https://donx10austin.github.io/wdd231/chamber/images/chamber-og.jpg">
-    <meta property="og:description" content="Take your business to the next level by joining the LCCI community today.">
+    <meta name="description" content="Apply for membership with the Lagos Chamber of Commerce. Connect with the heartbeat of Lagos business.">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 800px)">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 641px)">
     
     <script defer src="scripts/footer.js"></script>
     <script defer src="scripts/join.js"></script>
@@ -33,7 +26,9 @@
                 <img src="images/lcci-logo.jpg" alt="LCCI Logo" class="logo">
                 <div class="site-name">Lagos Chamber of Commerce</div>
             </a>
+
             <button id="menu" aria-label="Toggle Menu">☰</button>
+
             <nav class="primary-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -45,131 +40,84 @@
         </div>
     </header>
 
-    <main class="join-main">
-        <section class="join-hero">
-            <h1>Membership Application</h1>
-            <p>Connect with the heartbeat of Lagos business and industry.</p>
-        </section>
+    <main>
+        <div class="join-container">
+            <section class="membership-form-section">
+                <form method="get" action="thankyou.html" class="membership-form">
+                    <h1>Membership Application</h1>
+                    <p class="form-description">Connect with the heartbeat of Lagos business and industry.</p>
 
-        <div class="join-layout">
-            <form method="get" action="thankyou.html" class="custom-form">
-                <fieldset>
-                    <legend>Applicant Information</legend>
+                    <fieldset>
+                        <legend>Applicant Information</legend>
+                        <div class="input-grid">
+                            <label>First Name: 
+                                <input type="text" name="fname" required title="Please enter your first name">
+                            </label>
+                            <label>Last Name: 
+                                <input type="text" name="lname" required title="Please enter your last name">
+                            </label>
+                            <label>Organization Title: 
+                                <input type="text" name="title" pattern="[A-Za-z\s\-]{4,}" title="Minimum 4 characters, letters and hyphens only">
+                            </label>
+                            <label>Email Address: 
+                                <input type="email" name="email" placeholder="name@example.com" required title="A valid email is required">
+                            </label>
+                            <label>Mobile Phone: 
+                                <input type="tel" name="phone" required title="Please provide a contact number">
+                            </label>
+                            <label>Organization Name: 
+                                <input type="text" name="orgname" required>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Membership Level</legend>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="level" value="np"> Non-Profit (Free)</label>
+                            <label class="radio-item"><input type="radio" name="level" value="bronze"> Bronze Member</label>
+                            <label class="radio-item"><input type="radio" name="level" value="silver"> Silver Member</label>
+                            <label class="radio-item"><input type="radio" name="level" value="gold"> Gold Member</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Business Description</legend>
+                        <label>Organization Description:
+                            <textarea name="description" rows="4" placeholder="Briefly describe your business..."></textarea>
+                        </label>
+                    </fieldset>
+
+                    <input type="hidden" name="timestamp" id="form-timestamp">
                     
-                    <label>First Name: 
-                        <input type="text" name="fname" required autocomplete="given-name" title="Please enter your first name.">
-                    </label>
+                    <input type="submit" value="Submit Application" class="submit-btn">
+                </form>
+            </section>
 
-                    <label>Last Name: 
-                        <input type="text" name="lname" required autocomplete="family-name" title="Please enter your last name.">
-                    </label>
-
-                    <label>Organization Title: 
-                        <input type="text" name="org-title" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{10,}" title="Enter your professional title (minimum 10 characters).">
-                    </label>
-
-                    <label>Email Address: 
-                        <input type="email" name="email" required placeholder="name@example.com" autocomplete="email" title="Please enter a valid email address.">
-                    </label>
-
-                    <label>Mobile Phone: 
-                        <input type="tel" name="phone" required autocomplete="tel" title="Please enter your contact phone number.">
-                    </label>
-
-                    <label>Organization Name: 
-                        <input type="text" name="orgname" required autocomplete="organization" title="Please enter the full name of your business.">
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Membership Level</legend>
-                    <div class="membership-options">
-                        <div class="membership-item">
-                            <label class="radio-label">
-                                <input type="radio" name="level" value="np"> Non-Profit (Free)
-                            </label>
-                            <button type="button" class="open-modal" data-target="np-info" aria-label="Non-Profit Details">ℹ️</button>
+            <aside class="join-sidebar">
+                <div class="lcci-info-box">
+                    <div class="lcci-box-header">Membership Levels</div>
+                    <div class="lcci-box-content">
+                        <div class="benefit-card">
+                            <h3>Gold Member</h3>
+                            <p>Full voting rights, spotlight features on the home page, and access to premium networking events.</p>
                         </div>
-                        
-                        <div class="membership-item">
-                            <label class="radio-label">
-                                <input type="radio" name="level" value="bronze"> Bronze Member
-                            </label>
-                            <button type="button" class="open-modal" data-target="bronze-info" aria-label="Bronze Details">ℹ️</button>
+                        <div class="benefit-card">
+                            <h3>Silver Member</h3>
+                            <p>Discounted event training, standard directory listing, and monthly newsletters.</p>
                         </div>
-                        
-                        <div class="membership-item">
-                            <label class="radio-label">
-                                <input type="radio" name="level" value="silver"> Silver Member
-                            </label>
-                            <button type="button" class="open-modal" data-target="silver-info" aria-label="Silver Details">ℹ️</button>
+                        <div class="benefit-card">
+                            <h3>Bronze Member</h3>
+                            <p>Standard directory listing and invitation to general quarterly meetings.</p>
                         </div>
-                        
-                        <div class="membership-item">
-                            <label class="radio-label">
-                                <input type="radio" name="level" value="gold"> Gold Member
-                            </label>
-                            <button type="button" class="open-modal" data-target="gold-info" aria-label="Gold Details">ℹ️</button>
+                        <div class="benefit-card">
+                            <h3>Non-Profit</h3>
+                            <p>Available only to registered NGOs. Provides basic listing with no membership fee.</p>
                         </div>
                     </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Business Description</legend>
-                    <label>Organization Description: 
-                        <textarea name="description" rows="5" title="Provide a brief description of your organization's mission and activities."></textarea>
-                    </label>
-                </fieldset>
-
-                <input type="hidden" id="timestamp" name="timestamp">
-
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
-
-            <aside class="level-benefits">
-                <h2>Why Join LCCI?</h2>
-                <div class="benefit-card">
-                    <h3>Networking</h3>
-                    <p>Exclusive access to over 2,000 corporate leaders in Lagos.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Advocacy</h3>
-                    <p>We represent your business interests to the government.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Growth</h3>
-                    <p>Training and certification programs for your staff.</p>
                 </div>
             </aside>
         </div>
-
-        <dialog id="np-info" class="info-modal">
-            <button type="button" class="close-modal" aria-label="Close">❌</button>
-            <h3>Non-Profit Level</h3>
-            <p>Cost: $0.00/year</p>
-            <p>Includes directory listing and access to general workshops.</p>
-        </dialog>
-
-        <dialog id="bronze-info" class="info-modal">
-            <button type="button" class="close-modal" aria-label="Close">❌</button>
-            <h3>Bronze Level</h3>
-            <p>Cost: $100/year</p>
-            <p>Includes directory listing, training discounts, and monthly newsletters.</p>
-        </dialog>
-
-        <dialog id="silver-info" class="info-modal">
-            <button type="button" class="close-modal" aria-label="Close">❌</button>
-            <h3>Silver Level</h3>
-            <p>Cost: $250/year</p>
-            <p>Includes Bronze benefits plus home page spotlights and VIP event access.</p>
-        </dialog>
-
-        <dialog id="gold-info" class="info-modal">
-            <button type="button" class="close-modal" aria-label="Close">❌</button>
-            <h3>Gold Level</h3>
-            <p>Cost: $500/year</p>
-            <p>Includes all Silver benefits plus premium spotlight placement and media coverage.</p>
-        </dialog>
     </main>
 
     <footer>
@@ -178,14 +126,16 @@
                 <p>1 Idowu Taylor Street, Victoria Island, Lagos</p>
                 <p>+234 8081387067</p>
             </div>
+            
             <div class="footer-social">
                 <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
                 <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
                 <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
             </div>
+
             <div class="footer-meta">
                 <p>&copy; <span id="current-year"></span> Austin Anumudu | Lagos, Nigeria</p>
-                <p>Last Modified: <span id="lastModified" class="highlight-date"></span></p>
+                <p id="lastModified"></p>
             </div>
         </div>
     </footer>
@@ -193,5 +143,9 @@
     <div class="attribution-bar">
         <p>COPYRIGHT 2026 BYU-PATHWAY WORLDWIDE</p>
     </div>
+
+    <script>
+        document.getElementById('form-timestamp').value = new Date().toISOString();
+    </script>
 </body>
 </html>
