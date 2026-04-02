@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RheignCred Orthopedic Hospital | Lagos Specialists</title>
+    
+    <meta name="description" content="RheignCred Orthopedic Hospital provides world-class bone and joint care in Lagos. Book consultations with our sports medicine and surgical specialists today.">
+    <meta name="author" content="Your Name">
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="images/rheigncred-logo.webp" alt="RheignCred Logo" width="50" height="50">
+            <h1>RheignCred</h1>
+        </div>
+        
+        <button id="menu-button" aria-label="Toggle Navigation">☰</button>
+        
+        <nav>
+    <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="specialists.html">Specialists</a></li>
+        <li><a href="index.html#booking">Book Now</a></li> 
+        <li><a href="site-plan.html">Site Plan</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Precision in Motion. <br>Excellence in Recovery.</h2>
+                <p>Lagos's premier destination for advanced orthopedic surgery and sports medicine.</p>
+                <a href="#booking" class="cta-button">Book a Consultation</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-hospital.webp" alt="Modern Medical Facility" width="600" height="400">
+            </div>
+        </section>
+
+        <section class="services-stack">
+            <h2>Our Specialized Care</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Sports Medicine</h3>
+                    <p>Advanced treatments for athletes to get back in the game safely.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Joint Replacement</h3>
+                    <p>State-of-the-art hip and knee reconstructions for lasting mobility.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Trauma & Fractures</h3>
+                    <p>24/7 emergency orthopedic care for complex bone injuries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-doctor">
+            <div class="cta-content">
+                <h2>Looking for a Specialist?</h2>
+                <p>Browse our directory of board-certified surgeons practicing across Lagos.</p>
+                <a href="specialists.html" class="secondary-btn">View Specialist Directory</a>
+            </div>
+        </section>
+       <section id="booking" class="form-section">
+            <h2>Book an Appointment</h2>
+            <p>Consult with Lagos's leading orthopedic specialists. Select a doctor below to begin.</p>
+            
+            <form action="thanks.html" method="get">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>Full Name: <input type="text" name="fname" required placeholder="Enter your full name"></label>
+                    <label>Email: <input type="email" name="email" placeholder="example@mail.com" required></label>
+                    <label>Phone: <input type="tel" name="phone" placeholder="080..." required></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Appointment Details</legend>
+                    <label>Select Specialist:
+                        <select name="doctor" required>
+                            <option value="" disabled selected>Choose a Doctor...</option>
+                            <option value="chidi-okoro">Dr. Chidi Okoro (Sports Medicine)</option>
+                            <option value="amina-yusuf">Dr. Amina Yusuf (Pediatric Orthopedics)</option>
+                            <option value="segun-adebayo">Dr. Segun Adebayo (Joint Replacement)</option>
+                            <option value="funmi-bakare">Dr. Funmi Bakare (Spine Surgery)</option>
+                            <option value="emeka-nwosu">Dr. Emeka Nwosu (Trauma & Fractures)</option>
+                        </select>
+                    </label>
+                    <label>Reason for Visit: 
+                        <textarea name="notes" rows="4" placeholder="Briefly describe your bone or joint concern..."></textarea>
+                    </label>
+                </fieldset>
+                
+                <input type="submit" value="Confirm Appointment" class="submit-btn">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 RheignCred Orthopedic Hospital | Lagos, Nigeria</p>
+            <nav class="footer-nav">
+                <a href="site-plan.html">Site Plan</a> | 
+                <a href="site-plan.html#attributions">Attributions</a>
+            </nav>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
