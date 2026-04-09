@@ -129,3 +129,19 @@ main {
         gap: 2rem;
     }
 }
+
+@media (min-width: 768px) {
+    /* Create side-by-side scenarios on desktop */
+    .scenario-grid, .design-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        text-align: left;
+    }
+
+    /* Keep specialists in a clean 3-column row */
+    #specialist-grid.grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
