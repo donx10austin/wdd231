@@ -6,12 +6,19 @@
     <title>RheignCred Orthopedic Hospital | Lagos Specialists</title>
     
     <meta name="description" content="RheignCred Orthopedic Hospital provides world-class bone and joint care in Lagos. Book consultations with our sports medicine and surgical specialists today.">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Austin Anumudu">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/projects/index.html">
+    <meta property="og:title" content="RheignCred Orthopedic Hospital | Lagos Specialists">
+    <meta property="og:description" content="Expert bone and joint care in Lagos. RheignCred Orthopedic Hospital offers specialized surgery and sports medicine for your recovery and mobility.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/projects/images/hero-hospital.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <link rel="icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
-    
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
@@ -26,13 +33,13 @@
         <button id="menu-button" aria-label="Toggle Navigation">☰</button>
         
         <nav>
-    <ul id="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="specialists.html">Specialists</a></li>
-        <li><a href="index.html#booking">Book Now</a></li> 
-        <li><a href="site-plan.html">Site Plan</a></li>
-    </ul>
-</nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="specialists.html">Specialists</a></li>
+                <li><a href="index.html#booking">Book Now</a></li> 
+                <li><a href="site-plan.html">Site Plan</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -72,7 +79,8 @@
                 <a href="specialists.html" class="secondary-btn">View Specialist Directory</a>
             </div>
         </section>
-       <section id="booking" class="form-section">
+
+        <section id="booking" class="form-section">
             <h2>Book an Appointment</h2>
             <p>Consult with Lagos's leading orthopedic specialists. Select a doctor below to begin.</p>
             
@@ -123,3 +131,10 @@
             <p>Last Modified: <span id="lastModified"></span></p>
         </div>
     </footer>
+
+    <script src="scripts/navigation.js" type="module"></script>
+    <script src="scripts/date.js" type="module"></script>
+    <script src="scripts/directory.js" type="module"></script>
+    <script src="scripts/course.js" type="module"></script>
+</body>
+</html>

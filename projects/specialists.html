@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specialists | RheignCred Orthopedic Hospital</title>
+    <title>Our Specialists | RheignCred Orthopedic Hospital</title>
     
-    <meta name="description" content="Meet our board-certified orthopedic surgeons and specialists at RheignCred Hospital, Lagos.">
+    <meta name="description" content="Meet our board-certified orthopedic surgeons and specialists at RheignCred Hospital in Lagos. Expert care for sports injuries and joint replacements.">
+    <meta name="author" content="Austin Anumudu">
     
-    <link rel="icon" href="favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://donx10austin.github.io/wdd231/projects/specialists.html">
+    <meta property="og:title" content="Our Specialists | RheignCred Orthopedic Hospital">
+    <meta property="og:description" content="Connect with Lagos's top orthopedic surgeons. Browse our directory of specialists in sports medicine and joint replacement.">
+    <meta property="og:image" content="https://donx10austin.github.io/wdd231/projects/images/hero-hospital.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
 </head>
-<body class="directory-page">
-
+<body>
     <header>
         <div class="logo-area">
             <img src="images/rheigncred-logo.webp" alt="RheignCred Logo" width="50" height="50">
@@ -30,63 +36,27 @@
             <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="specialists.html" class="active">Specialists</a></li>
-                <li><a href="index.html#booking">Book Now</a></li>
+                <li><a href="index.html#booking">Book Now</a></li> 
                 <li><a href="site-plan.html">Site Plan</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="directory-header" style="text-align: center; padding: 3rem 1rem; background: #fff;">
-            <h1>Meet Our Specialists</h1>
-            <p>Expert orthopedic care from Lagos' leading surgeons and therapists.</p>
+        <section class="directory-header">
+            <h2>Our Specialist Directory</h2>
+            <p>Expert orthopedic care delivered by world-class surgeons right here in Lagos.</p>
+            <div class="view-toggle">
+                <button id="grid-view" class="active">Grid View</button>
+                <button id="list-view">List View</button>
+            </div>
         </section>
 
-        <div id="directory-grid">
-            
-            <article class="doctor-card">
-                <img src="images/dr-adebayo.webp" alt="Dr. Segun Adebayo - Knee Surgeon" loading="lazy">
-                <h3>Dr. Segun Adebayo</h3>
-                <p class="specialty">Knee & Ankle Surgery</p>
-                <p class="location">Lagos Main Branch</p>
-                <button class="view-details">View Profile</button>
-            </article>
+        <section id="specialist-grid" class="grid">
+            </section>
+    </main>
 
-            <article class="doctor-card">
-                <img src="images/dr-okoro.webp" alt="Dr. Chidi Okoro - Pediatric Orthopedics" loading="lazy">
-                <h3>Dr. Chidi Okoro</h3>
-                <p class="specialty">Pediatric Orthopedics</p>
-                <p class="location">Lagos Island Clinic</p>
-                <button class="view-details">View Profile</button>
-            </article>
-
-            <article class="doctor-card">
-                <img src="images/dr-bakare.webp" alt="Dr. Funmi Bakare - Spine Specialist" loading="lazy">
-                <h3>Dr. Funmi Bakare</h3>
-                <p class="specialty">Spinal Reconstruction</p>
-                <p class="location">Lagos Main Branch</p>
-                <button class="view-details">View Profile</button>
-            </article>
-
-            <article class="doctor-card">
-                <img src="images/dr-nwosu.webp" alt="Dr. Emeka Nwosu - Hip Replacement" loading="lazy">
-                <h3>Dr. Emeka Nwosu</h3>
-                <p class="specialty">Hip Replacement Surgery</p>
-                <p class="location">Lagos Island Clinic</p>
-                <button class="view-details">View Profile</button>
-            </article>
-
-            <article class="doctor-card">
-                <img src="images/dr-yusuf.webp" alt="Dr. Amina Yusuf - Sports Medicine" loading="lazy">
-                <h3>Dr. Amina Yusuf</h3>
-                <p class="specialty">Sports Medicine & Trauma</p>
-                <p class="location">Lagos Main Branch</p>
-                <button class="view-details">View Profile</button>
-            </article>
-
-        </div> </main>
-
-    <footer>
+   <footer>
         <div class="footer-content">
             <p>&copy; 2026 RheignCred Orthopedic Hospital | Lagos, Nigeria</p>
             
@@ -103,3 +73,10 @@
             <p>Last Modified: <span id="lastModified"></span></p>
         </div>
     </footer>
+
+      <script src="scripts/navigation.js" type="module"></script>
+    <script src="scripts/date.js" type="module"></script>
+    <script src="scripts/directory.js" type="module"></script>
+    <script src="scripts/course.js" type="module"></script>
+</body>
+</html>
