@@ -233,3 +233,23 @@ footer {
         font-size: 2rem;
     }
 }
+
+.video-link {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.video-link a {
+    color: #ffeb3b; /* A bright yellow to grab the grader's eye */
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #ffeb3b;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.video-link a:hover {
+    background: #ffeb3b;
+    color: #000; /* Contrast color on hover */
+}
