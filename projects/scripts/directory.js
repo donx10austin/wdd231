@@ -1,88 +1,85 @@
 const specialists = [
-  {
-    "name": "Dr. Chidi Okoro",
-    "specialty": "Sports Medicine",
-    "location": "Lagos Island",
-    "experience": "12 Years",
-    "image": "images/dr-okoro.webp", // Path relative to index.html
-    "bio": "Dr. Okoro specializes in minimally invasive arthroscopic surgery for athletes."
-  },
-  {
-    "name": "Dr. Amina Yusuf",
-    "specialty": "Pediatric Orthopedics",
-    "location": "Ikeja",
-    "experience": "8 Years",
-    "image": "images/dr-yusuf.webp",
-    "bio": "Expert in correcting congenital bone disorders and pediatric trauma."
-  },
-  {
-    "name": "Dr. Segun Adebayo",
-    "specialty": "Joint Replacement",
-    "location": "Lekki Phase 1",
-    "experience": "15 Years",
-    "image": "images/dr-adebayo.webp",
-    "bio": "A pioneer in robotic-assisted hip and knee surgery with over 2,000 successful procedures."
-  },
-  {
-    "name": "Dr. Funmi Bakare",
-    "specialty": "Spine Surgery",
-    "location": "Surulere",
-    "experience": "10 Years",
-    "image": "images/dr-bakare.webp",
-    "bio": "Specializes in complex spinal reconstructions and non-surgical management of chronic back pain."
-  },
-  {
-    "name": "Dr. Emeka Nwosu",
-    "specialty": "Trauma & Fractures",
-    "location": "Yaba",
-    "experience": "7 Years",
-    "image": "images/dr-nwosu.webp",
-    "bio": "Dedicated to emergency orthopedic care, focusing on complex limb-salvage and fracture healing."
-  }
+    // ... Paste all 15 doctor objects here ...
+    {
+        "name": "Dr. Chidi Okoro",
+        "specialty": "Sports Medicine",
+        "location": "Lagos Island",
+        "experience": "12 Years",
+        "image": "images/dr-okoro.webp",
+        "bio": "Dr. Okoro specializes in minimally invasive arthroscopic surgery for athletes."
+    },
+    // ... add the rest until you have 15 ...
 ];
 
+const modal = document.querySelector('#specialist-modal');
+const modalContent = document.querySelector('#modal-content');
+const closeModal = document.querySelector('#close-modal');
+const container = document.querySelector('#specialist-grid');
+
 const displaySpecialists = (list) => {
-  const container = document.querySelector('#specialist-grid');
-  if (!container) return;
+    if (!container) return;
+    container.innerHTML = "";
 
-  container.innerHTML = "";
+    list.forEach((doc) => {
+        let card = document.createElement("section");
+        card.classList.add("specialist-card");
 
-  list.forEach((doc) => {
-    let card = document.createElement("section");
-    card.classList.add("specialist-card");
+        card.innerHTML = `
+            <img src="${doc.image}" alt="Portrait of ${doc.name}" loading="lazy" width="300" height="200">
+            <h3>${doc.name}</h3>
+            <p class="specialty"><strong>${doc.specialty}</strong></p>
+            <p>📍 ${doc.location}</p>
+            <button class="view-bio-btn">View Full Bio</button>
+        `;
 
-    // We use the image path directly because the script is called from specialists.html
-    card.innerHTML = `
-      <img src="${doc.image}" alt="Portrait of ${doc.name}" loading="lazy" width="300" height="200">
-      <h3>${doc.name}</h3>
-      <p class="specialty"><strong>${doc.specialty}</strong></p>
-      <p>📍 ${doc.location}</p>
-      <p>🎓 ${doc.experience} Experience</p>
-      <p class="bio">${doc.bio}</p>
-    `;
+        // MODAL LOGIC (Inside the loop so it knows which 'doc' is clicked)
+        card.querySelector('.view-bio-btn').addEventListener('click', () => {
+            modalContent.innerHTML = `
+                <h2>${doc.name}</h2>
+                <hr>
+                <p><strong>Specialty:</strong> ${doc.specialty}</p>
+                <p><strong>Experience:</strong> ${doc.experience}</p>
+                <p><strong>Location:</strong> ${doc.location}</p>
+                <p class="modal-bio">${doc.bio}</p>
+            `;
+            modal.showModal();
+        });
 
-    container.appendChild(card);
-  });
+        container.appendChild(card);
+    });
 };
 
+// --- VIEW TOGGLE & LOCAL STORAGE ---
 const gridBtn = document.querySelector('#grid-view');
 const listBtn = document.querySelector('#list-view');
-const container = document.querySelector('#specialist-grid');
+
+// Check Local Storage for saved preference
+const savedView = localStorage.getItem('viewPreference');
+if (savedView === 'list') {
+    container.classList.add('list');
+    container.classList.remove('grid');
+}
 
 if (gridBtn && listBtn) {
     gridBtn.addEventListener('click', () => {
         container.classList.add('grid');
         container.classList.remove('list');
-        gridBtn.classList.add('active');
-        listBtn.classList.remove('active');
+        localStorage.setItem('viewPreference', 'grid');
     });
 
     listBtn.addEventListener('click', () => {
         container.classList.add('list');
         container.classList.remove('grid');
-        listBtn.classList.add('active');
-        gridBtn.classList.remove('active');
+        localStorage.setItem('viewPreference', 'list');
     });
 }
 
+// Close Modal Event
+if (closeModal) {
+    closeModal.addEventListener('click', () => {
+        modal.close();
+    });
+}
+
+// Initial Call
 displaySpecialists(specialists);
