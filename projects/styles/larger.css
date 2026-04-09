@@ -25,7 +25,7 @@ main {
     }
 
     #nav-list {
-        display: flex; /* No !important needed inside media query */
+        display: flex !important; /* Safety fix for JS conflicts */
         flex-direction: row;
         background: none;
         gap: 1.5rem;
@@ -33,7 +33,7 @@ main {
     }
 
     #nav-list a:hover {
-        color: var(--teal);
+        color: var(--secondary-color); /* Corrected variable */
         text-decoration: underline;
     }
 
@@ -48,8 +48,8 @@ main {
         padding: 4rem 0;
     }
 
-    /* Directory - Responsive 3-column layout */
-    #directory-grid {
+    /* Specialist Grid - Consistent with your JS */
+    #specialist-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
@@ -67,12 +67,6 @@ main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
-    }
-
-    .wireframe-container {
-        display: grid;
-        grid-template-columns: 320px 1fr;
-        gap: 40px;
     }
 
     #scenarios {
@@ -93,10 +87,18 @@ main {
         text-align: left;
         padding: 2rem 5%;
     }
+}
 
-    .contact-info-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+/* --- 5. TABLET REFINEMENT (Specialists in Twos) --- */
+@media screen and (min-width: 600px) {
+    #specialist-grid.grid {
+        grid-template-columns: 1fr 1fr; /* YOUR TWOS LAYOUT */
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #specialist-grid.grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3-column on large monitors */
     }
 }

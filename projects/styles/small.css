@@ -1,11 +1,14 @@
 /* --- 1. BRAND VARIABLES --- */
+/* --- 1. BRAND VARIABLES --- */
 :root {
-    --navy: #0b2c5a;
-    --teal: #17a2b8;
-    --coral: #ff6b35;
+    --primary-color: #0b2c5a;    /* Navy */
+    --secondary-color: #17a2b8;  /* Teal */
+    --accent-color: #ff6b35;     /* Coral */
     --white: #ffffff;
     --light-bg: #f9f9f9;
-    --text-dark: #333333;
+    --text-color: #333;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
     --radius: 8px;
     --shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -18,35 +21,29 @@
 }
 
 body {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: var(--body-font); /* Fixed */
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--text-color); /* Fixed */
     background-color: var(--light-bg);
     overflow-x: hidden;
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--navy);
+    font-family: var(--heading-font); /* Fixed */
+    color: var(--primary-color); /* Fixed from --navy */
     margin-bottom: 1rem;
 }
 
 /* --- 3. GLOBAL HEADER --- */
 header {
-    background-color: var(--navy);
+    background-color: var(--primary-color); /* Fixed */
     color: var(--white);
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 4px solid var(--teal);
+    border-bottom: 4px solid var(--secondary-color); /* Fixed from --teal */
     width: 100%;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
 
 header h1 {
@@ -76,95 +73,53 @@ header h1 {
 
 #nav-list a:hover, #nav-list a.active {
     background-color: rgba(23, 162, 184, 0.2);
-    color: var(--teal);
+    color: var(--secondary-color); /* Fixed */
 }
 
-/* --- 5. DIRECTORY GRID --- */
-#directory-grid {
+/* --- 5. SPECIALIST GRID (The "Twos" Setup) --- */
+#specialist-grid.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr; 
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.doctor-card {
-    background-color: var(--white);
-    border: 1px solid #eee;
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: var(--shadow);
+/* RESPONSIVE OVERRIDE FOR TWOS */
+@media (min-width: 600px) {
+    #specialist-grid.grid {
+        grid-template-columns: 1fr 1fr; /* This creates the TWO column layout */
+    }
 }
 
-.doctor-card img {
+.specialist-card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.specialist-card img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    height: 250px; /* Consistent height */
+    object-fit: cover; 
     border-radius: 4px;
-    margin: 0 auto 1rem auto;
-    display: block;
+    margin-bottom: 10px;
 }
 
 /* --- 6. FORMS --- */
-.form-section {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-fieldset {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: var(--radius);
-    margin-bottom: 2rem;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-}
-
-legend {
-    font-weight: 700;
-    color: var(--navy);
-    padding: 0 10px;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    font-weight: 600;
-    color: #444;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s, outline 0.3s;
-}
-
 input:focus, select:focus, textarea:focus {
-    outline: 2px solid var(--teal);
-    border-color: var(--teal);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
+    outline: 2px solid var(--secondary-color); /* Fixed */
+    border-color: var(--secondary-color); /* Fixed */
 }
 
 .submit-btn {
     width: 100%;
-    background-color: var(--coral);
+    background-color: var(--accent-color); /* Fixed from --coral */
     color: white;
     padding: 1rem;
     font-size: 1.1rem;
@@ -175,81 +130,12 @@ textarea {
     transition: 0.3s ease;
 }
 
-.submit-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-}
-
 /* --- 7. GLOBAL FOOTER --- */
 footer {
-    background-color: var(--navy);
+    background-color: var(--primary-color); /* Fixed */
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
     margin-top: 50px;
-    border-top: 4px solid var(--teal);
-}
-
-/* --- 8. THANKS PAGE STYLES --- */
-.thanks-main {
-    text-align: center;
-    padding: 10% 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.confirmation-message h2 {
-    font-size: 2.5rem;
-    color: var(--teal);
-}
-
-.next-steps {
-    margin: 2rem 0;
-    padding: 20px;
-    background-color: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-/* --- 9. RESPONSIVE DESKTOP OVERRIDES --- */
-@media (min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 5%;
-    }
-
-    #nav-list {
-        flex-direction: row;
-        margin-top: 0;
-        gap: 20px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-}
-
-.video-link {
-    margin: 10px 0;
-    padding: 5px;
-}
-
-.video-link a {
-    color: #ffeb3b; /* A bright yellow to grab the grader's eye */
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid #ffeb3b;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
-}
-
-.video-link a:hover {
-    background: #ffeb3b;
-    color: #000; /* Contrast color on hover */
+    border-top: 4px solid var(--secondary-color); /* Fixed */
 }
