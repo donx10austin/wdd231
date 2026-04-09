@@ -1,5 +1,4 @@
 /* --- 1. BRAND VARIABLES --- */
-/* --- 1. BRAND VARIABLES --- */
 :root {
     --primary-color: #0b2c5a;    /* Navy */
     --secondary-color: #17a2b8;  /* Teal */
@@ -10,7 +9,7 @@
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Open Sans', sans-serif;
     --radius: 8px;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* --- 2. RESET & BASE --- */
@@ -21,143 +20,231 @@
 }
 
 body {
-    font-family: var(--body-font); /* Fixed */
+    font-family: var(--body-font);
     line-height: 1.6;
-    color: var(--text-color); /* Fixed */
+    color: var(--text-color);
     background-color: var(--light-bg);
     overflow-x: hidden;
 }
 
 h1, h2, h3 {
-    font-family: var(--heading-font); /* Fixed */
-    color: var(--primary-color); /* Fixed from --navy */
+    font-family: var(--heading-font);
+    color: var(--primary-color);
     margin-bottom: 1rem;
-}
-
-/* --- 3. GLOBAL HEADER --- */
-header {
-    background-color: var(--primary-color); /* Fixed */
-    color: var(--white);
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 4px solid var(--secondary-color); /* Fixed from --teal */
-    width: 100%;
-}
-
-header h1 {
-    margin: 0;
-    color: var(--white);
-    font-size: 1.6rem;
-}
-
-/* --- 4. NAVIGATION --- */
-#nav-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column; 
-    gap: 10px;
-    margin-top: 15px;
     text-align: center;
 }
 
+/* --- 3. GLOBAL HEADER & NAV --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-area h1 {
+    color: var(--white);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+#nav-list {
+    list-style: none;
+    display: none; /* Controlled by navigation.js toggle */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+#nav-list.show {
+    display: flex;
+}
+
 #nav-list a {
+    display: block;
     color: var(--white);
     text-decoration: none;
+    padding: 12px;
     font-weight: 600;
-    padding: 8px 15px;
-    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#nav-list a.active {
+    background-color: var(--secondary-color);
+}
+
+/* --- 4. DIRECTORY & SPECIALISTS --- */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    background: var(--white);
+    cursor: pointer;
     border-radius: 4px;
 }
 
-#nav-list a:hover, #nav-list a.active {
-    background-color: rgba(23, 162, 184, 0.2);
-    color: var(--secondary-color); /* Fixed */
+.view-toggle button.active {
+    background: var(--primary-color);
+    color: var(--white);
 }
 
-/* --- 5. SPECIALIST GRID (The "Twos" Setup) --- */
-#specialist-grid.grid {
+#specialist-grid {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 1fr; /* Mobile first: 1 column */
+    gap: 1.5rem;
+    padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* RESPONSIVE OVERRIDE FOR TWOS */
-@media (min-width: 600px) {
-    #specialist-grid.grid {
-        grid-template-columns: 1fr 1fr; /* This creates the TWO column layout */
-    }
+/* List View Override */
+#specialist-grid.list {
+    display: block;
+}
+
+#specialist-grid.list .specialist-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#specialist-grid.list .specialist-card img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
 }
 
 .specialist-card {
-    background-color: var(--white);
-    border: 1px solid #ddd;
+    background: var(--white);
     border-radius: var(--radius);
-    padding: 15px;
-    text-align: center;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .specialist-card img {
     width: 100%;
-    height: 250px; /* Consistent height */
-    object-fit: cover; 
-    border-radius: 4px;
-    margin-bottom: 10px;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
 }
 
-/* --- 6. FORMS --- */
-input:focus, select:focus, textarea:focus {
-    outline: 2px solid var(--secondary-color); /* Fixed */
-    border-color: var(--secondary-color); /* Fixed */
+.view-bio-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- 5. FORMS (Appointment Section) --- */
+.form-section {
+    padding: 2rem 1rem;
+    background: #f0f4f8;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--white);
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .submit-btn {
-    width: 100%;
-    background-color: var(--accent-color); /* Fixed from --coral */
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--white);
     padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius);
+    width: 100%;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
-/* --- 7. GLOBAL FOOTER --- */
+/* --- 6. FOOTER & MISC --- */
 footer {
-    background-color: var(--primary-color); /* Fixed */
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 2rem 1rem;
     text-align: center;
-    margin-top: 50px;
-    border-top: 4px solid var(--secondary-color); /* Fixed */
+    border-top: 5px solid var(--secondary-color);
 }
 
+.video-cta {
+    color: #ffeb3b; /* Yellow for visibility */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Modal Styling */
 dialog {
     border: none;
-    border-radius: var(--radius, 8px);
+    border-radius: var(--radius);
     padding: 2rem;
+    width: 90%;
     max-width: 500px;
-    box-shadow: var(--shadow);
+    margin: auto;
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.7); /* Dims the background */
+    background: rgba(0,0,0,0.8);
 }
 
 #close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+    float: right;
     cursor: pointer;
+    font-weight: bold;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 50%;
 }
