@@ -38,5 +38,85 @@
     "experience": "7 Years",
     "image": "images/dr-nwosu.webp",
     "bio": "Dedicated to emergency orthopedic care, focusing on complex limb-salvage and fracture healing."
+  },
+  {
+    "name": "Dr. Tunde Fashola",
+    "specialty": "Physical Therapy",
+    "location": "Victoria Island",
+    "experience": "5 Years",
+    "image": "images/dr-fashola.webp",
+    "bio": "Focuses on post-operative rehabilitation and mobility recovery."
+  },
+  {
+    "name": "Dr. Ifeoma Azikiwe",
+    "specialty": "Hand & Upper Extremity",
+    "location": "Ikoyi",
+    "experience": "11 Years",
+    "image": "images/dr-azikiwe.webp",
+    "bio": "Expert in delicate nerve repairs and carpal tunnel treatments."
+  },
+  {
+    "name": "Dr. Babatunde Lawal",
+    "specialty": "Orthopedic Oncology",
+    "location": "Lagos Mainland",
+    "experience": "20 Years",
+    "image": "images/dr-lawal.webp",
+    "bio": "Specializes in the surgical management of bone and soft tissue tumors."
+  },
+  {
+    "name": "Dr. Zainab Balogun",
+    "specialty": "Rheumatology",
+    "location": "Ajah",
+    "experience": "9 Years",
+    "image": "images/dr-balogun.webp",
+    "bio": "Dedicated to managing autoimmune and inflammatory bone conditions."
+  },
+  {
+    "name": "Dr. Victor Obi",
+    "specialty": "Foot & Ankle Surgery",
+    "location": "Festac Town",
+    "experience": "6 Years",
+    "image": "images/dr-obi.webp",
+    "bio": "Treats complex ankle fractures and reconstructive foot deformities."
+  },
+  {
+    "name": "Dr. Kelechi Iheanacho",
+    "specialty": "Osteoporosis Care",
+    "location": "Gbagada",
+    "experience": "14 Years",
+    "image": "images/dr-iheanacho.webp",
+    "bio": "Expert in bone density optimization and geriatric fracture prevention."
+  },
+  {
+    "name": "Dr. Sarah Alabi",
+    "specialty": "Sports Medicine",
+    "location": "Apapa",
+    "experience": "7 Years",
+    "image": "images/dr-alabi.webp",
+    "bio": "Specializes in ACL reconstruction and shoulder stability in athletes."
+  },
+  {
+    "name": "Dr. Mohammed Danjuma",
+    "specialty": "Trauma Surgery",
+    "location": "Ogba",
+    "experience": "13 Years",
+    "image": "images/dr-danjuma.webp",
+    "bio": "Focuses on high-impact emergency orthopedic interventions."
+  },
+  {
+    "name": "Dr. Nneka Eze",
+    "specialty": "Joint Replacement",
+    "location": "Magodo",
+    "experience": "16 Years",
+    "image": "images/dr-eze.webp",
+    "bio": "Leading expert in total knee and hip replacements in West Africa."
+  },
+  {
+    "name": "Dr. David Bello",
+    "specialty": "Physical Medicine",
+    "location": "Ikorodu",
+    "experience": "4 Years",
+    "image": "images/dr-bello.webp",
+    "bio": "Passionate about non-surgical pain management and physical recovery."
   }
 ]
